@@ -1,0 +1,366 @@
+.animacja {
+  transition: all 0.36s ease;
+}
+
+.shadow {
+  box-shadow: 0 10px 50px 0px rgba($darkcolor, 0.16);
+}
+
+// usage 
+/* 
+  @extend .animacja;
+*/
+
+@mixin xxlarge {
+  @media only screen and (min-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media only screen and (min-width: 1025px) and (max-width: 1499px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (min-width: 376px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media only screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+// usage
+/*
+.element {
+  @include small {
+    ...
+  }
+}
+*/
+
+// Animation mixin
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }  
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }  
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+
+@mixin animation($str) {
+  animation: #{$str};      
+}
+
+// usage 
+/*
+@include keyframes(slide-down) {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+}
+
+.element {
+  ...
+  @include animation('slide-down 5s 3');
+}
+*/
+
+// placeholder
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// gradient animation 
+@keyframes GradientAnimation { 
+  0%{background-position:57% 0%}
+  50%{background-position:44% 100%}
+  100%{background-position:57% 0%}
+}
+
+// margin & paddings
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100, 110, 120, 130, 140, 150, 200); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+// font sizes
+$font-sizes: (14, 16, 20, 23, 22, 26, 28, 44, 46, 90);
+@each $size in $font-sizes {
+	.font-#{$size} {
+		font-size: #{$size}px;
+	}
+}
+
+@mixin bgcover {
+	background-size: cover!important;
+}
+
+@mixin bgcontain {
+	background-size: contain!important;
+}
+
+// uni klasy 
+.all-link {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.line-normal {
+	line-height: normal;
+}
+
+.underline {
+	text-decoration: underline!important;
+}
+
+.line-through {
+	text-decoration: line-through;
+}
+
+.nodecoration {
+	text-decoration: none!important;
+}
+
+// nadanie wielkich liter
+.big {
+	text-transform: uppercase!important;
+}
+
+// tekst normalny
+.normal {
+	text-transform: none;
+}
+
+// tekst pogrubiony
+.light {
+	font-weight: 300;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+// tekst pochyły
+.italic {
+	font-style: italic;
+}
+
+.regular {
+	font-weight: 400!important;
+}
+
+.medium {
+	font-weight: 500;
+}
+
+.semibold {
+	font-weight: 600;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.spacing {
+	letter-spacing: rem-calc(1);
+}
+
+.border-radius {
+	border-radius: $global-radius;
+}
+
+.round {
+	border-radius: rem-calc(40);
+}
+
+.nopadding {
+	padding: 0!important;
+}
+
+.nomargin {
+	margin: 0;
+}
+
+// nadanie wysokości na 100% viewport
+.height100vh {
+	height: 100vh;
+}
+
+// nadanie szerokości na 100% viewport
+.width100vw {
+	width: 100vw;
+}
+
+// wyzerowanie domyślnych ustawień dla UL w zurb foundation
+.clear-ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+// background z obrazkiem gdzie centrowany jest w pionie i poziomie oraz ustawiany jako wypełnienie cover dla przestrzeno
+.photobg {
+	background-repeat: no-repeat;
+	@include bgcover;
+	background-position: center center!important;
+	position: relative;
+	z-index: 1;
+
+	&-top {
+		background-position: top center!important;
+	}
+
+	&-bottom {
+		background-position: bottom center!important;
+	}
+}
+
+.photobg-top {
+	background-position: top center!important;
+}
+
+// ustawienie warstwy o wyższym z-indexie, szczególnie przydatne gdy element nadrzędny - rodzic ma użyty before/after z warstwą kryjącą
+.photobg-inner {
+	position: relative;
+	z-index: 12;
+	width: 100%;
+	height: 100%;
+}
+
+// usyawienie before dla 100% wysokości i szerokości, szczególnie przydatne gdy na zdjęcie w tle chcemy nałożyć warstwę w kolorze lub gradiencie kryjącym
+.before-absolute,
+.after-absolute {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+// nadanie elementowi display: table. Wygodne w stosowaniu razem z equalizerem
+.display-table {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+// nadanie elementowi display: table-cell, szczególnie przydatne gdy element nadrzędny - rodzic ma użyty .display-table. Wyrównanie elemntów w poziomie
+.display-table-cell {
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	position: relative;
+	z-index: 12;
+
+	// Wyrównanie elemntów do dolnej krawędzi
+	&.v-bottom {
+		vertical-align: bottom;
+	}
+
+	// Wyrównanie elemntów do górnej krawędzi
+	&.v-top {
+		vertical-align: top;
+	}
+}
+// nadanie elementowi display: inline-block
+.display-inline-block {
+	display: inline-block;
+}
+
+// nadanie elementowi display: inline.
+.display-inline {
+	display: inline;
+}
+
+// nadanie elementowi display: block o 100% szerokości.
+.display-block {
+	display: block;
+	width: 100%;
+}
+
+// nadanie elementowi display: none
+.display-none {
+	display: none;
+}
+
+// pozycja relative
+.position-relative {
+	position: relative;
+}
+
+//pozycja absolutna
+.position-absolute {
+	position: absolute;
+}
+
+//pozycja fixed
+.position-fixed {
+	position: fixed;
+}
+
+.o-hidden {
+	overflow: hidden;
+}
+
+.o-x-hidden {
+	overflow-x: hidden;
+}
+
+.o-y-hidden {
+	overflow-y: hidden;
+}
+
+.full-height {
+	height:100%;
+}
+
+.full-width {
+	width:100%;
+}
+
+.z-index20 {
+	z-index:20;
+	position: relative;
+}

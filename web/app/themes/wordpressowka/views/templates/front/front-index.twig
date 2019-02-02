@@ -1,0 +1,57 @@
+{% extends "/layouts/base.twig" %}
+
+{% block content %}
+
+<main role="main" id="wrapper">
+
+      <div id="left-column">
+
+        {% include 'views/parts/logo.twig' %}
+
+      </div>
+
+      <div id="right-column">
+
+          <div role="list" id="content">
+
+            {% include 'views/parts/header.twig' %}
+            
+            <h1 class="intro">
+                WordPress News - najnowsze wiadomości o WordPressie, pluginach <a href="" data-link="Subskrybuj">Subskrybuj</a>
+            </h1>
+
+            <article class="article">
+              <time><strong>WordPressówka #24</strong>Piątek, 25 Styczeń 2018</time>
+              
+              {% include 'views/parts/url.twig' %}
+
+              {% include 'views/parts/url.twig' %}
+
+              {% include 'views/parts/url.twig' %}
+
+              {% include 'views/parts/url.twig' %}
+
+              {% include 'views/parts/url.twig' %}
+
+              {% include 'views/parts/url.twig' %}
+
+              {% include 'views/parts/url.twig' %}
+
+            </article>
+
+            <ul class="pagination">
+              <li><a href="">Poprzednie wydanie</a></li>
+              <li><a href="">Następne wydanie</a></li>
+            </ul>
+
+          </div>
+
+          {% include 'views/parts/newsletter.twig' %}
+
+          {% include 'views/parts/footer.twig' %}
+
+      </div>
+
+    </main>
+
+{% endblock %}
