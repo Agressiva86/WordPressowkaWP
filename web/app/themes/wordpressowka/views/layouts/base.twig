@@ -3,21 +3,31 @@
 <!--[if IE 9]><html class="lt-ie10" lang="{{ function( 'language_attributes' ) }}" > <![endif]-->
 <html {{ function( 'language_attributes' ) }}>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{ function( 'wp_head' ) }}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ function( 'wp_head' ) }}
 </head>
 <body {{ function( 'body_class' ) }}>
 {% endblock %}
 
-{% block content %}
+<main role="main" id="wrapper">
+    {% block left_column %}
+     <div id="left-column">
+        {% include 'views/parts/logo.twig' %}
+    </div>
+    {% endblock %}
 
-{% endblock %}
+    {% block right_column %}
+        {% include 'views/parts/newsletter.twig' %}
+
+        {% include 'views/parts/footer.twig' %}
+    {% endblock %}
+</main>
 
 {% block footer %}
-  {{ function( 'wp_footer' ) }}
-  <link href="https://fonts.googleapis.com/css?family=Catamaran:400,700,900&amp;subset=latin-ext" rel="stylesheet">
-  </body>
+    {{ function( 'wp_footer' ) }}
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+    </body>
 </html>
 {% endblock %}
