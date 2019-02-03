@@ -38,7 +38,7 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(images, sass, javascript, copy), revision_css, revision_js ));
+ gulp.series(clean, gulp.parallel(images, sass, sassEditor, javascript, copy), revision_css, revision_js ));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -115,6 +115,19 @@ function copy() {
 // In production, the CSS is compressed
 function sass() {
   return gulp.src('assets/scss/app.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.plumber())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    }).on('error', $.sass.logError))
+    .pipe($.postcss([autoprefixer()])) // uses ".browserslistrc"
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/css'))
+    .pipe(browser.reload({ stream: true }));
+}
+
+function sassEditor() {
+  return gulp.src('assets/scss/editor.scss')
     .pipe($.sourcemaps.init())
     .pipe($.plumber())
     .pipe($.sass({

@@ -51,3 +51,13 @@ function owl_block_link_render_callback( $block, $content = '', $is_preview ) {
 	$context['is_preview'] = $is_preview;
 	Timber::render('views/blocks/link.twig', $context);
 }
+
+function my_acf_block_editor_style() {
+	wp_enqueue_style(
+			'url_css',
+			get_template_directory_uri() .'/dist/css/editor.css'
+	);
+
+}
+
+add_action( 'enqueue_block_editor_assets', 'my_acf_block_editor_style' );
