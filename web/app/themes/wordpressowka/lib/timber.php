@@ -22,6 +22,8 @@ function add_to_context( $data ){
    $data['is_paged'] = is_paged();
    $data['is_singular'] = is_singular();
    $data['is_main_query'] = is_main_query();
+
+   $data['options'] = get_fields( 'options' );
    return $data;
 }
 add_filter( 'timber_context', 'add_to_context' );

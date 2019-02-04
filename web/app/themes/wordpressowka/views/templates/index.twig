@@ -6,7 +6,7 @@
 			{% include 'views/parts/header.twig' %}
 			
 			<h1 class="intro">
-				WordPress News - najnowsze wiadomości o WordPressie, pluginach <a href="" data-link="Subskrybuj">Subskrybuj</a>
+				{{ options.opis|striptags('<strong><a>') }}
 			</h1>
 
 			{% for post in posts %}
@@ -18,8 +18,12 @@
 			{% endfor %}
 			
 			<ul class="pagination">
-				<li><a href="">Poprzednie wydanie</a></li>
-				<li><a href="">Następne wydanie</a></li>
+				{% if posts.pagination.next %}
+					<li><a href="{{ posts.pagination.next.link }}">Następne wydanie</a></li>
+				{% endif %}
+				{% if posts.pagination.prev %}
+					<li><a href="{{ posts.pagination.prev.link }}">Poprzednie wydanie</a></li>
+				{% endif %}
 			</ul>
 
 		</div>

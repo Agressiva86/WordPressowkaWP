@@ -17,20 +17,8 @@ function owl_blocks() {
 				'description'     => 'Link do artykułu',
 				'render_callback' => 'owl_block_link_render_callback',
 				'category'        => 'layout',
-				'icon'            => 'location-alt',
+				'icon'            => 'menu',
 				'keywords'        => [ 'link', 'linki' ],
-			]
-		);
-
-		acf_register_block(
-			[
-				'name'            => 'owl_title',
-				'title'           => 'Tytuł',
-				'description'     => 'Tytuł artykułu',
-				'render_callback' => 'owl_block_title_render_callback',
-				'category'        => 'layout',
-				'icon'            => 'location-alt',
-				'keywords'        => [ 'tytuł' ],
 			]
 		);
 	}
@@ -52,12 +40,16 @@ function owl_block_link_render_callback( $block, $content = '', $is_preview ) {
 	Timber::render('views/blocks/link.twig', $context);
 }
 
-function my_acf_block_editor_style() {
+/**
+ * ACF Blocks editor style
+ *
+ * @return void
+ */
+function acf_block_editor_style() {
 	wp_enqueue_style(
-			'url_css',
-			get_template_directory_uri() .'/dist/css/editor.css'
+		'url_css',
+		get_template_directory_uri() . '/dist/css/editor.css'
 	);
-
 }
 
-add_action( 'enqueue_block_editor_assets', 'my_acf_block_editor_style' );
+add_action('enqueue_block_editor_assets', 'acf_block_editor_style');
