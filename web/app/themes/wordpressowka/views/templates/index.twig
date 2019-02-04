@@ -9,22 +9,22 @@
 				{{ options.opis|striptags('<strong><a>') }}
 			</h1>
 
-			{% for post in posts %}
 			<article class="article">
 				{% include 'views/blocks/title.twig' %}
 				{{ post.content }}
 			</article>
-
-			{% endfor %}
 			
 			<ul class="pagination">
 					<li>
-						{% if posts.pagination.prev %}<a href="{{ posts.pagination.prev.link }}">Nowsze wydanie</a>{% endif %}
+					{% if post.prev_post %}
+						<a href="{{ post.prev_post }}">Nowsze wydanie</a>
+					{% endif %}
 					</li>
 			
 					<li>
-						
-						{% if posts.pagination.next %}<a href="{{ posts.pagination.next.link }}">Wcześniejsze wydanie</a>{% endif %}
+					{% if post.next_post %}
+						<a href="{{ post.next_post }}">Wcześniejsze wydanie</a>
+					{% endif %}
 					</li>
 			</ul>
 

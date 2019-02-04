@@ -8,6 +8,7 @@ $sage_includes = [
 	'lib/assets.php',
 	'lib/setup.php',
 	'lib/gutenberg.php',
+	'lib/class-owl-post.php',
 ];
 
 foreach ( $sage_includes as $file ) {

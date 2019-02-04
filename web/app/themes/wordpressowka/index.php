@@ -1,6 +1,6 @@
 <?php
 
 $context = Timber::get_context();
-$context['posts'] = new Timber\PostQuery();
+$context['post'] = Timber::get_posts(false, 'OwlPost')[0];
 
 Timber::render('views/templates/index.twig', $context);
