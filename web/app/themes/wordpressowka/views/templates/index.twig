@@ -18,12 +18,14 @@
 			{% endfor %}
 			
 			<ul class="pagination">
-				{% if posts.pagination.next %}
-					<li><a href="{{ posts.pagination.next.link }}">Następne wydanie</a></li>
-				{% endif %}
-				{% if posts.pagination.prev %}
-					<li><a href="{{ posts.pagination.prev.link }}">Poprzednie wydanie</a></li>
-				{% endif %}
+					<li>
+						{% if posts.pagination.prev %}<a href="{{ posts.pagination.prev.link }}">Nowsze wydanie</a>{% endif %}
+					</li>
+			
+					<li>
+						
+						{% if posts.pagination.next %}<a href="{{ posts.pagination.next.link }}">Wcześniejsze wydanie</a>{% endif %}
+					</li>
 			</ul>
 
 		</div>
