@@ -28,6 +28,12 @@ function setup() {
   // Use main stylesheet for visual editor
   // To add custom styles edit /assets/styles/layouts/_tinymce.scss
   // add_editor_style(Assets\asset_path('styles/main.css'));
+  register_nav_menus(
+		[
+			'header' => 'Header',
+			'footer'      => 'Footer',
+		]
+	);
 }
 add_action( 'after_setup_theme', 'setup' );
 
@@ -37,11 +43,6 @@ add_action( 'after_setup_theme', 'setup' );
 
 function assets() {
   wp_enqueue_style( 'sasquatch/css', asset_path( 'css/app.css' ), false, null);
-
-  if (is_single() && comments_open() && get_option( 'thread_comments' )) {
-    wp_enqueue_script( 'comment-reply' );
-  }
-
   wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), ['jquery'], null, true);
 }
 add_action( 'wp_enqueue_scripts', 'assets', 100 );
@@ -81,3 +82,30 @@ if ( function_exists( 'Sober\Intervention\intervention' ) ) {
   intervention( 'add-dashboard-redirect' );
   intervention( 'add-svg-support' );
 }
+
+function deregister_embed() {
+  wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'deregister_embed' );
+
+/**
+ * Removes comments
+ */
+// Removes from admin menu
+add_action( 'admin_menu', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+	remove_menu_page( 'edit-comments.php' );
+}
+// Removes from post and pages
+add_action( 'init', 'remove_comment_support', 100 );
+
+function remove_comment_support() {
+	remove_post_type_support( 'post', 'comments' );
+	remove_post_type_support( 'page', 'comments' );
+}
+// Removes from admin bar
+function mytheme_admin_bar_render() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu( 'comments' );
+}
+add_action('wp_before_admin_bar_render', 'mytheme_admin_bar_render');

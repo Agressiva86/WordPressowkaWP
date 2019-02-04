@@ -1,7 +1,7 @@
 <header id="header">
-  <ul role="navigation">
-    <li><a href="" data-link="Wydania"><span>Wydania</span></a></li>
-    <li><a href="" data-link="Newsletter"><span>Newsletter</span></a></li>
-    <li><a href="" data-link="Facebook"><span>Facebook</span></a></li>
-  </ul>
+	<ul role="navigation">
+	{% for item in menu.header.get_items %}
+		<li><a href="{{ item.link }}" target="{{ item.target }}" data-link="{{ item.title }}"><span>{{ item.title }}</span></a></li>
+	{% endfor %}
+	</ul>
 </header>
