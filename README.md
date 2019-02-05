@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="sasquatch%20logo.png">
+  <img src="wordpressowka.png">
 </p>
 
 # Sasquatch WP - starter pack
