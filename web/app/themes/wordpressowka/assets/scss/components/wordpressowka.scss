@@ -751,3 +751,93 @@ body {
 	text-align: center;
 	margin-top: 50px;
 }
+
+.page404 {
+	#footer, 
+	#newsletter {
+		display: none;
+	}
+
+	.page404-content {
+		height: 100vh!important;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		padding: 0 60px;
+
+		@include medium {
+			height: auto!important;
+			padding: 160px 50px!important;
+		}
+
+		@include small {
+			height: auto!important;
+			padding: 100px 50px!important;
+		}
+
+		p {
+			opacity: 0.7;
+			color: #{var(--primary)};
+			font-size: 17px;
+		}
+
+		a {
+			color: #{var(--lightcolor)}!important;
+			font-weight: 900!important;
+			display: inline-block;
+			position: relative;
+			border-bottom: 1px solid #{var(--lightcolor)};
+			display: inline-block;
+			margin-top: 30px;
+			@extend .big;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				overflow: hidden;
+				max-width: 0;
+				color: #{var(--primary)};
+				content: attr(data-link);
+				transition: max-width 0.35s;
+				white-space: nowrap;
+			}
+
+			&:hover, &:focus {
+				border-bottom: 1px solid #{var(--primary)};
+
+				&:before {
+					max-width: 100%;
+				}
+			}
+		}
+
+		h2 {
+			color: #{var(--primary)};
+			margin-bottom: 30px;
+			font-weight: 700;
+
+			@include xxlarge {
+				font-size: 100px;
+			}
+
+			@include xlarge {
+				font-size: 40px;
+			}
+
+			@include large {
+				font-size: 35px;
+			}
+
+			@include medium {
+				font-size: 30px;
+			}
+
+			@include small {
+				font-size: 27px;
+			}
+		}
+	}
+}

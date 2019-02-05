@@ -20,7 +20,7 @@
     }
     </style>
 </head>
-<body {{ function( 'body_class' ) }}>
+<body class="{{ body_class }} {{ page404 ? 'page404' }}">
 {% endblock %}
 
 <main role="main" id="wrapper">
