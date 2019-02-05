@@ -16,9 +16,9 @@ body {
   scroll-behavior: smooth;
 	overflow-x: hidden;
 	overflow-y: auto;
-	color: rgba($primary, 0.75);
+	color: rgba(#{var(--primary)}, 0.75);
 	line-height: 1.6;
-	background-color: $white;
+	background-color: #{var(--white)};
 	-webkit-font-smoothing: antialiased !important;
 	-moz-osx-font-smoothing: antialiased;
 	//font-smooth: antialiased;
@@ -52,7 +52,7 @@ body {
 		z-index: 10;
 		@extend .shadow;
 		padding: 30px;
-		background-color: $white;
+		background-color: #{var(--white)};
 		@extend .animacja;
 
 		&:hover {
@@ -66,19 +66,19 @@ body {
 			svg {
 				#sygnet {
 					path#sowka {
-						fill: $white!important;
+						fill: #{var(--white)}!important;
 					}
 				}
 	
 				#napis {
 					path {
-						fill: $white!important;
+						fill: #{var(--white)}!important;
 					}
 				}
 
 				#wordpress {
 					path {
-						fill: $darkcolor!important;
+						fill: #{var(--darkcolor)}!important;
 					}
 				}
 			}
@@ -121,7 +121,7 @@ body {
 				position: absolute;
 				top: 0;
 				left: 0;
-				background: linear-gradient(223deg, $lightcolor, $primary);
+				background: linear-gradient(223deg, #{var(--lightcolor)}, #{var(--primary)});
 				background-size: 400% 400%;
 				animation: GradientAnimation 6s ease infinite;
 				@extend .animacja;
@@ -169,13 +169,13 @@ body {
 	
 				#napis {
 					path {
-						fill: $primary;
+						fill: #{var(--primary)};
 					}
 				}
 	
 				#sygnet {
 					path#sowka {
-						fill: $primary;
+						fill: #{var(--primary)};
 					}
 				}
 			}
@@ -212,7 +212,7 @@ body {
 
 		.intro {
 			font-size: 44px;
-			color: darken($primary, 10%);
+			color: #{var(--primary)};
 			font-weight: 900;
 			margin-bottom: 60px;
 			line-height: 1.3;
@@ -229,11 +229,11 @@ body {
 			}
 
 			a {
-				color: $lightcolor!important;
+				color: #{var(--lightcolor)}!important;
 				font-weight: 900!important;
 				display: inline-block;
 				position: relative;
-				border-bottom: 1px solid $lightcolor;
+				border-bottom: 1px solid #{var(--lightcolor)};
 
 				&:before {
 					position: absolute;
@@ -241,14 +241,14 @@ body {
 					left: 0;
 					overflow: hidden;
 					max-width: 0;
-					color: darken($primary, 10%);
+					color: #{var(--primary)};
 					content: attr(data-link);
 					transition: max-width 0.35s;
 					white-space: nowrap;
 				}
 
 				&:hover, &:focus {
-					border-bottom: 1px solid darken($primary, 10%);
+					border-bottom: 1px solid #{var(--primary)};
 
 					&:before {
 						max-width: 100%;
@@ -261,7 +261,7 @@ body {
 	#header {
 		padding-bottom: 40px;
 		margin-bottom: 40px;
-		border-bottom: 1px solid rgba($primary, 0.05);
+		border-bottom: 1px solid #{var(--light)};
 
 		@include small {
 			padding-bottom: 20px;
@@ -301,7 +301,7 @@ body {
 					font-size: 16px;
 					//@extend .big;
 					line-height: normal;
-					color: $primary;
+					color: #{var(--primary)};
 					position: relative;
 					letter-spacing: 1px;
 
@@ -319,7 +319,7 @@ body {
 						left: 0;
 						overflow: hidden;
 						max-width: 0;
-						color: $lightcolor;
+						color: #{var(--lightcolor)};
 						content: attr(data-link);
 						transition: max-width 0.35s;
 						white-space: nowrap;
@@ -385,7 +385,7 @@ body {
 					font-weight: 400;
 					font-size: 13px;
 					line-height: normal;
-					color: rgba($primary, 0.7);
+					color: rgba(#{var(--primary)}, 0.7);
 					position: relative;
 					letter-spacing: 1px;
 
@@ -403,7 +403,7 @@ body {
 						left: 0;
 						overflow: hidden;
 						max-width: 0;
-						color: $lightcolor;
+						color: #{var(--lightcolor)};
 						content: attr(data-link);
 						transition: max-width 0.35s;
 						white-space: nowrap;
@@ -422,7 +422,7 @@ body {
 			font-size: 13px;
 			text-align: center;
 			margin: 20px 0 0 0;
-			color: rgba($darkcolor, 0.4);
+			color: #{var(--lighttext)};
 			letter-spacing: 1px;
 
 			span {
@@ -432,11 +432,11 @@ body {
 			}
 
 			a {
-				color: rgba($darkcolor, 0.4);
+				color: rgba(#{var(--darkcolor)}, 0.4);
 				text-decoration: underline;
 
 				&:hover, &:focus {
-					color: $lightcolor;
+					color: #{var(--lightcolor)};
 				}
 			}
 		}
@@ -449,78 +449,60 @@ body {
 		&.page {
 			strong, b {
 				font-weight: 700;
-				color: rgba($primary, 1);
+				color: rgba(#{var(--primary)}, 1);
 			}
 
 			p {
 				margin-bottom: 30px;
-				color: rgba($primary, 0.75);
+				color: rgba(#{var(--primary)}, 0.75);
 
 				&:first-of-type {
 					font-size: 130%;
 					font-weight: 700;
-					color: $primary;
+					color: #{var(--primary)};
 				}
 			}
 
 			a {
 				text-decoration: underline;
-				color: $lightcolor;
+				color: #{var(--lightcolor)};
 
 				&:hover, &:focus {
-					color: darken($primary, 10%);
+					color: #{var(--primary)};
+				}
+			}
+		}
+
+		p {
+			margin-bottom: 20px;				
+			color: #{var(--darktext)};
+			opacity: 0.7;
+			font-size: 18px;
+
+			a {
+				text-decoration: underline;
+				color: #{var(--lightcolor)};
+
+				&:hover, &:focus {
+					color: #{var(--primary)};
 				}
 			}
 		}
 
 		time {
 			display: inline-block;
-			color: rgba($darkcolor, 0.3);
+			color: #{var(--lighttext)};
 			font-weight: 700;
 			
 			strong {
-				color: $lightcolor;
+				color: #{var(--lightcolor)};
 				font-weight: 700;
 				display: inline-block;
 				padding-right: 20px;
+				font-size: 20px;
 
 				@include small {
 					display: block;
-				}
-			}
-		}
-
-		section {
-			padding: 30px 0;
-			line-height: 1.7;
-
-			p {
-				margin-bottom: 10px;				
-			}
-
-			a[target="_blank"] {
-				font-weight: 700;
-				color: $primary;
-				font-size: 19px;
-				border-bottom: 1px solid rgba($darkcolor, 0.2);
-				display: inline;
-				@extend .animacja;
-				position: relative;
-
-				&:after {
-					content: "";
-					width: 13px;
-					height: 13px;
-					background-image: url(#{$assets}/link2.svg);
-					background-size: contain;
-					position: absolute;
-					bottom: 10px;
-					right: -25px; 
-				}
-
-				&:hover {
-					color: $lightcolor;
-					border-bottom-color: $lightcolor;
 				}
 			}
 		}
@@ -530,10 +512,11 @@ body {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		list-style-type: none;
 		margin-top: 30px;
+		flex-grow: 1;
 
 		@include small {
 			flex-wrap: wrap;
@@ -565,23 +548,23 @@ body {
 			}
 
 			a {
-				border: 2px solid $lightcolor;
+				border: 2px solid #{var(--lightcolor)};
 				padding: 12px 22px;
 				font-size: 15px;
-				color: $lightcolor;
+				color: #{var(--lightcolor)};
 				font-weight: 700;
 				display: inline-block;
 
 				&:hover {
-					background-color: $lightcolor;
-					color: $white;
+					background-color: #{var(--lightcolor)};
+					color: #{var(--white)};
 				}
 			}
 		}
 	}
 
 	.newsletter {
-		background: linear-gradient(223deg, $lightcolor, $primary);
+		background: linear-gradient(223deg, #{var(--lightcolor)}, #{var(--primary)});
 		background-size: 400% 400%;
 		@extend .shadow;
 		margin-top: 20px;
@@ -610,7 +593,7 @@ body {
 
 		h2 {
 			font-size: 33px;
-			color: $white;
+			color: #{var(--white)};
 			margin-bottom: 20px;
 
 			@include xxlarge {
@@ -625,7 +608,8 @@ body {
 		p {
 			font-size: 17px;
 			margin-bottom: 30px;
-			color: rgba($white, 0.7);
+			color: #{var(--white)};
+			opacity: 0.7;
 
 			@include xxlarge {
 				padding-right: 100px;
@@ -670,22 +654,24 @@ body {
 				padding: 0;
 				font-size: 16px;
 				border: none;
-				color: $white;
+				color: #{var(--white)};
 				background: none;
 				font-family: $font;
 				outline: none;
 				@extend .animacja;
-				box-shadow: inset 0 -2px 0 0 rgba($white, 0.4);
+				box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.4);
 
 				@include input-placeholder {
-					color: rgba($white, 0.6);
+					color: #{var(--white)};
+					opacity: 0.6;
 				}
 
 				&:focus {
-					box-shadow: inset 0 -2px 0 0 rgba($white, 1);
+					box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 1);
 
 					@include input-placeholder {
-						color: rgba($white, 1);
+						color: #{var(--white)};
+						opacity: 1;
 					}
 				}
 			}
@@ -700,19 +686,68 @@ body {
 				margin-right: 0px!important;
 				height: 60px;
 				font-weight: 700;
-				color: $white;
+				color: #{var(--white)};
 				background: none;
 				cursor: pointer;
 				@extend .animacja;
 				padding: 0 20px;
-				background: rgba($white, 0.05);
-				box-shadow: inset 0 -2px 0 0 rgba($white, 0);
+				background: rgba(255, 255, 255, 0.05);
+				box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.0);
 				
 				&:hover, &:focus {
-					border-bottom-color: rgba($white, 1);
-					box-shadow: inset 0 -2px 0 0 rgba($white, 1);
+					border-bottom-color: #{var(--white)};
+					box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 1);
 				}
 			}
 		}
 	}
+}
+
+.gutenberg-wordpressowka-block {
+	&:last-of-type {
+		margin-bottom: 40px;
+	}
+}
+
+.gutenberg-url-block {
+	padding: 30px 0 40px 0;
+	line-height: 1.7;
+
+	p {
+		margin-bottom: 10px!important;				
+		color: #{var(--darktext)};
+		opacity: 0.7;
+		font-size: 18px;
+	}
+
+	a[target="_blank"] {
+		font-weight: 700;
+		color: #{var(--primary)};
+		font-size: 19px;
+		border-bottom: 1px solid #{var(--light)};
+		display: inline;
+		@extend .animacja;
+		position: relative;
+
+		&:after {
+			content: "";
+			width: 13px;
+			height: 13px;
+			background-image: url(#{$assets}/link2.svg);
+			background-size: contain;
+			position: absolute;
+			bottom: 10px;
+			right: -25px; 
+		}
+
+		&:hover {
+			color: #{var(--lightcolor)};
+			border-bottom-color: #{var(--lightcolor)};
+		}
+	}
+}
+
+.footer-button {
+	text-align: center;
+	margin-top: 50px;
 }

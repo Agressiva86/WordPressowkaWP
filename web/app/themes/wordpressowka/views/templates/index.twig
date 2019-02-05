@@ -1,13 +1,35 @@
 {% extends "/layouts/base.twig" %}
 
-{% block content %}
+{% block right_column %}
+	<div id="right-column">
+		<div role="list" id="content">
+			{% include 'views/parts/header.twig' %}
+			
+			<h1 class="intro">
+				{{ options.opis|striptags('<strong><a>') }}
+			</h1>
 
-<div class="row" data-equalizer>
-  {% for post in posts %}
-  <div class="large-6 columns" data-equalizer-watch>
-    <h2>{{ post.title }} :)</h2>
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+			<article class="article">
+				{% include 'views/blocks/title.twig' %}
+				{{ post.content }}
+			</article>
+			
+			<ul class="pagination">
+					<li>
+					{% if post.prev_post %}
+						<a href="{{ post.prev_post }}">Nowsze wydanie</a>
+					{% endif %}
+					</li>
+			
+					<li>
+					{% if post.next_post %}
+						<a href="{{ post.next_post }}">Wcześniejsze wydanie</a>
+					{% endif %}
+					</li>
+			</ul>
+
+		</div>
+		
+		{{ parent() }}
+	</div>
 {% endblock %}

@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import 'what-input';
 import Router from './lib/router';
 
 // Routes
