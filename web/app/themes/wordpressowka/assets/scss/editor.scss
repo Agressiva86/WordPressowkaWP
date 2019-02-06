@@ -5,7 +5,7 @@
 }
 
 .gutenberg-wordpressowka-block {
-  @import url('https://fonts.googleapis.com/css?family=Catamaran:400,700,900&subset=latin-ext');
+  @import 'components/fonts.scss';
 
   @import "components/reset.scss";
 
