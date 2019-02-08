@@ -30,13 +30,13 @@
 }
 
 @mixin medium {
-  @media only screen and (min-width: 376px) and (max-width: 768px) {
+  @media only screen and (min-width: 421px) and (max-width: 768px) {
     @content;
   }
 }
 
 @mixin small {
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 420px) {
     @content;
   }
 }
