@@ -798,7 +798,6 @@ body {
 			display: inline-block;
 			position: relative;
 			border-bottom: 1px solid #{var(--lightcolor)};
-			display: inline-block;
 			margin-top: 30px;
 			@extend .big;
 
@@ -847,6 +846,40 @@ body {
 			@include small {
 				font-size: 27px;
 			}
+		}
+	}
+}
+
+.button-coffee {
+	display: inline-block;
+	padding: 14px 30px;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color: #{var(--primary)};
+	border: 2px solid #{var(--primary)};
+	background: #{var(--white)};
+	@extend .animacja;
+
+	svg {
+		height: 25px;
+		vertical-align: middle;
+		margin-right: 12px;
+		display: inline-block;
+		width: auto;
+
+		path {
+			@extend .animacja;
+			fill: #{var(--primary)};
+		}
+	}
+
+	&:hover, &:focus {
+		background: #{var(--primary)};
+		color: #{var(--white)};
+
+		path {
+			fill: #{var(--white)};
 		}
 	}
 }
