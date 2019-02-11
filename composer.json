@@ -52,7 +52,8 @@
     "philippbaschke/acf-pro-installer": "dev-master#9cac3d3ed8217eb2c49aecd0941ab82bf0374f58",
     "advanced-custom-fields/advanced-custom-fields-pro": "*@beta",
     "wpackagist-plugin/wordpress-seo": "*",
-    "wpackagist-plugin/w3-total-cache": "*"
+    "wpackagist-plugin/w3-total-cache": "*",
+    "wpackagist-plugin/uk-cookie-consent": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",

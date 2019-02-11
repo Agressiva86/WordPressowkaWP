@@ -78,7 +78,7 @@ body {
 
 				#wordpress {
 					path {
-						fill: #{var(--darkcolor)}!important;
+						fill: #{var(--primary)}!important;
 					}
 				}
 			}
@@ -121,9 +121,7 @@ body {
 				position: absolute;
 				top: 0;
 				left: 0;
-				background: linear-gradient(223deg, #{var(--lightcolor)}, #{var(--primary)});
-				background-size: 400% 400%;
-				animation: GradientAnimation 6s ease infinite;
+				background: #{var(--primary)};
 				@extend .animacja;
 				opacity: 0;
 				visibility: hidden;
@@ -171,6 +169,10 @@ body {
 					path {
 						fill: #{var(--primary)};
 					}
+
+					@include small {
+						display: none;
+					}
 				}
 	
 				#sygnet {
@@ -187,12 +189,12 @@ body {
 		height: 100%;
 
 		@include small {
-			width: 100vw!important;
+			width: 100%!important;
 			height: auto!important;
 		}
 
 		@include medium {
-			width: 100vw!important;
+			width: 100%!important;
 			height: auto!important;
 		}
 	}
@@ -201,13 +203,16 @@ body {
 		max-width: 684px;
 		margin: 0 auto;
 		padding: 50px;
+		width: calc(100% - 100px);
 
 		@include small {
 			padding: 30px;
+			width: calc(100% - 60px);
 		}
 
 		@include medium {
 			padding: 30px;
+			width: calc(100% - 60px);
 		}
 
 		.intro {
@@ -473,6 +478,47 @@ body {
 			}
 		}
 
+		.article-cover {
+			display: none;
+			margin-bottom: 40px;
+
+			@include large {
+				display: block;
+				position: relative;
+				width: 100%!important;
+
+				img {
+					max-width: 100%;
+					width: 100%;
+				}
+			}
+
+			@include xlarge {
+				width: calc(100% + 100px);
+				margin-left: -50px;
+				display: block;
+				position: relative;
+
+				img {
+					max-width: 100%;
+					width: 100%;
+				}
+			}
+
+			@include xxlarge {
+				width: calc(100% + 200px);
+				margin-left: -100px;
+				position: relative;
+				display: block;
+				position: relative;
+
+				img {
+					max-width: 100%;
+					width: 100%;
+				}
+			}
+		}
+
 		p {
 			margin-bottom: 20px;				
 			color: #{var(--darktext)};
@@ -494,13 +540,14 @@ body {
 			color: #{var(--lighttext)};
 			font-weight: 700;
 			margin-bottom: 40px;
+			font-size: 17px;
 			
 			strong {
 				color: #{var(--lightcolor)};
 				font-weight: 700;
 				display: inline-block;
-				padding-right: 20px;
-				font-size: 20px;
+				padding-right: 10px;
+				font-size: 17px;
 
 				@include small {
 					display: block;
@@ -565,8 +612,7 @@ body {
 	}
 
 	.newsletter {
-		background: linear-gradient(223deg, #{var(--lightcolor)}, #{var(--primary)});
-		background-size: 400% 400%;
+		background: #{var(--primary)};
 		@extend .shadow;
 		margin-top: 20px;
 		padding: 40px;
@@ -602,7 +648,8 @@ body {
 		}
 
 		h2 {
-			font-size: 33px;
+			font-size: 30px;
+			font-weight: 800;
 			color: #{var(--white)};
 			margin-bottom: 20px;
 
@@ -695,18 +742,19 @@ body {
 				font-family: $font;
 				margin-right: 0px!important;
 				height: 60px;
-				font-weight: 700;
+				font-weight: 800;
 				color: #{var(--white)};
 				background: none;
 				cursor: pointer;
 				@extend .animacja;
 				padding: 0 20px;
 				background: rgba(255, 255, 255, 0.05);
-				box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.0);
+				box-shadow: none;
 				
 				&:hover, &:focus {
-					border-bottom-color: #{var(--white)};
-					box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 1);
+					background: #{var(--white)};
+					color: #{var(--primary)};
+					@extend .shadow-light;
 				}
 			}
 		}
@@ -724,6 +772,14 @@ body {
 	line-height: 1.7;
 	position: relative;
 
+	@include small {
+		padding: 0px 0 40px 0;
+	}
+
+	@include medium {
+		padding: 0px 0 40px 0;
+	}
+
 	&:after {
 		content: "";
 		display: block;
@@ -738,6 +794,14 @@ body {
 		z-index: -1;
 		opacity: 0;
 		@extend .animacja;
+
+		@include small {
+			display: none;
+		}
+
+		@include medium {
+			display: none;
+		}
 	}
 
 	&:hover {
@@ -764,9 +828,9 @@ body {
 	}
 
 	a[target="_blank"] {
-		font-weight: 700;
+		font-weight: 800;
 		color: #{var(--primary)};
-		font-size: 19px;
+		font-size: 18px;
 		border-bottom: 1px solid #{var(--light)};
 		display: inline;
 		@extend .animacja;
@@ -901,6 +965,10 @@ body {
 		margin-right: 12px;
 		display: inline-block;
 		width: auto;
+
+		@include small {
+			display: none;
+		}
 
 		path {
 			@extend .animacja;
