@@ -11,6 +11,22 @@
 
 			<article class="article">
 				{% include 'views/blocks/title.twig' %}
+				
+				<div class="article-cover">
+					{% if post.thumbnail %}
+						<picture>
+							<source 
+									media="(max-width: 1023px)"
+									srcset="{{ TimberImage(post.thumbnail).src | resize(700, 400) }}"
+							/>
+							<img 
+									src="{{ TimberImage(post.thumbnail).src | resize(1200, 630) }}"
+									alt=""
+							/>
+						</picture>
+          {% endif %}
+				</div>
+
 				{{ post.content }}
 			</article>
 			
