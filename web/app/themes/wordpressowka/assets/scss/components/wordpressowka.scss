@@ -462,18 +462,12 @@ body {
 		&.page {
 			strong, b {
 				font-weight: 700;
-				color: rgba(#{var(--primary)}, 1);
+				color: #{var(--primary)};
 			}
 
 			p {
 				margin-bottom: 30px;
-				color: rgba(#{var(--primary)}, 0.75);
-
-				&:first-of-type {
-					font-size: 130%;
-					font-weight: 700;
-					color: #{var(--primary)};
-				}
+				color: #{var(--darktext)};
 			}
 
 			a {
@@ -992,6 +986,32 @@ body {
 
 		path {
 			fill: $white;
+		}
+	}
+}
+
+#catapult-cookie-bar {
+	background-color: #{var(--primary)}!important;
+	box-shadow: none!important;
+	color:#white!important;
+
+	a {
+		text-decoration: underline!important;
+	}
+
+	button {
+		font-size: 14px;
+		font-family: $font;
+		font-weight: 800!important;
+		border-radius: 0!important;
+		padding: 9px 20px!important;
+		background-color: $white!important;
+		color:  #{var(--primary)}!important;
+		@extend .animacja;
+
+		&:hover {
+			background-color: #{var(--primary-light)}!important;
+			color:  $white!important;
 		}
 	}
 }
