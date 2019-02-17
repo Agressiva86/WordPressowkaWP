@@ -21,23 +21,25 @@
 
     <style type="text/css">
     :root {
-        --darktext: #212C52;
-        --primary: #142664;
-        --darkcolor: #3658D1;
-        --lightcolor: #416BFF;
-        --lighttext: #DFE2EF;
-        --light: #F1F3F8;
-        --white: #fff;
+        --primary: #2A296E;
+        --primary-light: #524FD4;
     }
     </style>
 </head>
 <body class="{{ body_class }} {{ page404 ? 'page404' }}">
 {% endblock %}
-
+{% include 'views/parts/navigation.twig' %}
 <main role="main" id="wrapper">
     {% block left_column %}
      <div id="left-column">
         {% include 'views/parts/logo.twig' %}
+        <div class="hamburger-wrapper">
+          <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
     </div>
     {% endblock %}
 
