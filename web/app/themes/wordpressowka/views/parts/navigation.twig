@@ -1,0 +1,16 @@
+<nav class="navigation">
+	<div class="inner">
+    <nav>
+      
+      <ul>
+      {% for item in menu.header.get_items %}
+		    <li><a href="{{ item.link }}" target="{{ item.target }}">{{ item.title }}</a></li>
+	    {% endfor %}
+      </ul>
+
+
+      {% include 'views/parts/socials.twig' %}
+
+    </nav>
+	</div>
+</nav>
