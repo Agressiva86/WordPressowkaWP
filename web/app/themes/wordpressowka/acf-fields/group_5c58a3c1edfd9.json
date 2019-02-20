@@ -79,18 +79,33 @@
         },
         {
             "key": "field_5c58a451acb77",
-            "label": "Kolor",
+            "label": "Kolor - primary",
             "name": "kolor",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "#2A296E"
+        },
+        {
+            "key": "field_5c6d92cbb4fba",
+            "label": "Kolor - primary light",
+            "name": "kolor_primary_light",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#524FD4"
         }
     ],
     "location": [
@@ -110,5 +125,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1549313170
+    "modified": 1550684953
 }
