@@ -6,6 +6,11 @@ p, blockquote, li, td, button, input, textarea, dt, dd {
 	}
 }
 
+::selection {
+  color: $white;
+  background: #{var(--primary)}!important;
+}
+
 a {
 	text-decoration: none;
 	@extend .animacja;
@@ -30,11 +35,11 @@ body {
 	}
 
 	@include small {
-		padding-top: 110px;
+		padding-top: 90px;
 	}
 
 	@include medium {
-		padding-top: 110px;
+		padding-top: 90px;
 	}
 }
 
@@ -217,6 +222,14 @@ html {
 			@extend .animacja;
 			z-index: 10;
 
+			@include small {
+				height: 90px;
+			}
+
+			@include medium {
+				height: 90px;
+			}
+
 			@include large {
 				display: none;
 			}
@@ -231,7 +244,7 @@ html {
 
 			.hamburger {
 				width: 17px;
-        transform: translateY(40px);
+        transform: translateY(33px);
         z-index: 500;
         cursor: pointer;
         @extend .animacja;
@@ -311,11 +324,11 @@ html {
 				z-index: 10;
 
 				@include small {
-					height: 70px;
+					height: 50px;
 				}
 	
 				@include medium {
-					height: 70px;
+					height: 50px;
 				}
 
 				@include xxlarge {
@@ -329,14 +342,14 @@ html {
 	
 				#napis {
 					path {
-						fill: #{var(--primary)};
-                    }
+						fill: $darktext;
+					}
 				}
 
 				#nazwa {
 					path {
 						fill: #{var(--primary-light)};
-						}
+					}
 				}
 	
 				#sygnet {
@@ -659,7 +672,7 @@ html {
 
 	.article {
 		position: relative;
-		padding-top: 30px;
+		padding-top: 10px;
 
 		&.page {
 			strong, b {
@@ -727,7 +740,7 @@ html {
 		p {
 			margin-bottom: 20px;				
 			color: #{var(--darktext)};
-			opacity: 0.7;
+			//opacity: 0.7;
 			line-height: 1.9;
 			font-size: 18px;
 
@@ -744,9 +757,10 @@ html {
 		time {
 			display: inline-block;
 			color: $lighttext;
-			font-weight: 700;
+			font-weight: 400;
 			margin-bottom: 40px;
 			font-size: 15px;
+			@extend .big;
 			
 			strong {
 				color: #{var(--primary-light)};
@@ -754,6 +768,7 @@ html {
 				display: inline-block;
 				padding-right: 10px;
 				font-size: 20px;
+				text-transform: none;
 
 				@include small {
 					display: block;
@@ -1350,7 +1365,7 @@ html {
 			}
 
 			svg {
-				transform: translateY(1px);
+				transform: translateY(2px);
 			}
 		}
 	}
