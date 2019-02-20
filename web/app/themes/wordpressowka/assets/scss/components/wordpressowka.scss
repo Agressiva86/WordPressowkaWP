@@ -677,14 +677,49 @@ html {
 		&.page {
 			strong, b {
 				font-weight: 700;
-				color: #{var(--primary)};
+				color: #{var(--primary-light)};
 			}
 
 			p {
 				margin-bottom: 30px;
 				line-height: 1.9;
-				color: #{var(--darktext)};
+				color: rgba($darktext, 0.7);
 			}
+
+			ul {
+				@extend .clear-ul;
+				margin-bottom: 30px;
+
+				li {
+					margin-bottom: 15px;
+					color: rgba($darktext, 0.7);
+					position: relative;
+					font-size: 18px;
+					padding: 0 0 0 40px;
+
+					&:before {
+						content: "";
+						width: 12px;
+						height: 2px;
+						background-color: #{var(--primary-light)};
+						position: absolute;
+						top: 10px;
+						left: 0;
+					}
+				}
+			}
+
+			ol {
+				margin-bottom: 30px;
+				list-style-position: inside;
+
+				li {
+					margin-bottom: 15px;
+					color: rgba($darktext, 0.7);
+					position: relative;
+					font-size: 18px;
+			}
+		}
 
 			a {
 				text-decoration: underline;
@@ -739,7 +774,7 @@ html {
 
 		p {
 			margin-bottom: 20px;				
-			color: #{var(--darktext)};
+			color: rgba($darktext, 0.7);
 			//opacity: 0.7;
 			line-height: 1.9;
 			font-size: 18px;
@@ -1043,8 +1078,8 @@ html {
 
 	p {
 		margin-bottom: 10px!important;				
-		color: #{var(--darktext)};
-		opacity: 0.7;
+		color: rgba($darktext, 0.7);
+		//opacity: 0.7;
 		font-size: 18px;
 		line-height: 1.9;
 	}
