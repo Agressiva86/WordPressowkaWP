@@ -6,6 +6,11 @@ p, blockquote, li, td, button, input, textarea, dt, dd {
 	}
 }
 
+::selection {
+  color: $white;
+  background: #{var(--primary)}!important;
+}
+
 a {
 	text-decoration: none;
 	@extend .animacja;
