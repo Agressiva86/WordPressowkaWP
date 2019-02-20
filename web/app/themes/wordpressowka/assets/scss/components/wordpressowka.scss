@@ -669,6 +669,7 @@ html {
 
 			p {
 				margin-bottom: 30px;
+				line-height: 1.9;
 				color: #{var(--darktext)};
 			}
 
@@ -727,6 +728,7 @@ html {
 			margin-bottom: 20px;				
 			color: #{var(--darktext)};
 			opacity: 0.7;
+			line-height: 1.9;
 			font-size: 18px;
 
 			a {
@@ -751,7 +753,7 @@ html {
 				font-weight: 700;
 				display: inline-block;
 				padding-right: 10px;
-				font-size: 17px;
+				font-size: 20px;
 
 				@include small {
 					display: block;
@@ -1029,12 +1031,14 @@ html {
 		color: #{var(--darktext)};
 		opacity: 0.7;
 		font-size: 18px;
+		line-height: 1.9;
 	}
 
 	a[target="_blank"] {
 		font-weight: 800;
 		color: #{var(--primary)};
-		font-size: 18px;
+		font-size: 19px;
+		line-height: 1.9;
 		border-bottom: 1px solid $light;
 		display: inline;
 		@extend .animacja;
@@ -1332,16 +1336,17 @@ html {
 			width: 45px;
 			height: 45px;
 			line-height: 45px;
-			color: $white!important;
+			color: #{var(--primary-light)}!important;
 			font-size: 16px;
 			border-radius: 50%;
-			background: #{var(--primary)};
+			background: $white;
 			padding: 0;
+			border: 1px solid #{var(--primary-light)};
 
 			&:hover, &:focus {
-				color: #{var(--primary)}!important;
-				background: $white!important;
-				@extend .shadow;
+				color: $white!important;
+				background: #{var(--primary-light)}!important;
+				//@extend .shadow;
 			}
 
 			svg {
