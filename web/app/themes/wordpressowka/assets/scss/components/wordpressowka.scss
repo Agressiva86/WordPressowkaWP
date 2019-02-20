@@ -489,12 +489,19 @@ html {
 		margin-bottom: 40px;
 		border-bottom: 1px solid $light;
 		position: relative;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content:space-between;
+		align-items: center;
+
+		ul {
+			width: 50%;
+		}
 
 		.socials {
-			position: absolute;
-			top: 0;
-			left: 0;
-
+			justify-content: flex-start;
+			
 			li {
 				margin-left: 0;
 				margin-right: 16px;
