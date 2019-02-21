@@ -16,7 +16,9 @@
 
 				{% if is_single %}
 					<span id="comments"></span>
-					{{ function('comments_template') }}
+					{% if post.status == 'publish' %}
+    	                {{ function('comments_template') }}
+	                {% endif %}
 				{% else %}
 					<a href="{{ post.link }}#comments">Podystkuj z nami</a>
 				{% endif %}
