@@ -1,8 +1,8 @@
 <header id="header">
-	{% include 'views/parts/socials.twig' %}
 	<ul role="navigation">
 	{% for item in menu.header.get_items %}
 		<li><a href="{{ item.link }}" target="{{ item.target }}" data-link="{{ item.title }}"><span>{{ item.title }}</span></a></li>
 	{% endfor %}
 	</ul>
+	{% include 'views/parts/socials.twig' %}
 </header>
