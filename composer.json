@@ -53,7 +53,8 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "*@beta",
     "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-plugin/w3-total-cache": "*",
-    "wpackagist-plugin/uk-cookie-consent": "*"
+    "wpackagist-plugin/uk-cookie-consent": "*",
+    "wpackagist-plugin/disqus-comment-system": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
