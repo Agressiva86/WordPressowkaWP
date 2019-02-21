@@ -13,6 +13,13 @@
 				{% include 'views/blocks/title.twig' %}
 
 				{{ post.content }}
+
+				{% if is_single %}
+					<span id="comments"></span>
+					{{ function('comments_template') }}
+				{% else %}
+					<a href="{{ post.link }}#comments">Podystkuj z nami</a>
+				{% endif %}
 			</article>
 			
 			<ul class="pagination">
