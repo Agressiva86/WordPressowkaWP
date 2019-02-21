@@ -15,12 +15,14 @@
 				{{ post.content }}
 
 				{% if is_single %}
-					<span id="comments"></span>
 					{% if post.status == 'publish' %}
-    	                {{ function('comments_template') }}
-	                {% endif %}
+						<div class="comments-frame">
+							<h3 class="comments-headline">Dołącz do dyskusji:</h3>
+							{{ function('comments_template') }}
+						</div>
+					{% endif %}
 				{% else %}
-					<a href="{{ post.link }}#comments">Podystkuj z nami</a>
+					<a class="button-coffee comments-btn" href="{{ post.link }}#comments">{% include 'views/parts/comments-icon.twig' %} Dołącz do dyskusji</a>
 				{% endif %}
 			</article>
 			
