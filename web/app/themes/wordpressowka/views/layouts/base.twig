@@ -19,6 +19,8 @@
     <meta name="theme-color" content="{{ options.kolor }}">
     {{ function('wp_head') }}
 
+    <link rel="alternate" type="application/rss+xml" title="Wordpressowka" href="{{ site.link }}/feed/" />
+
     <style type="text/css">
     :root {
         --primary: {{ options.kolor }};
