@@ -30,3 +30,7 @@ function add_to_twig( $twig ) {
 	$twig->addFilter(new Twig_SimpleFilter('darken', 'darken'));
 	return $twig;
 }
+
+// Display the links to the general feeds: Post and Comment Feed.
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'feed_links', 2);
