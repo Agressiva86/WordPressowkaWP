@@ -41,6 +41,39 @@ body {
 	@include medium {
 		padding-top: 90px;
 	}
+
+	&.newsletter {
+		padding-top: 0!important;
+
+		#wrapper {
+			#left-column {
+				display: none;
+			}
+
+			#right-column {
+				width: 60%!important;
+				margin: 0 auto;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				justify-content: center;
+				align-items: center;
+
+				@include small {
+					width: calc(100% - 80px)!important;
+					height: auto;
+					padding: 40px;
+				}
+			
+				@include medium {
+					width: calc(100% - 80px)!important;
+					padding: 40px;
+					height: auto;
+				}
+			}
+		}
+	}
 }
 
 html {
@@ -1011,27 +1044,18 @@ html {
 			}
 
 			input[type="submit"] {
-				outline: none;
-				width: auto;
-				display: block;
-				margin-right: 0px;
-				margin-bottom: 0px;
-				font-family: $font;
-				margin-right: 0px!important;
-				height: 60px;
-				font-weight: 800;
-				color: $white;
-				background: none;
-				cursor: pointer;
-				@extend .animacja;
-				padding: 0 20px;
-				background: rgba(255, 255, 255, 0.05);
-				box-shadow: none;
+				color: $white!important;
+				background: #{var(--primary-light)};
 				
 				&:hover, &:focus {
-					background: $white;
-					color: #{var(--primary)};
+					color: $white!important;
+					background: #{var(--primary-light)};
 					@extend .shadow-light;
+				}
+
+				@include small {
+					width: 100%;
+					margin-top: 10px;
 				}
 			}
 		}
@@ -1445,4 +1469,79 @@ html {
 
 .disqus_thread {
 	margin-top: 20px;
+}
+
+#nsl-wrapper {
+	width: 100%;
+	text-align: center!important;
+
+	img {
+		height: 300px;
+
+		@include small {
+			height: 200px;
+		}
+	
+		@include medium {
+			height: 200px;
+		}
+	}
+
+	.newsletter {
+		background:none;
+		padding: 0;
+		box-shadow: none;
+
+		.inner {
+			h2 {
+				color: #{var(--primary-light)};
+			}
+
+			p {
+				color: rgba($darktext, 0.7);
+			}
+		}
+
+		input {
+			color: $darktext!important;
+			box-shadow: inset 0 -2px 0 0 #{var(--primary-light)}!important;
+
+			@include input-placeholder {
+				color: $darktext!important;
+			}
+
+			&:focus {
+				box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 1);
+
+				@include input-placeholder {
+					color: $darktext!important;
+				}
+			}
+		}
+
+		input[type="submit"] {
+			outline: none;
+			width: auto;
+			display: block;
+			margin-right: 0px;
+			margin-bottom: 0px;
+			font-family: $font;
+			margin-right: 0px!important;
+			height: 60px;
+			font-weight: 800;
+			color: $white;
+			background: none;
+			cursor: pointer;
+			@extend .animacja;
+			padding: 0 20px;
+			background: rgba(255, 255, 255, 0.05);
+			box-shadow: none;
+			
+			&:hover, &:focus {
+				background: $white;
+				color: #{var(--primary)};
+				@extend .shadow-light;
+			}
+		}
+	}
 }
