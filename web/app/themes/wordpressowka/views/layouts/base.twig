@@ -28,7 +28,7 @@
     }
     </style>
 </head>
-<body class="{{ body_class }} {{ page404 ? 'page404' }}">
+<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
 {% endblock %}
 {% include 'views/parts/navigation.twig' %}
 <main role="main" id="wrapper">

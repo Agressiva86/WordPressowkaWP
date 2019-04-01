@@ -1,0 +1,13 @@
+{% extends "/layouts/base.twig" %}
+
+{% block right_column %}
+<div id="right-column">
+
+    <div id="nsl-wrapper">
+      <p><img src="{{ Image( options.nsl_image ).src }}" alt="{{ Image( nsl_image ).alt }}"></p>
+
+      {% include 'views/parts/newsletter.twig' %}
+    </div>
+
+</div>
+{% endblock %}
