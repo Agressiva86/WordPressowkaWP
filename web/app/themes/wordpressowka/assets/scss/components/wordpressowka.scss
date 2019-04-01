@@ -969,10 +969,6 @@ html {
 			color: $white;
 			margin-bottom: 20px;
 
-			@include xxlarge {
-				padding-right: 100px;
-			}
-
 			@include small {
 				font-size: 27px;
 			}
@@ -984,9 +980,6 @@ html {
 			color: $white;
 			opacity: 0.9;
 
-			@include xxlarge {
-				//padding-right: 100px;
-			}
 		}
 
 		form {
