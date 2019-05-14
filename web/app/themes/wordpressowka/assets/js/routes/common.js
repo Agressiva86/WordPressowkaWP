@@ -13,6 +13,12 @@ export default {
       $( 'html, body' ).toggleClass( "nooverflow" );
     });
 
+    $( "#gotonewsletter" ).click(function() {
+        $( "html, body" ).animate({
+            scrollTop: $( "#newsletter" ).offset().top
+        }, 1000)
+    });
+
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired

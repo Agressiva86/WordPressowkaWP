@@ -54,7 +54,8 @@
     "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-plugin/w3-total-cache": "*",
     "wpackagist-plugin/uk-cookie-consent": "*",
-    "wpackagist-plugin/disqus-comment-system": "*"
+    "wpackagist-plugin/disqus-comment-system": "*",
+    "wpackagist-plugin/duplicate-post": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",

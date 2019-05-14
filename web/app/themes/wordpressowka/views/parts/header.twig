@@ -1,8 +1,11 @@
 <header id="header">
+	<a href="{{ site.url }}" class="logo">WordPressówka</a>
 	<ul role="navigation">
 	{% for item in menu.header.get_items %}
 		<li><a href="{{ item.link }}" target="{{ item.target }}" data-link="{{ item.title }}"><span>{{ item.title }}</span></a></li>
 	{% endfor %}
 	</ul>
-	{% include 'views/parts/socials.twig' %}
+	<div class="buttons">
+		<span class="newsletter-btn" id="gotonewsletter"><span>Zapisz się na</span> Newsletter</span>
+	</div>
 </header>

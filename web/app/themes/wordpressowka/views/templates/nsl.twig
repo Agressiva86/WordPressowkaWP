@@ -6,7 +6,7 @@
     <div id="nsl-wrapper">
       <p><img src="{{ Image( options.nsl_image ).src }}" alt="{{ Image( nsl_image ).alt }}"></p>
 
-      {% include 'views/parts/newsletter.twig' %}
+      {% include 'views/parts/newsletter.twig' with { 'nslclass': 'nslpage' } %}
     </div>
 
 </div>

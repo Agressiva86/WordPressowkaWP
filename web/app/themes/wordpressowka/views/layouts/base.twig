@@ -30,27 +30,14 @@
 </head>
 <body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
 {% endblock %}
-{% include 'views/parts/navigation.twig' %}
+{# % include 'views/parts/navigation.twig' % #}
+{% include 'views/parts/header.twig' %}
 <main role="main" id="wrapper">
-    {% block left_column %}
-     <div id="left-column">
-        {% include 'views/parts/logo.twig' %}
-        <div class="hamburger-wrapper">
-          <div class="hamburger">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-          </div>
-        </div>
-    </div>
-    {% endblock %}
-
     {% block right_column %}
         {% include 'views/parts/newsletter.twig' %}
-
-        {% include 'views/parts/footer.twig' %}
     {% endblock %}
 </main>
+{% include 'views/parts/footer.twig' %}
 
 {% block footer %}
     {{ function( 'wp_footer' ) }}

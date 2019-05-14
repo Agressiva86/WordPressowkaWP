@@ -337,7 +337,7 @@ html {
 				position: absolute;
 				top: 0;
 				left: 0;
-				background: #{var(--primary-light)}!important;
+				background: #{var(--primary)}!important;
 				@extend .animacja;
 				opacity: 0;
 				visibility: hidden;
@@ -726,7 +726,9 @@ html {
 
 			p {
 				margin-bottom: 30px;
-				line-height: 1.9;
+				line-height: 1.7;
+				font-weight: 300;
+				font-size: 16px;
 				color: rgba($darktext, 0.7);
 			}
 
@@ -820,8 +822,9 @@ html {
 			margin-bottom: 20px;				
 			color: rgba($darktext, 0.7);
 			//opacity: 0.7;
-			line-height: 1.9;
-			font-size: 18px;
+			line-height: 1.7;
+			font-size: 16px;
+			font-weight: 300;
 
 			a {
 				text-decoration: underline;
@@ -834,20 +837,25 @@ html {
 		}
 
 		time {
-			display: inline-block;
-			color: $lighttext;
-			font-weight: 400;
+			display: block;
+			color: rgba($lighttext, 0.05);
+			font-weight: 700;
 			margin-bottom: 40px;
-			font-size: 15px;
+			font-size: 60px;
 			@extend .big;
+			position: relative;
 			
 			strong {
 				color: #{var(--primary-light)};
 				font-weight: 700;
 				display: inline-block;
 				padding-right: 10px;
-				font-size: 20px;
+				font-size: 25px;
 				text-transform: none;
+				position: absolute;
+				bottom: 10px;
+				left: 0;
+				z-index: 1;
 
 				@include small {
 					display: block;
@@ -1072,6 +1080,16 @@ html {
 	line-height: 1.7;
 	position: relative;
 
+	.block-img {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background-color: $white;
+		margin-right: 25px;
+		padding: 15px;
+		@extend .shadow;
+	}
+
 	@include small {
 		padding: 0px 0 40px 0;
 	}
@@ -1123,37 +1141,23 @@ html {
 	p {
 		margin-bottom: 10px!important;				
 		color: rgba($darktext, 0.7);
-		//opacity: 0.7;
-		font-size: 18px;
-		line-height: 1.9;
+		font-size: 16px;
+		line-height: 1.7;
 	}
 
 	a[target="_blank"] {
-		font-weight: 800;
-		color: #{var(--primary)};
-		font-size: 19px;
-		line-height: 1.9;
-		border-bottom: 1px solid $light;
+		font-weight: 700;
+		color: #{var(--primary-light)};
+		font-size: 20px;
+		line-height: 1.7;
+		border-bottom: 1px solid transparent;
 		display: inline;
 		@extend .animacja;
 		position: relative;
 
-		&:after {
-			content: "";
-			width: 12px;
-			height: 12px;
-			transform: translateY(-2px);
-			background-image: url(#{$assets}/link2.svg);
-			background-size: contain;
-			display: inline-block;
-			box-sizing: border-box;
-			margin-left: 10px;
-			opacity: 0.2;
-		}
-
 		&:hover {
-			color: #{var(--primary-light)};
-			border-bottom-color: #{var(--primary-light)};
+			color: #{var(--primary)};
+			border-bottom-color: #{var(--primary)};
 		}
 	}
 }
@@ -1434,12 +1438,12 @@ html {
 			width: 45px;
 			height: 45px;
 			line-height: 45px;
-			color: #{var(--primary-light)}!important;
+			color: rgba($darktext, 0.6)!important;
 			font-size: 16px;
 			border-radius: 50%;
 			background: $white;
 			padding: 0;
-			border: 1px solid #{var(--primary-light)};
+			border: 1px solid rgba($darktext, 0.1);
 
 			&:hover, &:focus {
 				color: $white!important;

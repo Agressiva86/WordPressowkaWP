@@ -3,8 +3,6 @@
 {% block right_column %}
 	<div id="right-column">
 		<div role="list" id="content">
-			{% include 'views/parts/header.twig' %}
-			
 			<h1 class="intro">
 				{{ options.opis|striptags('<strong><a>') }}
 			</h1>
@@ -12,8 +10,19 @@
 			<article class="article">
 				{% include 'views/blocks/title.twig' %}
 
+				<img class="display-block m-b-30 article-cover" src="{{ post.thumbnail }}" alt="" />
+
 				{{ post.content }}
 
+				<div class="tags">
+					Tagi:
+					<a href="">lorem ipsum</a>,
+					<a href="">lorem ipsum dolor</a>,
+					<a href="">sit lorem ipsum</a>,
+					<a href="">lorem ipsum</a>,
+					<a href="">lorem ipsum dolor</a>
+				</div>
+			
 				{% if is_single %}
 					{% if post.status == 'publish' %}
 						<div class="comments-frame">
@@ -21,8 +30,9 @@
 						</div>
 					{% endif %}
 				{% else %}
-					<a class="button-coffee comments-btn" href="{{ post.link }}#comments">{% include 'views/parts/comments-icon.twig' %} Dołącz do dyskusji</a>
+					<a class="comments-btn" href="{{ post.link }}#comments">Dołącz do dyskusji</a>
 				{% endif %}
+
 			</article>
 			
 			<ul class="pagination">
