@@ -10,9 +10,11 @@
 			<article class="article">
 				{% include 'views/blocks/title.twig' %}
 
-				<img class="display-block m-b-30 article-cover" src="{{ post.thumbnail }}" alt="" />
+				{# <img class="display-block m-b-30 article-cover" src="{{ post.thumbnail }}" alt="" /> #}
 
 				{{ post.content }}
+
+				{% include 'views/blocks/nsl.twig' %}
 
 				<div class="tags">
 					Tagi:

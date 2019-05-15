@@ -899,6 +899,7 @@ html {
     max-width: 684px;
     margin: 0 auto;
     padding: 50px;
+    border-top: 1px solid rgba($black, 0.04);
     
     @include small {
         padding: 30px;
@@ -1089,6 +1090,90 @@ html {
             &:before {
                 max-width: 100%;
             }
+        }
+    }
+}
+
+.gutenberg-newsletter-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @include small {
+        flex-wrap: wrap!important;
+    }
+
+    .left {
+        width: 50%;
+
+        @include small {
+            width: 100%;
+        }
+
+        @include medium {
+            width: 100%;
+        }
+
+        @include large {
+            width: 100%;
+        }
+    }
+
+    .right {
+        width: 50%;
+
+        @include small {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        @include medium {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        @include large {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 29px!important;
+        line-height: 1.4;
+        margin-bottom: 20px!important;
+        font-weight: 700!important;
+    }
+
+    p {
+        font-size: 14px!important;
+        margin-bottom: 20px!important;
+    }
+
+    a {
+        display: inline-block;
+        padding: 16px 20px 12px 20px;
+        border-radius: 50px;
+        //@extend .big;
+        color: $white;
+        font-size: 14px;
+        align-self: flex-end;
+        line-height: 14px;
+        font-weight: 600;
+        line-height: normal;
+        background-color: #{var(--primary)}!important;
+        @extend .animacja;
+        cursor: pointer;
+
+        &:hover, 
+        &:focus {
+            background-color: #{var(--primary-light)}!important;
         }
     }
 }
