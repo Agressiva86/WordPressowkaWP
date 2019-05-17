@@ -14,8 +14,10 @@
 
 				{{ post.content }}
 
-				{% include 'views/blocks/nsl.twig' %}
+				{# % include 'views/blocks/nsl.twig' % #}
 
+				{# % include 'views/blocks/socials.twig' % #}
+				{#
 				<div class="tags">
 					Tagi:
 					<a href="">lorem ipsum</a>,
@@ -24,7 +26,7 @@
 					<a href="">lorem ipsum</a>,
 					<a href="">lorem ipsum dolor</a>
 				</div>
-			
+				#}
 				{% if is_single %}
 					{% if post.status == 'publish' %}
 						<div class="comments-frame">
