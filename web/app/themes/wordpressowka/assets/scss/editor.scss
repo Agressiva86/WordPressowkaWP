@@ -5,14 +5,15 @@
 }
 
 .gutenberg-wordpressowka-block {
-  @import 'components/fonts.scss';
+   @import url("https://use.typekit.net/qab2jvi.css");
+  //@import 'components/fonts.scss';
 
   @import "components/reset.scss";
 
   @import "components/variables.scss";
   @import "components/standards.scss";
 
-  @import "components/wordpressowka.scss";
+  @import "components/wordpressowka2.scss";
 
   max-width: 684px;
   margin: 0 auto;
