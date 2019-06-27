@@ -23,7 +23,7 @@
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.8.0-beta3",
+        "version": "5.8.1",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
@@ -50,7 +50,7 @@
     "roots/wp-config": "1.0.0",
     "soberwp/models": "dev-master",
     "philippbaschke/acf-pro-installer": "dev-master#9cac3d3ed8217eb2c49aecd0941ab82bf0374f58",
-    "advanced-custom-fields/advanced-custom-fields-pro": "*@beta",
+    "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-plugin/w3-total-cache": "*",
     "wpackagist-plugin/uk-cookie-consent": "*",
