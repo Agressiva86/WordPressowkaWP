@@ -55,7 +55,8 @@
     "wpackagist-plugin/w3-total-cache": "*",
     "wpackagist-plugin/uk-cookie-consent": "*",
     "wpackagist-plugin/disqus-comment-system": "*",
-    "wpackagist-plugin/duplicate-post": "*"
+    "wpackagist-plugin/duplicate-post": "*",
+    "super-progressive-web-apps": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
