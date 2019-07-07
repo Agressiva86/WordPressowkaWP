@@ -118,7 +118,8 @@ function sass() {
     .pipe($.sourcemaps.init())
     .pipe($.plumber())
     .pipe($.sass({
-      includePaths: PATHS.sass
+      includePaths: PATHS.sass,
+      outputStyle: 'compressed'
     }).on('error', $.sass.logError))
     .pipe($.postcss([autoprefixer()])) // uses ".browserslistrc"
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))

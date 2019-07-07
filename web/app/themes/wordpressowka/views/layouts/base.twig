@@ -28,19 +28,23 @@
     }
     </style>
 </head>
-<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
 {% endblock %}
+{% fold %}
+<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
 {# % include 'views/parts/navigation.twig' % #}
 {% include 'views/parts/header.twig' %}
+{% endfold %}
+{% fold %}
 <main role="main" id="wrapper">
     {% block right_column %}
         {% include 'views/parts/newsletter.twig' %}
     {% endblock %}
 </main>
+{% endfold %}
 {% include 'views/parts/footer.twig' %}
-
 {% block footer %}
     {{ function( 'wp_footer' ) }}
+    <link rel="stylesheet" href="{{ function( 'asset_path', 'css/app.css' ) }}" type="text/css" media="all">
     </body>
 </html>
 {% endblock %}

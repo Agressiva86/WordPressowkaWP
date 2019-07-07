@@ -1,4 +1,6 @@
 <?php
+use TwigWrapper\TwigWrapper;
+use CriticalCssProcessor\CriticalCssProcessor;
 /**
  * Conditional tags for Timber
  */
@@ -43,3 +45,18 @@ function add_to_config( $data ) {
 }
 
 add_filter('timber_context', 'add_to_config');
+
+
+add_filter( 'timber/twig', 'add_to_twig2' );
+
+/**
+ * Adds functionality to Twig.
+ * 
+ * @param \Twig\Environment $twig The Twig environment.
+ * @return \Twig\Environment
+ */
+function add_to_twig2( $twig ) {
+	$twig->addExtension(new CSSFromHTMLExtractor\Twig\Extension());
+	$twigWrapper = new TwigWrapper($twig, [new CriticalCssProcessor()]);
+    return $twigWrapper;
+}

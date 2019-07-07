@@ -42,8 +42,8 @@ add_action( 'after_setup_theme', 'setup' );
  */
 
 function assets() {
-  wp_enqueue_style( 'sasquatch/css', asset_path( 'css/app.css' ), false, null);
-  wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), ['jquery'], null, true);
+  //wp_enqueue_style( 'sasquatch/css', asset_path( 'css/app.css' ), false, null);
+  wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), ['jquery-core'], null, true);
 }
 add_action( 'wp_enqueue_scripts', 'assets', 100 );
 
@@ -87,3 +87,14 @@ function deregister_embed() {
   wp_deregister_script( 'wp-embed' );
 }
 add_action( 'wp_footer', 'deregister_embed' );
+
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+function clean_header() {
+    remove_action('wp_head', 'wp_print_scripts');
+    remove_action('wp_head', 'wp_print_head_scripts', 9);
+    remove_action('wp_head', 'wp_enqueue_scripts', 1);
+}
+
+add_action('wp_enqueue_scripts', 'clean_header');
