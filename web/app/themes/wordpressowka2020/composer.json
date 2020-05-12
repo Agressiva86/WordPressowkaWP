@@ -1,8 +1,7 @@
 {
     "require": {
         "timber/timber": "^1.5",
-        "soberwp/intervention": "1.2.0-p",
-        "mexitek/phpcolors": "dev-master",
-        "jandc/critical-css": "^0.6.1"
+		"soberwp/intervention": "1.2.0-p",
+        "palmiak/timber-acf-wp-blocks": "^1.9"
     }
 }
