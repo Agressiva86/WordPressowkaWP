@@ -14,15 +14,11 @@
   "author": "Maciej Palmowski <m.palmowski@spiders.agency>",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.8",
-    "@fortawesome/fontawesome-free-brands": "^5.0.13",
-    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.1",
-    "babel-core": "^6.26.3",
     "babel-loader": "^6.4.1",
-    "babel-plugin-transform-object-assign": "*",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.7.2",
     "browser-sync": "^2.24.4",
