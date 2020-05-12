@@ -1,23 +1,37 @@
-import fontawesome from '@fortawesome/fontawesome';
-import faFacebookF from '@fortawesome/fontawesome-free-brands/faFacebookF';
-import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
-import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram';
-fontawesome.library.add(faFacebookF, faTwitter, faInstagram);
-
 export default {
   init() {
-    // JavaScript to be fired on all pages
-    $( '.hamburger-wrapper .hamburger' ).click(function(){
-      $(this).toggleClass('is-active');
-      $( '.navigation' ).toggleClass('open' );
-      $( 'html, body' ).toggleClass( "nooverflow" );
-    });
+	class ThemeSwitcher {
+		constructor() {
+			// define some state variables
+			this.hasLocalStorage = typeof Storage !== 'undefined'
+			this.activeTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light';
 
-    $( "#gotonewsletter" ).click(function() {
-        $( "html, body" ).animate({
-            scrollTop: $( "#newsletter" ).offset().top
-        }, 1000)
-    });
+			document.documentElement.setAttribute('data-theme', this.activeTheme)
+
+			var btn = document.getElementById( 'themeswitcher' );
+			btn.addEventListener('click', () => this.setTheme());
+		}
+
+		setTheme() {
+			this.activeTheme = ( this.activeTheme === 'light' ) ? 'dark' : 'light';
+			// set the theme id on the <html> element...
+			document.documentElement.setAttribute('data-theme', this.activeTheme)
+
+			// and save the selection in localStorage for later
+			if (this.hasLocalStorage) {
+				localStorage.setItem("theme", this.activeTheme)
+			}
+		}
+	}
+
+	// this whole thing only makes sense if custom properties are supported -
+	// so let's check for that before initializing our switcher.
+	if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
+		new ThemeSwitcher()
+	}
+
+
+
 
   },
   finalize() {
