@@ -42,7 +42,7 @@ add_action( 'after_setup_theme', 'setup' );
  */
 
 function assets() {
-  //wp_enqueue_style( 'sasquatch/css', asset_path( 'css/app.css' ), false, null);
+  wp_enqueue_style( 'sasquatch/css', asset_path( 'css/app.css' ), false, null);
   wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), ['jquery-core'], null, true);
 }
 add_action( 'wp_enqueue_scripts', 'assets', 100 );
