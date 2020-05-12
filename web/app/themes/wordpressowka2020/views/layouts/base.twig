@@ -1,0 +1,58 @@
+{% block header %}
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="{{ function( 'language_attributes' ) }}" > <![endif]-->
+<html {{ function( 'language_attributes' ) }}>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134066876-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134066876-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="{{ options.kolor }}">
+    {{ function('wp_head') }}
+
+    <link rel="alternate" type="application/rss+xml" title="Wordpressowka" href="{{ site.link }}/feed/" />
+
+    <style type="text/css">
+	{# Light mode colors #}
+    :root {
+		--color-white: #ffffff;
+		--color-form-bg: #ffffff;
+		--color-form-input: #B4B7CC;
+		--color-switcher: #061058;
+		--color-switcher-bg: #ffffff;
+		--color-bg: #ffffff;
+		--color-bg-offset: #F7F7FB;
+		--color-text: #061058;
+		--color-primary: #0052FF;
+		--color-secondary: #061058;
+    }
+    </style>
+</head>
+{% endblock %}
+
+<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
+
+{% include 'views/parts/header.twig' %}
+
+<main role="main" id="wrapper">
+    {% block main %}
+    {% endblock %}
+</main>
+
+{% include 'views/parts/footer.twig' %}
+
+{% block footer %}
+    {{ function( 'wp_footer' ) }}
+    <link rel="stylesheet" href="{{ function( 'asset_path', 'css/app.css' ) }}" type="text/css" media="all">
+</body>
+</html>
+{% endblock %}
