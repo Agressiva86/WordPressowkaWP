@@ -1,6 +1,9 @@
 body {
+    background-color: #{var(--color-bg)};
+    background: linear-gradient(to right, #{var(--color-bg-offset)} 0%, #{var(--color-bg)} 100%);
+
     @media screen and (min-width: 1920px) {
-        max-width: 1920px;
+        max-width: 2200px;
         padding: 0 100px;
         margin: 0 auto;
     }
@@ -82,14 +85,13 @@ body {
                 strong {
                     display: block;
                     color: #{var(--color-secondary)};
-                    font-size: 21px;
+                    font-size: 22px;
                     font-weight: 800;
-                    letter-spacing: 0.8px;
                     @extend .animation;
                 }
 
                 small {
-                    font-size: 9px;
+                    font-size: 10px;
                     color: #{var(--color-primary)};
                     @extend .big;
                 }
@@ -132,6 +134,7 @@ body {
                 border-radius: 50px;
                 color: #{var(--color-form-input)};
                 @extend .animation;
+                background-color: #{var(--color-form-bg)};
                 outline: none;
 
                 @include placeholder {
@@ -178,7 +181,7 @@ body {
                 z-index: -1;
                 height: 20px;
                 border-radius: 50px;
-                background: #{var(--color-secondary)};
+                background: $color-black;
                 opacity: 0.7;
                 filter: blur(50px);
             }
@@ -318,7 +321,7 @@ body {
             z-index: -1;
             height: 20px;
             border-radius: 50px;
-            background: #{var(--color-secondary)};
+            background: $color-black;
             opacity: 0.7;
             filter: blur(50px);
             @extend .animation;
@@ -351,6 +354,14 @@ body {
         }
     }
 
+}
+
+.site-name {
+    position: relative;
+
+    h1 {
+        color: #{var(--color-secondary)};
+    }
 }
 
 #catapult-cookie-bar {
