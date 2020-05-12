@@ -52,11 +52,11 @@
 </head>
 {% endblock %}
 
-<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
+<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}" data-barba="wrapper">
 
 {% include 'views/parts/header.twig' %}
 
-<main role="main" id="wrapper">
+<main role="main" id="wrapper" data-barba="container" data-barba-namespace="home">
     {% block main %}
     {% endblock %}
 </main>

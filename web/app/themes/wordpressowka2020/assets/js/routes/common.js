@@ -43,7 +43,6 @@ function siteHeader() {
 	var isClosed = localStorage.getItem('headerStatus') ? localStorage.getItem('headerStatus') : false;
 	var closeButton = document.getElementById( 'site-name-close' );
 
-	console.log( isClosed );
 	closeButton.addEventListener('click', () => {
 		header.classList.toggle( 'hide' );
 		localStorage.setItem( 'headerStatus', true );

@@ -1,4 +1,5 @@
 import Router from './lib/router';
+import barba from '@barba/core';
 
 // Routes
 import common from './routes/common';
@@ -13,3 +14,21 @@ const routes = new Router({
 
 /** Load Events */
 document.addEventListener('DOMContentLoaded', () => routes.loadEvents(), false);
+
+barba.init({
+	transitions: [{
+	  name: 'default-transition',
+	  leave() {
+		// create your stunning leave animation here
+	  },
+	  enter() {
+		// create your amazing enter animation here
+	  },
+	}],
+	views: [{
+		namespace: 'home',
+		before() {
+			routes.loadEvents();
+		},
+	  }]
+  });
