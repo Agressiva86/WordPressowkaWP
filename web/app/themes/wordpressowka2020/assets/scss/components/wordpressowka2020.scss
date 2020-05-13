@@ -494,9 +494,10 @@ body {
     &-columns {
         display: grid;
         justify-items: stretch;
-        grid-template-columns: minmax(300px, 1135px) minmax(200px, 400px);
+        grid-template-columns: minmax(300px, 1135px) minmax(200px, 500px);
         grid-gap: 150px;
         @extend .animation;
+        justify-content: space-between;
 
         @media screen and (max-width: 1366px) {
             grid-template-columns: minmax(300px, 1135px) minmax(200px, 300px);
@@ -510,9 +511,46 @@ body {
     }
 }
 
+.entry-content {
+    p, ul, ol, h2, h3, h4 {
+        padding: 0 40px;
+        margin-bottom: 40px;
+        @extend .animation;
+        line-height: 1.45;
+        color: #{var(--color-secondary)};
+
+        @media screen and (min-width: 1366px) {
+            max-width: 760px;
+        }
+    }
+
+    h2, h3, h4 {
+        @extend .animation;
+        color: #{var(--color-secondary)};
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    p, ol, ul, li {
+        @extend .animation;
+        color: #{var(--color-text)};
+    }
+}
+
 .wordpressowka-block {
     .wordpressowka-link {
         position: relative;
+        margin-bottom: 40px;
 
         &.photobg {
             border-radius: 25px;
@@ -591,6 +629,10 @@ body {
                 justify-content: center;
                 background-color: #{var(--color-form-bg)};
 
+                @media screen and (min-width: 1366px) {
+                    max-width: none;
+                }
+
                 &:after {
                     content: "";
                     width: 90%;
@@ -629,12 +671,21 @@ body {
         }
 
         .inner {
-            padding: 40px;
+            padding: 0 40px;
             border-radius: 25px;
 
+            p, ul, ol, h2, h3, h4 {
+                padding: 0;
+                margin: 0;
+            }
+
+            @media screen and (min-width: 1366px) {
+                max-width: 760px;
+            }
+
             h2 {
-                margin-bottom: 20px;
-                font-size: 22px;
+                margin-bottom: 20px !important;
+                font-size: 22px !important;
                 @extend .animation;
                 color: #{var(--color-secondary)};
             }
@@ -669,7 +720,7 @@ body {
             }
 
             @media screen and (max-width: 660px) {
-                padding: 40px 30px;
+                padding: 0 30px;
             }
         }
 
