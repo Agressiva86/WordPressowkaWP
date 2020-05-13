@@ -11,5 +11,5 @@
   SupportsMultiple: true
 #}
 
-{% set template = 'views/blocks/' ~fields.tryb ~ '.twig' %}
-{% include [ template, 'views/blocks/default.twig' ] %}
+{% set template = 'views/blocks/link-' ~fields.tryb ~ '.twig' %}
+{% include [ template, 'views/blocks/link-default.twig' ] %}
