@@ -14,7 +14,9 @@
   "author": "Maciej Palmowski <m.palmowski@spiders.agency>",
   "license": "MIT",
   "dependencies": {
-    "@barba/core": "^2.9.7"
+    "@barba/core": "^2.9.7",
+    "@barba/css": "^2.1.15",
+    "lazysizes": "^5.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.1",

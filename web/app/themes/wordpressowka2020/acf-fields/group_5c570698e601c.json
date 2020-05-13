@@ -35,6 +35,91 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_5ebb366a227fd",
+            "label": "Obrazek",
+            "name": "obrazek",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebb368a227fe",
+                        "operator": "==",
+                        "value": "picture-bg"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ebb368a227fe",
+                        "operator": "==",
+                        "value": "picture"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5ebb368a227fe",
+            "label": "Tryb",
+            "name": "tryb",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Domyślny",
+                "picture-bg": "Obrazek w tle",
+                "picture": "Obrazek z boku",
+                "selected": "Wyróżniony"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ebb373222800",
+            "label": "Nagłówek",
+            "name": "header",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -54,5 +139,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1549207296
+    "modified": 1589327696
 }

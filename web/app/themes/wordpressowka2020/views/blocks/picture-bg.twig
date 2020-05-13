@@ -1,0 +1,53 @@
+{% set img = Image( fields.obrazek ) %}
+<div class="wordpressowka-block">
+    <div class="wordpressowka-link photobg" role="link">
+        <picture role="img">
+			<source
+				media="(max-width:640px)"
+				type="image/webp"
+				class="lazyload"
+                data-srcset="{{ img | resize( 640, 900, 'center' ) | towebp }}"
+				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 900'%3E%3C/svg%3E"
+			/>
+            <source
+				media="(max-width:640px)"
+				class="lazyload"
+                data-srcset="{{ img | resize( 640, 900, 'center' ) }}"
+				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 900'%3E%3C/svg%3E"
+			/>
+			<source
+				media="(min-width: 641px) and (max-width:1023px)"
+				type="image/webp"
+				class="lazyload"
+                data-srcset="{{ img | resize( 1024, 600, 'center' ) | towebp }}"
+				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 600'%3E%3C/svg%3E"
+			/>
+            <source
+				media="(min-width: 641px) and (max-width:1023px)"
+				class="lazyload"
+                data-srcset="{{ img | resize( 1024, 600, 'center' ) }}"
+				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 600'%3E%3C/svg%3E"
+			/>
+			<source
+				media="(min-width:1024px)"
+				class="lazyload"
+				type="image/webp"
+                data-srcset="{{ img | resize( 1500, 500, 'center' ) | towebp }}"
+				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1500 500'%3E%3C/svg%3E"
+			/>
+            <img
+                data-src="{{ img | resize( 1500, 500, 'center' ) }}"
+				class="lazyload"
+				alt="{{ img.title }}"
+				src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1500 500'%3E%3C/svg%3E"
+			/>
+        </picture>
+        <div class="inner">
+			{% if fields.header %}
+            	<h2>{{ fields.header }}</h2>
+			{% endif %}
+			{{ fields.opis }}
+			<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank">{{ fields.link.title }}</a>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,7 @@
 import Router from './lib/router';
 import barba from '@barba/core';
+import css from '@barba/css';
+import 'lazysizes';
 
 // Routes
 import common from './routes/common';
@@ -15,16 +17,8 @@ const routes = new Router({
 /** Load Events */
 document.addEventListener('DOMContentLoaded', () => routes.loadEvents(), false);
 
+barba.use( css );
 barba.init({
-	transitions: [{
-	  name: 'default-transition',
-	  leave() {
-		// create your stunning leave animation here
-	  },
-	  enter() {
-		// create your amazing enter animation here
-	  },
-	}],
 	views: [{
 		namespace: 'home',
 		before() {

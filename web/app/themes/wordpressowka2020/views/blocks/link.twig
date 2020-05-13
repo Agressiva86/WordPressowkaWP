@@ -1,6 +1,15 @@
-<section class="gutenberg-wordpressowka-block">
-    <div class="gutenberg-url-block">
-        {{ fields.opis }}
-        <a href="{{ fields.link.url }}" target="_blank">{{ fields.link.title }}</a>
-    </div>
-</section>
+{#
+  Title: Link
+  Description: Link
+  Category: formatting
+  Icon: admin-comments
+  Keywords: link
+  Mode: preview
+  Align: left
+  PostTypes: post
+  SupportsMode: true
+  SupportsMultiple: true
+#}
+
+{% set template = 'views/blocks/' ~fields.tryb ~ '.twig' %}
+{% include [ template, 'views/blocks/default.twig' ] %}
