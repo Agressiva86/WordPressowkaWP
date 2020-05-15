@@ -1,0 +1,394 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-poppins;
+    font-weight: 700;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 50px;
+    padding: 29px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    font-family: $font-poppins;
+    border: none;
+    cursor: pointer;
+
+    &.for-mobile {
+        display: none;
+
+        @media screen and (max-width: 680px) {
+            display: inline-block !important;
+        }
+    }
+
+    &.for-desktop {
+        @media screen and (max-width: 680px) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        padding: 18px 20px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    &.expand {
+        padding: 29px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    &.small {
+        padding: 19px 25px;
+    }
+
+    &.color-primary {
+        background-color: #{var(--color-primary)};
+        color: #{var(--color-white)};
+        @extend .animation;
+
+        &:hover {
+            background-color: #{var(--color-secondary)} !important;
+            color: #{var(--color-white)};
+        }
+    }
+
+    &.color-switcher {
+        background-color: #{var(--color-switcher-bg)};
+        padding: 0;
+        width: 72px;
+        height: 72px;
+        text-align: center;
+        position: relative;
+
+        @media screen and (max-width: 680px) {
+            height: 49px;
+            width: 49px;
+
+            svg {
+                height: 15px;
+            }
+        }
+
+        &:hover {
+            background-color: #{var(--color-primary)};
+            color: #{var(--color-white)};
+
+            path,
+            rect,
+            polyline,
+            circle,
+            polygon,
+            ellipse,
+            line {
+                fill: #{var(--color-white)};
+            }
+        }
+
+        &:after {
+            @extend .after-shadow;
+
+            @media screen and (max-width: 1024px) {
+                filter: blur(28px);
+                opacity: 0.36;
+                transform: translateX(-50%) translateY(6px);
+            }
+        }
+
+        svg {
+            height: 18px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            path,
+            rect,
+            polyline,
+            circle,
+            polygon,
+            ellipse,
+            line {
+                fill: #{var(--color-switcher)};
+                @extend .animation;
+            }
+        }
+    }
+}
+
+.single-entry {
+    &-wrapper {
+        margin-top: 80px;
+
+        @media screen and (max-width: 1024px) {
+            margin-top: 30px;
+        }
+    }
+
+    &-header {
+        position: relative;
+        margin-bottom: 60px;
+
+        @media screen and (max-width: 680px) {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            position: relative;
+            z-index: 10;
+            color: #{var(--color-primary)};
+            font-weight: 800;
+            margin: 0;
+            @extend .animation;
+
+            @media screen and (min-width: 1367px) {
+                font-size: 56px;
+                padding-top: 62px;
+            }
+
+            @media screen and (max-width: 1366px) {
+                font-size: 46px;
+                padding-top: 46px;
+            }
+
+            @media screen and (max-width: 1024px) {
+                font-size: 30px;
+                padding-top: 35px;
+            }
+
+            @media screen and (max-width: 680px) {
+                font-size: 23px;
+                padding-top: 30px;
+            }
+        }
+
+        time {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            color: #{var(--color-secondary)};
+            opacity: 0.08;
+            font-family: $font-poppins;
+            font-weight: 800;
+            @extend .animation;
+
+            @media screen and (min-width: 1367px) {
+                font-size: 96px;
+            }
+
+            @media screen and (max-width: 1366px) {
+                font-size: 76px;
+            }
+
+            @media screen and (max-width: 1024px) {
+                font-size: 56px;
+            }
+
+            @media screen and (max-width: 680px) {
+                font-size: 20px;
+                opacity: 0.1;
+            }
+        }
+    }
+
+    &-columns {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: minmax(300px, 1135px) minmax(200px, 500px);
+        grid-gap: 150px;
+        @extend .animation;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1800px) {
+            grid-template-columns: minmax(300px, 1135px) minmax(200px, 350px);
+            grid-gap: 75px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            grid-gap: 60px;
+        }
+    }
+}
+
+.entry-content {
+    p,
+    ul,
+    ol,
+    h2,
+    h3,
+    h4 {
+        padding: 0 40px;
+        margin-bottom: 40px;
+        @extend .animation;
+        line-height: 1.6;
+        color: #{var(--color-secondary)};
+
+        @media screen and (max-width: 1024px) {
+            padding: 0px;
+        }
+
+        @media screen and (min-width: 1366px) {
+            max-width: 760px;
+        }
+    }
+
+    h2,
+    h3,
+    h4 {
+        @extend .animation;
+        color: #{var(--color-secondary)};
+
+        a {
+            color: #{var(--color-secondary)};
+            border-bottom: 1px solid #{var(--color-secondary)};
+        }
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 33px;
+
+            &:before {
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                background-color: #{var(--color-primary)};
+            }
+        }
+    }
+
+    p,
+    ol,
+    ul,
+    li {
+        @extend .animation;
+        color: #{var(--color-text)};
+
+        a {
+            @extend .animation;
+            color: #{var(--color-text)};
+            border-bottom: 1px solid #{var(--color-text)};
+
+            &:hover {
+                color: #{var(--color-primary)};
+                border-bottom: 1px solid #{var(--color-primary)};
+            }
+        }
+    }
+
+    picture,
+    img,
+    source {
+        border-radius: 15px;
+    }
+
+    figure {
+        margin-bottom: 40px;
+        position: relative;
+
+        &:after {
+            @extend .after-shadow;
+        }
+
+        &.wp-block-gallery {
+            margin-bottom: 0 !important;
+
+            &:after {
+                display: none !important;
+            }
+        }
+
+        &.wp-block-image {
+            @media screen and (min-width: 1366px) {
+                max-width: 840px;
+            }
+        }
+    }
+
+    .blocks-gallery-grid {
+        margin-bottom: 0 !important;
+
+        @media screen and (min-width: 1366px) {
+            max-width: 840px;
+            padding: 0;
+        }
+
+        figure {
+            margin-bottom: 40px;
+        }
+
+        li {
+            padding: 0;
+            margin: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    .wp-block-columns {
+        margin-bottom: 0;
+
+        @media screen and (min-width: 1366px) {
+            max-width: 840px;
+        }
+    }
+
+    blockquote {
+        padding: 0 40px;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: 1024px) {
+            padding: 0px;
+        }
+
+        @media screen and (min-width: 1366px) {
+            max-width: 760px;
+        }
+
+        cite {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            opacity: 0.4;
+            font-size: 80%;
+        }
+
+        p,
+        ul,
+        ol {
+            padding: 0;
+            color: #{var(--color-link)};
+            font-weight: 700;
+            margin: 0;
+            font-family: $font-poppins;
+        }
+    }
+}

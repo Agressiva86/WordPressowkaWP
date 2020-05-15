@@ -1,4 +1,62 @@
-// $assets: "../../dist/images";
+$assets: "../../dist/images";
+
+// responsive font size
+@mixin fluid-font($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == "vh", "height", "width");
+    $min-breakpoint: $min / $responsive-unitless * 100;
+
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        font-size: $min;
+    }
+
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            font-size: $max;
+        }
+    }
+
+    @if $fallback {
+        font-size: $fallback;
+    }
+
+    font-size: $responsive;
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Poppins Bold"), local("Poppins-Bold"),
+        url("../fonts/poppins-v9-latin-ext_latin-700.woff2") format("woff2"),
+            url("../fonts/poppins-v9-latin-ext_latin-700.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    src: local("Poppins ExtraBold"), local("Poppins-ExtraBold"),
+        url("../fonts/poppins-v9-latin-ext_latin-800.woff2") format("woff2"),
+            url("../fonts/poppins-v9-latin-ext_latin-800.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Didact Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Didact Gothic Regular'), local('DidactGothic-Regular'),
+         url('../fonts/didact-gothic-v13-latin-ext_latin-regular.woff2') format('woff2'),
+         url('../fonts/didact-gothic-v13-latin-ext_latin-regular.woff') format('woff');
+}
+
+// variables
+$global-radius: 0px;
+$color-black: #000000;
+$font-poppins: "Poppins";
+$font-gothic: 'Didact Gothic';
 
 @mixin placeholder {
     @include optional-at-root("::-webkit-input-placeholder") {
@@ -18,41 +76,22 @@
     }
 }
 
-// variables
-$global-radius: 0px;
-$color-black: #000000;
+.after-shadow {
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(20px);
+    z-index: -1;
+    height: 20px;
+    border-radius: 50px;
+    background: #{var(--color-shadow)};
+    opacity: 0.3;
+    filter: blur(30px);
+    @extend .animation;
+}
 
-/* poppins-regular - latin-ext_latin */
-@font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Poppins Regular"), local("Poppins-Regular"),
-        url("../fonts/poppins-v9-latin-ext_latin-regular.woff2") format("woff2"),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-            url("../fonts/poppins-v9-latin-ext_latin-regular.woff")
-            format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* poppins-700 - latin-ext_latin */
-@font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
-    src: local("Poppins Bold"), local("Poppins-Bold"),
-        url("../fonts/poppins-v9-latin-ext_latin-700.woff2") format("woff2"),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-            url("../fonts/poppins-v9-latin-ext_latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* poppins-800 - latin-ext_latin */
-@font-face {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 800;
-    src: local("Poppins ExtraBold"), local("Poppins-ExtraBold"),
-        url("../fonts/poppins-v9-latin-ext_latin-800.woff2") format("woff2"),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-            url("../fonts/poppins-v9-latin-ext_latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 
 body {
     overflow-x: hidden;
@@ -62,7 +101,35 @@ body {
     text-rendering: optimizeLegibility;
     padding: 0;
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: $font-gothic;
+    background-color: #{var(--color-bg)};
+    background: linear-gradient(
+        to right,
+        #{var(--color-bg-offset)} 0%,
+        #{var(--color-bg)} 100%
+    );
+    @include fluid-font(3vw, 16px, 21px, 35px);
+
+    @media screen and (min-width: 1920px) {
+        max-width: 2200px;
+        padding: 0 100px;
+        margin: 0 auto;
+    }
+
+    @media screen and (min-width: 1367px) {
+        padding: 0 100px;
+        line-height: 1.55;
+    }
+
+    @media screen and (min-width: 681px) and (max-width: 1366px) {
+        padding: 0 50px;
+        line-height: 1.45;
+    }
+
+    @media screen and (max-width: 680px) {
+        padding: 0px 30px;
+        line-height: 1.55;
+    }
 }
 
 // mixins
@@ -643,15 +710,15 @@ a {
 
 .barba-leave-active,
 .barba-enter-active {
-  transition: opacity 450ms ease;
+    transition: opacity 450ms ease;
 }
 
 .barba-leave,
 .barba-enter-to {
-  opacity: 1;
+    opacity: 1;
 }
 
 .barba-enter,
 .barba-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
