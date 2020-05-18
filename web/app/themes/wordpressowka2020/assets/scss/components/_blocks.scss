@@ -132,6 +132,30 @@
             }
         }
 
+        &.shadow-bg {
+            .inner {
+                position: relative;
+                background-color: #{var(--color-form-bg)};
+                padding: 40px 40px;
+
+                @media screen and (max-width: 680px) {
+                    padding: 40px 30px;
+                }
+
+                @media screen and (min-width: 1366px) {
+                    max-width: none;
+                }
+
+                &:after {
+                    @extend .after-shadow;
+                }
+
+                p {
+                    max-width: none;
+                }
+            }
+        }
+
         &.photo {
             display: grid;
             grid-template-columns: 208px 1fr;
