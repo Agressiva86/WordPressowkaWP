@@ -1,0 +1,151 @@
+.other-editions {
+    margin-top: 40px;
+
+    @media screen and (min-width: 1367px) {
+        margin-top: 80px !important;
+    }
+
+    h3 {
+        color: #{var(--color-primary)};
+        margin-bottom: 40px;
+        padding: 0 40px;
+
+        @media screen and (max-width: 1024px) {
+            padding: 0px;
+        }
+
+        @media screen and (min-width: 1367px) {
+            margin-top: 30px !important;
+        }
+    }
+}
+
+.editions-wrapper {
+    @media screen and (max-width:1023px) {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-points-x: 276px;
+        scroll-snap-type: mandatory;
+        padding-bottom: 20px;
+        margin-bottom: 60px;
+    }
+
+    @media screen and (min-width: 681px) and (max-width: 1023px) {
+        margin-left: -50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 680px) {
+        margin-left: -30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+    }
+}
+
+.editions-list {
+    @media screen and (max-width:1023px) {
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    @media screen and (min-width:1601px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 30px;
+        justify-items: stretch;
+        align-items: stretch;
+    }
+
+    @media screen and (min-width:1367px) and (max-width:1600px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+        justify-items: stretch;
+        align-items: stretch;
+    }
+
+    @media screen and (min-width:1024px) and (max-width:1366px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        justify-items: stretch;
+        align-items: stretch;
+    }
+
+    .edition {
+        position: relative;
+        background-color: #{var(--color-form-bg)};
+        padding: 40px 40px;
+        border-radius: 25px;
+        @extend .animation;
+
+        @media screen and (max-width: 680px) {
+            padding: 30px 30px;
+        }
+
+        @media screen and (max-width:1023px) {
+            flex-shrink: 0;
+            white-space: normal;
+            display: inline-flex;
+            width: 276px;
+            margin-right: 25px;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        time {
+            color: #{var(--color-secondary)};
+            opacity: 0.2;
+            font-family: $font-poppins;
+            font-weight: 800;
+            @extend .animation;
+
+            @media screen and (max-width:1023px) {
+                @include fluid-font(3vw, 14px, 17px, 35px);
+            }
+        }
+
+        p {
+            font-family: $font-poppins;
+            font-weight: 700;
+            @include fluid-font(3vw, 20px, 29px, 35px);
+            @extend .animation;
+            color: #{var(--color-primary)};
+            margin-bottom: 10px;
+
+            @media screen and (max-width:1023px) {
+                @include fluid-font(3vw, 17px, 22px, 35px);
+            }
+        }
+
+        h2 {
+            font-family: $font-gothic;
+            font-weight: 400;
+            @include fluid-font(3vw, 14px, 17px, 35px);
+            color: #{var(--color-secondary)};
+            @extend .animation;
+
+            span {
+                opacity: 0.6;
+            }
+        }
+
+        @media screen and (max-width: 680px) {
+            padding: 40px 30px;
+        }
+
+        @media screen and (min-width: 1366px) {
+            max-width: none;
+        }
+
+        &:after {
+            @extend .after-shadow;
+        }
+    }
+}

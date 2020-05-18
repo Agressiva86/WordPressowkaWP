@@ -1,34 +1,51 @@
 @charset 'utf-8';
-@import url("https://use.typekit.net/qab2jvi.css");
 @import "components/variables.scss";
 
 .wp-block {
-    max-width: 1280px;
+    // max-width: 1280px;
 }
 
-.gutenberg-wordpressowka-block{
-   
-  @import 'components/fonts.scss';
+.wordpressowka-block {
+    @import "components/reset.scss";
+    @import "components/standards.scss";
+    @import "components/wordpressowka2020.scss";
 
-  @import "components/reset.scss";
-
-  @import "components/standards.scss";
-
-  @import "components/wordpressowka2.scss";
-
-  max-width: 684px;
-  margin: 0 auto;
-  font-family: $font;
+    // max-width: 684px;
+    // margin: 0 auto;
+    font-family: $font-gothic;
 }
 
-p.wp-block-paragraph,
+p.wp-block-paragraph {
+    padding: 0 40px;
+    margin-bottom: 40px;
+    @extend .animation;
+    line-height: 1.6;
+    color: #{var(--color-secondary)};
+    font-family: $font-gothic;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0px;
+    }
+
+    @media screen and (min-width: 1366px) {
+        max-width: 760px;
+    }
+}
+
 .wp-block-heading {
-  font-family: $font;
-  position: relative;
-  max-width: 684px;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  line-height: 1.7;
-  font-size: 18px;
-  color: rgba($darktext, 0.7);
+    padding: 0 40px;
+    margin-bottom: 40px;
+    @extend .animation;
+    line-height: 1.6;
+    font-family: $font-poppins;
+    font-weight: 700;
+    color: #{var(--color-secondary)};
+
+    @media screen and (max-width: 1024px) {
+        padding: 0px;
+    }
+
+    @media screen and (min-width: 1366px) {
+        max-width: 760px;
+    }
 }
