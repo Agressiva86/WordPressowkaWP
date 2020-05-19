@@ -1,23 +1,20 @@
 {% extends "/layouts/base.twig" %}
 
 {% block main %}
-<div id="right-column">
 
-    <div role="list" id="content">
+<article class="single-entry-wrapper">
+	<header class="single-entry-header" role="heading">
+		<h2>{{ post.title }}</h2>
+	</header>
+	<div class="single-entry-columns" role="grid">
+		<div class="item entry-content" role="article">
+			{{ post.content }}
+		</div>
 
-        {% include 'views/parts/header.twig' %}
+		<aside class="item entry-sidebar" role="form">
+			{% include 'views/parts/sidebar.twig' %}
+		</aside>
+	</div>
+</article>
 
-        <h1 class="intro">
-            {{ post.title }}
-        </h1>
-
-        <article class="article page">
-            {{ post.content }}
-        </article>
-
-    </div>
-
-    {{ parent() }}
-
-</div>
 {% endblock %}
