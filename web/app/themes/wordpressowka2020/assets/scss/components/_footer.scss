@@ -1,8 +1,42 @@
 .other-editions {
     margin-top: 40px;
+    position: relative;
 
     @media screen and (min-width: 1367px) {
         margin-top: 80px !important;
+    }
+
+    svg {
+        display: none;
+
+        path,
+        rect,
+        polyline,
+        circle,
+        polygon,
+        ellipse,
+        line {
+            @extend .animation;
+        }
+
+        @media screen and (max-width:1023px) {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 23px;
+
+            path,
+            rect,
+            polyline,
+            circle,
+            polygon,
+            ellipse,
+            line {
+                fill: #{var(--color-secondary)};
+                opacity: 0.3;
+            }
+        }
     }
 
     h3 {
@@ -10,8 +44,9 @@
         margin-bottom: 40px;
         padding: 0 40px;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 1023px) {
             padding: 0px;
+            margin-bottom: 20px;
         }
 
         @media screen and (min-width: 1367px) {
@@ -146,6 +181,165 @@
 
         &:after {
             @extend .after-shadow;
+        }
+
+        &:hover {
+            position: relative;
+
+            p {
+                color: #{var(--color-secondary)};
+            }
+
+            time {
+                opacity: 0.1;
+            }
+
+            &:after {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .all-editions {
+        justify-self: center;
+        align-self: center;
+
+        @media screen and (max-width: 1023px) {
+            display: none;
+        }
+    }
+}
+
+#footer {
+    text-align: center;
+    padding: 80px 0;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 0 60px 0;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        list-style-type: none;
+        justify-content: center;
+        @include fluid-font(3vw, 14px, 18px, 35px);
+        margin: 60px 0 30px 0;
+
+        li {
+            position: relative;
+            padding-right: 20px;
+            margin-right: 20px;
+            color: #{var(--color-secondary)};
+            @extend .animation;
+            font-size: 90%;
+
+            @media screen and (max-width: 1024px) {
+                margin: 0 0 10px 0;
+                padding: 0;
+            }
+
+            &:before {
+                content: "/";
+                color: #{var(--color-secondary)};
+                opacity: 0.14;
+                position: absolute;
+                right: -5px;
+                top: 50%;
+                transform: translateY(-50%);
+                @extend .animation;
+                font-family: $font-gothic;
+                font-weight: 400;
+            }
+
+            &:last-child {
+                padding-right: 0;
+                margin-right: 0;
+
+                &:before {
+                    display: none;
+                }
+            }
+
+            a {
+                color: #{var(--color-secondary)};
+
+                &:hover {
+                    color: #{var(--color-primary)};
+                }
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            padding-right: 0;
+            margin-right: 0;
+            margin-bottom: 6px;
+
+            li {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    p {
+        @include fluid-font(3vw, 13px, 14px, 35px);
+        color: #{var(--color-secondary)};
+        opacity: 0.4;
+        letter-spacing: 1px;
+
+        a {
+            text-decoration: underline !important;
+            color: #{var(--color-secondary)};
+        }
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+
+        a {
+            padding: 0 0 0 30px;
+            @extend .animation;
+            transform-origin: 50% 50%;
+
+            @media screen and (min-width: 1024px) {
+                padding: 0 0 0 60px;
+            }
+
+            &:first-child {
+                padding: 0;
+            }
+
+            &:hover {
+                svg {
+                    transform: translateY(-4px) rotate(-15deg);
+                }
+            }
+
+            svg {
+                height: 18px;
+                width: auto;
+                @extend .animation;
+                transform-origin: 50% 50%;
+
+                path,
+                rect,
+                polyline,
+                circle,
+                polygon,
+                ellipse,
+                line {
+                    fill: #{var(--color-link)};
+                }
+            }
         }
     }
 }
