@@ -8,23 +8,11 @@
 
     svg {
         display: none;
+    }
 
-        path,
-        rect,
-        polyline,
-        circle,
-        polygon,
-        ellipse,
-        line {
-            @extend .animation;
-        }
-
-        @media screen and (max-width:1023px) {
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 23px;
+    &.scroll {
+        svg {
+            display: none;
 
             path,
             rect,
@@ -33,8 +21,26 @@
             polygon,
             ellipse,
             line {
-                fill: #{var(--color-secondary)};
-                opacity: 0.3;
+                @extend .animation;
+            }
+
+            @media screen and (max-width: 1023px) {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 23px;
+
+                path,
+                rect,
+                polyline,
+                circle,
+                polygon,
+                ellipse,
+                line {
+                    fill: #{var(--color-secondary)};
+                    opacity: 0.3;
+                }
             }
         }
     }
@@ -56,38 +62,56 @@
 }
 
 .editions-wrapper {
-    @media screen and (max-width:1023px) {
-        display: flex;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-points-x: 276px;
-        scroll-snap-type: mandatory;
-        padding-bottom: 20px;
-        margin-bottom: 60px;
-    }
+    &.scroll {
+        @media screen and (max-width: 1023px) {
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-points-x: 276px;
+            scroll-snap-type: mandatory;
+            padding-bottom: 20px;
+            margin-bottom: 60px;
+        }
 
-    @media screen and (min-width: 681px) and (max-width: 1023px) {
-        margin-left: -50px;
-        padding-left: 50px;
-        padding-right: 50px;
-        width: 100%;
-    }
+        @media screen and (min-width: 681px) and (max-width: 1023px) {
+            margin-left: -50px;
+            padding-left: 50px;
+            padding-right: 50px;
+            width: 100%;
+        }
 
-    @media screen and (max-width: 680px) {
-        margin-left: -30px;
-        padding-left: 30px;
-        padding-right: 30px;
-        width: 100%;
+        @media screen and (max-width: 680px) {
+            margin-left: -30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 100%;
+        }
+
+        .editions-list {
+            @media screen and (max-width: 1023px) {
+                white-space: nowrap;
+                width: 100%;
+            }
+
+            .edition {
+                @media screen and (max-width: 1023px) {
+                    flex-shrink: 0;
+                    white-space: normal;
+                    display: inline-flex;
+                    width: 276px;
+                    margin-right: 25px;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
 
 .editions-list {
-    @media screen and (max-width:1023px) {
-        white-space: nowrap;
-        width: 100%;
-    }
-
-    @media screen and (min-width:1601px) {
+    @media screen and (min-width: 1601px) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 30px;
@@ -95,7 +119,7 @@
         align-items: stretch;
     }
 
-    @media screen and (min-width:1367px) and (max-width:1600px) {
+    @media screen and (min-width: 1367px) and (max-width: 1600px) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 30px;
@@ -103,9 +127,17 @@
         align-items: stretch;
     }
 
-    @media screen and (min-width:1024px) and (max-width:1366px) {
+    @media screen and (min-width: 1024px) and (max-width: 1366px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        justify-items: stretch;
+        align-items: stretch;
+    }
+
+    @media screen and (max-width: 1023px) {
+        display: grid;
+        grid-template-columns: 1fr;
         grid-gap: 30px;
         justify-items: stretch;
         align-items: stretch;
@@ -122,18 +154,6 @@
             padding: 30px 30px;
         }
 
-        @media screen and (max-width:1023px) {
-            flex-shrink: 0;
-            white-space: normal;
-            display: inline-flex;
-            width: 276px;
-            margin-right: 25px;
-
-            &:after {
-                display: none;
-            }
-        }
-
         time {
             color: #{var(--color-secondary)};
             opacity: 0.2;
@@ -141,7 +161,7 @@
             font-weight: 800;
             @extend .animation;
 
-            @media screen and (max-width:1023px) {
+            @media screen and (max-width: 1023px) {
                 @include fluid-font(3vw, 14px, 17px, 35px);
             }
         }
@@ -154,7 +174,7 @@
             color: #{var(--color-primary)};
             margin-bottom: 10px;
 
-            @media screen and (max-width:1023px) {
+            @media screen and (max-width: 1023px) {
                 @include fluid-font(3vw, 17px, 22px, 35px);
             }
         }
@@ -340,6 +360,64 @@
                     fill: #{var(--color-link)};
                 }
             }
+        }
+    }
+}
+
+.pagination {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    grid-gap: 20px;
+    margin: 50px 0;
+
+    @media screen and (max-width: 660px) {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    a {
+        font-family: $font-poppins;
+        font-weight: 700;
+        @include fluid-font(3vw, 13px, 14px, 35px);
+        @extend .big;
+        color: #{var(--color-secondary)};
+        position: relative;
+        justify-self: start;
+        padding: 19px 25px;
+        line-height: normal;
+        overflow: hidden;
+        border-radius: 50px;
+
+        &:after {
+            content: "";
+            height: 100%;
+            background-color: #{var(--color-primary)};
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: -100%;
+            @extend .animation;
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        &:hover {
+            color: #{var(--color-white)};
+
+            &:after {
+                left: 0;
+            }
+        }
+
+        @media screen and (max-width: 660px) {
+            text-align: center !important;
+            justify-self: center;
+        }
+
+        &:last-child {
+            justify-self: end;
+            text-align: right;
         }
     }
 }
