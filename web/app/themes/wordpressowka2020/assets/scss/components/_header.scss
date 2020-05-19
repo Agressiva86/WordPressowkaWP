@@ -156,6 +156,12 @@
             &:after {
                 @extend .after-shadow;
             }
+
+            &:hover {
+                &:after {
+                    opacity: 0.7;
+                }
+            }
         }
     }
 
