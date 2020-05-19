@@ -34,12 +34,34 @@
         grid-gap: 20px;
         margin-bottom: 30px;
 
+        @media screen and (min-width: 660px) and (max-width: 1023px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
         label {
             border-radius: 50px;
             position: relative;
 
+            @media screen and (max-width: 659px) {
+                grid-column: 1 / 3;
+            }
+
             &:after {
                 @extend .after-shadow;
+            }
+        }
+
+        div {
+            @media screen and (max-width: 1023px) {
+                grid-column: 1 / 3;
+            }
+        }
+
+        .button {
+            @media screen and (max-width: 1023px) {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
             }
         }
 
