@@ -19,7 +19,10 @@
         align-items: center;
 
         .item {
-            padding-left: 50px;
+            &.socials,
+            &.switcher {
+                padding-left: 50px;
+            }
 
             &:first-child {
                 padding-left: 0;

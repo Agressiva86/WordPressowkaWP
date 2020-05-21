@@ -1,9 +1,14 @@
 <div class="sidebar">
-	<h3>Zapisz się na newsletter WordPressówki!</h3>
-	<p>
-		Dzięki Newsletterowi WordPressówki będziesz na bieżąco z informacjami na temat WordPressa! Jako
-		pierwszy dowiesz się o nowym wydaniu. Dołącz do naszych subskrybentów!
-	</p>
+
+	{% if options.tytul_newslettera %}
+		<h3>{{ options.tytul_newslettera }}</h3>
+	{% endif %}
+
+	{% if options.opis_newslettera %}
+		<p>
+			{{ options.opis_newslettera }}
+		</p>
+	{% endif %}
 
 	<form
 		action="https://wordpressowka.us20.list-manage.com/subscribe/post?u=bc1349d1dfefba72bdd8c3974&amp;id=f8311d93e4"
@@ -15,16 +20,20 @@
 		</div>
 	</form>
 
-	<small role="alert">
-		Zapisując się na newsletter zgadzam się na otrzymywanie Newslettera od WordPressówki. Po naciśnięciu
-		<strong>Zapisz się teraz!</strong> otrzymasz na swój adres e-mail prośbę o potwierdzenie zapisu.
-	</small>
+	{% if options.reguly_newslettera %}
+		<small role="alert">
+			{{ options.reguly_newslettera }}
+		</small>
+	{% endif %}
 
-	<h3>Dołącz do nas!</h3>
+	{% if options.social_media_tytul %}
+		<h3>{{ options.social_media_tytul }}</h3>
+	{% endif %}
+
 	<div class="profiles">
-		<a href="">Facebook</a>
-		<a href="">Twitter</a>
-		<a href="">Linkedin</a>
-		<a href="">Instagram</a>
+		<a href="{{ options.facebook }}">Facebook</a>
+		<a href="{{ options.linkedin }}">Linkedin</a>
+		<a href="{{ options.instagram }}">Instagram</a>
+		<a href="{{ options.twitter }}">Twitter</a>
 	</div>
 </div>

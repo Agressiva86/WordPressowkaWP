@@ -17,18 +17,18 @@ h1, h2, h3, h4, h5, h6 {
     &.for-mobile {
         display: none;
 
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 880px) {
             display: inline-block !important;
         }
     }
 
     &.for-desktop {
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 880px) {
             display: none;
         }
     }
 
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 880px) {
         padding: 18px 20px;
         font-size: 13px;
         font-weight: 700;
@@ -49,10 +49,18 @@ h1, h2, h3, h4, h5, h6 {
         color: #{var(--color-white)};
         @extend .animation;
 
+        html[data-theme="dark"] & {
+            &:hover {
+                background-color: #{var(--color-white)} !important;
+                color: #{var(--color-primary)} !important;
+                box-shadow: none;
+            }
+        }
+
         &:hover {
             background-color: #{var(--color-white)} !important;
-            color: #{var(--color-link)};
-            box-shadow: inset 0 0 0 3px #{var(--color-link)};
+            color: #{var(--color-primary)};
+            box-shadow: inset 0 0 0 3px #{var(--color-primary)};
         }
     }
 

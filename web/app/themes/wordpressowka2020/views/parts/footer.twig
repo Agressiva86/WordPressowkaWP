@@ -20,19 +20,10 @@
 			fill="white" />
 	</svg>
 
-	<ul>
-		<li>
-			<a href="">Newsletter</a>
-		</li>
-		<li>
-			<a href="">Polityka prywatności</a>
-		</li>
-		<li>
-			<a href="">Polityka plików cookies</a>
-		</li>
-		<li>
-			<a href="">Gitkraken</a>
-		</li>
+	<ul role="navigation">
+	{% for item in menu.footer.get_items %}
+		<li><a href="{{ item.link }}" target="{{ item.target }}" data-link="{{ item.title }}"><span>{{ item.title }}</span></a></li>
+	{% endfor %}
 	</ul>
 
 	<p>
@@ -40,16 +31,16 @@
 	</p>
 
 	<div class="links">
-		<a href="">
+		<a href="{{ options.facebook }}">
 			{% include 'views/parts/icons/facebook.twig' %}
 		</a>
-		<a href="">
+		<a href="{{ options.linkedin }}">
 			{% include 'views/parts/icons/linkedin.twig' %}
 		</a>
-		<a href="">
+		<a href="{{ options.instagram }}">
 			{% include 'views/parts/icons/instagram.twig' %}
 		</a>
-		<a href="">
+		<a href="{{ options.twitter }}">
 			{% include 'views/parts/icons/twitter.twig' %}
 		</a>
 	</div>

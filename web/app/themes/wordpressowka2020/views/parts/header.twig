@@ -26,24 +26,24 @@
 
 		<div class="item socials">
 			<div class="links">
-				<a href="">
+				<a href="{{ options.facebook }}">
 					{% include 'views/parts/icons/facebook.twig' %}
 				</a>
-				<a href="">
+				<a href="{{ options.linkedin }}">
 					{% include 'views/parts/icons/linkedin.twig' %}
 				</a>
-				<a href="">
+				<a href="{{ options.instagram }}">
 					{% include 'views/parts/icons/instagram.twig' %}
 				</a>
-				<a href="">
+				<a href="{{ options.twitter }}">
 					{% include 'views/parts/icons/twitter.twig' %}
 				</a>
 			</div>
 		</div>
 
 		<div class="item buttons">
-			<a href="" class="button color-primary for-desktop">Zapisz się na Newsletter</a>
-			<a href="" class="button color-primary for-mobile">Newsletter</a>
+			{# <a href="" class="button color-primary for-desktop">Zapisz się na Newsletter</a> #}
+			{% if options.link_newsletter.url %}<a href="{{ options.link_newsletter.url }}" target="{{ options.link_newsletter.target }}" class="button color-primary for-mobile">{{ options.link_newsletter.title }}</a>{% endif %}
 		</div>
 
 		<div class="item switcher">

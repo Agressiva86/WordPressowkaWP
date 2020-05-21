@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5c58a46eacb78",
-            "label": "Opisy",
+            "label": "Tytuł H1",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -20,7 +20,7 @@
         },
         {
             "key": "field_5c58a47eacb79",
-            "label": "Opis",
+            "label": "Treść",
             "name": "opis",
             "type": "wysiwyg",
             "instructions": "",
@@ -36,76 +36,6 @@
             "toolbar": "basic",
             "media_upload": 0,
             "delay": 0
-        },
-        {
-            "key": "field_5c58a3cfacb75",
-            "label": "Branding",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5c58a443acb76",
-            "label": "Logo",
-            "name": "logo",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5c58a451acb77",
-            "label": "Kolor - primary",
-            "name": "kolor",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#2A296E"
-        },
-        {
-            "key": "field_5c6d92cbb4fba",
-            "label": "Kolor - primary light",
-            "name": "kolor_primary_light",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#524FD4"
         },
         {
             "key": "field_5c6d9439a9e61",
@@ -124,6 +54,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5ec653fc1a93e",
+            "label": "Tytuł",
+            "name": "social_media_tytul",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5c6d944ca9e62",
             "label": "Facebook",
             "name": "facebook",
@@ -132,7 +81,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -148,7 +97,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "34",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -164,7 +113,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -172,8 +121,24 @@
             "placeholder": ""
         },
         {
-            "key": "field_5ca27025adde5",
-            "label": "Newsletter",
+            "key": "field_5ec6536c20ae6",
+            "label": "Linkedin",
+            "name": "linkedin",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ec6541e1a93f",
+            "label": "Sidebar",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -188,10 +153,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_5ca27032adde6",
-            "label": "Obrazek newsletter",
-            "name": "nsl_image",
-            "type": "image",
+            "key": "field_5ec65be20afbb",
+            "label": "Link do strony z newsletterem",
+            "name": "link_newsletter",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -200,112 +165,285 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "return_format": "array"
         },
         {
-            "key": "field_5ca27050adde7",
-            "label": "Newsletter banner desktop",
-            "name": "newsletter_banner_desktop",
-            "type": "image",
+            "key": "field_5ec6542f1a940",
+            "label": "Tytuł newslettera",
+            "name": "tytul_newslettera",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "key": "field_5ca270aaadde8",
-            "label": "Newsletter banner mobile",
-            "name": "newsletter_banner_mobile",
-            "type": "image",
+            "key": "field_5ec654461a941",
+            "label": "Opis newslettera",
+            "name": "opis_newslettera",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
         },
         {
-            "key": "field_5ca270b8adde9",
-            "label": "FB banner desktop",
-            "name": "fb_banner_desktop",
-            "type": "image",
+            "key": "field_5ec654651a942",
+            "label": "Reguły newslettera",
+            "name": "reguly_newslettera",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
         },
         {
-            "key": "field_5ca270d2addeb",
-            "label": "FB banner mobile",
-            "name": "fb_banner_mobile",
-            "type": "image",
+            "key": "field_5ec65918d5155",
+            "label": "Kolory",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ec6592ad5156",
+            "label": "Dodaj paletę kolorów",
+            "name": "dodaj_palete_kolorow",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Dodaj kolor",
+            "sub_fields": [
+                {
+                    "key": "field_5ec65b7367066",
+                    "label": "Nazwa palety",
+                    "name": "nazwa_palety",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ec65938d5157",
+                    "label": "Kolor primary",
+                    "name": "kolor_primary",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #0052FF",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#0052FF"
+                },
+                {
+                    "key": "field_5ec6595dd5158",
+                    "label": "Kolor secondary",
+                    "name": "kolor_secondary",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #061058",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#061058"
+                },
+                {
+                    "key": "field_5ec65974d5159",
+                    "label": "Kolor tła formularzy",
+                    "name": "kolor_tla_formularzy",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #ffffff",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffffff"
+                },
+                {
+                    "key": "field_5ec659c6d515a",
+                    "label": "Kolor placeholder formularzy",
+                    "name": "kolor_placeholder_formularzy",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #B4B7CC",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#B4B7CC"
+                },
+                {
+                    "key": "field_5ec65a25d515b",
+                    "label": "Kolor ikony Switcher",
+                    "name": "kolor_ikony_switcher",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #061058",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#061058"
+                },
+                {
+                    "key": "field_5ec65a47d515c",
+                    "label": "Kolor tła ikony Switcher",
+                    "name": "kolor_tla_ikony_switcher",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #ffffff",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffffff"
+                },
+                {
+                    "key": "field_5ec65a5cd515d",
+                    "label": "Kolor tła strony",
+                    "name": "kolor_tla_strony",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #ffffff",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffffff"
+                },
+                {
+                    "key": "field_5ec65a78d515e",
+                    "label": "Kolor tła strony - gradient",
+                    "name": "kolor_tla_strony_-_gradient",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #F7F7FB",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#F7F7FB"
+                },
+                {
+                    "key": "field_5ec65a95d515f",
+                    "label": "Kolor tekstu",
+                    "name": "kolor_tekstu",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #061058",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#061058"
+                },
+                {
+                    "key": "field_5ec65aafd5160",
+                    "label": "Kolor linków",
+                    "name": "kolor_linkow",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #0052FF",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#0052FF"
+                },
+                {
+                    "key": "field_5ec65ae3d5161",
+                    "label": "Kolor cienia",
+                    "name": "kolor_cienia",
+                    "type": "color_picker",
+                    "instructions": "Wartość z #, np. #061058",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#061058"
+                }
+            ]
         }
     ],
     "location": [
@@ -325,5 +463,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1554149605
+    "modified": 1590058059
 }
