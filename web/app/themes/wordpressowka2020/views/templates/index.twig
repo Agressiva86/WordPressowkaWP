@@ -6,56 +6,11 @@
 <article class="single-entry-wrapper">
 	<header class="single-entry-header" role="heading">
 		<h2>{{ post.title }}</h2>
-		<time>22 listopada 2020</time>
+		<time>{{ post.date('d F Y') }}</time>
 	</header>
 	<div class="single-entry-columns" role="grid">
 		<div class="item entry-content" role="article">
 			{{ post.content }}
-
-			<div class="wordpressowka-block">
-				<div class="wordpressowka-link shadow-bg" role="link">
-					<div class="inner">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum eros at lacus
-							fermentum euismod. Phasellus et odio dolor.&nbsp;</p>
-
-						<div>
-							<a href="https://www.thule.com/pl-pl/pl/backpacks/laptop-backpacks/thule-vea-backpack-25l-_-3203514"
-								title="Plecak na laptopa Thule Vea Backpack 25L" class="link" target="_blank">Plecak na
-								laptopa Thule Vea Backpack 25L</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="wordpressowka-block">
-				<div class="wordpressowka-link event" role="link">
-					<div class="inner">
-						<picture role="img">
-							<source media="(max-width:880px)" type="image/webp"
-								srcset="https://wordpressowka.pl/app/uploads/2020/05/wordup-kalisz-logo.svg" />
-							<source media="(max-width:880px)"
-								srcset="https://wordpressowka.pl/app/uploads/2020/05/wordup-kalisz-logo.svg" />
-							<source media="(min-width: 8811px) and (max-width:1023px)" type="image/webp"
-								srcset="https://wordpressowka.pl/app/uploads/2020/05/wordup-kalisz-logo.svg" />
-							<source media="(min-width: 8811px) and (max-width:1023px)"
-								srcset="https://wordpressowka.pl/app/uploads/2020/05/wordup-kalisz-logo.svg" />
-							<source media="(min-width: 1024px)" type="image/webp"
-								srcset="https://wordpressowka.pl/app/uploads/2020/05/wordup-kalisz-logo.svg" />
-							<img src="https://wordpressowka.pl/app/uploads/2020/05/wordup-kalisz-logo.svg"
-								alt="tutaj alt" />
-						</picture>
-						<div>
-							<h2>Tutaj data np 22 listopad 2020</h2>
-							<div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet consectetur
-									nisi ut placerat. Nam suscipit sem ac mi auctor.</p>
-								<a href="" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit" class="link"
-									target="_blank">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<h4>Podoba Ci się to wydanie? Podaj dalej!</h4>
 			<div class="share">
@@ -71,10 +26,6 @@
 					{% include 'views/parts/icons/twitter.twig' %}
 					Udostępnij na Twitterze
 				</a>
-				<!-- <a href="">
-					{% include 'views/parts/icons/mail.twig' %}
-					Wyślij na adres email
-				</a> -->
 			</div>
 		</div>
 

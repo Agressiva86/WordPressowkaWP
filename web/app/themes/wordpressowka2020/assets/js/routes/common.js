@@ -1,6 +1,5 @@
 export default {
   init() {
-
 	if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
 		new ThemeSwitcher()
 	}

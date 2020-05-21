@@ -1,8 +1,9 @@
 {% set img = Image( fields.obrazek ) %}
 
 <div class="wordpressowka-block">
-	<div class="wordpressowka-link photo" role="link">
-		<picture role="img">
+	<div class="wordpressowka-link event" role="link">
+		<div class="inner">
+			<picture role="img">
 			<source
 				media="(max-width:880px)"
 				type="image/webp"
@@ -39,13 +40,16 @@
 				alt="{{ img.title }}"
 			/>
 		</picture>
-		<div class="inner">
-			{% if fields.header %}
-				<h2>{{ fields.header }}</h2>
-			{% endif %}
-			{{ fields.opis }}
 			<div>
-				<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank">{{ fields.link.title }}</a>
+				{% if fields.header %}
+					<h2>{{ fields.header }}</h2>
+				{% endif %}
+				<div>
+					{{ fields.opis }}
+					<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank">
+						{{ fields.link.title }}
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

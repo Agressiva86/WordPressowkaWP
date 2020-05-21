@@ -57,6 +57,13 @@
                         "operator": "==",
                         "value": "picture"
                     }
+                ],
+                [
+                    {
+                        "field": "field_5ebb368a227fe",
+                        "operator": "==",
+                        "value": "event"
+                    }
                 ]
             ],
             "wrapper": {
@@ -92,7 +99,8 @@
                 "default": "Domyślny",
                 "picture-bg": "Obrazek w tle",
                 "picture": "Obrazek z boku",
-                "selected": "Wyróżniony"
+                "selected": "Wyróżniony",
+                "event": "Wydarzenie"
             },
             "default_value": "default",
             "allow_null": 0,
@@ -139,5 +147,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1589327696
+    "modified": 1590009552
 }

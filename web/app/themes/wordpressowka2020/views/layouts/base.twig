@@ -58,14 +58,15 @@
 </head>
 {% endblock %}
 
-<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}" data-barba="wrapper">
+<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}" >
 
 {% include 'views/parts/header.twig' %}
-
-<main role="main" id="wrapper" data-barba="container" data-barba-namespace="home">
-    {% block main %}
-    {% endblock %}
-</main>
+<section data-barba="wrapper">
+	<main role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
+		{% block main %}
+		{% endblock %}
+	</main>
+</section>
 
 {% include 'views/parts/footer.twig' %}
 

@@ -1,18 +1,32 @@
 @charset 'utf-8';
+@import "components/fonts.scss";
 @import "components/variables.scss";
 
 .wp-block {
-    // max-width: 1280px;
+    max-width: 1280px;
 }
 
-.wordpressowka-block {
+.block-editor-block-list__layout {
+    --color-white: #ffffff;
+    --color-form-bg: #ffffff;
+    --color-form-input: #B4B7CC;
+    --color-switcher: #061058;
+    --color-switcher-bg: #ffffff;
+    --color-bg: #ffffff;
+    --color-bg-offset: #F7F7FB;
+    --color-text: #061058;
+    --color-primary: #0052FF;
+    --color-secondary: #061058;
+    --color-link: #0052FF;
+    --color-shadow: #061058;
+
     @import "components/reset.scss";
     @import "components/standards.scss";
     @import "components/wordpressowka2020.scss";
 
-    // max-width: 684px;
-    // margin: 0 auto;
-    font-family: $font-gothic;
+    .wordpressowka-block p {
+        font-family: $font-gothic;
+    }
 }
 
 p.wp-block-paragraph {

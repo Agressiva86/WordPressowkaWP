@@ -16,6 +16,7 @@ PATHS:
   # TODO:  Rework this using webpack build. Right now just verifying the files are being built properly
   entries:
     - "assets/js/app.js"
-  
+    - "assets/js/editor.js"
+
   cssfile:
     - "./dist/css/app.css"

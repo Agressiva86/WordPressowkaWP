@@ -4,83 +4,9 @@
 
 	<div class="editions-wrapper scroll">
 		<div class="editions-list">
-			<a class="edition" href="" title="">
-				<div>
-					<time>20 październik 2020</time>
-					<p>WordPressówka #23</p>
-					<h2>
-						<span>Tematy:</span>
-						WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
-					</h2>
-				</div>
-			</a>
-
-			<a class="edition" href="" title="">
-				<div>
-					<time>20 październik 2020</time>
-					<p>WordPressówka #23</p>
-					<h2>
-						<span>Tematy:</span>
-						WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
-					</h2>
-				</div>
-			</a>
-
-			<a class="edition" href="" title="">
-				<div>
-					<time>20 październik 2020</time>
-					<p>WordPressówka #23</p>
-					<h2>
-						<span>Tematy:</span>
-						WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
-					</h2>
-				</div>
-			</a>
-
-			<a class="edition" href="" title="">
-				<div>
-					<time>20 październik 2020</time>
-					<p>WordPressówka #23</p>
-					<h2>
-						<span>Tematy:</span>
-						WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
-					</h2>
-				</div>
-			</a>
-
-			<a class="edition" href="" title="">
-				<div>
-					<time>20 październik 2020</time>
-					<p>WordPressówka #23</p>
-					<h2>
-						<span>Tematy:</span>
-						WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
-					</h2>
-				</div>
-			</a>
-
-			<a class="edition" href="" title="">
-				<div>
-					<time>20 październik 2020</time>
-					<p>WordPressówka #23</p>
-					<h2>
-						<span>Tematy:</span>
-						WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
-					</h2>
-				</div>
-			</a>
-
-			<a class="edition" href="" title="">
-				<div>
-					<time>20 październik 2020</time>
-					<p>WordPressówka #23</p>
-					<h2>
-						<span>Tematy:</span>
-						WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
-					</h2>
-				</div>
-			</a>
-
+			{% for post in other_posts %}
+				{% include 'views/parts/older-entries.twig' %}
+			{% endfor %}
 			<div class="all-editions">
 				<a href="" class="button color-primary small">Zobacz wszystkie wydania</a>
 			</div>
