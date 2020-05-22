@@ -6,6 +6,5 @@
  */
 
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
-$context['newsletter'] = true;
+$context['post'] = Timber::get_posts()[0];
 Timber::render('views/templates/nsl.twig', $context);

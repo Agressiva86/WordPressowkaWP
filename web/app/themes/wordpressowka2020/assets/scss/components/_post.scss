@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6 {
 .button {
     display: inline-block;
     border-radius: 50px;
-    padding: 29px;
+    padding: 26px 29px 25px 29px;
     font-size: 14px;
     font-weight: 700;
     line-height: normal;
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &.expand {
-        padding: 29px 0;
+        padding: 26px 0 25px 0;
         text-align: center;
         width: 100%;
     }
@@ -402,6 +402,82 @@ h1, h2, h3, h4, h5, h6 {
         @media screen and (min-width: 1366px) {
             max-width: 840px;
         }
+    }
+
+    form {
+        position: relative;
+        margin-bottom: 40px;
+        border-radius: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 190px;
+        grid-gap: 30px;
+
+        @media screen and (max-width: 1366px) {
+            grid-template-columns: 1fr;
+            padding: 0;
+        }
+
+        label {
+            border-radius: 50px;
+            position: relative;
+
+            &:after {
+                @extend .after-shadow;
+            }
+        }
+
+        .button {
+            @media screen and (max-width: 1023px) {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        input[type="text"], input[type="email"], input[type="name"] {
+            padding: 0 25px;
+            height: 72px;
+            border: none;
+            font-weight: 400;
+            @include fluid-font(3vw, 15px, 17px, 35px);
+            width: calc(100% - 50px);
+            border-radius: 50px;
+            color: #{var(--color-form-input)};
+            @extend .animation;
+            font-family: $font-gothic;
+            background-color: #{var(--color-form-bg)};
+            outline: none;
+            line-height: normal;
+
+
+            @include placeholder {
+                color: #{var(--color-form-input)};
+            }
+
+            &:focus {
+                box-shadow: 5px 20px 30px 0 rgba($color-black, 0.1);
+                position: relative;
+                z-index: 10;
+            }
+        }
+
+        @media screen and (max-width: 680px) {
+            margin-bottom: 40px;
+        }
+
+        p {
+            max-width: none;
+        }
+    }
+
+    small {
+        @extend .animation;
+        font-size: 14px !important;
+        line-height: 22px !important;
+        color: #{var(--color-secondary)};
+        opacity: 0.7;
+        display: block;
+        margin-bottom: 40px;
     }
 
     blockquote {

@@ -92,20 +92,124 @@
                 white-space: nowrap;
                 width: 100%;
             }
+        }
+    }
+}
 
-            .edition {
-                @media screen and (max-width: 1023px) {
-                    flex-shrink: 0;
-                    white-space: normal;
-                    display: inline-flex;
-                    width: 276px;
-                    margin-right: 25px;
+.edition {
+    position: relative;
+    background-color: #{var(--color-form-bg)};
+    padding: 40px 40px;
+    border-radius: 25px;
+    @extend .animation;
 
-                    &:after {
-                        display: none;
-                    }
-                }
+    &.block {
+        display: block;
+    }
+
+    &.latest {
+        background-color: #{var(--color-primary)};
+
+        time {
+            color: #{var(--color-white)};
+            opacity: 0.5;
+        }
+
+        h2, p {
+            color: #{var(--color-white)};
+        }
+
+        &:hover {
+            time {
+                opacity: 0.7;
             }
+
+            p {
+                color: #{var(--color-white)};
+            }
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        padding: 30px 30px;
+    }
+
+    @media screen and (max-width: 1023px) {
+        flex-shrink: 0;
+        white-space: normal;
+        display: inline-flex;
+        width: 276px;
+        margin-right: 25px;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    time {
+        color: #{var(--color-secondary)};
+        opacity: 0.2;
+        font-family: $font-poppins;
+        font-weight: 800;
+        @extend .animation;
+        display: block;
+
+        @media screen and (max-width: 1023px) {
+            @include fluid-font(3vw, 14px, 17px, 35px);
+        }
+    }
+
+    p {
+        font-family: $font-poppins;
+        font-weight: 700;
+        @include fluid-font(3vw, 20px, 29px, 35px);
+        @extend .animation;
+        color: #{var(--color-primary)};
+        margin-bottom: 10px;
+
+        @media screen and (max-width: 1023px) {
+            @include fluid-font(3vw, 17px, 22px, 35px);
+        }
+    }
+
+    h2 {
+        font-family: $font-gothic;
+        font-weight: 400;
+        @include fluid-font(3vw, 14px, 17px, 35px);
+        color: #{var(--color-secondary)};
+        @extend .animation;
+
+        span {
+            opacity: 0.6;
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        padding: 40px 30px;
+    }
+
+    @media screen and (min-width: 1366px) {
+        max-width: none;
+    }
+
+    &:after {
+        @extend .after-shadow;
+    }
+
+    &:hover {
+        position: relative;
+
+        p {
+            color: #{var(--color-secondary)};
+        }
+
+        time {
+            opacity: 0.1;
+            transform: translateY(-5px);
+        }
+
+        &:after {
+            opacity: 0.7;
         }
     }
 }
@@ -141,108 +245,6 @@
         grid-gap: 30px;
         justify-items: stretch;
         align-items: stretch;
-    }
-
-    .edition {
-        position: relative;
-        background-color: #{var(--color-form-bg)};
-        padding: 40px 40px;
-        border-radius: 25px;
-        @extend .animation;
-
-        &.latest {
-            background-color: #{var(--color-primary)};
-
-            time {
-                color: #{var(--color-white)};
-                opacity: 0.5;
-            }
-
-            h2, p {
-                color: #{var(--color-white)};
-            }
-
-            &:hover {
-                time {
-                    opacity: 0.7;
-                }
-
-                p {
-                    color: #{var(--color-white)};
-                }
-            }
-        }
-
-        @media screen and (max-width: 680px) {
-            padding: 30px 30px;
-        }
-
-        time {
-            color: #{var(--color-secondary)};
-            opacity: 0.2;
-            font-family: $font-poppins;
-            font-weight: 800;
-            @extend .animation;
-            display: block;
-
-            @media screen and (max-width: 1023px) {
-                @include fluid-font(3vw, 14px, 17px, 35px);
-            }
-        }
-
-        p {
-            font-family: $font-poppins;
-            font-weight: 700;
-            @include fluid-font(3vw, 20px, 29px, 35px);
-            @extend .animation;
-            color: #{var(--color-primary)};
-            margin-bottom: 10px;
-
-            @media screen and (max-width: 1023px) {
-                @include fluid-font(3vw, 17px, 22px, 35px);
-            }
-        }
-
-        h2 {
-            font-family: $font-gothic;
-            font-weight: 400;
-            @include fluid-font(3vw, 14px, 17px, 35px);
-            color: #{var(--color-secondary)};
-            @extend .animation;
-
-            span {
-                opacity: 0.6;
-            }
-        }
-
-        @media screen and (max-width: 680px) {
-            padding: 40px 30px;
-        }
-
-        @media screen and (min-width: 1366px) {
-            max-width: none;
-        }
-
-        &:after {
-            @extend .after-shadow;
-        }
-
-        &:hover {
-            position: relative;
-
-            p {
-                color: #{var(--color-secondary)};
-            }
-
-            time {
-                opacity: 0.1;
-                transform: translateY(-5px);
-            }
-
-            &:after {
-                opacity: 0.7;
-            }
-        }
     }
 
     .all-editions {
