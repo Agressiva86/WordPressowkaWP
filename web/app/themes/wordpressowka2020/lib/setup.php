@@ -43,6 +43,7 @@ add_action( 'after_setup_theme', 'setup' );
 
 function assets() {
 		wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), '', null, true );
+		wp_deregister_style( 'wp-block-library' );
 }
 add_action( 'wp_enqueue_scripts', 'assets', 100 );
 
@@ -53,6 +54,18 @@ add_action(
 		<link rel="stylesheet" href="<?php echo asset_path( 'css/app.css' ); ?>" media="print" onload="this.media='all'">'
 		<?php
 	}
+);
+
+add_filter(
+	'script_loader_tag',
+	function( $tag, $handle, $src ) {
+		if ( false === strpos( $src, '.js' ) ) { // not our file
+			return $tag;
+		}
+		// Must be a ', not "!
+        return '<script type="text/javascript" async="async" src="' . esc_url( $src ) . '" id="'.$handle.'" data-app-key="MY_APP_KEY"></script>';	},
+	11,
+	3
 );
 
 // ACF Sync Fields
