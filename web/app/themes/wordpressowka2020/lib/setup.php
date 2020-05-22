@@ -42,14 +42,18 @@ add_action( 'after_setup_theme', 'setup' );
  */
 
 function assets() {
-	//
-	wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), '', null, true );
+		wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), '', null, true );
 }
 add_action( 'wp_enqueue_scripts', 'assets', 100 );
 
-add_action( 'wp_footer', function() {
-	wp_enqueue_style( 'sasquatch/css', asset_path( 'css/app.css' ), false, null );
-});
+add_action(
+	'wp_footer',
+	function() {
+		?>
+		<link rel="stylesheet" href="<?php echo asset_path( 'css/app.css' ); ?>" media="print" onload="this.media='all'">'
+		<?php
+	}
+);
 
 // ACF Sync Fields
 add_filter( 'acf/settings/save_json', 'acf_json_save_point' );
