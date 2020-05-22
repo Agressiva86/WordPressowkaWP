@@ -5,9 +5,7 @@
 	{% endif %}
 
 	{% if options.opis_newslettera %}
-		<p>
-			{{ options.opis_newslettera }}
-		</p>
+		{{ options.opis_newslettera | wpautop }}
 	{% endif %}
 
 	<form
@@ -31,9 +29,9 @@
 	{% endif %}
 
 	<div class="profiles">
-		<a href="{{ options.facebook }}">Facebook</a>
-		<a href="{{ options.linkedin }}">Linkedin</a>
-		<a href="{{ options.instagram }}">Instagram</a>
-		<a href="{{ options.twitter }}">Twitter</a>
+		<a href="{{ options.facebook }}" target="_blank">Facebook</a>
+		<a href="{{ options.linkedin }}" target="_blank">Linkedin</a>
+		<a href="{{ options.instagram }}" target="_blank">Instagram</a>
+		<a href="{{ options.twitter }}" target="_blank">Twitter</a>
 	</div>
 </div>

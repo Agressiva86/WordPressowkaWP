@@ -21,10 +21,11 @@ class ThemeSwitcher {
 		document.documentElement.setAttribute('data-theme', this.activeTheme)
 
 		var btn = document.getElementById( 'themeswitcher' );
-		btn.addEventListener('click', () => this.setTheme());
+		btn.addEventListener('click', (event) => this.setTheme());
 	}
 
 	setTheme() {
+		event.preventDefault();
 		this.activeTheme = ( this.activeTheme === 'light' ) ? 'dark' : 'light';
 		// set the theme id on the <html> element...
 		document.documentElement.setAttribute('data-theme', this.activeTheme)
@@ -42,7 +43,8 @@ function siteHeader() {
 	var isClosed = localStorage.getItem('headerStatus') ? localStorage.getItem('headerStatus') : false;
 	var closeButton = document.getElementById( 'site-name-close' );
 
-	closeButton.addEventListener('click', () => {
+	closeButton.addEventListener('click', (event) => {
+		event.preventDefault();
 		header.classList.toggle( 'hide' );
 		localStorage.setItem( 'headerStatus', true );
 	});
