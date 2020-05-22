@@ -56,18 +56,6 @@ add_action(
 	}
 );
 
-add_filter(
-	'script_loader_tag',
-	function( $tag, $handle, $src ) {
-		if ( false === strpos( $src, '.js' ) ) { // not our file
-			return $tag;
-		}
-		// Must be a ', not "!
-        return '<script type="text/javascript" async="async" src="' . esc_url( $src ) . '" id="'.$handle.'" data-app-key="MY_APP_KEY"></script>';	},
-	11,
-	3
-);
-
 // ACF Sync Fields
 add_filter( 'acf/settings/save_json', 'acf_json_save_point' );
 
