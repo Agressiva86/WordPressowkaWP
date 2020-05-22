@@ -25,13 +25,15 @@ function add_to_context( $data ) {
 	$data['is_singular']      = is_singular();
 	$data['is_main_query']    = is_main_query();
 
-	$data['options'] = get_fields('options');
+	$data['options'] = get_fields( 'options' );
 
-	$data['menu']['header'] = new TimberMenu('header');
-	$data['menu']['footer'] = new TimberMenu('footer');
+	$data['menu']['header'] = new TimberMenu( 'header' );
+	$data['menu']['footer'] = new TimberMenu( 'footer' );
+
+	$data['css_file'] = asset_path( 'css/app.css' );
 	return $data;
 }
-add_filter('timber_context', 'add_to_context');
+add_filter( 'timber_context', 'add_to_context' );
 
 /**
  * Config vars
@@ -44,4 +46,4 @@ function add_to_config( $data ) {
 	return $data;
 }
 
-add_filter('timber_context', 'add_to_config');
+add_filter( 'timber_context', 'add_to_config' );

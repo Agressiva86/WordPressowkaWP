@@ -51,7 +51,12 @@ add_action(
 	'wp_footer',
 	function() {
 		?>
-		<link rel="stylesheet" href="<?php echo asset_path( 'css/app.css' ); ?>" media="print" onload="this.media='all'">'
+		<link id="main-css" rel="stylesheet" href="<?php echo asset_path( 'css/app.css' ); ?>" media="all" disabled="disabled">
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				document.querySelector("#main-css").removeAttribute('disabled');
+			});
+		</script>
 		<?php
 	}
 );
@@ -107,3 +112,15 @@ function clean_header() {
 }
 
 add_action( 'wp_enqueue_scripts', 'clean_header' );
+
+function defer_parsing_of_js( $url ) {
+	if ( is_user_logged_in() ) {
+		return $url; // don't break WP Admin
+	}
+	if ( false === strpos( $url, '.js' ) ) {
+		return $url;
+	}
+
+	return str_replace( ' src', ' defer src', $url );
+}
+add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
