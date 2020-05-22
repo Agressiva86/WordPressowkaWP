@@ -1,15 +1,55 @@
 {% extends "/layouts/base.twig" %}
 
 {% block main %}
-<div id="right-column">
+<article class="single-entry-wrapper">
+	<header class="single-entry-header" role="heading">
+		<h2>Oops, niestety ten adres nie istnieje :(</h2>
+	</header>
+	<div class="single-entry-columns" role="grid">
+		<div class="item entry-content" role="article">
+			<p>
+				Ale nic straconego, możesz wrócić do strony głównej klikając w logo WordPressówki.
+			</p>
+			<p>
+				Zachęcamy Cię do zapisu na nasz Newsletter, dzięki niemu trafisz zawsze pod odpowiedni adres z najnowszym wydaniem!
+			</p>
+			<form
+				action="https://wordpressowka.us20.list-manage.com/subscribe/post?u=bc1349d1dfefba72bdd8c3974&amp;id=f8311d93e4"
+				method="post" name="mc-embedded-subscribe-form" class="validate">
+				<label><input type="name" placeholder="Twoje imię" name="NAME" required></label>
+				<label><input type="email" placeholder="Twój adres email" name="EMAIL" required></label>
+				<div>
+					<input type="submit" value="Zapisz się teraz!" class="button color-primary expand" name="subscribe">
+				</div>
+			</form>
 
-    <div class="page404-content">
-      <h2>
-        Błąd 404
-      </h2>
-      <p>Bardzo nam przykro, ale strona której szukasz nie może zostać znaleziona.</p>
-      <a href="{{ site.url }}" data-link="Wróć do strony głównej">Wróć do strony głównej</a>
-    </div>
+			<p>
+				{% if options.reguly_newslettera %}
+					<small role="alert">
+						{{ options.reguly_newslettera }}
+					</small>
+				{% endif %}
+			</p>
+		</div>
 
-</div>
+		<aside class="item entry-sidebar">
+			<div class="sidebar">
+				{% if options.tytul_numer_sidebar %}
+					<h3>{{ options.tytul_numer_sidebar }}</h3>
+				{% endif %}
+
+				<a class="edition block" href="{{ post.link }}">
+					<div>
+						<time>30 listopada 2020</time>
+						<p class="title">WordPressówka #101</p>
+						<h2>
+							<span>Tematy:</span>
+							WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
+						</h2>
+					</div>
+				</a>
+			</div>
+		</aside>
+	</div>
+</article>
 {% endblock %}
