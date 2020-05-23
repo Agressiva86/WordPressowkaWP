@@ -52,6 +52,7 @@ add_action(
 	function() {
 		?>
 		<link id="main-css" rel="stylesheet" href="<?php echo asset_path( 'css/app.css' ); ?>" media="all" disabled="disabled">
+		<script async src="https://cse.google.com/cse.js?cx=001053715413369767729:c5snqazfx4i"></script>
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 				document.querySelector("#main-css").removeAttribute('disabled');
