@@ -23,7 +23,7 @@
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/poppins-v9-latin-ext_latin-700.woff2" as="font" crossorigin>
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/poppins-v9-latin-ext_latin-800.woff2" as="font" crossorigin>
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/didact-gothic-v13-latin-ext_latin-regular.woff2" as="font" crossorigin>
-	<link rel="preload" href="{{ css_file }}" as="style">
+	<link rel="preload" href="{{ css_file }}" as="style" onload="this.rel='stylesheet'">
 
 	<style type="text/css">
 		{% verbatim %}
