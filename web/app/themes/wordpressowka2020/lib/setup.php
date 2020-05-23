@@ -47,14 +47,6 @@ function assets() {
 }
 add_action( 'wp_enqueue_scripts', 'assets', 100 );
 
-add_action(
-	'wp_footer',
-	function() {
-		?>
-		<script async src="https://cse.google.com/cse.js?cx=001053715413369767729:c5snqazfx4i"></script>
-		<?php
-	}
-);
 
 // ACF Sync Fields
 add_filter( 'acf/settings/save_json', 'acf_json_save_point' );
@@ -109,7 +101,7 @@ function clean_header() {
 add_action( 'wp_enqueue_scripts', 'clean_header' );
 
 function defer_parsing_of_js( $url ) {
-	if ( is_user_logged_in() ) {
+	if ( is_admin() && is_user_logged_in() ) {
 		return $url; // don't break WP Admin
 	}
 	if ( false === strpos( $url, '.js' ) ) {
