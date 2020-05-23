@@ -1,0 +1,23 @@
+{% extends "/layouts/base.twig" %}
+
+{% block main %}
+
+<article class="single-entry-wrapper">
+
+	<header class="single-entry-header" role="heading">
+		<h2>{{ post.title }}</h2>
+	</header>
+	<div class="single-entry-columns" role="grid">
+		<div class="item entry-content" role="article">
+			<div id="algolia-search-input"></div>
+            <div id="algolia-results"></div>
+            <div id="algolia-pagination"></div>
+		</div>
+
+		<aside class="item entry-sidebar" role="form">
+			{% include 'views/parts/sidebar.twig' %}
+		</aside>
+	</div>
+</article>
+
+{% endblock %}
