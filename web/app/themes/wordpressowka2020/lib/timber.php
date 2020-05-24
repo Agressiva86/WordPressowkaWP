@@ -31,6 +31,8 @@ function add_to_context( $data ) {
 	$data['menu']['footer'] = new TimberMenu( 'footer' );
 
 	$data['css_file'] = asset_path( 'css/app.css' );
+
+	$data['get_data'] = $_GET;
 	return $data;
 }
 add_filter( 'timber_context', 'add_to_context' );

@@ -34,16 +34,9 @@
 					<h3>{{ options.tytul_numer_sidebar }}</h3>
 				{% endif %}
 
-				<a class="edition block" href="{{ post.link }}">
-					<div>
-						<time>30 listopada 2020</time>
-						<p class="title">WordPressówka #101</p>
-						<h2>
-							<span>Tematy:</span>
-							WordCamp, Guteberg, HacktoberFest, Open source, WP CLI, wcldz
-						</h2>
-					</div>
-				</a>
+				{% for post in other_posts %}
+					{% include 'views/parts/older-entries.twig' with {'extra_class': 'block' } %}
+				{% endfor %}
 			</div>
 		</aside>
 	</div>
