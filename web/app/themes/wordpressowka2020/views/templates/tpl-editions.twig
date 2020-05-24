@@ -6,7 +6,12 @@
 	{% include 'views/parts/editions.twig' %}
 </article>
 <nav class="pagination">
-	<a href="">Nowsze wydania</a>
-	<a href="">Wcześniejsze wydania</a>
+	{% if other_posts.pagination.prev %}
+		<a href="{{ other_posts.pagination.prev.link }}">Nowsze wydania</a>
+	{% endif %}
+
+	{% if other_posts.pagination.next %}
+		<a href="{{ other_posts.pagination.next.link }}">Wcześniejsze wydania</a>
+	{% endif %}
 </nav>
 {% endblock %}

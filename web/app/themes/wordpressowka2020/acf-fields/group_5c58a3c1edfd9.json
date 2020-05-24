@@ -405,7 +405,7 @@
                 {
                     "key": "field_5ec65a78d515e",
                     "label": "Kolor tła strony - gradient",
-                    "name": "kolor_tla_strony_-_gradient",
+                    "name": "kolor_tla_strony_gradient",
                     "type": "color_picker",
                     "instructions": "Wartość z #, np. #F7F7FB",
                     "required": 0,
@@ -463,6 +463,41 @@
                     "default_value": "#061058"
                 }
             ]
+        },
+        {
+            "key": "field_5ec9c41807a31",
+            "label": "Critical CSS",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ec9c42807a32",
+            "label": "Critical CSS",
+            "name": "critical_css",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -482,5 +517,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590148088
+    "modified": 1590282183
 }
