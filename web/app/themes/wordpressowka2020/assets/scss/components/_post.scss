@@ -72,6 +72,24 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
         position: relative;
 
+        &.search-icon {
+            position: fixed;
+            bottom: 3vh;
+            right: 3vh;
+            z-index: 999;
+            background-color: #{var(--color-secondary)};
+
+            path,
+            rect,
+            polyline,
+            circle,
+            polygon,
+            ellipse,
+            line {
+                fill: #{var(--color-white)};
+            }
+        }
+
         @media screen and (max-width: 680px) {
             height: 49px;
             width: 49px;
@@ -274,6 +292,72 @@ h1, h2, h3, h4, h5, h6 {
         list-style-type: none;
         counter-reset: li;
 
+        &.ais-Hits-list {
+            max-width: none;
+            padding: 0;
+
+            li {
+                padding: 0;
+                position: relative;
+                background-color: #{var(--color-form-bg)};
+                padding: 40px 40px;
+                margin-bottom: 40px;
+                border-radius: 15px;
+
+                &:after {
+                    @extend .after-shadow;
+                }
+
+                @media screen and (max-width: 680px) {
+                    padding: 40px 30px;
+                }
+
+                @media screen and (min-width: 1366px) {
+                    max-width: none;
+                }
+
+                &:before {
+                    display: none;
+                }
+
+                .hit-name {
+                    a {
+                        font-family: $font-poppins !important;
+                        font-weight: 700 !important;
+                        border: none !important;
+                        color: #{var(--color-link)};
+                        @extend .animation;
+
+                        .ais-Highlight-highlighted {
+                            font-style: normal;
+                            background-color: #{var(--color-primary)};
+                            color: #{var(--color-white)};
+                        }
+
+                        &:hover {
+                            color: #{var(--color-secondary)};
+                        }
+
+                    }
+                }
+
+                .hit-description {
+                    font-family: $font-gothic;
+                    font-weight: 400;
+                    @include fluid-font(3vw, 14px, 17px, 35px);
+                    color: #{var(--color-secondary)};
+                    @extend .animation;
+
+                    .ais-Snippet-highlighted {
+                        font-style: normal;
+                        background-color: #{var(--color-primary)};
+                        color: #{var(--color-white)};
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
         li {
             position: relative;
             padding-left: 30px;
@@ -296,6 +380,44 @@ h1, h2, h3, h4, h5, h6 {
 
     ul {
         list-style-type: none;
+
+        &.ais-Pagination-list {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-gap: 20px;
+            justify-content: space-evenly;
+            max-width: none;
+            padding: 0;
+            font-family: $font-poppins;
+            font-weight: 700;
+            @include fluid-font(3vw, 14px, 17px, 35px);
+
+            li {
+                padding: 0;
+                justify-self: stretch;
+                text-align: center;
+                margin-bottom: 0;
+                @extend .animation;
+
+                &.ais-Pagination-item--selected {
+                    color: #{var(--color-primary)};
+                }
+
+                &.ais-Pagination-item--disabled {
+                    opacity: 0.3;
+                }
+
+                &:before {
+                    display: none;
+                }
+
+                a {
+                    text-decoration: none !important;
+                    border: none !important;
+                    display: block;
+                }
+            }
+        }
 
         li {
             margin-bottom: 16px;
@@ -417,6 +539,64 @@ h1, h2, h3, h4, h5, h6 {
             padding: 0;
         }
 
+        &.ais-SearchBox-form {
+            grid-template-columns: 1fr 72px !important;
+            border-radius: 50px;
+            background-color: #{var(--color-form-bg)};
+            position: relative;
+            margin-bottom: 40px;
+            @extend .animation;
+            grid-gap: 0px;
+
+            input {
+                border-radius: 50% 0 0 50% !important;
+                width: 100% !important;
+                color: #{var(--color-secondary)} !important;
+            }
+
+            input:focus {
+                box-shadow: none !important;
+            }
+
+            &:after {
+                @extend .after-shadow;
+            }
+
+            .ais-SearchBox-reset {
+                display: none;
+            }
+
+            button {
+                border-radius: 0 50% 50% 0 !important;
+                border: none !important;
+                padding: 0 !important;
+                cursor: pointer;
+                background-color: #{var(--color-primary)};
+                @extend .animation;
+
+                &:focus,
+                &:hover {
+                    background-color: #{var(--color-secondary)};
+                }
+
+                svg {
+                    height: 18px;
+                    width: auto;
+                    transform: translateX(-3px);
+
+                    path,
+                    rect,
+                    polyline,
+                    circle,
+                    polygon,
+                    ellipse,
+                    line {
+                        fill: #{var(--color-white)};
+                    }
+                }
+            }
+        }
+
         label {
             border-radius: 50px;
             position: relative;
@@ -434,7 +614,7 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
 
-        input[type="text"], input[type="email"], input[type="name"] {
+        input[type="text"], input[type="email"], input[type="name"], input[type="search"] {
             padding: 0 25px;
             height: 72px;
             border: none;

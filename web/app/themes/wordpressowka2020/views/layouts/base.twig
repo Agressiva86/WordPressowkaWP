@@ -62,6 +62,12 @@
 
 <body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}" >
 
+{% if options.search_form_page.url %}
+<a href="{{ options.search_form_page.url }}" class="button color-switcher search-icon">
+	{% include 'views/parts/icons/search.twig' %}
+</a>
+{% endif %}
+
 {% include 'views/parts/header.twig' %}
 <section data-barba="wrapper">
 	<main role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
