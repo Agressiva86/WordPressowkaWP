@@ -83,7 +83,7 @@ function search() {
 			  item: `
 				<div>
 					<div class="hit-name">
-						<a href="{{ permalink }}" target="_blank">
+						<a href="{{ permalink }}">
 							{{#helpers.highlight}}{ "attribute": "post_title" }{{/helpers.highlight}}
 						</a>
 					</div>
