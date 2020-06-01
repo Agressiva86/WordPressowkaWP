@@ -57,6 +57,7 @@ function search() {
 			},
 		}),
 
+
 		instantsearch.widgets.hits({
 			container: '#algolia-results',
 			templates: {
