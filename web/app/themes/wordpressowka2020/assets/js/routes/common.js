@@ -119,3 +119,4 @@ function pull(url, callback, method = 'GET', async = true) {
     xhr.open(method, url, async);
     xhr.send();
 }
+/* test */
