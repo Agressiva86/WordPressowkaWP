@@ -27,10 +27,10 @@
 	{% else %}
 		<link id="main-css" rel="preload" href="{{ css_file }}" as="style">
 		<script>
-			window.onload = function(){
+			window.addEventListener('DOMContentLoaded', () => {
 				var css = document.getElementById( 'main-css' );
 				css.rel = 'stylesheet';
-			};
+			});
 		</script>
 		<style type="text/css">
 
