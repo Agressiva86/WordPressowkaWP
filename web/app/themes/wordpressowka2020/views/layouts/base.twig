@@ -3,16 +3,6 @@
 <!--[if IE 9]><html class="lt-ie10" lang="{{ function( 'language_attributes' ) }}" > <![endif]-->
 <html {{ function( 'language_attributes' ) }}>
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134066876-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-134066876-1');
-    </script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,10 +27,10 @@
 	{% else %}
 		<link id="main-css" rel="preload" href="{{ css_file }}" as="style">
 		<script>
-			window.onload = function(){
+			window.addEventListener('DOMContentLoaded', () => {
 				var css = document.getElementById( 'main-css' );
 				css.rel = 'stylesheet';
-			};
+			});
 		</script>
 		<style type="text/css">
 
@@ -80,6 +70,15 @@
 
 {% block footer %}
     {{ function( 'wp_footer' ) }}
+	 <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134066876-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134066876-1');
+    </script>
 </body>
 </html>
 {% endblock %}

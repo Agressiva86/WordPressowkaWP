@@ -3,7 +3,6 @@ export default {
 	if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
 		new ThemeSwitcher()
 	}
-	siteHeader();
 
 	if ( document.getElementById( 'algolia-search-input' ) !== null ) {
 		pullScript( 'https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js' );
@@ -42,25 +41,6 @@ class ThemeSwitcher {
 	}
 }
 
-function siteHeader() {
-	var header = document.getElementById( 'site-name' );
-	var hasLocalStorage = typeof Storage !== 'undefined';
-	var isClosed = localStorage.getItem('headerStatus') ? localStorage.getItem('headerStatus') : false;
-	var closeButton = document.getElementById( 'site-name-close' );
-
-	if( closeButton !== null ){
-		closeButton.addEventListener('click', (event) => {
-			event.preventDefault();
-			header.classList.toggle( 'hide' );
-			localStorage.setItem( 'headerStatus', true );
-		});
-
-		if ( ! isClosed ) {
-			header.classList.toggle( 'hide' );
-		}
-	}
-}
-
 function search() {
 	const search = instantsearch({
 		indexName: 'wp_posts_post',
@@ -76,6 +56,7 @@ function search() {
 				</svg>`,
 			},
 		}),
+
 
 		instantsearch.widgets.hits({
 			container: '#algolia-results',
@@ -138,3 +119,4 @@ function pull(url, callback, method = 'GET', async = true) {
     xhr.open(method, url, async);
     xhr.send();
 }
+/* test */
