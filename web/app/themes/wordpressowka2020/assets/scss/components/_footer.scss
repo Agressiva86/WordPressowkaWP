@@ -270,6 +270,13 @@
         padding: 0 0 60px 0;
     }
 
+    svg {
+        .color-primary {
+            fill: #{var(--color-primary)};
+            @extend .animation;
+        }
+    }
+
     ul {
         display: flex;
         flex-direction: row;
