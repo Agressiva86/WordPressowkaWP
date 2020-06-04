@@ -1,31 +1,35 @@
 {% extends "/layouts/base.twig" %}
 
 {% block main %}
-{% include 'parts/site-name.twig' %}
+
 
 <article class="single-entry-wrapper">
-	<header class="single-entry-header" role="heading">
-		<h2>{{ post.title }}</h2>
-		<time>{{ post.date('d F Y') }}</time>
-	</header>
 	<div class="single-entry-columns" role="grid">
-		<div class="item entry-content" role="article">
-			{{ post.content }}
+		<div class="item" role="article">
+			{% include 'parts/site-name.twig' %}
 
-			<h4>Podoba Ci się to wydanie? Podaj dalej!</h4>
-			<div class="share">
-				<a href="{{ post.link | fb_share_url }}" target="_blank">
-					{% include 'views/parts/icons/facebook.twig' %}
-					Udostępnij na Facebooku
-				</a>
-				<a href="{{ post.link | ln_share_url }}" target="_blank">
-					{% include 'views/parts/icons/linkedin.twig' %}
-					Udostępnij na Linkedin
-				</a>
-				<a href="{{ post.link | tt_share_url }}" target="_blank">
-					{% include 'views/parts/icons/twitter.twig' %}
-					Udostępnij na Twitterze
-				</a>
+			<header class="single-entry-header" role="heading">
+				<h2>{{ post.title }}</h2>
+				<time>{{ post.date('d F Y') }}</time>
+			</header>
+			<div class="entry-content">
+				{{ post.content }}
+
+				<h4>Podoba Ci się to wydanie? Podaj dalej!</h4>
+				<div class="share">
+					<a href="{{ post.link | fb_share_url }}" target="_blank">
+						{% include 'views/parts/icons/facebook.twig' %}
+						Udostępnij na Facebooku
+					</a>
+					<a href="{{ post.link | ln_share_url }}" target="_blank">
+						{% include 'views/parts/icons/linkedin.twig' %}
+						Udostępnij na Linkedin
+					</a>
+					<a href="{{ post.link | tt_share_url }}" target="_blank">
+						{% include 'views/parts/icons/twitter.twig' %}
+						Udostępnij na Twitterze
+					</a>
+				</div>
 			</div>
 		</div>
 
