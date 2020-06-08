@@ -8,7 +8,9 @@
 				{% include 'views/parts/older-entries.twig' %}
 			{% endfor %}
 			<div class="all-editions">
-				<a href="{{ site.url }}/wszystkie-wydania" class="button color-primary small">Zobacz wszystkie wydania</a>
+				{% if options.adres_strony_z_wydaniami %}
+				<a href="{{ options.adres_strony_z_wydaniami.url }}" target="{{ options.adres_strony_z_wydaniami.target }}" title="{{ options.adres_strony_z_wydaniami.title }}" class="button color-primary-border small">Zobacz wszystkie wydania</a>
+				{% endif %}
 			</div>
 		</div>
 	</div>
