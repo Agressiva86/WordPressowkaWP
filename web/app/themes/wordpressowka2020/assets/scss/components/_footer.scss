@@ -165,7 +165,7 @@
         font-weight: 700;
         @include fluid-font(3vw, 20px, 29px, 35px);
         @extend .animation;
-        color: #{var(--color-primary)};
+        color: #{var(--color-secondary)};
         margin-bottom: 10px;
 
         @media screen and (max-width: 1023px) {
@@ -201,7 +201,7 @@
         position: relative;
 
         p {
-            color: #{var(--color-secondary)};
+            color: #{var(--color-primary)};
         }
 
         time {
