@@ -54,7 +54,7 @@
 
 {% if options.search_form_page.url %}
 <a href="{{ options.search_form_page.url }}" class="button color-switcher search-icon">
-	{% include 'views/parts/icons/search.twig' %}
+	{% include 'views/parts/icons/search.twig' %} <span>{{ options.search_form_page.title }}</span>
 </a>
 {% endif %}
 

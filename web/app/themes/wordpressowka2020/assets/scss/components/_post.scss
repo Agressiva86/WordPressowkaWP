@@ -89,6 +89,40 @@ h1, h2, h3, h4, h5, h6 {
             right: 3vh;
             z-index: 999;
             background-color: #{var(--color-primary)};
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            line-height: 72px;
+            padding: 0 36px;
+            overflow: hidden;
+            @extend .animation;
+
+            &.hide-span {
+                width: 72px;
+                padding: 0;
+
+                svg {
+                    transform: translateY(-50%) translateX(-50%);
+                    left: 50%;
+                }
+
+                span {
+                    transform: translateX(400px);
+                }
+            }
+
+            span {
+                padding-left: 36px;
+                @extend .animation;
+            }
+
+            svg {
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50%;
+                left: auto;
+                @extend .animation;
+            }
 
             path,
             rect,
@@ -99,19 +133,30 @@ h1, h2, h3, h4, h5, h6 {
             line {
                 fill: #{var(--color-white)};
             }
+
+            color: #{var(--color-white)};
         }
 
         @media screen and (max-width: 680px) {
             height: 49px;
-            width: 49px;
+            width: 49px !important;
+            padding: 0 !important;
 
             svg {
-                height: 15px;
+                position: absolute;
+                height: 15px !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+            }
+
+            span {
+                display: none;
             }
         }
 
-        &:hover {
-            background-color: #{var(--color-primary)};
+        &:hover, &:focus {
+            background-color: #{var(--color-secondary)};
             color: #{var(--color-white)};
 
             path,
@@ -122,6 +167,22 @@ h1, h2, h3, h4, h5, h6 {
             ellipse,
             line {
                 fill: #{var(--color-white)};
+            }
+        }
+
+        html[data-theme="dark"] & {
+            &:hover, &:focus {
+                color: #{var(--color-primary)};
+
+                path,
+                rect,
+                polyline,
+                circle,
+                polygon,
+                ellipse,
+                line {
+                    fill: #{var(--color-primary)};
+                }
             }
         }
 
@@ -136,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         svg {
-            height: 18px;
+            height: 22px !important;
             width: auto;
             position: absolute;
             top: 50%;
@@ -587,7 +648,7 @@ h1, h2, h3, h4, h5, h6 {
             }
 
             button {
-                border-radius: 0 50% 50% 0 !important;
+                border-radius: 50%!important;
                 border: none !important;
                 padding: 0 !important;
                 cursor: pointer;
@@ -599,10 +660,24 @@ h1, h2, h3, h4, h5, h6 {
                     background-color: #{var(--color-secondary)};
                 }
 
+                html[data-theme="dark"] & {
+                    &:hover {
+                        path,
+                        rect,
+                        polyline,
+                        circle,
+                        polygon,
+                        ellipse,
+                        line {
+                            fill: #{var(--color-primary)};
+                        }
+                    }
+                }
+
                 svg {
                     height: 18px;
                     width: auto;
-                    transform: translateX(-3px);
+                    transform: translateX(0px);
 
                     path,
                     rect,
@@ -611,6 +686,7 @@ h1, h2, h3, h4, h5, h6 {
                     polygon,
                     ellipse,
                     line {
+                        @extend .animation;
                         fill: #{var(--color-white)};
                     }
                 }
