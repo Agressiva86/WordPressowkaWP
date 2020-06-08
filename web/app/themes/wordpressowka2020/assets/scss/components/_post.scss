@@ -44,6 +44,17 @@ h1, h2, h3, h4, h5, h6 {
         padding: 19px 25px;
     }
 
+    &.color-primary-border {
+        background-color: #{var(--color-bg)};
+        color: #{var(--color-primary)};
+        border: 2px solid #{var(--color-primary)};
+
+        &:hover, &:focus {
+            background-color: #{var(--color-primary)};
+            color: #{var(--color-white)};
+        }
+    }
+
     &.color-primary {
         background-color: #{var(--color-primary)};
         color: #{var(--color-white)};
@@ -382,10 +393,15 @@ h1, h2, h3, h4, h5, h6 {
         list-style-type: none;
 
         &.ais-Pagination-list {
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            grid-gap: 20px;
-            justify-content: space-evenly;
+            // display: grid;
+            // grid-template-columns: repeat(8, 1fr);
+            // grid-gap: 20px;
+            // justify-content: space-evenly;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
             max-width: none;
             padding: 0;
             font-family: $font-poppins;
@@ -393,18 +409,22 @@ h1, h2, h3, h4, h5, h6 {
             @include fluid-font(3vw, 14px, 17px, 35px);
 
             li {
-                padding: 0;
-                justify-self: stretch;
+                padding: 0 20px;
+                //justify-self: stretch;
                 text-align: center;
                 margin-bottom: 0;
                 @extend .animation;
 
                 &.ais-Pagination-item--selected {
                     color: #{var(--color-primary)};
+
+                    a {
+                        color: #{var(--color-primary)};
+                    }
                 }
 
                 &.ais-Pagination-item--disabled {
-                    opacity: 0.3;
+                    opacity: 0.2;
                 }
 
                 &:before {
