@@ -3,6 +3,36 @@
 <div class="wordpressowka-block">
 	<div class="wordpressowka-link photo" role="link">
 		<picture role="img">
+		{% if fields.disable_lazy_load %}
+			<source
+				media="(max-width:880px)"
+				type="image/webp"
+				srcset="{{ img | resize( 880, 450, 'center' ) | towebp }}"
+			/>
+			<source
+				media="(max-width:880px)"
+				srcset="{{ img | resize( 880, 450, 'center' ) }}"
+			/>
+			<source
+				media="(min-width: 8811px) and (max-width:1023px)"
+				type="image/webp"
+				srcset="{{ img | resize( 1024, 900, 'center' ) | towebp }}"
+
+			/>
+			<source
+				media="(min-width: 8811px) and (max-width:1023px)"
+				srcset="{{ img | resize( 1024, 900, 'center' ) }}"
+			/>
+			<source
+				media="(min-width: 1024px)"
+				type="image/webp"
+				srcset="{{ img | resize( 208, 270, 'center' ) | towebp }}"
+			/>
+			<img
+				src="{{ img | resize( 208, 270, 'center' ) }}"
+				alt="{{ img.title }}"
+			/>
+		{% else %}
 			<source
 				media="(max-width:880px)"
 				type="image/webp"
@@ -38,6 +68,7 @@
 				class="lazyload"
 				alt="{{ img.title }}"
 			/>
+		{% endif %}
 		</picture>
 		<div class="inner">
 			{% if fields.header %}
