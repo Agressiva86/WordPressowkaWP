@@ -22,7 +22,8 @@ remove_action( 'wp_head', 'feed_links', 2 );
  * @todo other params
  */
 function fb_share_url( $url ) {
-    $url = 'https://www.facebook.com/sharer.php?u='. urlencode( $url );
+	$url = str_replace( 'https://app.wordpressowka.pl/', 'https://wordpressowka.pl/', $url );
+	$url = 'https://www.facebook.com/sharer.php?u='. urlencode( $url );
     return $url;
 }
 
@@ -35,6 +36,7 @@ function fb_share_url( $url ) {
  * @todo other params
  */
 function tt_share_url( $url, $title='' ) {
+	$url = str_replace( 'https://app.wordpressowka.pl/', 'https://wordpressowka.pl/', $url );
     $url = 'https://twitter.com/intent/tweet?url='. urlencode( $url );
 
     if ( $title != '' ) {
@@ -51,6 +53,7 @@ function tt_share_url( $url, $title='' ) {
  * @todo other params
  */
 function ln_share_url( $url ) {
+	$url = str_replace( 'https://app.wordpressowka.pl/', 'https://wordpressowka.pl/', $url );
     $url = 'https://www.linkedin.com/shareArticle?url='. urlencode( $url );
     return $url;
 }
