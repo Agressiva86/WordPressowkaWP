@@ -469,6 +469,17 @@ h1, h2, h3, h4, h5, h6 {
             font-weight: 700;
             @include fluid-font(3vw, 14px, 17px, 35px);
 
+            @media screen and (max-width:660px) {
+                li {
+                    padding: 0 12px !important;
+
+                    &.ais-Pagination-item--lastPage,
+                    &.ais-Pagination-item--firstPage {
+                        display: none !important;
+                    }
+                }
+            }
+
             li {
                 padding: 0 20px;
                 //justify-self: stretch;
