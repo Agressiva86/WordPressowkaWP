@@ -10,6 +10,8 @@ export default {
 
 	}
 
+	search_animation();
+
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
@@ -119,4 +121,22 @@ function pull(url, callback, method = 'GET', async = true) {
     xhr.open(method, url, async);
     xhr.send();
 }
-/* test */
+
+function search_animation() {
+	if (
+		"IntersectionObserver" in window &&
+		"IntersectionObserverEntry" in window &&
+		"intersectionRatio" in window.IntersectionObserverEntry.prototype
+	) {
+		var search = document.getElementById( 'search-icon' );
+		let observer = new IntersectionObserver(entries => {
+			if (entries[0].isIntersecting) {
+				search.classList.remove("hide-span");
+			} else {
+				search.classList.add("hide-span");
+			}
+		});
+
+		observer.observe( document.querySelector("#header") );
+	}
+}
