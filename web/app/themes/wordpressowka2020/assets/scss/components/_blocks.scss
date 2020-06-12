@@ -55,12 +55,12 @@
                 transform: translateY(-50%);
                 z-index: 1;
                 object-fit: cover;
-                height: 100%;
+                height: auto;
                 width: 100%;
 
-                img {
+                img, source {
                     object-fit: cover;
-                    height: 100%;
+                    height: auto;
                     width: 100%;
                 }
             }
@@ -186,6 +186,7 @@
                 border-radius: 15px;
                 line-height: normal;
                 display: block;
+                height: auto;
             }
 
             .inner {
