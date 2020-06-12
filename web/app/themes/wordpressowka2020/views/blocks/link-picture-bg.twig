@@ -6,13 +6,13 @@
 				<source
 					media="(max-width:640px)"
 					type="image/webp"
-					srcset="{{ img | resize( 640, 900, 'center' ) | towebp }}"
+					srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
 					width="640"
 					height="900"
 				/>
 				<source
 					media="(max-width:640px)"
-					srcset="{{ img | resize( 640, 900, 'center' ) }}"
+					srcset="{{ img | resize( 640, 600, 'center' ) }}"
 					width="640"
 					height="900"
 				/>
@@ -46,17 +46,17 @@
 				<source
 					media="(max-width:640px)"
 					type="image/webp"
-					data-srcset="{{ img | resize( 640, 900, 'center' ) | towebp }}"
-					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 900'%3E%3C/svg%3E"
+					data-srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
+					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 600'%3E%3C/svg%3E"
 					width="640"
-					height="900"
+					height="600"
 				/>
 				<source
 					media="(max-width:640px)"
-					data-srcset="{{ img | resize( 640, 900, 'center' ) }}"
-					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 900'%3E%3C/svg%3E"
+					data-srcset="{{ img | resize( 640, 600, 'center' ) }}"
+					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 600'%3E%3C/svg%3E"
 					width="640"
-					height="900"
+					height="600"
 				/>
 				<source
 					media="(min-width: 641px) and (max-width:1023px)"
