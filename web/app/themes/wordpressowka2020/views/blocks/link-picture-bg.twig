@@ -47,14 +47,14 @@
 					media="(max-width:640px)"
 					type="image/webp"
 					data-srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
-					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 600'%3E%3C/svg%3E"
+					srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 600'></svg>"
 					width="640"
 					height="600"
 				/>
 				<source
 					media="(max-width:640px)"
 					data-srcset="{{ img | resize( 640, 600, 'center' ) }}"
-					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 600'%3E%3C/svg%3E"
+					srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 600'></svg>"
 					width="640"
 					height="600"
 				/>
@@ -62,14 +62,14 @@
 					media="(min-width: 641px) and (max-width:1023px)"
 					type="image/webp"
 					data-srcset="{{ img | resize( 1024, 600, 'center' ) | towebp }}"
-					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 600'%3E%3C/svg%3E"
+					srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 600'></svg>"
 					width="1024"
 					height="600"
 				/>
 				<source
 					media="(min-width: 641px) and (max-width:1023px)"
 					data-srcset="{{ img | resize( 1024, 600, 'center' ) }}"
-					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 600'%3E%3C/svg%3E"
+					srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 600'></svg>"
 					width="1024"
 					height="600"
 				/>
@@ -77,7 +77,7 @@
 					media="(min-width:1024px)"
 					type="image/webp"
 					data-srcset="{{ img | resize( 1135, 500, 'center' ) | towebp }}"
-					srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1135 500'%3E%3C/svg%3E"
+					srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1135 500'></svg>"
 					width="1135"
 					height="500"
 				/>
@@ -85,7 +85,7 @@
 					data-src="{{ img | resize( 1135, 500, 'center' ) }}"
 					class="lazyload"
 					alt="{{ img.title }}"
-					src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1135 500'%3E%3C/svg%3E"
+					src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1135 500'></svg>"
 					width="1135"
 					height="500"
 				/>
@@ -96,7 +96,7 @@
             	<h2>{{ fields.header }}</h2>
 			{% endif %}
 			{{ fields.opis }}
-			<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank">{{ fields.link.title }}</a>
+			<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank" rel="noopener">{{ fields.link.title }}</a>
         </div>
     </div>
 </div>

@@ -53,7 +53,7 @@
 <body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}" >
 
 {% if options.search_form_page.url %}
-<a href="{{ options.search_form_page.url }}" class="button color-switcher search-icon" id="search-icon">
+<a href="{{ options.search_form_page.url }}" class="button color-switcher search-icon" id="search-icon" aria-label="{{ options.search_form_page.title }}">
 	{% include 'views/parts/icons/search.twig' %} <span>{{ options.search_form_page.title }}</span>
 </a>
 {% endif %}

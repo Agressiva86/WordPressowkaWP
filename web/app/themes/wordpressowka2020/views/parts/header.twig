@@ -2,7 +2,7 @@
 
 	<div class="header-left">
 		<div class="item logo">
-			<a href="{{ site.url }}" class="logo">
+			<a href="{{ site.url }}" class="logo" aria-label="Strona główna">
 				{% include 'views/parts/logo.twig' %}
 				<span>
 					<strong>WordPressówka</strong>
@@ -26,16 +26,16 @@
 
 		<div class="item socials">
 			<div class="links">
-				<a href="{{ options.facebook }}" target="_blank">
+				<a href="{{ options.facebook }}" target="_blank" rel="noopener" aria-label="facebook">
 					{% include 'views/parts/icons/facebook.twig' %}
 				</a>
-				<a href="{{ options.linkedin }}" target="_blank">
+				<a href="{{ options.linkedin }}" target="_blank" rel="noopener" aria-label="linkedin">
 					{% include 'views/parts/icons/linkedin.twig' %}
 				</a>
-				<a href="{{ options.instagram }}" target="_blank">
+				<a href="{{ options.instagram }}" target="_blank" rel="noopener" aria-label="instagram">
 					{% include 'views/parts/icons/instagram.twig' %}
 				</a>
-				<a href="{{ options.twitter }}" target="_blank">
+				<a href="{{ options.twitter }}" target="_blank" rel="noopener" aria-label="twitter">
 					{% include 'views/parts/icons/twitter.twig' %}
 				</a>
 			</div>
@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="item switcher">
-			<a href="#" class="button color-switcher" id="themeswitcher">
+			<a href="#" class="button color-switcher" id="themeswitcher" aria-label="Zmień tryb strony">
 				{% include 'views/parts/icons/switcher.twig' %}
 			</a>
 		</div>

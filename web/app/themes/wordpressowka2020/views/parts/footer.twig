@@ -20,27 +20,31 @@
 			fill="white" />
 	</svg>
 
-	<ul role="navigation">
+	<ul>
 	{% for item in menu.footer.get_items %}
-		<li><a href="{{ item.link }}" target="{{ item.target }}"><span>{{ item.title }}</span></a></li>
+		<li>
+			<a href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>
+				<span>{{ item.title }}</span>
+			</a>
+		</li>
 	{% endfor %}
 	</ul>
 
 	<p>
-		{{ site.name }} &copy; {{ now|date('Y') }}. Crafted with love by <a href="https://maciejpalmowski.dev/" target="_blank" title="Maciej Palmowski - WordPress Developer">Maciej Palmowski</a> and <a href="https://agnieszkapalmowska.myportfolio.com/" target="_blank" title="Agnieszka Palmowska - UI Designer">Agnieszka Palmowska</a>
+		{{ site.name }} &copy; {{ now|date('Y') }}. Crafted with love by <a href="https://maciejpalmowski.dev/" rel="noopener" target="_blank" title="Maciej Palmowski - WordPress Developer">Maciej Palmowski</a> and <a href="https://agnieszkapalmowska.myportfolio.com/" target="_blank" title="Agnieszka Palmowska - UI Designer" rel="noopener">Agnieszka Palmowska</a>
 	</p>
 
 	<div class="links">
-		<a href="{{ options.facebook }}" target="_blank">
+		<a href="{{ options.facebook }}" target="_blank" aria-label="Facebook" rel="noopener">
 			{% include 'views/parts/icons/facebook.twig' %}
 		</a>
-		<a href="{{ options.linkedin }}" target="_blank">
+		<a href="{{ options.linkedin }}" target="_blank" aria-label="Linkedin" rel="noopener">
 			{% include 'views/parts/icons/linkedin.twig' %}
 		</a>
-		<a href="{{ options.instagram }}" target="_blank">
+		<a href="{{ options.instagram }}" target="_blank" aria-label="Instagram" rel="noopener">
 			{% include 'views/parts/icons/instagram.twig' %}
 		</a>
-		<a href="{{ options.twitter }}" target="_blank">
+		<a href="{{ options.twitter }}" target="_blank" aria-label="Twitter" rel="noopener">
 			{% include 'views/parts/icons/twitter.twig' %}
 		</a>
 	</div>
