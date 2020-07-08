@@ -49,34 +49,34 @@
 				media="(max-width:880px)"
 				type="image/webp"
 				data-srcset="{{ img | resize( 880, 450, 'center' ) | towebp }}"
-				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 880 450'%3E%3C/svg%3E"
+				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 880 450'></svg>") }}"
 			/>
 			<source
 				media="(max-width:880px)"
 				data-srcset="{{ img | resize( 880, 450, 'center' ) }}"
-				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 880 450'%3E%3C/svg%3E"
+				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 880 450'></svg>") }}"
 			/>
 			<source
 				media="(min-width: 811px) and (max-width:1023px)"
 				type="image/webp"
 				data-srcset="{{ img | resize( 1024, 900, 'center' ) | towebp }}"
-				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 900'%3E%3C/svg%3E"
+				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 900'></svg>") }}"
 
 			/>
 			<source
 				media="(min-width: 811px) and (max-width:1023px)"
 				data-srcset="{{ img | resize( 1024, 900, 'center' ) }}"
-				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 900'%3E%3C/svg%3E"
+				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 900'></svg>") }}"
 			/>
 			<source
 				media="(min-width: 1024px)"
 				type="image/webp"
 				data-srcset="{{ img | resize( 208, 270, 'center' ) | towebp }}"
-				srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208 270'%3E%3C/svg%3E"
+				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208 270'></svg>") }}"
 			/>
 			<img
 				data-src="{{ img | resize( 208, 270, 'center' ) }}"
-				src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208 270'%3E%3C/svg%3E"
+				src="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208 270'></svg>") }}"
 				class="lazyload"
 				alt="{{ img.title }}"
 			/>
