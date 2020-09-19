@@ -2,6 +2,6 @@
     "require": {
         "timber/timber": "^1.5",
 		"soberwp/intervention": "1.2.0-p",
-        "palmiak/timber-acf-wp-blocks": "^1.9"
+        "palmiak/timber-acf-wp-blocks": "dev-master"
     }
 }
