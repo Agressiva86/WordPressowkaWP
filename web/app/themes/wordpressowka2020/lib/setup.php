@@ -34,6 +34,9 @@ function setup() {
 			'footer' => 'Footer',
 		)
 	);
+
+	add_theme_support( 'editor-color-palette' );
+	add_theme_support( 'disable-custom-colors' );
 }
 add_action( 'after_setup_theme', 'setup' );
 
@@ -44,6 +47,7 @@ add_action( 'after_setup_theme', 'setup' );
 function assets() {
 		wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), '', null, true );
 		wp_deregister_style( 'wp-block-library' );
+		wp_dequeue_style( 'global-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'assets', 100 );
 

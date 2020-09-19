@@ -2,94 +2,46 @@
 <div class="wordpressowka-block">
     <div class="wordpressowka-link photobg" role="link">
         <picture role="img">
-			{% if fields.disable_lazy_load %}
-				<source
-					media="(max-width:640px)"
-					type="image/webp"
-					srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
-					width="640"
-					height="900"
-				/>
-				<source
-					media="(max-width:640px)"
-					srcset="{{ img | resize( 640, 600, 'center' ) }}"
-					width="640"
-					height="900"
-				/>
-				<source
-					media="(min-width: 641px) and (max-width:1023px)"
-					type="image/webp"
-					srcset="{{ img | resize( 1024, 600, 'center' ) | towebp }}"
-					width="1024"
-					height="600"
-				/>
-				<source
-					media="(min-width: 641px) and (max-width:1023px)"
-					srcset="{{ img | resize( 1024, 600, 'center' ) }}"
-					width="1024"
-					height="600"
-				/>
-				<source
-					media="(min-width:1024px)"
-					type="image/webp"
-					srcset="{{ img | resize( 1135, 500, 'center' ) | towebp }}"
-					width="1135"
-					height="500"
-				/>
-				<img
-					src="{{ img | resize( 1135, 500, 'center' ) }}"
-					alt="{{ img.title }}"
-					width="1135"
-					height="500"
-				/>
-			{% else %}
-				<source
-					media="(max-width:640px)"
-					type="image/webp"
-					data-srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
-					srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 600'></svg>") }}"
-					width="640"
-					height="600"
-				/>
-				<source
-					media="(max-width:640px)"
-					data-srcset="{{ img | resize( 640, 600, 'center' ) }}"
-					srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 600'></svg>") }}"
-					width="640"
-					height="600"
-				/>
-				<source
-					media="(min-width: 641px) and (max-width:1023px)"
-					type="image/webp"
-					data-srcset="{{ img | resize( 1024, 600, 'center' ) | towebp }}"
-					srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 600'></svg>") }}"
-					width="1024"
-					height="600"
-				/>
-				<source
-					media="(min-width: 641px) and (max-width:1023px)"
-					data-srcset="{{ img | resize( 1024, 600, 'center' ) }}"
-					srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 600'></svg>") }}"
-					width="1024"
-					height="600"
-				/>
-				<source
-					media="(min-width:1024px)"
-					type="image/webp"
-					data-srcset="{{ img | resize( 1135, 500, 'center' ) | towebp }}"
-					srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1135 500'></svg>") }}"
-					width="1135"
-					height="500"
-				/>
-				<img
-					data-src="{{ img | resize( 1135, 500, 'center' ) }}"
-					class="lazyload"
-					alt="{{ img.title }}"
-					src="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1135 500'></svg>") }}"
-					width="1135"
-					height="500"
-				/>
-			{% endif %}
+			<source
+				media="(max-width:640px)"
+				type="image/webp"
+				srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
+				width="640"
+				height="900"
+			/>
+			<source
+				media="(max-width:640px)"
+				srcset="{{ img | resize( 640, 600, 'center' ) }}"
+				width="640"
+				height="900"
+			/>
+			<source
+				media="(min-width: 641px) and (max-width:1023px)"
+				type="image/webp"
+				srcset="{{ img | resize( 1024, 600, 'center' ) | towebp }}"
+				width="1024"
+				height="600"
+			/>
+			<source
+				media="(min-width: 641px) and (max-width:1023px)"
+				srcset="{{ img | resize( 1024, 600, 'center' ) }}"
+				width="1024"
+				height="600"
+			/>
+			<source
+				media="(min-width:1024px)"
+				type="image/webp"
+				srcset="{{ img | resize( 1135, 500, 'center' ) | towebp }}"
+				width="1135"
+				height="500"
+			/>
+			<img
+				src="{{ img | resize( 1135, 500, 'center' ) }}"
+				alt="{{ img.title }}"
+				width="1135"
+				height="500"
+				loading="{{ fields.disable_lazy_load ? 'eager' : 'lazy' }}"
+			/>
         </picture>
         <div class="inner">
 			{% if fields.header %}

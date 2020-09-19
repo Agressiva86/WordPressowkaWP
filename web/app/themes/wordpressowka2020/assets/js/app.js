@@ -1,7 +1,6 @@
 import Router from './lib/router';
 import barba from '@barba/core';
 import css from '@barba/css';
-import 'lazysizes';
 
 // Routes
 import common from './routes/common';
