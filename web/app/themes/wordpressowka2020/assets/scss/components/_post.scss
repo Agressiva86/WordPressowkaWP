@@ -819,7 +819,7 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    small {
+    small, .small, .small p {
         @extend .animation;
         font-size: 14px !important;
         line-height: 22px !important;
@@ -827,6 +827,11 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0.7;
         display: block;
         margin-bottom: 40px;
+    }
+
+    .small p {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     blockquote {
