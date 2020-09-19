@@ -7,37 +7,42 @@
 			<source
 				media="(max-width:880px)"
 				type="image/webp"
-				data-srcset="{{ img | resize( 880, 450, 'center' ) | towebp }}"
-				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmls='http://www.w3.org/2000/svg' viewBox='0 0 880 450'></svg>") }}"
+				srcset="{{ img | resize( 880, 450, 'center' ) | towebp }}"
+				width="880"
+				height="450"
 			/>
 			<source
 				media="(max-width:880px)"
-				data-srcset="{{ img | resize( 880, 450, 'center' ) }}"
-				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 880 450'></svg>") }}"
+				srcset="{{ img | resize( 880, 450, 'center' ) }}"
+				width="880"
+				height="450"
 			/>
 			<source
 				media="(min-width: 811px) and (max-width:1023px)"
 				type="image/webp"
-				data-srcset="{{ img | resize( 1024, 900, 'center' ) | towebp }}"
-				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 900'></svg>") }}"
-
+				srcset="{{ img | resize( 1024, 900, 'center' ) | towebp }}"
+				width="1024"
+				height="900"
 			/>
 			<source
 				media="(min-width: 811px) and (max-width:1023px)"
-				data-srcset="{{ img | resize( 1024, 900, 'center' ) }}"
-				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 900'></svg>") }}"
+				srcset="{{ img | resize( 1024, 900, 'center' ) }}"
+				width="1024"
+				height="900"
 			/>
 			<source
 				media="(min-width: 1024px)"
 				type="image/webp"
-				data-srcset="{{ img | resize( 208, 270, 'center' ) | towebp }}"
-				srcset="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208 270'></svg>") }}"
+				srcset="{{ img | resize( 208, 270, 'center' ) | towebp }}"
+				width="208"
+				height="270"
 			/>
 			<img
-				data-src="{{ img | resize( 208, 270, 'center' ) }}"
-				src="data:image/svg+xml,{{ fn('rawurlencode', "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208 270'></svg>") }}"
-				class="lazyload"
+				src="{{ img | resize( 208, 270, 'center' ) }}"
 				alt="{{ img.title }}"
+				loading="{{ fields.disable_lazy_load ? 'eager' : 'lazy' }}"
+				width="208"
+				height="270"
 			/>
 		</picture>
 			<div>

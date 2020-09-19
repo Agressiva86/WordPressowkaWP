@@ -97,8 +97,8 @@
                 }
 
                 picture, img, source {
-                    width: 170px;
                     border-radius: 0;
+                    height: auto;
                 }
 
                 @media screen and (max-width: 680px) {
@@ -283,6 +283,7 @@
         source,
         img {
             max-width: 100%;
+            width: 100%;
         }
     }
 
