@@ -111,3 +111,7 @@ if (!defined('ABSPATH')) {
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
     $_SERVER['HTTPS']='on';
 }
+
+if ( isset($_SERVER['HTTP_CF_CONNECTING_IP']) ) {
+    $_SERVER['HTTPS'] = 'on';
+}
