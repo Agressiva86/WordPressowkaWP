@@ -3,23 +3,23 @@
 {% block main %}
 <article class="single-entry-wrapper">
 	<header class="single-entry-header" role="heading" aria-level="1">
-		<h2>Oops, niestety ten adres nie istnieje :(</h2>
+		<h2>{{ __( 'Oops, niestety ten adres nie istnieje :(', 'sasquatch' ) }}</h2>
 	</header>
 	<div class="single-entry-columns">
 		<div class="item entry-content" role="article">
 			<p>
-				Ale nic straconego, możesz wrócić do strony głównej klikając w logo WordPressówki.
+				{{ __( 'Ale nic straconego, możesz wrócić do strony głównej klikając w logo WordPressówki.', 'sasquatch' ) }}
 			</p>
 			<p>
-				Zachęcamy Cię do zapisu na nasz Newsletter, dzięki niemu trafisz zawsze pod odpowiedni adres z najnowszym wydaniem!
+				{{ __( 'Zachęcamy Cię do zapisu na nasz Newsletter, dzięki niemu trafisz zawsze pod odpowiedni adres z najnowszym wydaniem!', 'sasquatch' ) }}
 			</p>
 			<form
 				action="https://wordpressowka.us20.list-manage.com/subscribe/post?u=bc1349d1dfefba72bdd8c3974&amp;id=f8311d93e4"
 				method="post" name="mc-embedded-subscribe-form" class="validate">
-				<label><input type="name" placeholder="Twoje imię" name="NAME" required></label>
-				<label><input type="email" placeholder="Twój adres email" name="EMAIL" required></label>
+				<label><input type="name" placeholder="{{ __( 'Twoje imię', 'sasquatch' ) }}" name="NAME" required></label>
+				<label><input type="email" placeholder="{{ __( 'Twój adres email', 'sasquatch' ) }}" name="EMAIL" required></label>
 				<div>
-					<input type="submit" value="Zapisz się teraz!" class="button color-primary expand" name="subscribe">
+					<input type="submit" value="{{ __( 'Zapisz się teraz!', 'sasquatch' ) }}" class="button color-primary small" name="subscribe">
 				</div>
 			</form>
 

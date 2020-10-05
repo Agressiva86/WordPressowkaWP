@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-10-05 23:19+0200\n"
-"PO-Revision-Date: 2020-10-05 23:19+0200\n"
+"PO-Revision-Date: 2020-10-05 23:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -56,12 +56,12 @@ msgstr ""
 #: views/parts/newsletter.twig:10 views/parts/sidebar.twig:14
 #: views/templates/404.twig:19 views/templates/nsl.twig:15
 msgid "Twoje imię"
-msgstr ""
+msgstr "Your name"
 
 #: views/parts/newsletter.twig:11 views/parts/sidebar.twig:15
 #: views/templates/404.twig:20 views/templates/nsl.twig:16
 msgid "Twój adres email"
-msgstr ""
+msgstr "Your e-mail address"
 
 #: views/parts/newsletter.twig:12 views/parts/sidebar.twig:17
 #: views/templates/404.twig:22 views/templates/nsl.twig:18

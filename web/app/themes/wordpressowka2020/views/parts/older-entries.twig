@@ -3,7 +3,7 @@
 		<time>{{ post.date('d F Y') }}</time>
 		<p>{{ post.title }}</p>
 		<h2>
-			<span>Tematy:</span>
+			<span>{{ __( 'Tematy:', 'sasquatch' ) }}</span>
 			{{ post.tags() | join(', ')}}
 		</h2>
 	</div>

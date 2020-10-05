@@ -7,13 +7,13 @@
 </article>
 <nav class="pagination">
 	{% if other_posts.pagination.prev %}
-		<a href="{{ other_posts.pagination.prev.link }}">Nowsze wydania</a>
+		<a href="{{ other_posts.pagination.prev.link }}">{{ __( 'Nowsze wydania', 'sasquatch' ) }}</a>
 	{% else %}
 		&nbsp;
 	{% endif %}
 
 	{% if other_posts.pagination.next %}
-		<a href="{{ other_posts.pagination.next.link }}">Wcześniejsze wydania</a>
+		<a href="{{ other_posts.pagination.next.link }}">{{ __( 'Wcześniejsze wydania', 'sasquatch' ) }}</a>
 	{% else %}
 		&nbsp;
 	{% endif %}

@@ -2,11 +2,11 @@
 
 	<div class="header-left">
 		<div class="item logo">
-			<a href="{{ site.url }}" class="logo" aria-label="Strona główna">
+			<a href="{{ site.url }}" class="logo" aria-label="{{ __( 'Strona główna', 'sasquatch' ) }}">
 				{% include 'views/parts/logo.twig' %}
 				<span>
-					<strong>WordPressówka</strong>
-					<small>Tygodnik społeczny i literacki</small>
+					<strong>{{ site.name }}</strong>
+					<small>{{ site.description }}</small>
 				</span>
 			</a>
 		</div>
@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="item switcher">
-			<a href="#" class="button color-switcher" id="themeswitcher" aria-label="Zmień tryb strony">
+			<a href="#" class="button color-switcher" id="themeswitcher" aria-label="{{ __( 'Zmień tryb strony', 'sasquatch' ) }}">
 				{% include 'views/parts/icons/switcher.twig' %}
 			</a>
 		</div>

@@ -16,19 +16,19 @@
 
 				{{ post.content }}
 
-				<h4>Podoba Ci się to wydanie? Podaj dalej!</h4>
+				<h4>{{ __( 'Podoba Ci się to wydanie? Podaj dalej!', 'sasquatch' ) }}</h4>
 				<div class="share">
 					<a href="{{ post.link | fb_share_url }}" target="_blank" rel="noopener">
 						{% include 'views/parts/icons/facebook.twig' %}
-						Udostępnij na Facebooku
+						{{ __( 'Udostępnij na Facebooku', 'sasquatch' ) }}
 					</a>
 					<a href="{{ post.link | ln_share_url }}" target="_blank" rel="noopener">
 						{% include 'views/parts/icons/linkedin.twig' %}
-						Udostępnij na Linkedin
+						{{ __( 'Udostępnij na Linkedin', 'sasquatch' ) }}
 					</a>
 					<a href="{{ post.link | tt_share_url }}" target="_blank" rel="noopener">
 						{% include 'views/parts/icons/twitter.twig' %}
-						Udostępnij na Twitterze
+						{{ __( 'Udostępnij na Twitterze', 'sasquatch' ) }}
 					</a>
 				</div>
 			</div>
