@@ -303,12 +303,24 @@
             grid-template-columns: 1fr;
         }
 
+        @media screen and (min-width: 881px) and (max-width: 1024px) {
+            grid-gap: 40px;
+        }
+
         picture, img, source {
             max-width: 100%;
             height: auto;
         }
 
         .face {
+            position: sticky;
+            top: 50px;
+
+            @media screen and (max-width: 880px) {
+                position: relative;
+                top: auto;
+            }
+
             strong {
                 @extend .animation;
                 color: #{var(--color-primary)};
