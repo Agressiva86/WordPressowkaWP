@@ -35,9 +35,20 @@
 	{% endif %}
 
 	<div class="profiles">
-		<a href="{{ options.facebook }}" target="_blank" rel="noopener">Facebook</a>
-		<a href="{{ options.linkedin }}" target="_blank" rel="noopener">Linkedin</a>
-		<a href="{{ options.instagram }}" target="_blank" rel="noopener">Instagram</a>
-		<a href="{{ options.twitter }}" target="_blank" rel="noopener">Twitter</a>
+		{% if options.facebook %}
+			<a href="{{ options.facebook }}" target="_blank" rel="noopener">Facebook</a>
+		{% endif %}
+
+		{% if options.linkedin %}
+			<a href="{{ options.linkedin }}" target="_blank" rel="noopener">Linkedin</a>
+		{% endif %}
+
+		{% if options.instagram %}
+			<a href="{{ options.instagram }}" target="_blank" rel="noopener">Instagram</a>
+		{% endif %}
+
+		{% if options.twitter %}
+			<a href="{{ options.twitter }}" target="_blank" rel="noopener">Twitter</a>
+		{% endif %}
 	</div>
 </div>
