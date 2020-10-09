@@ -560,6 +560,25 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_5f80db6b30097",
+            "label": "Mailchimp url",
+            "name": "mailchimp_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/wordpressowka.us20.list-manage.com\/subscribe\/post?u=bc1349d1dfefba72bdd8c3974&amp;id=f8311d93e4",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -577,7 +596,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1591614611
+    "modified": 1602280392
 }

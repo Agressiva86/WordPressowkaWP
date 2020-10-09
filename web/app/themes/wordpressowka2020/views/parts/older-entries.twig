@@ -1,6 +1,6 @@
 <a class="edition {{ extra_class }}" href="{{ post.link }}">
 	<div>
-		<time>{{ post.date('d F Y') }}</time>
+		<time>{{ post.date(options.date_format) }}</time>
 		<p>{{ post.title }}</p>
 		<h2>
 			<span>{{ __( 'Tematy:', 'sasquatch' ) }}</span>

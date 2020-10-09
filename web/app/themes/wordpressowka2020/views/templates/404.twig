@@ -14,7 +14,7 @@
 				{{ __( 'Zachęcamy Cię do zapisu na nasz Newsletter, dzięki niemu trafisz zawsze pod odpowiedni adres z najnowszym wydaniem!', 'sasquatch' ) }}
 			</p>
 			<form
-				action="https://wordpressowka.us20.list-manage.com/subscribe/post?u=bc1349d1dfefba72bdd8c3974&amp;id=f8311d93e4"
+				action="{{ options.mailchimp_url }}"
 				method="post" name="mc-embedded-subscribe-form" class="validate">
 				<label><input type="name" placeholder="{{ __( 'Twoje imię', 'sasquatch' ) }}" name="NAME" required></label>
 				<label><input type="email" placeholder="{{ __( 'Twój adres email', 'sasquatch' ) }}" name="EMAIL" required></label>
