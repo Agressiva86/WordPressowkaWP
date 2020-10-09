@@ -1,115 +1,90 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-08 22:27+0200\n"
-"PO-Revision-Date: 2020-10-08 22:27+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.1\n"
-"X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: node_modules\n"
-"X-Poedit-SearchPathExcluded-1: vendor\n"
+"Project-Id-Version: WordPressówka\n"
+"Language: en\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
-#: functions.php:20
-#, php-format
+#: functions.php:21
 msgid "Error locating %s for inclusion"
 msgstr ""
 
 #: views/blocks/nsl.twig:4
 msgid "Dołącz do WordPressowych Sówek"
-msgstr ""
+msgstr "Join the WP Owls!"
 
 #: views/blocks/nsl.twig:5
-msgid ""
-"Zapisz się na newsletter i bądź na bieżąco z aktualnymi informacjami na "
-"temat WordPressa! Jako pierwszy dowiesz się o nowym wydaniu WordPressówki."
-msgstr ""
+msgid "Zapisz się na newsletter i bądź na bieżąco z aktualnymi informacjami na temat WordPressa! Jako pierwszy dowiesz się o nowym wydaniu WordPressówki."
+msgstr "Subscribe to the newsletter and stay up to date with the latest news about WordPress! You'll be the first to know about the new edition of WP Owls."
 
-#: views/blocks/nsl.twig:6 views/parts/newsletter.twig:3
+#: views/blocks/nsl.twig:6
 msgid "Zapisz się na Newsletter"
-msgstr "Subscribe to the Newsletter"
+msgstr "Subscribe for WP Owls Newsletter"
 
 #: views/parts/editions-scroll.twig:2
 msgid "Zobacz inne wydania:"
-msgstr ""
+msgstr "Check other editions:"
 
 #: views/parts/header.twig:5
 msgid "Strona główna"
-msgstr "Homepage"
+msgstr "Home page"
 
-#: views/parts/header.twig:49
+#: views/parts/header.twig:50
 msgid "Zmień tryb strony"
-msgstr ""
+msgstr "Change the page mode"
 
-#: views/parts/newsletter.twig:10 views/templates/404.twig:19
+#: views/parts/newsletter.twig:3
+msgid "Zapisz się na newsletter"
+msgstr "Subscribe for WP Owls Newsletter!"
+
+#: views/parts/newsletter.twig:10 views/parts/sidebar.twig:14
+#: views/templates/404.twig:19 views/templates/nsl.twig:15
 msgid "Twoje imię"
 msgstr "Your name"
 
-#: views/parts/newsletter.twig:11 views/parts/sidebar.twig:18
-#: views/templates/404.twig:20 views/templates/nsl.twig:22
+#: views/parts/newsletter.twig:11 views/parts/sidebar.twig:15
+#: views/templates/404.twig:20 views/templates/nsl.twig:16
 msgid "Twój adres email"
-msgstr "Your e-mail address"
+msgstr "Your email address"
 
-#: views/parts/newsletter.twig:12 views/parts/sidebar.twig:23
-#: views/templates/404.twig:22 views/templates/nsl.twig:28
+#: views/parts/newsletter.twig:12 views/parts/sidebar.twig:17
+#: views/templates/404.twig:22 views/templates/nsl.twig:18
 msgid "Zapisz się teraz!"
-msgstr "Sign up now!"
+msgstr "Subscribe now!"
 
 #: views/parts/newsletter.twig:16
-msgid ""
-"Zapisując się na newsletter zgadzam się na otrzymywanie Newslettera od "
-"WordPressówki."
-msgstr ""
+msgid "Zapisując się na newsletter zgadzam się na otrzymywanie Newslettera od WordPressówki."
+msgstr "By subscribing, I agree to receive the Newsletter from WP Owls."
 
 #: views/parts/newsletter.twig:17
-msgid ""
-"Po naciśnięciu „Zapisz się teraz!\" otrzymasz na swój adres e-mail prośbę o "
-"potwierdzenie zapisu."
-msgstr ""
+msgid "Po naciśnięciu „Zapisz się teraz!\" otrzymasz na swój adres e-mail prośbę o potwierdzenie zapisu."
+msgstr "After clicking \"Subscribe now!\" You'll receive a confirmation message to your e-mail address."
 
 #: views/parts/older-entries.twig:6
 msgid "Tematy:"
 msgstr "Topics:"
 
-#: views/parts/sidebar.twig:14 views/templates/nsl.twig:16
-msgid "Twoje imię:"
-msgstr "Your name:"
-
-#: views/parts/sidebar.twig:16 views/templates/nsl.twig:18
-msgid "Tutaj podaj swoje imię"
-msgstr "Enter your name here"
-
-#: views/parts/sidebar.twig:20 views/templates/nsl.twig:24
-msgid "Tutaj podaj swój adres email"
-msgstr "Enter your email address here"
-
 #: views/templates/404.twig:6
 msgid "Oops, niestety ten adres nie istnieje :("
-msgstr "Oops, unfortunately this page does not exist :("
+msgstr "Oops, unfortunately this address doesn't exist :("
 
 #: views/templates/404.twig:11
-msgid ""
-"Ale nic straconego, możesz wrócić do strony głównej klikając w logo "
-"WordPressówki."
-msgstr ""
+msgid "Ale nic straconego, możesz wrócić do strony głównej klikając w logo WordPressówki."
+msgstr "But nothing is lost, you can go back to the home page by clicking on the WP Owls logo."
 
 #: views/templates/404.twig:14
-msgid ""
-"Zachęcamy Cię do zapisu na nasz Newsletter, dzięki niemu trafisz zawsze pod "
-"odpowiedni adres z najnowszym wydaniem!"
-msgstr ""
+msgid "Zachęcamy Cię do zapisu na nasz Newsletter, dzięki niemu trafisz zawsze pod odpowiedni adres z najnowszym wydaniem!"
+msgstr "Subscribe to our Newsletter! Thanks to it, you'll be up to date with the latest news from the WordPress world!"
 
 #: views/templates/index.twig:19
 msgid "Podoba Ci się to wydanie? Podaj dalej!"
-msgstr ""
+msgstr "You like this edition? Forward it!"
 
 #: views/templates/index.twig:23
 msgid "Udostępnij na Facebooku"
@@ -125,14 +100,8 @@ msgstr "Share on Twitter"
 
 #: views/templates/tpl-editions.twig:10
 msgid "Nowsze wydania"
-msgstr ""
+msgstr "Newer editions"
 
 #: views/templates/tpl-editions.twig:16
 msgid "Wcześniejsze wydania"
-msgstr ""
-
-#~ msgid "Zapisz się na newsletter"
-#~ msgstr "Subscribe to the newsletter"
-
-#~ msgid "test"
-#~ msgstr "plum"
+msgstr "Earlier editions"

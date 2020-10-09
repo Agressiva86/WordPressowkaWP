@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-05 23:19+0200\n"
-"PO-Revision-Date: 2020-10-05 23:19+0200\n"
+"POT-Creation-Date: 2020-10-09 11:46+0200\n"
+"PO-Revision-Date: 2020-10-09 11:46+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: functions.php:21
+#: functions.php:20
 #, php-format
 msgid "Error locating %s for inclusion"
 msgstr ""
@@ -33,7 +33,7 @@ msgid ""
 "temat WordPressa! Jako pierwszy dowiesz się o nowym wydaniu WordPressówki."
 msgstr ""
 
-#: views/blocks/nsl.twig:6
+#: views/blocks/nsl.twig:6 views/parts/newsletter.twig:3
 msgid "Zapisz się na Newsletter"
 msgstr ""
 
@@ -45,26 +45,21 @@ msgstr ""
 msgid "Strona główna"
 msgstr ""
 
-#: views/parts/header.twig:50
+#: views/parts/header.twig:49
 msgid "Zmień tryb strony"
 msgstr ""
 
-#: views/parts/newsletter.twig:3
-msgid "Zapisz się na newsletter"
-msgstr ""
-
-#: views/parts/newsletter.twig:10 views/parts/sidebar.twig:14
-#: views/templates/404.twig:19 views/templates/nsl.twig:15
+#: views/parts/newsletter.twig:10 views/templates/404.twig:19
 msgid "Twoje imię"
 msgstr ""
 
-#: views/parts/newsletter.twig:11 views/parts/sidebar.twig:15
-#: views/templates/404.twig:20 views/templates/nsl.twig:16
+#: views/parts/newsletter.twig:11 views/parts/sidebar.twig:18
+#: views/templates/404.twig:20 views/templates/nsl.twig:22
 msgid "Twój adres email"
 msgstr ""
 
-#: views/parts/newsletter.twig:12 views/parts/sidebar.twig:17
-#: views/templates/404.twig:22 views/templates/nsl.twig:18
+#: views/parts/newsletter.twig:12 views/parts/sidebar.twig:23
+#: views/templates/404.twig:22 views/templates/nsl.twig:28
 msgid "Zapisz się teraz!"
 msgstr ""
 
@@ -82,6 +77,18 @@ msgstr ""
 
 #: views/parts/older-entries.twig:6
 msgid "Tematy:"
+msgstr ""
+
+#: views/parts/sidebar.twig:14 views/templates/nsl.twig:16
+msgid "Twoje imię:"
+msgstr ""
+
+#: views/parts/sidebar.twig:16 views/templates/nsl.twig:18
+msgid "Tutaj podaj swoje imię"
+msgstr ""
+
+#: views/parts/sidebar.twig:20 views/templates/nsl.twig:24
+msgid "Tutaj podaj swój adres email"
 msgstr ""
 
 #: views/templates/404.twig:6
