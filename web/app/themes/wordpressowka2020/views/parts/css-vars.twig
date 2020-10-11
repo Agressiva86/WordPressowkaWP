@@ -1,0 +1,31 @@
+<style>
+:root {
+	--color-form-bg: {{ fn( 'get_theme_mod', appearance_options.light_kolor_tla_formularzy.key_name, appearance_options.light_kolor_tla_formularzy.default ) }};
+	--color-form-input: {{ fn( 'get_theme_mod', appearance_options.light_kolor_placeholder_formularzy.key_name, appearance_options.light_kolor_placeholder_formularzy.default ) }};
+	--color-switcher: {{ fn( 'get_theme_mod', appearance_options.light_kolor_ikony_switcher.key_name, appearance_options.light_kolor_ikony_switcher.default ) }};
+	--color-switcher-bg: {{ fn( 'get_theme_mod', appearance_options.light_kolor_tla_ikony_switcher.key_name, appearance_options.light_kolor_tla_ikony_switcher.default ) }};
+	--color-bg: {{ fn( 'get_theme_mod', appearance_options.light_kolor_tla_strony.key_name, appearance_options.light_kolor_tla_strony.default ) }};
+	--color-bg-offset: {{ fn( 'get_theme_mod', appearance_options.light_kolor_tla_strony_gradient.key_name, appearance_options.light_kolor_tla_strony_gradient.default ) }};
+	--color-text: {{ fn( 'get_theme_mod', appearance_options.light_kolor_tekstu.key_name, appearance_options.light_kolor_tekstu.default ) }};
+	--color-primary: {{ fn( 'get_theme_mod', appearance_options.light_kolor_primary.key_name, appearance_options.light_kolor_primary.default ) }};
+	--color-secondary: {{ fn( 'get_theme_mod', appearance_options.light_kolor_secondary.key_name, appearance_options.light_kolor_secondary.default ) }};
+	--color-link: {{ fn( 'get_theme_mod', appearance_options.light_kolor_linkow.key_name, appearance_options.light_kolor_linkow.default ) }};
+	--color-shadow: {{ fn( 'get_theme_mod', appearance_options.light_kolor_cienia.key_name, appearance_options.light_kolor_cienia.default ) }};
+	--color-white: #ffffff;
+}
+
+html[data-theme="dark"] {
+	--color-form-bg: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_tla_formularzy.key_name, appearance_options.dark_kolor_tla_formularzy.default ) }};
+	--color-form-input: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_placeholder_formularzy.key_name, appearance_options.dark_kolor_placeholder_formularzy.default ) }};
+	--color-switcher: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_ikony_switcher.key_name, appearance_options.dark_kolor_ikony_switcher.default ) }};
+	--color-switcher-bg: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_tla_ikony_switcher.key_name, appearance_options.dark_kolor_tla_ikony_switcher.default ) }};
+	--color-bg: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_tla_strony.key_name, appearance_options.dark_kolor_tla_strony.default ) }};
+	--color-bg-offset: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_tla_strony_gradient.key_name, appearance_options.dark_kolor_tla_strony_gradient.default ) }};
+	--color-text: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_tekstu.key_name, appearance_options.dark_kolor_tekstu.default ) }};
+	--color-primary: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_primary.key_name, appearance_options.dark_kolor_primary.default ) }};
+	--color-secondary: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_secondary.key_name, appearance_options.dark_kolor_secondary.default ) }};
+	--color-link: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_linkow.key_name, appearance_options.dark_kolor_linkow.default ) }};
+	--color-shadow: {{ fn( 'get_theme_mod', appearance_options.dark_kolor_cienia.key_name, appearance_options.dark_kolor_cienia.default ) }};
+	--color-white: #ffffff;
+}
+</style>
