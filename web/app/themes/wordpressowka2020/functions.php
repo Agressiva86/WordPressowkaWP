@@ -12,6 +12,8 @@ $sage_includes = [
 	'lib/gutenberg.php',
 	'lib/Class-owl-post.php',
 	'lib/filters.php',
+	'lib/class-css-vars.php',
+	'lib/class-customizer.php',
 ];
 
 foreach ( $sage_includes as $file ) {
@@ -22,3 +24,6 @@ foreach ( $sage_includes as $file ) {
 
 	require_once $filepath;
 }
+
+add_action( 'init', array( 'sowka\css_vars\Css_Vars', 'get_instance' ) );
+add_action( 'init', array( 'sowka\customizer\Customizer', 'get_instance' ), 99 );

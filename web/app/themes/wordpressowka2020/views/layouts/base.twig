@@ -7,23 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="{{ options.dodaj_palete_kolorow.0.kolor_primary }}">
-    {{ function('wp_head') }}
-
     <link rel="alternate" type="application/rss+xml" title="Wordpressowka" href="{{ site.link }}/feed/" />
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/poppins-v9-latin-ext_latin-700.woff2" as="font" crossorigin>
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/poppins-v9-latin-ext_latin-800.woff2" as="font" crossorigin>
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/didact-gothic-v13-latin-ext_latin-regular.woff2" as="font" crossorigin>
+	{{ function('wp_head') }}
 	{% if( get_data.generate_css == 1 ) %}
 		<link id="main-css" rel="stylesheet" href="{{ css_file }}" as="style">
-		<style type="text/css">
-		:root {
-			{% include 'views/parts/palette.twig' with { palette: options.dodaj_palete_kolorow.0 } %}
-		}
 
-		html[data-theme="dark"] {
-			{% include 'views/parts/palette.twig' with { palette: options.dodaj_palete_kolorow.1 } %}
-		}
-		</style>
 	{% else %}
 		<link id="main-css" rel="preload" href="{{ css_file }}" as="style">
 		<script>
@@ -33,17 +24,7 @@
 			});
 		</script>
 		<style type="text/css">
-
 		{{ options.critical_css }}
-
-		:root {
-			{% include 'views/parts/palette.twig' with { palette: options.dodaj_palete_kolorow.0 } %}
-		}
-
-		html[data-theme="dark"] {
-			{% include 'views/parts/palette.twig' with { palette: options.dodaj_palete_kolorow.1 } %}
-		}
-
 		</style>
 	{% endif %}
 

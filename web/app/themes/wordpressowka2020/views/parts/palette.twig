@@ -1,4 +1,6 @@
---color-form-bg: {{ palette.kolor_tla_formularzy }};
+{{ fn( 'get_theme_mod', 'light_kolor_tla_formularzy' ) }}
+
+--color-form-bg: {{ options.palette_prefix~_~kolor_tla_formularzy }};
 --color-form-input: {{ palette.kolor_placeholder_formularzy }};
 --color-switcher: {{ palette.kolor_ikony_switcher }};
 --color-switcher-bg: {{ palette.kolor_tla_ikony_switcher }};
