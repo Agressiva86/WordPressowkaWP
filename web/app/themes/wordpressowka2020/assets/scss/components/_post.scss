@@ -142,18 +142,17 @@ h1, h2, h3, h4, h5, h6 {
 
             html[data-theme="dark"] & {
                 &:hover, &:focus {
-                    @media screen and (max-width: 1023px) {
-                        background-color: #{var(--color-primary)} !important;
+                    background-color: #{var(--color-white)} !important;
+                    color: #{var(--color-primary)} !important;
 
-                        path,
-                        rect,
-                        polyline,
-                        circle,
-                        polygon,
-                        ellipse,
-                        line {
-                            fill: #{var(--color-white)} !important;
-                        }
+                    path,
+                    rect,
+                    polyline,
+                    circle,
+                    polygon,
+                    ellipse,
+                    line {
+                        fill: #{var(--color-primary)} !important;
                     }
                 }
             }
@@ -728,6 +727,7 @@ h1, h2, h3, h4, h5, h6 {
                 cursor: pointer;
                 background-color: #{var(--color-primary)};
                 @extend .animation;
+                height: 100%;
 
                 &:focus,
                 &:hover {
