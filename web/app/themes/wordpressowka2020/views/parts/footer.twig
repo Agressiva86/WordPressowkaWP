@@ -35,17 +35,25 @@
 	</p>
 
 	<div class="links">
-		<a href="{{ options.facebook }}" target="_blank" aria-label="Facebook" rel="noopener">
+		{% if options.facebook %}
+		<a href="{{ options.facebook }}" target="_blank" rel="noopener" aria-label="facebook">
 			{% include 'views/parts/icons/facebook.twig' %}
 		</a>
-		<a href="{{ options.linkedin }}" target="_blank" aria-label="Linkedin" rel="noopener">
+		{% endif %}
+		{% if options.linkedin %}
+		<a href="{{ options.linkedin }}" target="_blank" rel="noopener" aria-label="linkedin">
 			{% include 'views/parts/icons/linkedin.twig' %}
 		</a>
-		<a href="{{ options.instagram }}" target="_blank" aria-label="Instagram" rel="noopener">
+		{% endif %}
+		{% if options.instagram %}
+		<a href="{{ options.instagram }}" target="_blank" rel="noopener" aria-label="instagram">
 			{% include 'views/parts/icons/instagram.twig' %}
 		</a>
-		<a href="{{ options.twitter }}" target="_blank" aria-label="Twitter" rel="noopener">
+		{% endif %}
+		{% if options.twitter %}
+		<a href="{{ options.twitter }}" target="_blank" rel="noopener" aria-label="twitter">
 			{% include 'views/parts/icons/twitter.twig' %}
 		</a>
+		{% endif %}
 	</div>
 </footer>
