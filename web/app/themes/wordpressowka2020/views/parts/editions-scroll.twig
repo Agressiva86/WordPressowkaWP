@@ -9,7 +9,13 @@
 			{% endfor %}
 			<div class="all-editions">
 				{% if options.adres_strony_z_wydaniami %}
-				<a href="{{ options.adres_strony_z_wydaniami.url }}" target="{{ options.adres_strony_z_wydaniami.target }}" title="{{ options.adres_strony_z_wydaniami.title }}" class="button color-primary-border small">Zobacz wszystkie wydania</a>
+					<a
+						href="{{ options.adres_strony_z_wydaniami.url }}"
+						target="{{ options.adres_strony_z_wydaniami.target }}"
+						title="{{ options.adres_strony_z_wydaniami.title }}"
+						class="button color-primary-border small">
+						{{ __( 'Zobacz wszystkie wydania', 'sasquatch' ) }}
+					</a>
 				{% endif %}
 			</div>
 		</div>
