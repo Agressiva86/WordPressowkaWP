@@ -26,18 +26,26 @@
 
 		<div class="item socials">
 			<div class="links">
+				{% if options.facebook %}
 				<a href="{{ options.facebook }}" target="_blank" rel="noopener" aria-label="facebook">
 					{% include 'views/parts/icons/facebook.twig' %}
 				</a>
+				{% endif %}
+				{% if options.linkedin %}
 				<a href="{{ options.linkedin }}" target="_blank" rel="noopener" aria-label="linkedin">
 					{% include 'views/parts/icons/linkedin.twig' %}
 				</a>
+				{% endif %}
+				{% if options.instagram %}
 				<a href="{{ options.instagram }}" target="_blank" rel="noopener" aria-label="instagram">
 					{% include 'views/parts/icons/instagram.twig' %}
 				</a>
+				{% endif %}
+				{% if options.twitter %}
 				<a href="{{ options.twitter }}" target="_blank" rel="noopener" aria-label="twitter">
 					{% include 'views/parts/icons/twitter.twig' %}
 				</a>
+				{% endif %}
 			</div>
 		</div>
 

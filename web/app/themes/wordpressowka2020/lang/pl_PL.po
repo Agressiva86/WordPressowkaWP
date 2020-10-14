@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-09 11:46+0200\n"
-"PO-Revision-Date: 2020-10-09 11:46+0200\n"
+"POT-Creation-Date: 2020-10-15 00:27+0200\n"
+"PO-Revision-Date: 2020-10-15 00:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: functions.php:20
+#: functions.php:22
 #, php-format
 msgid "Error locating %s for inclusion"
 msgstr ""
@@ -41,11 +41,15 @@ msgstr ""
 msgid "Zobacz inne wydania:"
 msgstr ""
 
+#: views/parts/editions-scroll.twig:17
+msgid "Zobacz wszystkie wydania"
+msgstr ""
+
 #: views/parts/header.twig:5
 msgid "Strona główna"
 msgstr ""
 
-#: views/parts/header.twig:49
+#: views/parts/header.twig:57
 msgid "Zmień tryb strony"
 msgstr ""
 

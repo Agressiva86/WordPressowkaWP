@@ -3,15 +3,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: POEditor.com\n"
 "Project-Id-Version: WordPressówka\n"
 "Language: en\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 
-#: functions.php:21
+#: functions.php:22
 msgid "Error locating %s for inclusion"
 msgstr ""
 
@@ -21,21 +17,21 @@ msgstr "Join the WP Owls!"
 
 #: views/blocks/nsl.twig:5
 msgid "Zapisz się na newsletter i bądź na bieżąco z aktualnymi informacjami na temat WordPressa! Jako pierwszy dowiesz się o nowym wydaniu WordPressówki."
-msgstr "Subscribe to the newsletter and stay up to date with the latest news about WordPress! You'll be the first to know about the new edition of WP Owls."
+msgstr "Subscribe to the newsletter and stay up to date with the latest news about WordPress! You'll be the first to know about the new issue of WP Owls."
 
-#: views/blocks/nsl.twig:6
+#: views/blocks/nsl.twig:6 views/parts/newsletter.twig:3
 msgid "Zapisz się na Newsletter"
 msgstr "Subscribe for WP Owls Newsletter"
 
 #: views/parts/editions-scroll.twig:2
 msgid "Zobacz inne wydania:"
-msgstr "Check other editions:"
+msgstr "Check other issues:"
 
 #: views/parts/header.twig:5
 msgid "Strona główna"
 msgstr "Home page"
 
-#: views/parts/header.twig:50
+#: views/parts/header.twig:57
 msgid "Zmień tryb strony"
 msgstr "Change the page mode"
 
@@ -43,18 +39,17 @@ msgstr "Change the page mode"
 msgid "Zapisz się na newsletter"
 msgstr "Subscribe for WP Owls Newsletter!"
 
-#: views/parts/newsletter.twig:10 views/parts/sidebar.twig:14
-#: views/templates/404.twig:19 views/templates/nsl.twig:15
+#: views/parts/newsletter.twig:10 views/templates/404.twig:19
 msgid "Twoje imię"
 msgstr "Your name"
 
-#: views/parts/newsletter.twig:11 views/parts/sidebar.twig:15
-#: views/templates/404.twig:20 views/templates/nsl.twig:16
+#: views/parts/newsletter.twig:11 views/parts/sidebar.twig:18
+#: views/templates/404.twig:20 views/templates/nsl.twig:22
 msgid "Twój adres email"
 msgstr "Your email address"
 
-#: views/parts/newsletter.twig:12 views/parts/sidebar.twig:17
-#: views/templates/404.twig:22 views/templates/nsl.twig:18
+#: views/parts/newsletter.twig:12 views/parts/sidebar.twig:23
+#: views/templates/404.twig:22 views/templates/nsl.twig:28
 msgid "Zapisz się teraz!"
 msgstr "Subscribe now!"
 
@@ -100,8 +95,25 @@ msgstr "Share on Twitter"
 
 #: views/templates/tpl-editions.twig:10
 msgid "Nowsze wydania"
-msgstr "Newer editions"
+msgstr "Newer issues"
 
 #: views/templates/tpl-editions.twig:16
 msgid "Wcześniejsze wydania"
-msgstr "Earlier editions"
+msgstr "Earlier issues"
+
+#: views/parts/sidebar.twig:14 views/templates/nsl.twig:16
+msgid "Twoje imię:"
+msgstr "Your name:"
+
+#: views/parts/sidebar.twig:16 views/templates/nsl.twig:18
+msgid "Tutaj podaj swoje imię"
+msgstr "Enter your name here"
+
+#: views/parts/sidebar.twig:20 views/templates/nsl.twig:24
+msgid "Tutaj podaj swój adres email"
+msgstr "Enter your e-mail address here"
+
+#: views/parts/editions-scroll.twig:17
+msgid "Zobacz wszystkie wydania"
+msgstr "Check all issues"
+
