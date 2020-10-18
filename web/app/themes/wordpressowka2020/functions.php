@@ -30,8 +30,8 @@ add_action(
 	function() {
 		?>
 		<script>
-			var algolia_ID = '<?php echo get_option( 'algolia_application_id' ); ?>aa';
-			var algolia_API = '<?php echo get_option( 'algolia_search_api_key' ); ?>aa';
+			var algolia_ID = '<?php echo get_option( 'algolia_application_id' ); ?>';
+			var algolia_API = '<?php echo get_option( 'algolia_search_api_key' ); ?>';
 		</script>
 		<?php
 	}
