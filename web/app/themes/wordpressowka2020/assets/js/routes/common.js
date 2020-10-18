@@ -46,7 +46,7 @@ class ThemeSwitcher {
 function search() {
 	const search = instantsearch({
 		indexName: 'wp_posts_post',
-		searchClient: algoliasearch('MD4D3NLGXH', 'e53a9f9a558c037d688d9ae8440d1362'),
+		searchClient: algoliasearch(window.algolia_ID, window.algolia_API),
 	});
 
 	search.addWidgets([
