@@ -13,7 +13,7 @@
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/didact-gothic-v13-latin-ext_latin-regular.woff2" as="font" crossorigin>
 	{{ function('wp_head') }}
 	{% if ( load_file ) %}
-	<style>
+	<style type="text/css">
 	{{ css_file_content }}
 	</style>
 	{% else %}
