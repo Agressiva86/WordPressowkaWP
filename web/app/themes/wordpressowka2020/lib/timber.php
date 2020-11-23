@@ -31,6 +31,14 @@ function add_to_context( $data ) {
 	$data['menu']['footer'] = new TimberMenu( 'footer' );
 
 	$data['css_file'] = asset_path( 'css/app.css' );
+	$data['css_file_content'] = wp_remote_get( $data['css_file'] );
+
+	if ( is_wp_error( $data['css_file_content'] ) ) {
+		$data['load_file'] = false;
+	} else {
+		$data['load_file'] = true;
+		$data['css_file_content'] = $data['css_file_content']['body'];
+	}
 
 	$data['get_data'] = $_GET;
 	return $data;

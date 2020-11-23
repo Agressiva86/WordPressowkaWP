@@ -12,20 +12,26 @@
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/poppins-v9-latin-ext_latin-800.woff2" as="font" crossorigin>
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/didact-gothic-v13-latin-ext_latin-regular.woff2" as="font" crossorigin>
 	{{ function('wp_head') }}
-	{% if( get_data.generate_css == 1 ) %}
-		<link id="main-css" rel="stylesheet" href="{{ css_file }}" as="style">
-
+	{% if ( load_file ) %}
+	<style>
+	{{ css_file_content }}
+	</style>
 	{% else %}
-		<link id="main-css" rel="preload" href="{{ css_file }}" as="style">
-		<script>
-			window.addEventListener('DOMContentLoaded', () => {
-				var css = document.getElementById( 'main-css' );
-				css.rel = 'stylesheet';
-			});
-		</script>
-		<style type="text/css">
-		{{ options.critical_css }}
-		</style>
+		{% if( get_data.generate_css == 1 ) %}
+			<link id="main-css" rel="stylesheet" href="{{ css_file }}" as="style">
+
+		{% else %}
+			<link id="main-css" rel="preload" href="{{ css_file }}" as="style">
+			<script>
+				window.addEventListener('DOMContentLoaded', () => {
+					var css = document.getElementById( 'main-css' );
+					css.rel = 'stylesheet';
+				});
+			</script>
+			<style type="text/css">
+			{{ options.critical_css }}
+			</style>
+		{% endif %}
 	{% endif %}
 
 </head>
