@@ -174,7 +174,7 @@
     }
 
     h2 {
-        font-family: $font-gothic;
+        font-family: $font-poppins;
         font-weight: 400;
         @include fluid-font(3vw, 14px, 17px, 35px);
         color: #{var(--color-secondary)};
@@ -308,7 +308,7 @@
                 top: 50%;
                 transform: translateY(-50%);
                 @extend .animation;
-                font-family: $font-gothic;
+                font-family: $font-poppins;
                 font-weight: 400;
             }
 

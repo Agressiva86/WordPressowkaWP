@@ -10,22 +10,22 @@
     --color-white: #ffffff;
     --color-form-bg: #ffffff;
     --color-form-input: #B4B7CC;
-    --color-switcher: #061058;
+    --color-switcher: rgb(30, 30, 30);
     --color-switcher-bg: #ffffff;
     --color-bg: #ffffff;
     --color-bg-offset: #F7F7FB;
-    --color-text: #061058;
-    --color-primary: #0052FF;
-    --color-secondary: #061058;
-    --color-link: #0052FF;
-    --color-shadow: #061058;
+    --color-text: rgb(30, 30, 30);
+    --color-primary: rgb(30, 30, 30);
+    --color-secondary: rgb(30, 30, 30);
+    --color-link: rgb(30, 30, 30);
+    --color-shadow: rgb(30, 30, 30);
 
     @import "components/reset.scss";
     @import "components/standards.scss";
     @import "components/wordpressowka2020.scss";
 
     .wordpressowka-block p {
-        font-family: $font-gothic;
+        font-family: $font-poppins;
     }
 }
 
@@ -34,8 +34,8 @@ p.wp-block-paragraph {
     margin-bottom: 40px;
     @extend .animation;
     line-height: 1.6;
-    color: #{var(--color-secondary)};
-    font-family: $font-gothic;
+    color: rgb(30, 30, 30);
+    font-family: $font-poppins;
 
     @media screen and (max-width: 1024px) {
         padding: 0px;
@@ -53,7 +53,7 @@ p.wp-block-paragraph {
     line-height: 1.6;
     font-family: $font-poppins;
     font-weight: 700;
-    color: #{var(--color-secondary)};
+    color:rgb(30, 30, 30);
 
     @media screen and (max-width: 1024px) {
         padding: 0px;

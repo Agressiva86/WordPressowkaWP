@@ -475,7 +475,7 @@ h1, h2, h3, h4, h5, h6 {
                 }
 
                 .hit-description {
-                    font-family: $font-gothic;
+                    font-family: $font-poppins;
                     font-weight: 400;
                     @include fluid-font(3vw, 14px, 17px, 35px);
                     color: #{var(--color-secondary)};
@@ -806,7 +806,7 @@ h1, h2, h3, h4, h5, h6 {
             border-radius: 50px;
             color: #{var(--color-form-input)};
             @extend .animation;
-            font-family: $font-gothic;
+            font-family: $font-poppins;
             background-color: #{var(--color-form-bg)};
             outline: none;
             line-height: normal;
@@ -913,7 +913,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 14px;
         font-weight: 400;
         line-height: normal;
-        font-family: $font-gothic;
+        font-family: $font-poppins;
         border: none;
         cursor: pointer;
         color: #{var(--color-secondary)};
