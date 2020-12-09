@@ -20,7 +20,8 @@
 
         .item {
             &.socials,
-            &.switcher {
+            &.switcher,
+            &.partner {
                 padding-left: 50px;
             }
 
@@ -34,6 +35,26 @@
 
             @media screen and (max-width: 1024px) {
                 padding-left: 30px;
+            }
+
+            &.partner {
+                display: grid;
+                grid-template-columns: 55px 170px;
+                gap: 15px;
+                text-align: right;
+                font-size: 12px;
+                text-transform: uppercase;
+                align-items: center;
+
+                @media screen and (max-width: 880px) {
+                    display: none;
+                }
+
+                span {
+                    color: #{var(--color-secondary)};
+                    font-family: $font-poppins;
+                    opacity: 0.4;
+                }
             }
         }
     }
@@ -76,7 +97,7 @@
                     font-size: 10px;
                     color: #{var(--color-primary)};
                     @extend .big;
-                    font-family: $font-gothic;
+                    font-family: $font-poppins;
                     font-weight: 400;
                 }
             }
@@ -112,7 +133,7 @@
                 padding: 0 25px;
                 height: 72px;
                 border: none;
-                font-family: $font-gothic;
+                font-family: $font-poppins;
                 font-weight: 400;
                 @include fluid-font(3vw, 15px, 17px, 35px);
                 border-radius: 50px;
@@ -280,5 +301,25 @@
         @media screen and (max-width: 500px) {
             font-size: 25px;
         }
+    }
+}
+
+.partner-mobile {
+    display: grid;
+    grid-template-columns: 120px 170px;
+    gap: 0px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    align-items: center;
+
+    @media screen and (min-width: 881px) {
+        display: none;
+    }
+
+    span {
+        color: #{var(--color-secondary)};
+        font-family: $font-poppins;
+        opacity: 0.4;
     }
 }

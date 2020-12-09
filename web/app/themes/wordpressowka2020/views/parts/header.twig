@@ -58,6 +58,20 @@
 				{% include 'views/parts/icons/switcher.twig' %}
 			</a>
 		</div>
+
+		{% if options.napis_partner %}
+		<div class="item partner">
+			<span>{{ options.napis_partner }}</span>
+			<a href="{{ options.link }}" target="_blank"><img src="{{ Image(options.logo).src }}"></a>
+		</div>
+		{% endif %}
 	</div>
 
 </header>
+
+{% if options.napis_partner %}
+<div class="partner-mobile">
+	<span>{{ options.napis_partner }}</span>
+	<a href="{{ options.link }}" target="_blank"><img src="{{ Image(options.logo).src }}"></a>
+</div>
+{% endif %}
