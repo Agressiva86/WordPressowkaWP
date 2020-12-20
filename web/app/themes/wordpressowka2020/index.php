@@ -9,4 +9,4 @@ $args                   = array(
 );
 $context['other_posts'] = Timber::get_posts( $args, 'OwlPost' );
 
-Timber::render( 'views/templates/index.twig', $context );
+Timber::render( array( 'views/templates/single-' . get_post_type() . '.twig', 'views/templates/index.twig' ), $context );

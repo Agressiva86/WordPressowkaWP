@@ -39,3 +39,29 @@ add_action(
 
 add_action( 'init', array( 'sowka\css_vars\Css_Vars', 'get_instance' ) );
 add_action( 'init', array( 'sowka\customizer\Customizer', 'get_instance' ), 99 );
+
+add_filter( 'gettext', 'theme_change_comment_field_names', 20, 3 );
+/**
+ * Change comment form default field names.
+ *
+ * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/gettext
+ */
+function theme_change_comment_field_names( $translated_text, $text, $domain ) {
+
+	if ( get_locale() === 'pl_PL' ) {
+
+		switch ( $translated_text ) {
+			case 'Article':
+				$translated_text = 'Artykuł';
+				break;
+			case 'Articles':
+				$translated_text = 'Artykuły';
+				break;
+			case 'artykuly':
+				$translated_text = 'artykuly';
+				break;
+		}
+	}
+
+	return $translated_text;
+}
