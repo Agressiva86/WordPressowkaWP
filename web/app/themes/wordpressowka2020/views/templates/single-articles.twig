@@ -12,7 +12,7 @@
 				<time>{{ post.date( options.date_format ) }}</time>
 				<h2>{{ post.title }}</h2>
 			</header>
-
+			{% if img is not empty %}
 			<picture class="post-cover m-b-50" role="img">
 				<source
 					media="(max-width:640px)"
@@ -55,6 +55,7 @@
 					loading="{{ fields.disable_lazy_load ? 'eager' : 'lazy' }}"
 				/>
 			</picture>
+			{% endif %}
 
 			<div class="entry-content">
 
