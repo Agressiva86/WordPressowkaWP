@@ -1,17 +1,61 @@
 {% extends "/layouts/base.twig" %}
+{% set img = Image( post.thumbnail ) %}
 
 {% block main %}
 
 
 <article class="single-entry-wrapper">
-	<div class="single-entry-columns">
+	<div class="single-entry-onecolumn">
 		<div class="item" role="article">
-			{% include 'parts/site-name.twig' %}
 
-			<header class="single-entry-header" role="heading" aria-level="1">
-				<h2>{{ post.title }}</h2>
+			<header class="single-entry-header article-entry-header" role="heading" aria-level="1">
 				<time>{{ post.date( options.date_format ) }}</time>
+				<h2>{{ post.title }}</h2>
 			</header>
+
+			<picture class="post-cover m-b-50" role="img">
+				<source
+					media="(max-width:640px)"
+					type="image/webp"
+					srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
+					width="640"
+					height="900"
+				/>
+				<source
+					media="(max-width:640px)"
+					srcset="{{ img | resize( 640, 600, 'center' ) }}"
+					width="640"
+					height="900"
+				/>
+				<source
+					media="(min-width: 641px) and (max-width:1023px)"
+					type="image/webp"
+					srcset="{{ img | resize( 1024, 600, 'center' ) | towebp }}"
+					width="1024"
+					height="600"
+				/>
+				<source
+					media="(min-width: 641px) and (max-width:1023px)"
+					srcset="{{ img | resize( 1024, 600, 'center' ) }}"
+					width="1024"
+					height="600"
+				/>
+				<source
+					media="(min-width:1024px)"
+					type="image/webp"
+					srcset="{{ img | resize( 1135, 500, 'center' ) | towebp }}"
+					width="1135"
+					height="500"
+				/>
+				<img
+					src="{{ img | resize( 1135, 500, 'center' ) }}"
+					alt="{{ img.title }}"
+					width="1135"
+					height="500"
+					loading="{{ fields.disable_lazy_load ? 'eager' : 'lazy' }}"
+				/>
+			</picture>
+
 			<div class="entry-content">
 
 				{{ post.content }}
@@ -34,9 +78,9 @@
 			</div>
 		</div>
 
-		<aside class="item entry-sidebar" role="form">
+		{# <aside class="item entry-sidebar" role="form">
 			{% include 'views/parts/sidebar.twig' %}
-		</aside>
+		</aside> #}
 	</div>
 </article>
 

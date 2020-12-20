@@ -313,6 +313,22 @@ h1, h2, h3, h4, h5, h6 {
                 opacity: 0.1;
             }
         }
+
+        &.article-entry-header {
+            text-align: center;
+
+            h2 {
+                line-height: 1.2;
+            }
+
+            time {
+                position: relative !important;
+                font-size: 16px;
+                opacity: 1 !important;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
     }
 
     &-columns {
@@ -331,6 +347,65 @@ h1, h2, h3, h4, h5, h6 {
         @media screen and (max-width: 1024px) {
             grid-template-columns: 1fr;
             grid-gap: 60px;
+        }
+    }
+
+    &-onecolumn {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: minmax(300px, 880px);
+        grid-gap: 150px;
+        @extend .animation;
+        justify-content: center;
+        justify-items: center;
+
+        @media screen and (max-width: 1800px) {
+            grid-template-columns: minmax(300px, 760px);
+            grid-gap: 75px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            grid-gap: 60px;
+        }
+
+        p, h2, h3, h4, h5, h6, ul, ol {
+            max-width: none !important;
+            padding: 0 !important;
+        }
+
+        .entry-content {
+            h2, h3, h4, h5, h6 {
+                position: relative;
+                padding-bottom: 20px !important;
+
+                &:before {
+                    content: "";
+                    width: 60px;
+                    height: 3px;
+                    border-radius: 10px;
+                    background-color: #{var(--color-primary)};
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        .post-cover {
+            display: block;
+            font-size: 0;
+            line-height: 0;
+            @media screen and (min-width: 1800px) {
+                width: calc(100% + 200px);
+                transform: translateX(-100px);
+            }
+
+            img, source {
+                border-radius: 20px;
+                height: auto;
+                max-width: 100% !important;
+            }
         }
     }
 }
