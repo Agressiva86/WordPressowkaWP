@@ -1,0 +1,10 @@
+<a class="edition {{ extra_class }}" href="{{ post.link }}">
+	<div>
+		<time>{{ post.date(options.date_format) }}</time>
+		<p>{{ post.title }}</p>
+		<h2>
+			<span>{{ __( 'Tematy:', 'sasquatch' ) }}</span>
+			{{ post.tags() | join(', ')}}
+		</h2>
+	</div>
+</a>

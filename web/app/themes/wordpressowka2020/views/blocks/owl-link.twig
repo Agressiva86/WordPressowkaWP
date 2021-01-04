@@ -1,0 +1,16 @@
+{#
+  Title: owl-link
+  Description: Link
+  Category: formatting
+  Icon: admin-comments
+  Keywords: link
+  Mode: preview
+  Align: center
+  PostTypes: post articles
+  SupportsMode: true
+  SupportsMultiple: true
+  SupportsAlign: center
+#}
+
+{% set template = 'views/blocks/link-' ~fields.tryb ~ '.twig' %}
+{% include [ template, 'views/blocks/link-default.twig' ] %}

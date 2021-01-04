@@ -1,0 +1,20 @@
+<section class="newsletter {{ nslclass }}" id="newsletter">
+  <div class="inner">
+    <h2>{{ __( 'Zapisz się na Newsletter', 'sasquatch' ) }}</h2>
+    <p>
+      {{ 'Dzięki Newsletterowi WordPressówki będziesz na bieżąco z informacjami na temat WordPressa! Jako pierwszy dowiesz się o nowym wydaniu. Dołącz do naszych subskrybentów! :)', 'sasquatch' ) }}
+    </p>
+  </div>
+
+  <form action="https://wordpressowka.us20.list-manage.com/subscribe/post?u=bc1349d1dfefba72bdd8c3974&amp;id=f8311d93e4" method="post" name="mc-embedded-subscribe-form" class="validate">
+    <label><input type="name" placeholder="{{ __( 'Twoje imię', 'sasquatch' ) }}" name="NAME" required></label>
+    <label><input type="email" placeholder="{{ __( 'Twój adres email', 'sasquatch' ) }}" name="EMAIL" required></label>
+    <input type="submit" value="{{ __( 'Zapisz się teraz!', 'sasquatch' ) }}"  name="subscribe">
+  </form>
+
+  <div class="inner small">
+    <p>{{ __( 'Zapisując się na newsletter zgadzam się na otrzymywanie Newslettera od WordPressówki.', 'sasquatch' ) }}</p>
+    <p>{{ __( 'Po naciśnięciu „Zapisz się teraz!" otrzymasz na swój adres e-mail prośbę o potwierdzenie zapisu.', 'sasquatch' ) }}</p>
+  </div>
+</section>
+

@@ -1,0 +1,48 @@
+{% extends "/layouts/base.twig" %}
+
+{% block main %}
+<article class="single-entry-wrapper">
+	<header class="single-entry-header" role="heading" aria-level="1">
+		<h2>{{ __( 'Oops, niestety ten adres nie istnieje :(', 'sasquatch' ) }}</h2>
+	</header>
+	<div class="single-entry-columns">
+		<div class="item entry-content" role="article">
+			<p>
+				{{ __( 'Ale nic straconego, możesz wrócić do strony głównej klikając w logo WordPressówki.', 'sasquatch' ) }}
+			</p>
+			<p>
+				{{ __( 'Zachęcamy Cię do zapisu na nasz Newsletter, dzięki niemu trafisz zawsze pod odpowiedni adres z najnowszym wydaniem!', 'sasquatch' ) }}
+			</p>
+			<form
+				action="{{ options.mailchimp_url }}"
+				method="post" name="mc-embedded-subscribe-form" class="validate">
+				<label><input type="name" placeholder="{{ __( 'Twoje imię', 'sasquatch' ) }}" name="NAME" required></label>
+				<label><input type="email" placeholder="{{ __( 'Twój adres email', 'sasquatch' ) }}" name="EMAIL" required></label>
+				<div>
+					<input type="submit" value="{{ __( 'Zapisz się teraz!', 'sasquatch' ) }}" class="button color-primary small" name="subscribe">
+				</div>
+			</form>
+
+			<p>
+				{% if options.reguly_newslettera %}
+					<small role="alert">
+						{{ options.reguly_newslettera }}
+					</small>
+				{% endif %}
+			</p>
+		</div>
+
+		<aside class="item entry-sidebar">
+			<div class="sidebar">
+				{% if options.tytul_numer_sidebar %}
+					<h3>{{ options.tytul_numer_sidebar }}</h3>
+				{% endif %}
+
+				{% for post in other_posts %}
+					{% include 'views/parts/older-entries.twig' with { 'extra_class': 'block' } %}
+				{% endfor %}
+			</div>
+		</aside>
+	</div>
+</article>
+{% endblock %}

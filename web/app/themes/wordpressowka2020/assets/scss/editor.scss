@@ -1,0 +1,65 @@
+@charset 'utf-8';
+@import "components/fonts.scss";
+@import "components/variables.scss";
+
+.wp-block {
+    max-width: 1280px;
+}
+
+.block-editor-block-list__layout {
+    --color-white: #ffffff;
+    --color-form-bg: #ffffff;
+    --color-form-input: #B4B7CC;
+    --color-switcher: rgb(30, 30, 30);
+    --color-switcher-bg: #ffffff;
+    --color-bg: #ffffff;
+    --color-bg-offset: #F7F7FB;
+    --color-text: rgb(30, 30, 30);
+    --color-primary: rgb(30, 30, 30);
+    --color-secondary: rgb(30, 30, 30);
+    --color-link: rgb(30, 30, 30);
+    --color-shadow: rgb(30, 30, 30);
+
+    @import "components/reset.scss";
+    @import "components/standards.scss";
+    @import "components/wordpressowka2020.scss";
+
+    .wordpressowka-block p {
+        font-family: $font-poppins;
+    }
+}
+
+p.wp-block-paragraph {
+    padding: 0 40px;
+    margin-bottom: 40px;
+    @extend .animation;
+    line-height: 1.6;
+    color: rgb(30, 30, 30);
+    font-family: $font-poppins;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0px;
+    }
+
+    @media screen and (min-width: 1366px) {
+        max-width: 760px;
+    }
+}
+
+.wp-block-heading {
+    padding: 0 40px;
+    margin-bottom: 40px;
+    @extend .animation;
+    line-height: 1.6;
+    font-family: $font-poppins;
+    font-weight: 700;
+    color:rgb(30, 30, 30);
+
+    @media screen and (max-width: 1024px) {
+        padding: 0px;
+    }
+
+    @media screen and (min-width: 1366px) {
+        max-width: 760px;
+    }
+}

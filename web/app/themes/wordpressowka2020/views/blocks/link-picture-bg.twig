@@ -1,0 +1,54 @@
+{% set img = Image( fields.obrazek ) %}
+<div class="wordpressowka-block">
+    <div class="wordpressowka-link photobg" role="link">
+        <picture role="img">
+			<source
+				media="(max-width:640px)"
+				type="image/webp"
+				srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
+				width="640"
+				height="900"
+			/>
+			<source
+				media="(max-width:640px)"
+				srcset="{{ img | resize( 640, 600, 'center' ) }}"
+				width="640"
+				height="900"
+			/>
+			<source
+				media="(min-width: 641px) and (max-width:1023px)"
+				type="image/webp"
+				srcset="{{ img | resize( 1024, 600, 'center' ) | towebp }}"
+				width="1024"
+				height="600"
+			/>
+			<source
+				media="(min-width: 641px) and (max-width:1023px)"
+				srcset="{{ img | resize( 1024, 600, 'center' ) }}"
+				width="1024"
+				height="600"
+			/>
+			<source
+				media="(min-width:1024px)"
+				type="image/webp"
+				srcset="{{ img | resize( 1135, 500, 'center' ) | towebp }}"
+				width="1135"
+				height="500"
+			/>
+			<img
+				src="{{ img | resize( 1135, 500, 'center' ) }}"
+				alt="{{ img.title }}"
+				width="1135"
+				height="500"
+				loading="{{ fields.disable_lazy_load ? 'eager' : 'lazy' }}"
+			/>
+        </picture>
+        <div class="inner">
+			{% if fields.header %}
+            	<h2>{{ fields.header }}</h2>
+			{% endif %}
+			{{ fields.opis }}
+			<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank" rel="noopener">{{ fields.link.title }}</a>
+        </div>
+    </div>
+</div>

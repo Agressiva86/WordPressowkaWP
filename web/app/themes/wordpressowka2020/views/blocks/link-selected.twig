@@ -1,0 +1,15 @@
+<div class="wordpressowka-block">
+	<div class="wordpressowka-link shadow-bg" role="link">
+		<div class="inner">
+			{% if fields.header %}
+				<h2>{{ fields.header }}</h2>
+			{% endif %}
+			{{ fields.opis }}
+			<div>
+				<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank" rel="noopener">
+					{{ fields.link.title }}
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
