@@ -2,7 +2,24 @@
 require_once __DIR__ . '/vendor/autoload.php';
 $timber = new \Timber\Timber();
 if ( class_exists( 'Timber' ) ) {
-	Timber::$cache = true;
+	add_filter(
+		'timber/twig/environment/options',
+		function( $options ) {
+			$options['cache'] = true;
+			return $options;
+		}
+	);
+
+	add_filter(
+		'timber/post/classmap',
+		function( $classmap ) {
+			$custom_classmap = array(
+				'post' => OwlPost::class,
+			);
+
+			return array_merge( $classmap, $custom_classmap );
+		}
+	);
 }
 
 $sage_includes = array(
@@ -57,7 +74,7 @@ function theme_change_comment_field_names( $translated_text, $text, $domain ) {
 			case 'Articles':
 				$translated_text = 'Artykuły';
 				break;
-			case 'artykuly':
+			case 'articles':
 				$translated_text = 'artykuly';
 				break;
 		}
