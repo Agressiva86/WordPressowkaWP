@@ -436,6 +436,20 @@ h1, h2, h3, h4, h5, h6 {
         @media screen and (min-width: 1366px) {
             max-width: 760px;
         }
+
+        code {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            padding: .1rem .3rem .2rem;
+            border-radius: .2rem;
+            background: rgba(#152C5B, 0.07);
+
+            html[data-theme="dark"] & {
+                background: rgba(#FFFFFF, 0.1);
+            }
+        }
     }
 
     .wp-block-separator {
