@@ -17,7 +17,7 @@ return array(
 	'config'   => array(
 		'show_in_rest' => true,
 		'rewrite' => array(
-			'slug' => __( 'artykuly', 'sasquatch' ),
+			'slug' => __( 'articles', 'sasquatch' ),
 		),
 	),
 );
