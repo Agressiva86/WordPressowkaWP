@@ -13,7 +13,7 @@ export default {
 
 		if (document.getElementsByClassName('wordpressowka-code').length > 0 ) {
 			pullScript('/app/themes/wordpressowka2020/static/prism.js', () => {}, 'prismjs');
-			pullStyle('/app/themes/wordpressowka2020/static/prism.css', () => {}, 'prismcss');
+			pullStyle('/app/themes/wordpressowka2020/static/prism2.css', () => {}, 'prismcss');
         }
 
         search_animation();
