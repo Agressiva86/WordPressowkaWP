@@ -17,41 +17,41 @@
 				<source
 					media="(max-width:640px)"
 					type="image/webp"
-					srcset="{{ img | resize( 640, 600, 'center' ) | towebp }}"
+					srcset="{{ img | resize( 640, 320, 'center' ) | towebp }}"
 					width="640"
-					height="900"
+					height="320"
 				/>
 				<source
 					media="(max-width:640px)"
-					srcset="{{ img | resize( 640, 600, 'center' ) }}"
+					srcset="{{ img | resize( 640, 320, 'center' ) }}"
 					width="640"
-					height="900"
+					height="320"
 				/>
 				<source
 					media="(min-width: 641px) and (max-width:1023px)"
 					type="image/webp"
-					srcset="{{ img | resize( 1024, 600, 'center' ) | towebp }}"
+					srcset="{{ img | resize( 1024, 512, 'center' ) | towebp }}"
 					width="1024"
-					height="600"
+					height="512"
 				/>
 				<source
 					media="(min-width: 641px) and (max-width:1023px)"
-					srcset="{{ img | resize( 1024, 600, 'center' ) }}"
+					srcset="{{ img | resize( 1024, 512, 'center' ) }}"
 					width="1024"
-					height="600"
+					height="512"
 				/>
 				<source
 					media="(min-width:1024px)"
 					type="image/webp"
-					srcset="{{ img | resize( 1135, 500, 'center' ) | towebp }}"
-					width="1135"
-					height="500"
+					srcset="{{ img | resize( 1200, 600, 'center' ) | towebp }}"
+					width="1200"
+					height="600"
 				/>
 				<img
-					src="{{ img | resize( 1135, 500, 'center' ) }}"
+					src="{{ img | resize( 1200, 600, 'center' ) }}"
 					alt="{{ img.title }}"
-					width="1135"
-					height="500"
+					width="1200"
+					height="600"
 					loading="{{ fields.disable_lazy_load ? 'eager' : 'lazy' }}"
 				/>
 			</picture>
