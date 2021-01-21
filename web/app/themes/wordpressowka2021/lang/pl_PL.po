@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-10-15 00:27+0200\n"
+"PO-Revision-Date: 2020-10-15 00:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: functions.php:22
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: views/blocks/nsl.twig:4
+msgid "Dołącz do WordPressowych Sówek"
+msgstr ""
+
+#: views/blocks/nsl.twig:5
+msgid ""
+"Zapisz się na newsletter i bądź na bieżąco z aktualnymi informacjami na "
+"temat WordPressa! Jako pierwszy dowiesz się o nowym wydaniu WordPressówki."
+msgstr ""
+
+#: views/blocks/nsl.twig:6 views/parts/newsletter.twig:3
+msgid "Zapisz się na Newsletter"
+msgstr ""
+
+#: views/parts/editions-scroll.twig:2
+msgid "Zobacz inne wydania:"
+msgstr ""
+
+#: views/parts/editions-scroll.twig:17
+msgid "Zobacz wszystkie wydania"
+msgstr ""
+
+#: views/parts/header.twig:5
+msgid "Strona główna"
+msgstr ""
+
+#: views/parts/header.twig:57
+msgid "Zmień tryb strony"
+msgstr ""
+
+#: views/parts/newsletter.twig:10 views/templates/404.twig:19
+msgid "Twoje imię"
+msgstr ""
+
+#: views/parts/newsletter.twig:11 views/parts/sidebar.twig:18
+#: views/templates/404.twig:20 views/templates/nsl.twig:22
+msgid "Twój adres email"
+msgstr ""
+
+#: views/parts/newsletter.twig:12 views/parts/sidebar.twig:23
+#: views/templates/404.twig:22 views/templates/nsl.twig:28
+msgid "Zapisz się teraz!"
+msgstr ""
+
+#: views/parts/newsletter.twig:16
+msgid ""
+"Zapisując się na newsletter zgadzam się na otrzymywanie Newslettera od "
+"WordPressówki."
+msgstr ""
+
+#: views/parts/newsletter.twig:17
+msgid ""
+"Po naciśnięciu „Zapisz się teraz!\" otrzymasz na swój adres e-mail prośbę o "
+"potwierdzenie zapisu."
+msgstr ""
+
+#: views/parts/older-entries.twig:6
+msgid "Tematy:"
+msgstr ""
+
+#: views/parts/sidebar.twig:14 views/templates/nsl.twig:16
+msgid "Twoje imię:"
+msgstr ""
+
+#: views/parts/sidebar.twig:16 views/templates/nsl.twig:18
+msgid "Tutaj podaj swoje imię"
+msgstr ""
+
+#: views/parts/sidebar.twig:20 views/templates/nsl.twig:24
+msgid "Tutaj podaj swój adres email"
+msgstr ""
+
+#: views/templates/404.twig:6
+msgid "Oops, niestety ten adres nie istnieje :("
+msgstr ""
+
+#: views/templates/404.twig:11
+msgid ""
+"Ale nic straconego, możesz wrócić do strony głównej klikając w logo "
+"WordPressówki."
+msgstr ""
+
+#: views/templates/404.twig:14
+msgid ""
+"Zachęcamy Cię do zapisu na nasz Newsletter, dzięki niemu trafisz zawsze pod "
+"odpowiedni adres z najnowszym wydaniem!"
+msgstr ""
+
+#: views/templates/index.twig:19
+msgid "Podoba Ci się to wydanie? Podaj dalej!"
+msgstr ""
+
+#: views/templates/index.twig:23
+msgid "Udostępnij na Facebooku"
+msgstr ""
+
+#: views/templates/index.twig:27
+msgid "Udostępnij na Linkedin"
+msgstr ""
+
+#: views/templates/index.twig:31
+msgid "Udostępnij na Twitterze"
+msgstr ""
+
+#: views/templates/tpl-editions.twig:10
+msgid "Nowsze wydania"
+msgstr ""
+
+#: views/templates/tpl-editions.twig:16
+msgid "Wcześniejsze wydania"
+msgstr ""
+
+#~ msgid "test"
+#~ msgstr "plum"

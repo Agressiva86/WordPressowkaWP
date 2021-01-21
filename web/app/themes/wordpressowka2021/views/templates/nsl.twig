@@ -1,0 +1,54 @@
+{% extends "/layouts/base.twig" %}
+
+{% block main %}
+
+<article class="single-entry-wrapper">
+	<header class="single-entry-header" role="heading" aria-level="1">
+		<h2>{{ post.title }}</h2>
+	</header>
+	<div class="single-entry-columns">
+		<div class="item entry-content" role="article">
+			{{ post.content }}
+			<form
+				action="{{ options.mailchimp_url }}"
+				method="post" name="mc-embedded-subscribe-form" class="validate">
+				<div class="">
+					<label for="nsl-name">{{ __( 'Twoje imię:', 'sasquatch' ) }}</label>
+					<div class="input">
+						<input id="nsl-name" type="name" placeholder="{{ __( 'Tutaj podaj swoje imię', 'sasquatch' ) }}" name="NAME" required>
+					</div>
+				</div>
+				<div class="">
+					<label for="nsl-email">{{ __( 'Twój adres email', 'sasquatch' ) }}:</label>
+					<div class="input">
+						<input id="nsl-email" type="email" placeholder="{{ __( 'Tutaj podaj swój adres email', 'sasquatch' ) }}" name="EMAIL" required>
+					</div>
+				</div>
+				<div>
+					<input type="submit" value="{{ __( 'Zapisz się teraz!', 'sasquatch' ) }}" class="button color-primary" name="subscribe">
+				</div>
+			</form>
+
+			<p>
+				{% if options.reguly_newslettera %}
+					<small role="alert">
+						{{ options.reguly_newslettera }}
+					</small>
+				{% endif %}
+			</p>
+		</div>
+
+		<aside class="item entry-sidebar">
+			<div class="sidebar">
+				{% if options.tytul_numer_sidebar %}
+					<h3>{{ options.tytul_numer_sidebar }}</h3>
+				{% endif %}
+
+				{% for post in other_posts %}
+					{% include 'views/parts/older-entries.twig' with {'extra_class': 'block' } %}
+				{% endfor %}
+			</div>
+		</aside>
+	</div>
+</article>
+{% endblock %}

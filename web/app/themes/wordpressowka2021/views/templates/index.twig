@@ -1,0 +1,45 @@
+{% extends "/layouts/base.twig" %}
+
+{% block main %}
+
+
+<article class="single-entry-wrapper">
+	<div class="single-entry-columns">
+		<div class="item" role="article">
+			{% include 'parts/site-name.twig' %}
+
+			<header class="single-entry-header" role="heading" aria-level="1">
+				<h2>{{ post.title }}</h2>
+				<time>{{ post.date( options.date_format ) }}</time>
+			</header>
+			<div class="entry-content">
+
+				{{ post.content }}
+
+				<h4>{{ __( 'Podoba Ci się to wydanie? Podaj dalej!', 'sasquatch' ) }}</h4>
+				<div class="share">
+					<a href="{{ post.link | fb_share_url }}" target="_blank" rel="noopener">
+						{% include 'views/parts/icons/facebook.twig' %}
+						{{ __( 'Udostępnij na Facebooku', 'sasquatch' ) }}
+					</a>
+					<a href="{{ post.link | ln_share_url }}" target="_blank" rel="noopener">
+						{% include 'views/parts/icons/linkedin.twig' %}
+						{{ __( 'Udostępnij na Linkedin', 'sasquatch' ) }}
+					</a>
+					<a href="{{ post.link | tt_share_url }}" target="_blank" rel="noopener">
+						{% include 'views/parts/icons/twitter.twig' %}
+						{{ __( 'Udostępnij na Twitterze', 'sasquatch' ) }}
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<aside class="item entry-sidebar" role="form">
+			{% include 'views/parts/sidebar.twig' %}
+		</aside>
+	</div>
+</article>
+
+{% include 'views/parts/editions-scroll.twig' %}
+
+{% endblock %}

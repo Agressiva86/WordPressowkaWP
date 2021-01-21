@@ -1,0 +1,714 @@
+@import "fonts.scss";
+
+$assets: "../../dist/images";
+
+// responsive font size
+@mixin fluid-font($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == "vh", "height", "width");
+    $min-breakpoint: $min / $responsive-unitless * 100;
+
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        font-size: $min;
+    }
+
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            font-size: $max;
+        }
+    }
+
+    @if $fallback {
+        font-size: $fallback;
+    }
+
+    font-size: $responsive;
+}
+
+@mixin placeholder {
+    @include optional-at-root("::-webkit-input-placeholder") {
+        @content;
+    }
+
+    @include optional-at-root(":-moz-placeholder") {
+        @content;
+    }
+
+    @include optional-at-root("::-moz-placeholder") {
+        @content;
+    }
+
+    @include optional-at-root(":-ms-input-placeholder") {
+        @content;
+    }
+}
+
+.after-shadow {
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(20px);
+    z-index: -1;
+    height: 20px;
+    border-radius: 50px;
+    background: #{var(--color-shadow)};
+    opacity: 0.3;
+    filter: blur(30px);
+    @extend .animation;
+}
+
+
+body {
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    padding: 0;
+    margin: 0;
+    font-family: $font-poppins;
+    background-color: #{var(--color-bg)};
+    background: linear-gradient(
+        to right,
+        #{var(--color-bg-offset)} 0%,
+        #{var(--color-bg)} 100%
+    );
+    @include fluid-font(3vw, 16px, 21px, 35px);
+
+    @media screen and (min-width: 1920px) {
+        max-width: 2200px;
+        padding: 0 100px;
+        margin: 0 auto;
+    }
+
+    @media screen and (min-width: 1367px) {
+        padding: 0 100px;
+        line-height: 1.55;
+    }
+
+    @media screen and (min-width: 681px) and (max-width: 1366px) {
+        padding: 0 50px;
+        line-height: 1.45;
+    }
+
+    @media screen and (max-width: 680px) {
+        padding: 0px 30px;
+        line-height: 1.55;
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+input[type="search"],
+textarea,
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+// mixins
+@mixin transition($transition-property, $transition-time, $method) {
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin gradient($fromColor, $toColor) {
+    background: $toColor; /* Fallback Color */
+    background: linear-gradient(to bottom, $fromColor, $toColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin gradient-skos($fromColor, $toColor) {
+    background: $toColor; /* Fallback Color */
+    background: linear-gradient(45deg, $fromColor, $toColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin gradient-skew($fromColor, $toColor) {
+    background: $toColor; /* Fallback Color */
+    background: linear-gradient(25deg, $fromColor 50%, $toColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin horizontal($fromColor, $toColor) {
+    background: $fromColor;
+    background: linear-gradient(
+        to right,
+        $fromColor 0%,
+        $fromColor 50%,
+        $toColor 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$fromColor}', endColorstr='#{$toColor}',GradientType=1 );
+}
+
+@mixin manycolors($gradient-angle, $colors-list) {
+    background-image: linear-gradient($gradient-angle, $colors-list);
+}
+
+@mixin bgcover {
+    background-size: cover !important;
+}
+
+@mixin bgcontain {
+    background-size: contain !important;
+}
+
+@mixin selection {
+    ::-moz-selection {
+        @content;
+    }
+    ::selection {
+        @content;
+    }
+}
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root("::-webkit-input-placeholder") {
+        @content;
+    }
+
+    @include optional-at-root(":-moz-placeholder") {
+        @content;
+    }
+
+    @include optional-at-root("::-moz-placeholder") {
+        @content;
+    }
+
+    @include optional-at-root(":-ms-input-placeholder") {
+        @content;
+    }
+}
+
+@keyframes arrowmove {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@function px-vw($px) {
+    $vw: (1920 * 0.01) * 1px;
+    @return ($px / $vw) * 1vw;
+}
+
+// font sizes
+$font-sizes: (12, 13, 14, 15, 16, 17, 18, 20, 22, 24, 27, 30, 38, 44, 68, 90);
+@each $size in $font-sizes {
+    .font-#{$size} {
+        font-size: #{$size}px;
+    }
+}
+
+$spaceamounts: (
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    60,
+    70,
+    75,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    200
+); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .m-#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+
+        .p-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px !important;
+        }
+    }
+}
+
+// zindex-classes
+$zindexvalues: (1, 2, 3, 4, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+@each $value in $zindexvalues {
+    .z-index-#{$value} {
+        z-index: #{$value};
+    }
+}
+
+// dodanie transition o jednolitym czasie wywołania
+.animation {
+    @include transition(all, 0.4s, ease-out);
+}
+
+.animation-fast {
+    @include transition(all, 0.2s, ease-out);
+}
+
+.animation-slow {
+    @include transition(all, 0.65s, ease-out);
+}
+
+// dodanie animacji transition dla linków
+a {
+    @extend .animation;
+    @extend .nodecoration;
+}
+
+.all-link {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.line-normal {
+    line-height: normal;
+}
+
+.underline {
+    text-decoration: underline !important;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.nodecoration {
+    text-decoration: none !important;
+}
+
+// nadanie wielkich liter
+.big {
+    text-transform: uppercase !important;
+}
+
+// tekst normalny
+.normal {
+    text-transform: none;
+}
+
+// tekst pogrubiony
+.weight-200 {
+    font-weight: 200 !important;
+
+    p,
+    li,
+    div,
+    a,
+    strong {
+        font-weight: 200 !important;
+    }
+}
+
+.weight-300 {
+    font-weight: 300 !important;
+
+    p,
+    li,
+    div,
+    a,
+    strong {
+        font-weight: 300 !important;
+    }
+}
+
+.weight-400 {
+    font-weight: 400 !important;
+
+    p,
+    li,
+    div,
+    a,
+    strong {
+        font-weight: 400 !important;
+    }
+}
+
+.weight-500 {
+    font-weight: 500 !important;
+
+    p,
+    li,
+    div,
+    a,
+    strong {
+        font-weight: 500 !important;
+    }
+}
+
+.weight-600 {
+    font-weight: 600 !important;
+
+    p,
+    li,
+    div,
+    a,
+    strong {
+        font-weight: 600 !important;
+    }
+}
+
+.weight-700 {
+    font-weight: 700 !important;
+
+    p,
+    li,
+    div,
+    a,
+    strong {
+        font-weight: 700 !important;
+    }
+}
+
+.weight-800 {
+    font-weight: 800 !important;
+
+    p,
+    li,
+    div,
+    a,
+    strong {
+        font-weight: 800 !important;
+    }
+}
+
+.weight-900 {
+    font-weight: 900 !important;
+
+    p,
+    li,
+    div,
+    a,
+    strong {
+        font-weight: 900 !important;
+    }
+}
+
+// tekst pochyły
+.italic {
+    font-style: italic;
+}
+
+.spacing {
+    letter-spacing: rem-calc(1);
+}
+
+.spacing-4 {
+    letter-spacing: rem-calc(4.29);
+}
+
+.border-radius {
+    border-radius: $global-radius;
+}
+
+.border-radius-5 {
+    border-radius: rem-calc(5);
+}
+
+.border-round {
+    border-radius: rem-calc(90);
+}
+
+.border-circle {
+    border-radius: 50%;
+}
+
+.border {
+    &-solid {
+        border-style: solid;
+    }
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+// nadanie wysokości na 100% viewport
+.height100vh {
+    height: 100vh;
+}
+
+// nadanie szerokości na 100% viewport
+.width100vw {
+    width: 100vw;
+}
+
+// wyzerowanie domyślnych ustawień dla UL w zurb foundation
+.clear-ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+// background z obrazkiem gdzie centrowany jest w pionie i poziomie oraz ustawiany jako wypełnienie cover dla przestrzeno
+.photobg {
+    background-repeat: no-repeat;
+    @include bgcover;
+    background-position: center center !important;
+    position: relative;
+    z-index: 1;
+
+    &-top {
+        background-position: top center !important;
+    }
+
+    &-middle-top {
+        background-position: 50% 10% !important;
+    }
+
+    &-bottom {
+        background-position: bottom center !important;
+    }
+}
+
+// ustawienie warstwy o wyższym z-indexie, szczególnie przydatne gdy element nadrzędny - rodzic ma użyty before/after z warstwą kryjącą
+.photobg-inner {
+    position: relative;
+    z-index: 12;
+    width: 100%;
+    height: 100%;
+}
+
+// usyawienie before dla 100% wysokości i szerokości, szczególnie przydatne gdy na zdjęcie w tle chcemy nałożyć warstwę w kolorze lub gradiencie kryjącym
+.before-absolute,
+.after-absolute {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+// nadanie elementowi display: table. Wygodne w stosowaniu razem z equalizerem
+.display-table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+// nadanie elementowi display: table-cell, szczególnie przydatne gdy element nadrzędny - rodzic ma użyty .display-table. Wyrównanie elemntów w poziomie
+.display-table-cell {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    position: relative;
+    z-index: 12;
+
+    // Wyrównanie elemntów do dolnej krawędzi
+    &.v-bottom {
+        vertical-align: bottom;
+    }
+
+    // Wyrównanie elemntów do górnej krawędzi
+    &.v-top {
+        vertical-align: top;
+    }
+}
+// nadanie elementowi display: inline-block
+.display-inline-block {
+    display: inline-block;
+}
+
+// nadanie elementowi display: inline.
+.display-inline {
+    display: inline;
+}
+
+// nadanie elementowi display: block o 100% szerokości.
+.display-block {
+    display: block;
+    width: 100%;
+}
+
+// nadanie elementowi display: none
+.display-none {
+    display: none;
+}
+
+// domyślne wartości dla shadow w projekcie
+.noborder {
+    border: none !important;
+}
+
+// pozycja relative
+.position-relative {
+    position: relative;
+}
+
+//pozycja absolutna
+.position-absolute {
+    position: absolute;
+}
+
+//pozycja fixed
+.position-fixed {
+    position: fixed;
+}
+
+.o-hidden {
+    overflow: hidden;
+}
+
+.o-x-hidden {
+    overflow-x: hidden;
+}
+
+.o-y-hidden {
+    overflow-y: hidden;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.z-index20 {
+    z-index: 20;
+    position: relative;
+}
+
+.flex-row-nowrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    &.start {
+        justify-content: flex-start;
+    }
+
+    &.end {
+        justify-content: flex-end;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+}
+
+.flex-column-nowrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+    &.start {
+        justify-content: flex-start;
+    }
+
+    &.end {
+        justify-content: flex-end;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+
+    * {
+        @media all and (-ms-high-contrast: none) {
+            flex-shrink: 0;
+            width: 100%;
+        }
+    }
+}
+
+.flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &.start {
+        justify-content: flex-start;
+    }
+
+    &.end {
+        justify-content: flex-end;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+
+    &.between {
+        justify-content: space-between;
+    }
+}
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+.barba-leave-active,
+.barba-enter-active {
+    transition: opacity 450ms ease;
+}
+
+.barba-leave,
+.barba-enter-to {
+    opacity: 1;
+}
+
+.barba-enter,
+.barba-leave-to {
+    opacity: 0;
+}

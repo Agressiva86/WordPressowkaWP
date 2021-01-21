@@ -1,0 +1,45 @@
+{#
+  Title: Guest Wrapper
+  Description: Wrapper for guest editor posts
+  Category: formatting
+  Icon: admin-users
+  Keywords: wrapper
+  Mode: preview
+  Align: center
+  PostTypes: post articles
+  SupportsMode: true
+  SupportsMultiple: true
+  SupportsAlign: center
+  SupportsJSX: true
+#}
+{% set img = Image( fields.photo ) %}
+<div class="wordpressowka-block">
+	<div class="wordpressowka-guest">
+		<div class="face">
+			<picture role="img">
+			<source
+				type="image/webp"
+				srcset="{{ img | resize( 230, 230, 'center' ) | towebp }}"
+				width="230"
+				height="230"
+			/>
+			<img
+				src="{{ img | resize( 230, 230, 'center' ) }}"
+				alt="{{ img.title }}"
+				width="230"
+				height="230"
+				loading="lazy"
+			/>
+			</picture>
+			<strong>{{ fields.name }}</strong>
+			<div class="small">
+				{{ fields.description }}
+			</div>
+		</div>
+		<div class="wordpressowka-guest-links">
+			<InnerBlocks
+				allowedBlocks="{{ ['acf/owl-link', 'core/paragraph', 'core/image', 'core/heading'] | json_encode() | escape('html_attr') }}"
+			/>
+		</div>
+	</div>
+</div>

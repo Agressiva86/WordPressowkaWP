@@ -1,0 +1,54 @@
+<div class="sidebar">
+
+	{% if options.tytul_newslettera %}
+		<h3>{{ options.tytul_newslettera }}</h3>
+	{% endif %}
+
+	{% if options.opis_newslettera %}
+		{{ options.opis_newslettera | wpautop }}
+	{% endif %}
+
+	<form
+		action="{{ options.mailchimp_url }}"
+		method="post" name="mc-embedded-subscribe-form" class="validate">
+		<label for="nsl-name">{{ __( 'Twoje imię:', 'sasquatch' ) }}</label>
+		<div class="input">
+			<input id="nsl-name" type="name" placeholder="{{ __( 'Tutaj podaj swoje imię', 'sasquatch' ) }}" name="NAME" required>
+		</div>
+		<label for="nsl-email">{{ __( 'Twój adres email', 'sasquatch' ) }}:</label>
+		<div class="input">
+			<input id="nsl-email" type="email" placeholder="{{ __( 'Tutaj podaj swój adres email', 'sasquatch' ) }}" name="EMAIL" required>
+		</div>
+		<div>
+			<input type="submit" value="{{ __( 'Zapisz się teraz!', 'sasquatch' ) }}" class="button color-primary small" name="subscribe">
+		</div>
+	</form>
+
+	{% if options.reguly_newslettera %}
+		<small role="alert">
+			{{ options.reguly_newslettera }}
+		</small>
+	{% endif %}
+
+	{% if options.social_media_tytul %}
+		<h3>{{ options.social_media_tytul }}</h3>
+	{% endif %}
+
+	<div class="profiles">
+		{% if options.facebook %}
+			<a href="{{ options.facebook }}" target="_blank" rel="noopener">Facebook</a>
+		{% endif %}
+
+		{% if options.linkedin %}
+			<a href="{{ options.linkedin }}" target="_blank" rel="noopener">Linkedin</a>
+		{% endif %}
+
+		{% if options.instagram %}
+			<a href="{{ options.instagram }}" target="_blank" rel="noopener">Instagram</a>
+		{% endif %}
+
+		{% if options.twitter %}
+			<a href="{{ options.twitter }}" target="_blank" rel="noopener">Twitter</a>
+		{% endif %}
+	</div>
+</div>

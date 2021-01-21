@@ -1,0 +1,23 @@
+<div class="other-editions scroll">
+	<h3>{{ __( 'Zobacz inne wydania:', 'sasquatch' ) }}</h3>
+	{% include 'views/parts/icons/swipe.twig' %}
+
+	<div class="editions-wrapper scroll">
+		<div class="editions-list">
+			{% for post in other_posts %}
+				{% include 'views/parts/older-entries.twig' %}
+			{% endfor %}
+			<div class="all-editions">
+				{% if options.adres_strony_z_wydaniami %}
+					<a
+						href="{{ options.adres_strony_z_wydaniami.url }}"
+						target="{{ options.adres_strony_z_wydaniami.target }}"
+						title="{{ options.adres_strony_z_wydaniami.title }}"
+						class="button color-primary-border small">
+						{{ __( 'Zobacz wszystkie wydania', 'sasquatch' ) }}
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
