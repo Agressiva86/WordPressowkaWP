@@ -15,21 +15,13 @@
 	<div class="header-center">
 		<nav>
 			<ul>
-				<li>
-					<a href="">Wydania</a>
-				</li>
-				<li>
-					<a href="">Artykuły</a>
-				</li>
-				<li>
-					<a href="">Nasi goście</a>
-				</li>
-				<li>
-					<a href="">Zgłoś artykuł</a>
-				</li>
-				<li>
-					<a href="">Newsletter</a>
-				</li>
+				{% for item in menu.header.get_items %}
+					<li>
+						<a href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>
+							{{ item.title }}
+						</a>
+					</li>
+				{% endfor %}
 			</ul>
 		</nav>
 	</div>

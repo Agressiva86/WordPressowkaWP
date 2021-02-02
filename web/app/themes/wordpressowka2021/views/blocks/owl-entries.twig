@@ -1,0 +1,26 @@
+{#
+  Title: Owl older entries
+  Description: Older entries
+  Category: formatting
+  Icon: admin-comments
+  Keywords: entries
+  Mode: preview
+  Align: center
+  PostTypes: post articles page
+  SupportsMode: true
+  SupportsMultiple: false
+  SupportsAlign: center
+#}
+
+<section class="section p-t-100 p-b-100">
+	{% if fields.title %}
+	<h2 class="section-title text-center">
+		{{ fields.title }}
+	</h2>
+	{% endif %}
+	<div class="grid grid-wide grid-gap grid-columns-3">
+		{% for entry in entries %}
+			{% include 'views/parts/entry.twig' %}
+		{% endfor %}
+	</div>
+</section>

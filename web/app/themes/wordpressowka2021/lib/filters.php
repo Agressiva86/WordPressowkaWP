@@ -23,8 +23,8 @@ remove_action( 'wp_head', 'feed_links', 2 );
  */
 function fb_share_url( $url ) {
 	$url = str_replace( 'https://app.wordpressowka.pl/', 'https://wordpressowka.pl/', $url );
-	$url = 'https://www.facebook.com/sharer.php?u='. urlencode( $url );
-    return $url;
+	$url = 'https://www.facebook.com/sharer.php?u=' . urlencode( $url );
+	return $url;
 }
 
 /**
@@ -35,14 +35,14 @@ function fb_share_url( $url ) {
  * @return string
  * @todo other params
  */
-function tt_share_url( $url, $title='' ) {
+function tt_share_url( $url, $title = '' ) {
 	$url = str_replace( 'https://app.wordpressowka.pl/', 'https://wordpressowka.pl/', $url );
-    $url = 'https://twitter.com/intent/tweet?url='. urlencode( $url );
+	$url = 'https://twitter.com/intent/tweet?url=' . urlencode( $url );
 
-    if ( $title != '' ) {
-        $url .= '&text='.urlencode( $title );
-    }
-    return $url;
+	if ( $title != '' ) {
+		$url .= '&text=' . urlencode( $title );
+	}
+	return $url;
 }
 
 /**
@@ -54,6 +54,19 @@ function tt_share_url( $url, $title='' ) {
  */
 function ln_share_url( $url ) {
 	$url = str_replace( 'https://app.wordpressowka.pl/', 'https://wordpressowka.pl/', $url );
-    $url = 'https://www.linkedin.com/shareArticle?url='. urlencode( $url );
-    return $url;
+	$url = 'https://www.linkedin.com/shareArticle?url=' . urlencode( $url );
+	return $url;
 }
+
+add_filter(
+	'timber/acf-gutenberg-blocks-data/owl-entries',
+	function( $context ) {
+		$args               = array(
+			'posts_per_page' => 3,
+			'post_type'      => 'post',
+		);
+		$context['entries'] = Timber::get_posts( $args );
+
+		return $context;
+	}
+);

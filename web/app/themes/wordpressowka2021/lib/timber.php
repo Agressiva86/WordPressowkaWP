@@ -1,6 +1,4 @@
 <?php
-use TwigWrapper\TwigWrapper;
-use CriticalCssProcessor\CriticalCssProcessor;
 /**
  * Conditional tags for Timber
  */

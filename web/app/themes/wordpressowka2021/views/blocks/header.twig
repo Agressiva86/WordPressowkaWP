@@ -1,0 +1,76 @@
+{#
+  Title: Owl header newsletter
+  Description: Header with newsletter
+  Category: formatting
+  Icon: admin-comments
+  Keywords: header
+  Mode: preview
+  Align: center
+  PostTypes: post articles page
+  SupportsMode: true
+  SupportsMultiple: false
+  SupportsAlign: center
+#}
+
+<section class="home-top">
+	<div class="item empty">
+	</div>
+
+	<div class="item newsletter">
+		{% if options.tytul_newslettera %}
+			<h1>{{ options.tytul_newslettera }}</h1>
+		{% endif %}
+		{% if options.opis_newslettera %}
+			{{ options.opis_newslettera | wpautop }}
+		{% endif %}
+
+		<form action="{{ options.mailchimp_url }}" method="post" name="mc-embedded-subscribe-form" class="validate">
+			<div>
+				<label>{{ __( 'Twoje imię', 'sasquatch' ) }}</label>
+				<input type="text" autofocus placeholder="{{ __( 'Podaj swoje imię', 'sasquatch' ) }}">
+			</div>
+			<div>
+				<label>{{ __( 'Twój adres email', 'sasquatch' ) }}</label>
+				<input type="email" placeholder="{{ __( 'Podaj email', 'sasquatch' ) }}">
+			</div>
+			<div>
+				<input type="submit" value="{{ __( 'Zapisz się teraz', 'sasquatch' ) }}">
+			</div>
+		</form>
+		{% if options.reguly_newslettera %}
+		<p>
+			<small>{{ options.reguly_newslettera }}
+		</p>
+		{% endif %}
+	</div>
+	<div class="item photo">
+		<picture>
+			{% set newsletter_image = Image( options.obrazek_newslettera ) %}
+			<source
+				type="image/webp"
+				media="(max-width:640px)"
+				srcset="{{ newsletter_image.src|towebp }}"
+			/>
+			<source
+				media="(max-width:640px)"
+				srcset="{{ newsletter_image.src }}"
+			/>
+			<source
+				media="(min-width: 641px) and (max-width:1023px)"
+				type="image/webp"
+				srcset="{{ newsletter_image.src|towebp }}"
+			/>
+			<source
+				media="(min-width: 641px) and (max-width:1023px)"
+				srcset="{{ newsletter_image.src }}"
+			/>
+			<source
+				type="image/webp"
+				srcset="{{ newsletter_image.src|towebp }}"
+			/>
+			<img
+				src="{{ newsletter_image.src }}"
+			/>
+		</picture>
+	</div>
+</section>

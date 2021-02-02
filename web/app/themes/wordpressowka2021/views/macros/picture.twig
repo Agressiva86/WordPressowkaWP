@@ -1,0 +1,119 @@
+{#
+source_ - source tag
+src - img url
+webp = false - should we also create webp - true / false
+class - class names
+lazy_load = false - should the image be loaded with data-src/data-srcset variant
+lazy_image - the image that should be used until normal image is loaded
+media - media query
+force_jpg - forces using jpg (if webp is set to true this only works for non-webp image)
+#}
+
+{% macro source_( args )  %}
+    {% import _self as picture_helper %}
+
+    {{ picture_helper.wrapper( args, 'source' ) }}
+{% endmacro %}
+
+{#
+img tag
+src - img url
+webp = false - should we also create webp - true / false
+class - class names
+lazy_load = false - should the image be loaded with data-src/data-srcset variant
+lazy_image - the image that should be used until normal image is loaded
+media - media query
+force_jpg - forces using jpg (if webp is set to true this only works for non-webp image)
+#}
+{% macro img( args )  %}
+    {% import _self as picture_helper %}
+
+    {{ picture_helper.wrapper( args, 'img' ) }}
+{% endmacro %}
+
+
+{# helpers #}
+{% macro wrapper( args, type ) %}
+    {% import _self as picture_helper %}
+    {# webp version #}
+    {% if args.webp %}
+        <source
+            type="image/webp"
+            {{ picture_helper.media( args.media ) }}
+
+            {{ picture_helper.class( args.class ) }}
+
+            {{ picture_helper.src( args.src, args.lazy_load, args.lazy_image, true, 'srcset' ) }}
+        />
+    {% endif %}
+
+    {# default version #}
+    <{{ type }}
+        {{ picture_helper.media( args.media ) }}
+
+        {{ picture_helper.class( args.class ) }}
+
+        {{ picture_helper.src( args.src, args.lazy_load, args.lazy_image, false, type == 'img' ? 'src' : 'srcset', args.force_jpg ) }}
+    />
+{% endmacro %}
+
+{% macro media( media ) %}
+    {% if media != '' %}
+        media="{{ media }}"
+    {% endif %}
+{% endmacro %}
+
+{% macro class( class ) %}
+    {% if class != '' %}
+        class="{{ class }}"
+    {% endif %}
+{% endmacro %}
+
+{% macro src( src, lazy_load = false, lazy_image = '#', webp, src_type = 'src', force_jpg ) %}
+    {% if src != '' and lazy_load == false %}
+        {% if webp %}
+            {{ src_type }}="{{ src|towebp }}"
+        {% else %}
+            {% if force_jpg %}
+                {{ src_type }}="{{ src|tojpg }}"
+            {% else %}
+                {{ src_type }}="{{ src }}"
+            {% endif %}
+        {% endif %}
+    {% elseif src != '' and lazy_load == true %}
+        {% if webp %}
+            {{ src_type }}="{{ lazy_image|towebp }}"
+            data-{{ src_type }}="{{ src|towebp }}"
+        {% else %}
+            {% if force_jpg %}
+                {{ src_type }}="{{ lazy_image }}"
+                data-{{ src_type }}="{{ src|tojpg }}"
+            {% else %}
+                {{ src_type }}="{{ lazy_image }}"
+                data-{{ src_type }}="{{ src }}"
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{# BETA #}
+{% macro generator( args ) %}
+    {% import _self as picture_helper %}
+    {% for size in args.image_options %}
+        {% set options = {
+                src: args.src|resize(size[1], size[2], size[3]),
+                media: size[0],
+                webp: args.webp,
+                class: args.class,
+                lazy_load: args.lazy_load,
+                lazy_image: args.lazy_image|resize(size[1], size[2], size[3]),
+                force_jpg: args.force_jpg
+            }
+        %}
+        {% if loop.last == false %}
+            {{ picture_helper.source_( options ) }}
+        {% else %}
+           {{ picture_helper.img( options ) }}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
