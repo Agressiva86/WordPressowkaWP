@@ -12,7 +12,7 @@
   SupportsAlign: center
 #}
 
-<section class="section p-t-100 p-b-100">
+<section class="section p-b-100">
 	{% if fields.title %}
 	<h2 class="section-title text-center">
 		{{ fields.title }}
@@ -22,5 +22,9 @@
 		{% for entry in entries %}
 			{% include 'views/parts/entry.twig' %}
 		{% endfor %}
+	</div>
+
+	<div class="text-center m-t-50">
+		<a href="" class="button color-primary">Zobacz wszystkie wydania</a>
 	</div>
 </section>

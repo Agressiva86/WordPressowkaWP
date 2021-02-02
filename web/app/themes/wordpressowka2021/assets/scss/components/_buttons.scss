@@ -1,0 +1,236 @@
+.button {
+    display: inline-block;
+    border-radius: 50px;
+    padding: 25px 30px;
+    font-weight: 700;
+    line-height: normal;
+    font-family: $font-2;
+    border: none;
+    cursor: pointer;
+    @include fluid-font(3vw, 16px, 17px, 18px);
+
+    &.for-mobile {
+        display: none;
+
+        @media screen and (max-width: 880px) {
+            display: inline-block !important;
+        }
+    }
+
+    &.for-desktop {
+        @media screen and (max-width: 880px) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 880px) {
+        padding: 18px 20px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    &.expand {
+        padding: 26px 0 25px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    &.small {
+        padding: 19px 25px;
+    }
+
+    &.color-primary-border {
+        background-color: #{var(--color-bg)};
+        color: #{var(--color-primary)};
+        border: 2px solid #{var(--color-primary)};
+
+        &:hover, &:focus {
+            background-color: #{var(--color-primary)};
+            color: #{var(--color-white)};
+        }
+    }
+
+    &.color-primary {
+        background-color: #{var(--color-primary)} !important;
+        color: #{var(--color-white)} !important;
+        @extend .animation;
+
+        html[data-theme="dark"] & {
+            &:hover {
+                background-color: #{var(--color-white)} !important;
+                color: #{var(--color-primary)} !important;
+                box-shadow: none;
+            }
+        }
+
+        &:hover {
+            background-color: #{var(--color-white)} !important;
+            color: #{var(--color-primary)} !important;
+            box-shadow: inset 0 0 0 3px #{var(--color-primary)};
+        }
+    }
+
+    &.color-switcher {
+        background-color: #{var(--color-switcher-bg)};
+        padding: 0;
+        width: 52px;
+        height: 52px;
+        text-align: center;
+        position: relative;
+
+        &.search-icon {
+            position: fixed;
+            bottom: 3vh;
+            right: 3vh;
+            z-index: 999;
+            background-color: #{var(--color-primary)};
+            width: auto;
+            font-family: $font-2;
+            display: flex;
+            flex-direction: row;
+            line-height: 52px;
+            padding: 0 26px;
+            overflow: hidden;
+            @extend .animation;
+
+            &.hide-span {
+                width: 72px;
+                padding: 0;
+
+                svg {
+                    transform: translateY(-50%) translateX(-50%);
+                    left: 50%;
+                }
+
+                span {
+                    transform: translateX(400px);
+                }
+            }
+
+            span {
+                padding-left: 36px;
+                @extend .animation;
+            }
+
+            svg {
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50%;
+                left: auto;
+                @extend .animation;
+
+                @media screen and (max-width: 680px) {
+                    height: 15px !important;
+                }
+            }
+
+            path,
+            rect,
+            polyline,
+            circle,
+            polygon,
+            ellipse,
+            line {
+                fill: #{var(--color-white)};
+            }
+
+            color: #{var(--color-white)};
+
+            html[data-theme="dark"] & {
+                &:hover, &:focus {
+                    background-color: #{var(--color-white)} !important;
+                    color: #{var(--color-primary)} !important;
+
+                    path,
+                    rect,
+                    polyline,
+                    circle,
+                    polygon,
+                    ellipse,
+                    line {
+                        fill: #{var(--color-primary)} !important;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 680px) {
+            height: 52px;
+            width: 52px !important;
+            padding: 0 !important;
+
+            svg {
+                position: absolute;
+                height: 15px !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        &:hover, &:focus {
+            background-color: #{var(--color-secondary)};
+            color: #{var(--color-white)};
+
+            path,
+            rect,
+            polyline,
+            circle,
+            polygon,
+            ellipse,
+            line {
+                fill: #{var(--color-white)};
+            }
+        }
+
+        html[data-theme="dark"] & {
+            &:hover, &:focus {
+                color: #{var(--color-primary)};
+
+                path,
+                rect,
+                polyline,
+                circle,
+                polygon,
+                ellipse,
+                line {
+                    fill: #{var(--color-primary)};
+                }
+            }
+        }
+
+        &:after {
+            @extend .after-shadow;
+
+            @media screen and (max-width: 1024px) {
+                filter: blur(28px);
+                opacity: 0.36;
+                transform: translateX(-50%) translateY(6px);
+            }
+        }
+
+        svg {
+            height: 22px !important;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            path,
+            rect,
+            polyline,
+            circle,
+            polygon,
+            ellipse,
+            line {
+                fill: #{var(--color-switcher)};
+                @extend .animation;
+            }
+        }
+    }
+}

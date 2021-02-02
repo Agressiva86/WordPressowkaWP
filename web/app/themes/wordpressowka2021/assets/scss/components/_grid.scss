@@ -10,7 +10,7 @@ $gridcolumns: (1, 2, 3, 4, 6);
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media screen and (max-width: 680px) {
+        @media screen and (max-width: 800px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
@@ -22,7 +22,7 @@ $gridcolumns: (1, 2, 3, 4, 6);
     max-width: 1290px;
     margin: 0 auto;
     width: 100%;
-    grid-auto-flow: column;
+    //grid-auto-rows: 1fr;
 
     .item {
         justify-self: stretch;

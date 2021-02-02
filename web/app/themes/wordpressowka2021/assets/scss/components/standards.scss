@@ -620,6 +620,18 @@ a {
     position: relative;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
 .flex-row-nowrap {
     display: flex;
     flex-direction: row;
