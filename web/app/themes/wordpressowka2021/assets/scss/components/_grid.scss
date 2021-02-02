@@ -8,7 +8,7 @@ $gridcolumns: (1, 2, 3, 4, 6);
         grid-template-columns: repeat($column, 1fr);
 
         @media screen and (max-width: 1023px) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
         }
 
         @media screen and (max-width: 800px) {
