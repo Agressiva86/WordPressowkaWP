@@ -31,6 +31,16 @@ $gridcolumns: (1, 2, 3, 4, 6);
         }
     }
 
+    &-reverse {
+        .item-content {
+            order: 1;
+        }
+
+        .item {
+            order: 2;
+        }
+    }
+
     .item {
         justify-self: stretch;
 
