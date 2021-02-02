@@ -21,7 +21,7 @@
 			<h1>{{ options.tytul_newslettera }}</h1>
 		{% endif %}
 		{% if options.opis_newslettera %}
-			{{ options.opis_newslettera | wpautop }}
+			{{ options.opis_newslettera }}
 		{% endif %}
 
 		<form action="{{ options.mailchimp_url }}" method="post" name="mc-embedded-subscribe-form" class="validate">
@@ -38,9 +38,9 @@
 			</div>
 		</form>
 		{% if options.reguly_newslettera %}
-		<p>
-			<small>{{ options.reguly_newslettera }}
-		</p>
+			<div class="small">
+				{{ options.reguly_newslettera }}
+			</div>
 		{% endif %}
 	</div>
 	<div class="item photo">
