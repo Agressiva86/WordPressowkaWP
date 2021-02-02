@@ -1,4 +1,5 @@
 $gridspace: 50px;
+$gridspace_x2: $gridspace * 2;
 
 $gridcolumns: (1, 2, 3, 4, 6);
 @each $column in $gridcolumns {
@@ -24,8 +25,19 @@ $gridcolumns: (1, 2, 3, 4, 6);
     width: 100%;
     //grid-auto-rows: 1fr;
 
+    &-columns-2 {
+        @media screen and (min-width: 1280px) {
+            gap: $gridspace_x2 !important;
+        }
+    }
+
     .item {
         justify-self: stretch;
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
     }
 
     &.grid-wide {

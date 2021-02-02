@@ -280,6 +280,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.item-content {
+    p {
+        margin-bottom: 30px;
+    }
+
+    a {
+        color: #{var(--color-secondary)};
+        border-bottom: 2px solid #{var(--color-primary)};
+        text-decoration: none;
+
+        &:hover {
+            color: #{var(--color-primary)};
+        }
+    }
+}
+
 .single-entry {
     &-wrapper {
         margin-top: 30px;
