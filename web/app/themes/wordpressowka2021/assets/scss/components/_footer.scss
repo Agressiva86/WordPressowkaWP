@@ -150,7 +150,7 @@
     time {
         color: #{var(--color-secondary)};
         opacity: 0.2;
-        font-family: $font-poppins;
+        font-family: $font-1;
         font-weight: 800;
         @extend .animation;
         display: block;
@@ -161,7 +161,7 @@
     }
 
     p {
-        font-family: $font-poppins;
+        font-family: $font-1;
         font-weight: 700;
         @include fluid-font(3vw, 20px, 29px, 35px);
         @extend .animation;
@@ -174,7 +174,7 @@
     }
 
     h2 {
-        font-family: $font-poppins;
+        font-family: $font-1;
         font-weight: 400;
         @include fluid-font(3vw, 14px, 17px, 35px);
         color: #{var(--color-secondary)};
@@ -271,6 +271,8 @@
     }
 
     svg {
+        height: 55px;
+
         .color-primary {
             fill: #{var(--color-primary)};
             @extend .animation;
@@ -285,6 +287,7 @@
         justify-content: center;
         @include fluid-font(3vw, 14px, 18px, 35px);
         margin: 60px 0 30px 0;
+        font-family: $font-2;
 
         li {
             position: relative;
@@ -293,32 +296,16 @@
             color: #{var(--color-secondary)};
             @extend .animation;
             font-size: 90%;
+            font-weight: 700;
 
             @media screen and (max-width: 1024px) {
                 margin: 0 0 10px 0;
                 padding: 0;
             }
 
-            &:before {
-                content: "/";
-                color: #{var(--color-secondary)};
-                opacity: 0.14;
-                position: absolute;
-                right: -5px;
-                top: 50%;
-                transform: translateY(-50%);
-                @extend .animation;
-                font-family: $font-poppins;
-                font-weight: 400;
-            }
-
             &:last-child {
                 padding-right: 0;
                 margin-right: 0;
-
-                &:before {
-                    display: none;
-                }
             }
 
             a {
@@ -348,6 +335,7 @@
         @include fluid-font(3vw, 13px, 14px, 35px);
         color: #{var(--color-secondary)};
         opacity: 0.4;
+        font-family: $font-2;
         letter-spacing: 1px;
 
         a {
@@ -416,7 +404,7 @@
     }
 
     a {
-        font-family: $font-poppins;
+        font-family: $font-1;
         font-weight: 700;
         @include fluid-font(3vw, 13px, 14px, 35px);
         @extend .big;

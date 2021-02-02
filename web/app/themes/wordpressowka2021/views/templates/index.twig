@@ -2,44 +2,78 @@
 
 {% block main %}
 
-
-<article class="single-entry-wrapper">
-	<div class="single-entry-columns">
-		<div class="item" role="article">
-			{% include 'parts/site-name.twig' %}
-
-			<header class="single-entry-header" role="heading" aria-level="1">
-				<h2>{{ post.title }}</h2>
-				<time>{{ post.date( options.date_format ) }}</time>
-			</header>
-			<div class="entry-content">
-
-				{{ post.content }}
-
-				<h4>{{ __( 'Podoba Ci się to wydanie? Podaj dalej!', 'sasquatch' ) }}</h4>
-				<div class="share">
-					<a href="{{ post.link | fb_share_url }}" target="_blank" rel="noopener">
-						{% include 'views/parts/icons/facebook.twig' %}
-						{{ __( 'Udostępnij na Facebooku', 'sasquatch' ) }}
-					</a>
-					<a href="{{ post.link | ln_share_url }}" target="_blank" rel="noopener">
-						{% include 'views/parts/icons/linkedin.twig' %}
-						{{ __( 'Udostępnij na Linkedin', 'sasquatch' ) }}
-					</a>
-					<a href="{{ post.link | tt_share_url }}" target="_blank" rel="noopener">
-						{% include 'views/parts/icons/twitter.twig' %}
-						{{ __( 'Udostępnij na Twitterze', 'sasquatch' ) }}
-					</a>
-				</div>
-			</div>
-		</div>
-
-		<aside class="item entry-sidebar" role="form">
-			{% include 'views/parts/sidebar.twig' %}
-		</aside>
+<section class="home-top">
+	<div class="item empty">
 	</div>
-</article>
 
-{% include 'views/parts/editions-scroll.twig' %}
+	<div class="item newsletter">
+		<h1>
+			Zapisz się na nasz Newsletter!
+		</h1>
+		<p>Dzięki Newsletterowi WordPressówki będziesz na bieżąco z informacjami na temat WordPressa! Jako pierwszy dowiesz się o nowym wydaniu. Dołącz do naszych subskrybentów!</p>
+
+		<form>
+			<div>
+				<label>Twoje imię</label>
+				<input type="text" autofocus placeholder="Podaj swoje imię">
+			</div>
+			<div>
+				<label>Twój adres email</label>
+				<input type="email" placeholder="Podaj email">
+			</div>
+			<div>
+				<input type="submit" value="Zapisz się teraz">
+			</div>
+		</form>
+		<p>
+			<small>Zapisując się na newsletter zgadzam się na otrzymywanie Newslettera od WordPressówki. Po naciśnięciu <strong>Zapisz się teraz!</strong> otrzymasz na swój adres e-mail prośbę o potwierdzenie zapisu.</small>
+		</p>
+	</div>
+	<div class="item photo">
+		<picture>
+			<source media="(max-width:640px)"
+				srcset="http://localhost/wordpressowka-wp//app/uploads/2021/01/wpowls-header-image.jpg" />
+			<source media="(min-width: 641px) and (max-width:1023px)"
+				srcset="http://localhost/wordpressowka-wp//app/uploads/2021/01/wpowls-header-image.jpg" />
+			<img
+				src="http://localhost/wordpressowka-wp//app/uploads/2021/01/wpowls-header-image.jpg" />
+		</picture>
+	</div>
+</section>
+
+<section class="section p-t-100 p-b-100">
+	<h2 class="section-title text-center">
+		Najnowsze wydania
+	</h2>
+	<div class="grid grid-wide grid-gap grid-columns-3">
+		<article class="item item-post">
+			<a href="" class="box">
+				<time>7 styczeń 2020</time>
+				<h3>WordPressówka #113</h3>
+				<p><strong>Tematy:</strong> Elementor, Frontity, Full Site Editing, motywy, Newsletter, społeczność, WordPress, wtyczki, YoastSEO</p>
+
+				{% include 'views/parts/icons/arrow.twig' %}
+			</a>
+		</article>
+		<article class="item item-post">
+			<a href="" class="box">
+				<time>7 styczeń 2020</time>
+				<h3>WordPressówka #113</h3>
+				<p><strong>Tematy:</strong> Elementor, Frontity, Full Site Editing, motywy, Newsletter, społeczność, WordPress</p>
+
+				{% include 'views/parts/icons/arrow.twig' %}
+			</a>
+		</article>
+		<article class="item item-post">
+			<a href="" class="box">
+				<time>7 styczeń 2020</time>
+				<h3>WordPressówka #113</h3>
+				<p><strong>Tematy:</strong> Elementor, Frontity, Full Site Editing, motywy, Newsletter, społeczność, WordPress, wtyczki, YoastSEO</p>
+
+				{% include 'views/parts/icons/arrow.twig' %}
+			</a>
+		</article>
+	</div>
+</section>
 
 {% endblock %}

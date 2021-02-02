@@ -12,66 +12,71 @@
 		</div>
 	</div>
 
-	<div class="header-right">
-		{# <div class="item search">
-			<form>
-				<div id="algolia"></div>
-				<button type="submit">
-					<svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M1.19264 13.8879C0.702234 13.4421 0.666064 12.6832 1.11185 12.1928L5.37806 7.49957L1.11192 2.80719C0.666089 2.31681 0.702199 1.55787 1.19257 1.11205C1.68294 0.666219 2.44188 0.702329 2.88771 1.1927L8.62157 7.49944L2.88777 13.8071C2.44198 14.2975 1.68305 14.3337 1.19264 13.8879Z" class="color-primary" />
-					</svg>
-				</button>
-			</form>
-		</div> #}
+	<div class="header-center">
+		<nav>
+			<ul>
+				<li>
+					<a href="">Wydania</a>
+				</li>
+				<li>
+					<a href="">Artykuły</a>
+				</li>
+				<li>
+					<a href="">Nasi goście</a>
+				</li>
+				<li>
+					<a href="">Zgłoś artykuł</a>
+				</li>
+				<li>
+					<a href="">Newsletter</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 
-		<div class="item socials">
-			<div class="links">
-				{% if options.facebook %}
-				<a href="{{ options.facebook }}" target="_blank" rel="noopener" aria-label="facebook">
-					{% include 'views/parts/icons/facebook.twig' %}
+	<div class="header-right">
+		<div class="inner">
+			<div class="item socials">
+				<div class="links">
+					{% if options.facebook %}
+					<a href="{{ options.facebook }}" target="_blank" rel="noopener" aria-label="facebook">
+						{% include 'views/parts/icons/facebook.twig' %}
+					</a>
+					{% endif %}
+					{% if options.linkedin %}
+					<a href="{{ options.linkedin }}" target="_blank" rel="noopener" aria-label="linkedin">
+						{% include 'views/parts/icons/linkedin.twig' %}
+					</a>
+					{% endif %}
+					{% if options.instagram %}
+					<a href="{{ options.instagram }}" target="_blank" rel="noopener" aria-label="instagram">
+						{% include 'views/parts/icons/instagram.twig' %}
+					</a>
+					{% endif %}
+					{% if options.twitter %}
+					<a href="{{ options.twitter }}" target="_blank" rel="noopener" aria-label="twitter">
+						{% include 'views/parts/icons/twitter.twig' %}
+					</a>
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="item switcher">
+				<a href="#" class="button color-switcher" id="themeswitcher" aria-label="{{ __( 'Zmień tryb strony', 'sasquatch' ) }}">
+					{% include 'views/parts/icons/switcher.twig' %}
 				</a>
-				{% endif %}
-				{% if options.linkedin %}
-				<a href="{{ options.linkedin }}" target="_blank" rel="noopener" aria-label="linkedin">
-					{% include 'views/parts/icons/linkedin.twig' %}
-				</a>
-				{% endif %}
-				{% if options.instagram %}
-				<a href="{{ options.instagram }}" target="_blank" rel="noopener" aria-label="instagram">
-					{% include 'views/parts/icons/instagram.twig' %}
-				</a>
-				{% endif %}
-				{% if options.twitter %}
-				<a href="{{ options.twitter }}" target="_blank" rel="noopener" aria-label="twitter">
-					{% include 'views/parts/icons/twitter.twig' %}
-				</a>
-				{% endif %}
+			</div>
+
+			<div class="item burger">
+				<div class="burger-wrapper">
+					<div class="hamburger is-active">
+						<span class="line"></span>
+						<span class="line"></span>
+						<span class="line"></span>
+					</div>
+				</div>
 			</div>
 		</div>
-
-		<div class="item buttons">
-			{% if options.link_newsletter.url %}<a href="{{ options.link_newsletter.url }}" target="{{ options.link_newsletter.target }}" class="button color-primary for-mobile">{{ options.link_newsletter.title }}</a>{% endif %}
-		</div>
-
-		<div class="item switcher">
-			<a href="#" class="button color-switcher" id="themeswitcher" aria-label="{{ __( 'Zmień tryb strony', 'sasquatch' ) }}">
-				{% include 'views/parts/icons/switcher.twig' %}
-			</a>
-		</div>
-
-		{% if options.napis_partner %}
-		<div class="item partner">
-			<span>{{ options.napis_partner }}</span>
-			<a href="{{ options.link }}" target="_blank"><img src="{{ Image(options.logo).src }}"></a>
-		</div>
-		{% endif %}
 	</div>
 
 </header>
-
-{% if options.napis_partner %}
-<div class="partner-mobile">
-	<span>{{ options.napis_partner }}</span>
-	<a href="{{ options.link }}" target="_blank"><img src="{{ Image(options.logo).src }}"></a>
-</div>
-{% endif %}

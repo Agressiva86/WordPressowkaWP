@@ -25,7 +25,7 @@
     @import "components/wordpressowka2021.scss";
 
     .wordpressowka-block p {
-        font-family: $font-poppins;
+        font-family: $font-1;
     }
 }
 
@@ -35,7 +35,7 @@ p.wp-block-paragraph {
     @extend .animation;
     line-height: 1.6;
     color: rgb(30, 30, 30);
-    font-family: $font-poppins;
+    font-family: $font-1;
 
     @media screen and (max-width: 1024px) {
         padding: 0px;
@@ -51,7 +51,7 @@ p.wp-block-paragraph {
     margin-bottom: 40px;
     @extend .animation;
     line-height: 1.6;
-    font-family: $font-poppins;
+    font-family: $font-1;
     font-weight: 700;
     color:rgb(30, 30, 30);
 

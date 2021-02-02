@@ -1,0 +1,93 @@
+$gridspace: 50px;
+
+$gridcolumns: (1, 2, 3, 4, 6);
+@each $column in $gridcolumns {
+    // use: grid-columns-3
+    .grid-columns-#{$column} {
+        grid-template-columns: repeat($column, 1fr);
+
+        @media screen and (max-width: 1023px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: 680px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+.grid {
+    display: grid !important;
+    line-height: 1.5;
+    max-width: 1290px;
+    margin: 0 auto;
+    width: 100%;
+
+    .item {
+        justify-self: stretch;
+    }
+
+
+    &.grid-wide {
+        max-width: 1570px;
+    }
+
+    &-gap {
+        grid-gap: $gridspace;
+    }
+
+    *:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    & + .grid {
+        margin-top: $gridspace;
+    }
+
+    .grid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &-center {
+        justify-items: center;
+        justify-content: center;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 800px !important;
+            margin: 0 auto;
+        }
+    }
+
+    &-scroll-mobile {
+        @media screen and (max-width: 680px) {
+            grid-template-columns: repeat(auto-fill, 260px);
+            grid-auto-flow: column;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            padding-bottom: $gridspace / 2;
+
+            .item {
+                min-width: 260px;
+
+                &:last-child {
+                    padding-right: $gridspace / 2;
+                }
+            }
+        }
+    }
+
+    &-align {
+        &-middle {
+            align-items: center;
+        }
+
+        &-bottom {
+            align-items: end;
+        }
+
+        &-top {
+            align-items: start;
+        }
+    }
+}
