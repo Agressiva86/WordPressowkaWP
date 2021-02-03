@@ -1,17 +1,17 @@
 {
-    "key": "group_6019a6c3309b3",
-    "title": "Guest Editor",
+    "key": "group_6019e3453e453",
+    "title": "Text and Image Block",
     "fields": [
         {
-            "key": "field_6019a6cbe1213",
-            "label": "Name",
-            "name": "guest_name",
+            "key": "field_6019e353d8fbe",
+            "label": "Title",
+            "name": "title",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -22,34 +22,34 @@
             "maxlength": ""
         },
         {
-            "key": "field_6019a6dfe1214",
-            "label": "Description",
-            "name": "guest_description",
-            "type": "textarea",
+            "key": "field_6019e361d8fbf",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 0,
-            "new_lines": ""
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
         },
         {
-            "key": "field_6019a71ae1215",
-            "label": "Photo",
-            "name": "guest_photo",
+            "key": "field_6019e37ad8fc0",
+            "label": "Image",
+            "name": "image",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "34",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -63,14 +63,33 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_6019e38dd8fc1",
+            "label": "Reverse Order",
+            "name": "reverse_order",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "post"
+                "value": "acf\/owl-text-photo"
             }
         ]
     ],
@@ -82,5 +101,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1612303853
+    "modified": 1612309410
 }

@@ -13,87 +13,18 @@
 #}
 
 <section class="section p-b-100">
+	{% if fields.title %}
 	<h2 class="section-title text-center">
-		Redaktorzy gościnni
+		{{ fields.title }}
 	</h2>
+	{% endif %}
 	<div class="grid grid-wide grid-gap grid-columns-3">
-		<article class="item item-post">
-			<a href="" class="box">
-				<div class="inner">
-					<picture>
-						<source media="(max-width:640px)"
-							srcset="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&h=630&q=80" />
-						<source media="(min-width: 641px) and (max-width:1023px)"
-							srcset="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" />
-						<img
-							src="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" />
-					</picture>
-					<h3>Marcin Andrzejewski</h3>
-					<p>
-						A graphic designer who focuses on visual communication and lettering-based design. An image and communication expert specializing in election and sales campaigns.<br>
-						Polish WordPress community member & WordUp! Kalisz promoter.
-					</p>
-					<p>
-						<strong>WordPressówka #103</strong>
-					</p>
-				</div>
-			</a>
-
-			{% include 'views/parts/icons/arrow.twig' %}
-		</article>
-
-		<article class="item item-post">
-			<a href="" class="box">
-				<div class="inner">
-					<picture>
-						<source media="(max-width:640px)"
-							srcset="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&h=630&q=80" />
-						<source media="(min-width: 641px) and (max-width:1023px)"
-							srcset="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" />
-						<img
-							src="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" />
-					</picture>
-					<h3>Marcin Andrzejewski</h3>
-					<p>
-						A graphic designer who focuses on visual communication and lettering-based design. An image and communication expert specializing in election and sales campaigns.<br>
-						Polish WordPress community member & WordUp! Kalisz promoter.
-					</p>
-					<p>
-						<strong>WordPressówka #103</strong>
-					</p>
-				</div>
-			</a>
-
-			{% include 'views/parts/icons/arrow.twig' %}
-		</article>
-
-		<article class="item item-post">
-			<a href="" class="box">
-				<div class="inner">
-					<picture>
-						<source media="(max-width:640px)"
-							srcset="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&h=630&q=80" />
-						<source media="(min-width: 641px) and (max-width:1023px)"
-							srcset="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" />
-						<img
-							src="https://images.unsplash.com/photo-1612116144183-d1ba477239f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" />
-					</picture>
-					<h3>Marcin Andrzejewski</h3>
-					<p>
-						A graphic designer who focuses on visual communication and lettering-based design. An image and communication expert specializing in election and sales campaigns.<br>
-						Polish WordPress community member & WordUp! Kalisz promoter.
-					</p>
-					<p>
-						<strong>WordPressówka #103</strong>
-					</p>
-				</div>
-			</a>
-
-			{% include 'views/parts/icons/arrow.twig' %}
-		</article>
+	{% for entry in entries %}
+		{% include 'views/parts/entry-guest.twig' %}
+	{% endfor %}
 	</div>
 
 	<div class="text-center m-t-50">
-		<a href="" class="button color-primary">Poznaj wszystkich redaktorów gościnnych</a>
+		<a href="{{ term_link.link }}" class="button color-primary">{{ __( 'Poznaj wszystkich redaktorów gościnnych', 'sasquatch' ) }}</a>
 	</div>
 </section>

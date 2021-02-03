@@ -16,7 +16,7 @@ export default {
 			pullStyle('/app/themes/wordpressowka2021/static/prism2.css', () => {}, 'prismcss');
         }
 
-        search_animation();
+		search_animation();
 
     },
     finalize() { // JavaScript to be fired on all pages, after page specific JS is fired
@@ -150,15 +150,18 @@ function pull(url, callback, method = 'GET', async = true) { // Make sure we hav
 
 function search_animation() {
     if ("IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) {
-        var search = document.getElementById('search-icon');
-        let observer = new IntersectionObserver(entries => {
+		var search = document.getElementById('search-icon');
+		var header = document.getElementById('header');
+        let observer = new IntersectionObserver( (entries, observer) => {
             if (entries[0].isIntersecting) {
-                search.classList.remove("hide-span");
+				search.classList.remove("hide-span");
+				header.classList.remove("background-color");
             } else {
-                search.classList.add("hide-span");
+				search.classList.add("hide-span");
+				header.classList.add("background-color");
             }
-        });
+        },  {rootMargin: "200px 100px -200px -200px"});
 
-        observer.observe(document.querySelector("#header"));
+        observer.observe(document.querySelector("#top"));
     }
 }

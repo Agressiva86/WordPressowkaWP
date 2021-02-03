@@ -1,0 +1,41 @@
+<article class="item item-post">
+    <a href="{{ entry.link }}" class="box">
+        <div class="inner">
+			{% set image = Image( entry.meta('guest_photo') ) %}
+            <picture>
+                <source
+					type="image/webp"
+					media="(max-width:640px)"
+					srcset="{{ image.src|resize(630,630, 'center')|towebp }}"
+					width="630"
+					height="630"
+				/>
+				<source
+					media="(max-width:640px)"
+					srcset="{{ image.src|resize(630,630, 'center') }}"
+					width="630"
+					height="630"
+				/>
+				<source
+					type="image/webp"
+					srcset="{{ image.src|resize(400,250, 'center')|towebp }}"
+					width="400"
+					height="400"
+				/>
+				<img
+					src="{{ image.src|resize(400,250, 'center') }}"
+					loading="lazy"
+					width="400"
+					height="400"
+				/>
+            </picture>
+            <h3>{{ entry.meta( 'guest_name' ) }}</h3>
+            {{ entry.meta( 'guest_description' ) | wpautop }}
+            <p>
+                <strong>{{ entry.title }}</strong>
+            </p>
+        </div>
+    </a>
+
+    {% include 'views/parts/icons/arrow.twig' %}
+</article>

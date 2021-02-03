@@ -70,3 +70,19 @@ add_filter(
 		return $context;
 	}
 );
+
+add_filter(
+	'timber/acf-gutenberg-blocks-data/owl-editors',
+	function( $context ) {
+		$args               = array(
+			'posts_per_page' => 3,
+			'post_type'      => 'post',
+			'category'       => get_field( 'kategoria_guest_editorow', 'options' ),
+		);
+		$context['entries'] = Timber::get_posts( $args );
+
+		$context['term_link'] = new Timber\Term( get_field( 'kategoria_guest_editorow', 'options' ) );
+
+		return $context;
+	}
+);
