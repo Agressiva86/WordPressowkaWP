@@ -8,12 +8,14 @@
     position: fixed;
     z-index: 666;
 
+    html[data-theme="dark"] & {
+        &.background-color {
+            background-color: #{var(--color-bg)} !important;
+        }
+    }
+
     &.background-color {
         background-color: #{var(--color-white)};
-
-        html[data-theme="dark"] & {
-            background-color: #{var(--color-secondary)};
-        }
     }
 
     @media screen and (min-width: 1920px) {
@@ -245,6 +247,22 @@
                     }
                 }
 
+                html[data-theme="dark"] & {
+                    &:hover {
+                        svg {
+                            path,
+                            rect,
+                            polyline,
+                            circle,
+                            polygon,
+                            ellipse,
+                            line {
+                                fill: #{var(--color-primary)} !important;
+                            }
+                        }
+                    }
+                }
+
                 svg {
                     height: 14px;
                     width: auto;
@@ -258,6 +276,7 @@
                     polygon,
                     ellipse,
                     line {
+                        @extend .animation;
                         fill: #{var(--color-link)};
                     }
                 }
