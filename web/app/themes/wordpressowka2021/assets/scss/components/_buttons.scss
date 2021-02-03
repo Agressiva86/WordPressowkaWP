@@ -88,13 +88,14 @@
             font-family: $font-2;
             display: flex;
             flex-direction: row;
-            line-height: 52px;
-            padding: 0 26px;
+            line-height: 60px;
+            height: 60px;
+            padding: 0 25px;
             overflow: hidden;
             @extend .animation;
 
             &.hide-span {
-                width: 72px;
+                width: 60px;
                 padding: 0;
 
                 svg {
