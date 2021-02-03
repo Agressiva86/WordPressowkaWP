@@ -25,7 +25,20 @@
     @import "components/wordpressowka2021.scss";
 
     .wordpressowka-block p {
-        font-family: $font-1;
+        font-family: $font-2;
+    }
+}
+
+.acf-block-preview {
+    .home-top {
+        grid-template-columns: 0px 1fr 1fr !important;
+        padding: 0 !important;
+    }
+
+    form {
+        input {
+            width: 100% !important;
+        }
     }
 }
 
