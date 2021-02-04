@@ -13,23 +13,135 @@ SupportsAlign: center
 #}
 
 <section class="section p-t-100 p-b-100">
-	<div class="grid grid-gap grid-align-middle grid-columns-2">
+	<div class="grid grid-gap grid-align-middle grid-columns-2 border-bottom">
 		<div class="item">
 			<h2 class="section-title text-left">
 				Najnowsze artykuły
 			</h2>
 		</div>
-		<div class="item text-right">
-			<a href="" class="button color-primary for-desktop">Zobacz blog WordPressówki</a>
+		<div class="item text-right for-desktop">
+			<a href="" class="button color-primary">Zobacz blog WordPressówki</a>
 		</div>
 	</div>
 
-	<div class="grid grid-gap grid-wide grid-align-middle grid-blog">
+	<div class="grid grid-gap grid-wide grid-align-top grid-blog">
 		<div class="item">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam turpis sapien, facilisis sit amet massa id, tempor tristique turpis. Maecenas vehicula, sapien sed tincidunt finibus, nulla eros lacinia dui, id efficitur odio felis at diam. Proin faucibus quam massa, non volutpat eros laoreet in. Sed vel justo vitae ligula luctus luctus. Aliquam tristique egestas sem et iaculis. Curabitur vitae ultrices ligula, nec eleifend neque. Donec vehicula justo ac ante sagittis, nec efficitur massa pretium. Donec sollicitudin pretium ex vel viverra. Ut consequat metus sit amet leo auctor tristique. Cras eget orci interdum, commodo mauris ut, varius risus. Pellentesque aliquam, elit et pharetra pulvinar, dui sapien tristique tortor, a pharetra lacus eros vitae eros. Vivamus nec augue sollicitudin, eleifend augue ac, laoreet turpis. Duis et nibh posuere, facilisis magna sit amet, porttitor diam.
+
+			<article class="owl-article article-big">
+				<div class="item">
+					<a href="" class="article-cover">
+						<picture>
+							<source media="(max-width:640px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
+							<source media="(min-width: 641px) and (max-width:1023px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
+							<img
+								src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
+						</picture>
+					</a>
+				</div>
+				<div class="item article-content">
+					<h2>
+						<a href="">
+							Upstairs Community: building a tribe with people, not for people
+						</a>
+					</h2>
+
+					<p>
+						There’s a familiar yet truthful saying that if you’re not paying for the product, you are the product. Even though people are becoming more precarious of being in charge of their websites, there’s still plenty of unknown.
+					</p>
+
+					{% include 'views/parts/icons/arrow.twig' %}
+				</div>
+			</article>
+
 		</div>
+		<div class="item item-article-column">
+
+			<article class="owl-article article-small">
+				<div class="item">
+					<a href="" class="article-cover">
+						<picture>
+							<source media="(max-width:640px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=570&h=260&q=80" />
+							<source media="(min-width: 641px) and (max-width:1023px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=920&h=420&q=80" />
+							<source media="(min-width: 1024px) and (max-width:1900px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=170&q=80" />
+							<img
+								src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=230&q=80" />
+						</picture>
+					</a>
+				</div>
+				<div class="item article-content">
+					<h2>
+						<a href="">
+							Upstairs Community: building a tribe with people, not for people
+						</a>
+					</h2>
+
+					{% include 'views/parts/icons/arrow.twig' %}
+				</div>
+			</article>
+
+			<article class="owl-article article-small">
+				<div class="item">
+					<a href="" class="article-cover">
+						<picture>
+							<source media="(max-width:640px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=570&h=260&q=80" />
+							<source media="(min-width: 641px) and (max-width:1023px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=920&h=420&q=80" />
+							<source media="(min-width: 1024px) and (max-width:1900px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=170&q=80" />
+							<img
+								src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=230&q=80" />
+						</picture>
+					</a>
+				</div>
+				<div class="item article-content">
+					<h2>
+						<a href="">
+							Upstairs Community: building a tribe with people, not for people
+						</a>
+					</h2>
+
+					{% include 'views/parts/icons/arrow.twig' %}
+				</div>
+			</article>
+
+			<article class="owl-article article-small">
+				<div class="item">
+					<a href="" class="article-cover">
+						<picture>
+							<source media="(max-width:640px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=570&h=260&q=80" />
+							<source media="(min-width: 641px) and (max-width:1023px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=920&h=420&q=80" />
+							<source media="(min-width: 1024px) and (max-width:1900px)"
+								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=170&q=80" />
+							<img
+								src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=230&q=80" />
+						</picture>
+					</a>
+				</div>
+				<div class="item article-content">
+					<h2>
+						<a href="">
+							Upstairs Community: building a tribe with people, not for people
+						</a>
+					</h2>
+
+					{% include 'views/parts/icons/arrow.twig' %}
+				</div>
+			</article>
+
+		</div>
+	</div>
+
+	<div class="grid grid-columns-1 text-center for-mobile">
 		<div class="item">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam turpis sapien, facilisis sit amet massa id, tempor tristique turpis. Maecenas vehicula, sapien sed tincidunt finibus, nulla eros lacinia dui, id efficitur odio felis at diam. Proin faucibus quam massa, non volutpat eros laoreet in. Sed vel justo vitae ligula luctus luctus. Aliquam tristique egestas sem et iaculis. Curabitur vitae ultrices ligula, nec eleifend neque. Donec vehicula justo ac ante sagittis, nec efficitur massa pretium. Donec sollicitudin pretium ex vel viverra. Ut consequat metus sit amet leo auctor tristique. Cras eget orci interdum, commodo mauris ut, varius risus. Pellentesque aliquam, elit et pharetra pulvinar, dui sapien tristique tortor, a pharetra lacus eros vitae eros. Vivamus nec augue sollicitudin, eleifend augue ac, laoreet turpis. Duis et nibh posuere, facilisis magna sit amet, porttitor diam.
+			<a href="" class="button color-primary">Zobacz blog WordPressówki</a>
 		</div>
 	</div>
 </section>
