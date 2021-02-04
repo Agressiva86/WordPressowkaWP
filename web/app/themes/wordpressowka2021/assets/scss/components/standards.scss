@@ -2,6 +2,26 @@
 
 $assets: "../../dist/images";
 
+.primary-background {
+    background-color: #{var(--color-primary)};
+}
+
+.secondary-background {
+    background-color: #{var(--color-secondary)};
+
+    * {
+        color: #{var(--color-white)};
+    }
+
+    html[data-theme="dark"] & {
+        background-color: rgba($color-black, 0.2);
+    }
+}
+
+.formbg-background {
+    background-color: #{var(--color-form-bg)};
+}
+
 // responsive font size
 @mixin fluid-font($responsive, $min, $max: false, $fallback: false) {
     $responsive-unitless: $responsive / ($responsive - $responsive + 1);

@@ -3,6 +3,60 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
+.newsletter-form {
+    display: grid;
+    gap: 30px;
+    grid-template-rows: 1fr;
+
+    .secondary-background & {
+        input[type="text"], input[type="email"], input[type="name"], input[type="search"] {
+            background-color: rgba($color-black, 0.2);
+            color: #{var(--color-white)} !important;
+        }
+    }
+
+    form {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: end;
+
+        @media screen and (max-width: 800px) {
+            grid-template-columns: 1fr;
+        }
+
+        label {
+            font-weight: 700;
+            @include fluid-font(3vw, 14px, 16px, 16px);
+        }
+    }
+
+    .small  {
+        margin: 0 auto;
+        max-width: 650px;
+
+        p {
+            @include fluid-font(3vw, 12px, 14px, 16px);
+            line-height: 1.45;
+            display: block;
+
+            strong, b {
+                color: #{var(--color-primary)};
+            }
+        }
+    }
+
+    p {
+        margin: 0 auto;
+        max-width: 1000px;
+        @include fluid-font(3vw, 16px, 20px, 22px);
+
+        strong, b {
+            color: #{var(--color-primary)};
+        }
+    }
+}
+
 .home-top {
     display: grid;
     grid-template-columns: 230px 1fr 1fr;
@@ -73,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
         .small  {
             p {
                 @include fluid-font(3vw, 12px, 14px, 16px);
-                line-height: 1.3;
+                line-height: 1.45;
                 display: block;
 
                 strong, b {

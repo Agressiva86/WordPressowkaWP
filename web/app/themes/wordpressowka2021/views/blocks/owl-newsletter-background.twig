@@ -1,0 +1,51 @@
+{#
+Title: Owl Newsletter Background
+Description: Section with newsletter
+Category: formatting
+Icon: admin-comments
+Keywords: text photo
+Mode: preview
+Align: center
+PostTypes: post articles page
+SupportsMode: true
+SupportsMultiple: true
+SupportsAlign: center
+#}
+
+<section class="section p-t-100 p-b-100 secondary-background">
+	<div class="grid grid-gap grid-align-middle grid-columns-1 text-center">
+		{% if options.tytul_newslettera %}
+		<div class="item">
+			<h2 class="section-title text-center">
+				{{ options.tytul_newslettera }}
+			</h2>
+		</div>
+		{% endif %}
+
+		<div class="newsletter-form">
+			{% if options.opis_newslettera %}
+				{{ options.opis_newslettera }}
+			{% endif %}
+
+			<form class="text-left" action="{{ options.mailchimp_url }}" method="post" name="mc-embedded-subscribe-form" class="validate">
+				<div>
+					<label>{{ __( 'Twoje imię', 'sasquatch' ) }}</label>
+					<input type="text" placeholder="{{ __( 'Podaj swoje imię', 'sasquatch' ) }}">
+				</div>
+				<div>
+					<label>{{ __( 'Twój adres email', 'sasquatch' ) }}</label>
+					<input type="email" placeholder="{{ __( 'Podaj email', 'sasquatch' ) }}">
+				</div>
+				<div>
+					<input type="submit" value="{{ __( 'Zapisz się teraz', 'sasquatch' ) }}">
+				</div>
+			</form>
+
+			{% if options.reguly_newslettera %}
+			<div class="small">
+				{{ options.reguly_newslettera }}
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
