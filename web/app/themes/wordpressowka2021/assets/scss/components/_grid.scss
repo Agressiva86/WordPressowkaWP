@@ -49,6 +49,16 @@ $gridcolumns: (1, 2, 3, 4, 6);
             border-radius: $global-radius;
             height: auto;
         }
+
+        &.item-article-column {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+
+            @media screen and (max-width: 1024px) {
+                gap: 35px;
+            }
+        }
     }
 
     &.grid-wide {
@@ -115,6 +125,16 @@ $gridcolumns: (1, 2, 3, 4, 6);
     }
 
     &.grid-blog {
-        grid-template-columns: minmax(auto, 883px) 1fr;
+        @media screen and (min-width: 1920px) {
+            grid-template-columns: 880px 1fr;
+        }
+
+        @media screen and (min-width: 1025px) and (max-width: 1919px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: 1fr;
+        }
     }
 }
