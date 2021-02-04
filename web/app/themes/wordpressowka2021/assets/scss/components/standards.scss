@@ -478,6 +478,10 @@ a {
 .border {
     &-solid {
         border-style: solid;
+
+        &-bottom {
+            border-bottom-width: 1px;
+        }
     }
 }
 
@@ -719,6 +723,7 @@ a {
         justify-content: space-between;
     }
 }
+
 .hide {
     display: none;
     visibility: hidden;
@@ -737,4 +742,20 @@ a {
 .barba-enter,
 .barba-leave-to {
     opacity: 0;
+}
+
+// for desktop & mobile
+
+.for-mobile {
+    display: none;
+
+    @media screen and (max-width: 1024px) {
+        display: inline-block !important;
+    }
+}
+
+.for-desktop {
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
 }
