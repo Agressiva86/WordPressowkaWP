@@ -9,34 +9,20 @@
     cursor: pointer;
     @include fluid-font(3vw, 16px, 17px, 18px);
 
-    &.for-mobile {
-        display: none;
-
-        @media screen and (max-width: 1023px) {
-            display: inline-block !important;
-        }
-    }
-
-    &.for-desktop {
-        @media screen and (max-width: 1023px) {
-            display: none;
-        }
-    }
-
     @media screen and (max-width: 880px) {
         padding: 18px 20px;
-        font-size: 13px;
         font-weight: 700;
     }
 
     &.expand {
-        padding: 26px 0 25px 0;
+        padding: 25px 0 25px 0;
         text-align: center;
         width: 100%;
     }
 
     &.small {
         padding: 19px 25px;
+        @include fluid-font(3vw, 13px, 14px, 16px);
     }
 
     &.color-primary-border {
