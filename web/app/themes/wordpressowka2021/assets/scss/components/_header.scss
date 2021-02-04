@@ -7,15 +7,22 @@
     grid-template-columns: 230px 1fr 300px;
     position: fixed;
     z-index: 666;
+    @extend .animation;
 
     html[data-theme="dark"] & {
         &.background-color {
             background-color: #{var(--color-bg)} !important;
+            box-shadow: -2px 25px 60px -5px rgba(#000000, 0.2) !important;
         }
     }
 
     &.background-color {
         background-color: #{var(--color-white)};
+        box-shadow: -2px 25px 60px -5px rgba(#152C5B, 0.1);
+
+        @media screen and (min-width: 801px) {
+            padding: 15px 50px !important;
+        }
     }
 
     @media screen and (min-width: 1920px) {
