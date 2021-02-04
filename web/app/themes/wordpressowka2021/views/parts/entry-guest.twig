@@ -6,13 +6,13 @@
                 <source
 					type="image/webp"
 					media="(max-width:640px)"
-					srcset="{{ image.src|resize(630,630, 'center')|towebp }}"
+					srcset="{{ image.src|resize(630,350, 'center')|towebp }}"
 					width="630"
 					height="630"
 				/>
 				<source
 					media="(max-width:640px)"
-					srcset="{{ image.src|resize(630,630, 'center') }}"
+					srcset="{{ image.src|resize(630,350, 'center') }}"
 					width="630"
 					height="630"
 				/>
