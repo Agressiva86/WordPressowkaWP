@@ -12,13 +12,13 @@
     &.for-mobile {
         display: none;
 
-        @media screen and (max-width: 880px) {
+        @media screen and (max-width: 1023px) {
             display: inline-block !important;
         }
     }
 
     &.for-desktop {
-        @media screen and (max-width: 880px) {
+        @media screen and (max-width: 1023px) {
             display: none;
         }
     }
