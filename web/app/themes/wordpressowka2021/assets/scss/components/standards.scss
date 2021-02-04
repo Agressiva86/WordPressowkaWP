@@ -747,7 +747,7 @@ a {
 // for desktop & mobile
 
 .for-mobile {
-    display: none;
+    display: none !important;
 
     @media screen and (max-width: 1024px) {
         display: inline-block !important;
@@ -756,6 +756,6 @@ a {
 
 .for-desktop {
     @media screen and (max-width: 1024px) {
-        display: none;
+        display: none !important;
     }
 }

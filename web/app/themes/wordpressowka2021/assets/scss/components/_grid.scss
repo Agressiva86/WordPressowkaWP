@@ -18,7 +18,7 @@ $gridcolumns: (1, 2, 3, 4, 6);
 }
 
 .grid {
-    display: grid !important;
+    display: grid;
     line-height: 1.5;
     max-width: 1290px;
     margin: 0 auto;
