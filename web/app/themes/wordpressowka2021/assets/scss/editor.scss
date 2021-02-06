@@ -40,39 +40,25 @@
             width: 100% !important;
         }
     }
+
+    .wordpressowka-link {
+        margin-bottom: 28px !important;
+    }
+
+    .wp-block {
+        font-family: $font-2 !important;
+        margin-bottom: 28px !important;
+    }
 }
 
 p.wp-block-paragraph {
-    padding: 0 40px;
-    margin-bottom: 40px;
-    @extend .animation;
-    line-height: 1.6;
     color: rgb(30, 30, 30);
     font-family: $font-2;
-
-    @media screen and (max-width: 1024px) {
-        padding: 0px;
-    }
-
-    @media screen and (min-width: 1366px) {
-        max-width: 760px;
-    }
 }
 
 .wp-block-heading {
-    padding: 0 40px;
-    margin-bottom: 40px;
-    @extend .animation;
     line-height: 1.6;
     font-family: $font-1;
     font-weight: 700;
     color:rgb(30, 30, 30);
-
-    @media screen and (max-width: 1024px) {
-        padding: 0px;
-    }
-
-    @media screen and (min-width: 1366px) {
-        max-width: 760px;
-    }
 }

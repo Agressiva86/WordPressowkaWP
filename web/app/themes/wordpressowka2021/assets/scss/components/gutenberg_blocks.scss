@@ -697,7 +697,7 @@ section.wp-block-cover-image > h2,
 
 .wp-block-gallery,
 .blocks-gallery-grid {
-    display: flex;
+    display: flex !important;
     flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
