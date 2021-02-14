@@ -65,6 +65,10 @@ $gridcolumns: (1, 2, 3, 4, 6);
         max-width: 1570px;
     }
 
+    &.grid-narrow {
+        max-width: 990px;
+    }
+
     &-gap {
         grid-gap: $gridspace;
     }

@@ -9,19 +9,40 @@
     z-index: 666;
     @extend .animation;
 
+    .socials, .color-switcher {
+        border: 1px solid rgba(#ffffff, 0);
+        @extend .animation;
+    }
+
     html[data-theme="dark"] & {
         &.background-color {
             background-color: #{var(--color-bg)} !important;
             box-shadow: -2px 25px 60px -5px rgba(#000000, 0.2) !important;
+
+            .socials, .color-switcher {
+                border: 1px solid rgba(#ffffff, 0.1);
+
+                &:after {
+                    opacity: 0;
+                }
+            }
         }
     }
 
     &.background-color {
         background-color: #{var(--color-white)};
-        box-shadow: -2px 25px 60px -5px rgba(#152C5B, 0.1);
+        box-shadow: -2px 25px 60px -5px rgba(#152C5B, 0.08);
 
         @media screen and (min-width: 801px) {
             padding: 15px 50px !important;
+        }
+
+        .socials, .color-switcher {
+            border: 1px solid rgba(#152C5B, 0.08);
+
+            &:after {
+                opacity: 0;
+            }
         }
     }
 

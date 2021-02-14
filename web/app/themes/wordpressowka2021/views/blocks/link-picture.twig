@@ -45,13 +45,16 @@
 			/>
 		</picture>
 		<div class="inner">
-			{% if fields.header %}
-				<h2>{{ fields.header }}</h2>
-			{% endif %}
-			{{ fields.opis }}
 			<div>
-				<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank" rel="noopener">{{ fields.link.title }}</a>
+				{% if fields.header %}
+					<h2>{{ fields.header }}</h2>
+				{% endif %}
+				{{ fields.opis }}
+				<div>
+					<a href="{{ fields.link.url }}" title="{{ fields.link.title }}" class="link" target="_blank" rel="noopener">{{ fields.link.title }}</a>
+				</div>
 			</div>
+			{% include 'views/parts/icons/arrow.twig' %}
 		</div>
 	</div>
 </div>

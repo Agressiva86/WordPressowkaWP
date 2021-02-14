@@ -1,6 +1,21 @@
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $font-1;
     font-weight: normal;
+}
+
+.section-border-bottom {
+    max-width: 1570px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(#152C5B, 0.08);
+
+    html[data-theme="dark"] & {
+        border: 1px solid rgba(#ffffff, 0.1);
+    }
 }
 
 .newsletter-form {
@@ -9,7 +24,10 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-rows: 1fr;
 
     .secondary-background & {
-        input[type="text"], input[type="email"], input[type="name"], input[type="search"] {
+        input[type="text"],
+        input[type="email"],
+        input[type="name"],
+        input[type="search"] {
             background-color: rgba($color-black, 0.2);
             color: #{var(--color-white)} !important;
         }
@@ -18,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
     form {
         display: grid;
         gap: 30px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 250px;
         align-items: end;
 
         @media screen and (max-width: 800px) {
@@ -31,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    .small  {
+    .small {
         margin: 0 auto;
         max-width: 650px;
 
@@ -40,7 +58,8 @@ h1, h2, h3, h4, h5, h6 {
             line-height: 1.45;
             display: block;
 
-            strong, b {
+            strong,
+            b {
                 color: #{var(--color-primary)};
             }
         }
@@ -51,7 +70,8 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 1000px;
         @include fluid-font(3vw, 16px, 20px, 22px);
 
-        strong, b {
+        strong,
+        b {
             color: #{var(--color-primary)};
         }
     }
@@ -129,13 +149,14 @@ h1, h2, h3, h4, h5, h6 {
             line-height: 1.1;
         }
 
-        .small  {
+        .small {
             p {
                 @include fluid-font(3vw, 12px, 14px, 16px);
                 line-height: 1.45;
                 display: block;
 
-                strong, b {
+                strong,
+                b {
                     color: #{var(--color-primary)};
                 }
             }
@@ -144,7 +165,8 @@ h1, h2, h3, h4, h5, h6 {
         p {
             @include fluid-font(3vw, 16px, 20px, 22px);
 
-            strong, b {
+            strong,
+            b {
                 color: #{var(--color-primary)};
             }
         }
@@ -152,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
         form {
             display: grid;
             gap: 30px;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 250px;
             align-items: end;
 
             @media screen and (min-width: 1024px) {
@@ -169,7 +191,10 @@ h1, h2, h3, h4, h5, h6 {
             }
 
             html[data-theme="dark"] & {
-                input[type="text"], input[type="email"], input[type="name"], input[type="search"] {
+                input[type="text"],
+                input[type="email"],
+                input[type="name"],
+                input[type="search"] {
                     background-color: rgba($color-black, 0.2);
                     color: #{var(--color-white)} !important;
                 }
@@ -195,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
                 display: block;
                 line-height: 0;
                 object-fit: cover;
-                width:100%;
+                width: 100%;
                 height: 100%;
                 border-radius: 0 0 0 80px;
             }
@@ -232,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
         &:after {
             bottom: 0;
             transform: translateX(-50%);
-            left:50%;
+            left: 50%;
         }
     }
 
@@ -241,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 
         &:after {
             bottom: 0;
-            left:0;
+            left: 0;
         }
     }
 }
@@ -274,7 +299,9 @@ h1, h2, h3, h4, h5, h6 {
     .article-cover {
         display: block;
 
-        picture, source, img {
+        picture,
+        source,
+        img {
             display: block;
             line-height: 0;
         }
@@ -294,7 +321,8 @@ h1, h2, h3, h4, h5, h6 {
             a {
                 color: #{var(--color-secondary)};
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     color: #{var(--color-primary)};
                 }
             }
@@ -328,6 +356,10 @@ h1, h2, h3, h4, h5, h6 {
             @media screen and (max-width: 1024px) {
                 padding: 0 35px;
             }
+
+            @media screen and (max-width: 680px) {
+                padding: 0px !important;
+            }
         }
 
         h2 {
@@ -354,6 +386,10 @@ h1, h2, h3, h4, h5, h6 {
             @media screen and (max-width: 1024px) {
                 padding: 0 35px;
             }
+
+            @media screen and (max-width: 680px) {
+                padding: 0px !important;
+            }
         }
 
         h2 {
@@ -367,9 +403,75 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.grid-single {
+    display: grid;
+    grid-template-columns: 230px 1fr 280px;
+    gap: 50px;
+    padding: 0 50px;
+    justify-items: stretch;
+
+    @media screen and (min-width: 1920px) {
+        grid-template-columns: 300px 900px 1fr;
+        justify-items: end;
+    }
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        padding: 0 35px;
+    }
+
+    @media screen and (max-width: 800px) {
+        padding: 0 35px !important;
+    }
+
+    @media screen and (min-width: 1025px) and (max-width: 1366px) {
+        grid-template-columns: 1fr 260px !important;
+        gap: 100px;
+
+        .empty {
+            display: none !important;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .empty {
+            display: none !important;
+        }
+
+        .item-single {
+            order: 2;
+            padding-top: 0 !important;
+        }
+
+        .item-fixed {
+            order: 1;
+            padding-top: 100px !important;
+        }
+    }
+
+    .item-single,
+    .item-fixed {
+        padding-top: 200px;
+    }
+
+    .item-fixed {
+        @media screen and (max-width: 1024px) {
+            padding-top: 50px;
+        }
+    }
+}
+
+.item-single,
+.wordpressowka-guest-links {
+    display: grid;
+    gap: 50px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+}
+
 .item-post {
     border-radius: $global-radius;
-    border: 1px solid rgba(#152C5B, 0.1);
+    border: 1px solid rgba(#152C5B, 0.08);
     @extend .animation;
     position: relative;
     padding-bottom: 50px;
@@ -396,8 +498,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &:hover {
-        border: 1px solid rgba(#152C5B, 0);
-        box-shadow: -2px 25px 60px -5px rgba(#152C5B, 0.1);
+        border: 1px solid rgba(#152c5b, 0);
+        box-shadow: -2px 25px 60px -5px rgba(#152C5B, 0.08);
 
         time {
             color: #{var(--color-secondary)};
@@ -420,7 +522,7 @@ h1, h2, h3, h4, h5, h6 {
         border: 1px solid rgba(#ffffff, 0.1);
 
         &:hover {
-            border: 1px solid rgba(#ffffff, 0.0);
+            border: 1px solid rgba(#ffffff, 0);
             box-shadow: -2px 25px 60px -5px rgba(#000000, 0.4);
         }
     }
@@ -613,13 +715,24 @@ h1, h2, h3, h4, h5, h6 {
             grid-gap: 60px;
         }
 
-        p, h2, h3, h4, h5, h6, ul, ol {
+        p,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul,
+        ol {
             max-width: none !important;
             padding: 0 !important;
         }
 
         .entry-content {
-            h2, h3, h4, h5, h6 {
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
                 position: relative;
                 padding-bottom: 20px !important;
 
@@ -637,7 +750,7 @@ h1, h2, h3, h4, h5, h6 {
 
             .wp-block-image {
                 &:after {
-                    display: none!important;
+                    display: none !important;
                 }
             }
         }
@@ -651,7 +764,8 @@ h1, h2, h3, h4, h5, h6 {
                 transform: translateX(-100px);
             }
 
-            img, source {
+            img,
+            source {
                 border-radius: 20px;
                 height: auto;
                 max-width: 100% !important;
@@ -661,56 +775,71 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry-content {
+    header {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+
+        time {
+            color: #{var(--color-primary)};
+            font-family: $font-2;
+            font-weight: 700;
+            @include fluid-font(3vw, 16px, 19px, 22px);
+            display: block;
+            line-height: 100%;
+        }
+
+        h1 {
+            color: #{var(--color-secondary)};
+            font-family: $font-1;
+            font-weight: 400;
+            @include fluid-font(3vw, 30px, 45px, 60px);
+        }
+    }
+
+    h2, h3, h4 {
+        line-height: 1.2 !important;
+    }
+
     p,
     ul,
     ol,
     h2,
     h3,
     h4 {
-        padding: 0 40px;
-        margin-bottom: 40px;
         @extend .animation;
         line-height: 1.6;
         color: #{var(--color-secondary)};
-
-        @media screen and (max-width: 1024px) {
-            padding: 0px;
-        }
-
-        @media screen and (min-width: 1366px) {
-            max-width: 760px;
-        }
 
         code {
             overflow-wrap: break-word;
             word-wrap: break-word;
             -webkit-box-decoration-break: clone;
             box-decoration-break: clone;
-            padding: .1rem .3rem .2rem;
-            border-radius: .2rem;
-            background: rgba(#152C5B, 0.07);
+            padding: 0.1rem 0.3rem 0.2rem;
+            border-radius: $global-radius;
+            background: rgba(#152c5b, 0.07);
 
             html[data-theme="dark"] & {
-                background: rgba(#FFFFFF, 0.1);
+                background: rgba(#ffffff, 0.1);
             }
         }
     }
 
     .wp-block-separator {
-        padding: 0 40px;
-        margin-bottom: 40px;
-        margin-top: 0;
+        margin: 0;
         position: relative;
         border: 0;
-        height: 3px;
+        height: 2px;
 
         &:before {
             content: "";
             position: absolute;
             top: 0;
-            left: 40px;
+            left: 0;
             width: 100px;
-            height: 3px;
+            height: 2px;
             border-radius: 10px;
             display: block;
             z-index: 10;
@@ -723,8 +852,8 @@ h1, h2, h3, h4, h5, h6 {
             top: 0;
             left: 0;
             width: 100%;
-            height: 3px;
-            border-radius: 10px;
+            height: 2px;
+            border-radius: $global-radius;
             display: block;
             opacity: 0.03;
             z-index: 2;
@@ -809,7 +938,6 @@ h1, h2, h3, h4, h5, h6 {
                         &:hover {
                             color: #{var(--color-secondary)};
                         }
-
                     }
                 }
 
@@ -838,7 +966,7 @@ h1, h2, h3, h4, h5, h6 {
             &:before {
                 display: inline-block;
                 content: counters(li, ".");
-                font-family: $font-1;
+                font-family: $font-2;
                 font-weight: 700;
                 color: #{var(--color-primary)};
                 font-size: 15px;
@@ -854,10 +982,6 @@ h1, h2, h3, h4, h5, h6 {
         list-style-type: none;
 
         &.ais-Pagination-list {
-            // display: grid;
-            // grid-template-columns: repeat(8, 1fr);
-            // grid-gap: 20px;
-            // justify-content: space-evenly;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -869,7 +993,7 @@ h1, h2, h3, h4, h5, h6 {
             font-weight: 700;
             @include fluid-font(3vw, 14px, 17px, 35px);
 
-            @media screen and (max-width:660px) {
+            @media screen and (max-width: 660px) {
                 li {
                     padding: 0 12px !important;
 
@@ -927,7 +1051,7 @@ h1, h2, h3, h4, h5, h6 {
                 transform: translateY(-50%);
                 background-color: #{var(--color-primary)};
 
-                @media screen and (max-width:660px) {
+                @media screen and (max-width: 660px) {
                     top: 14px;
                 }
             }
@@ -956,18 +1080,13 @@ h1, h2, h3, h4, h5, h6 {
     picture,
     img,
     source {
-        border-radius: 15px;
+        border-radius: $global-radius;
         max-width: 100%;
         height: auto;
     }
 
     figure {
-        margin-bottom: 40px;
         position: relative;
-
-        &:after {
-            @extend .after-shadow;
-        }
 
         &.wp-block-gallery {
             margin-bottom: 0 !important;
@@ -976,15 +1095,12 @@ h1, h2, h3, h4, h5, h6 {
                 display: none !important;
             }
         }
-
-        &.wp-block-image {
-            @media screen and (min-width: 1366px) {
-                max-width: 840px;
-            }
-        }
     }
 
-    .wp-block-gallery .blocks-gallery-image, .wp-block-gallery .blocks-gallery-item, .blocks-gallery-grid .blocks-gallery-image, .blocks-gallery-grid .blocks-gallery-item  {
+    .wp-block-gallery .blocks-gallery-image,
+    .wp-block-gallery .blocks-gallery-item,
+    .blocks-gallery-grid .blocks-gallery-image,
+    .blocks-gallery-grid .blocks-gallery-item {
         @media screen and (max-width: 660px) {
             width: 100%;
         }
@@ -992,11 +1108,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .blocks-gallery-grid {
         margin-bottom: 0 !important;
-
-        @media screen and (min-width: 1366px) {
-            max-width: 840px;
-            padding: 0;
-        }
 
         figure {
             margin-bottom: 40px;
@@ -1014,10 +1125,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .wp-block-columns {
         margin-bottom: 0;
-
-        @media screen and (min-width: 1366px) {
-            max-width: 840px;
-        }
     }
 
     form {
@@ -1062,7 +1169,7 @@ h1, h2, h3, h4, h5, h6 {
             }
 
             button {
-                border-radius: 50%!important;
+                border-radius: 50% !important;
                 border: none !important;
                 padding: 0 !important;
                 cursor: pointer;
@@ -1135,7 +1242,10 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
 
-        input[type="text"], input[type="email"], input[type="name"], input[type="search"] {
+        input[type="text"],
+        input[type="email"],
+        input[type="name"],
+        input[type="search"] {
             padding: 0 25px;
             height: 72px;
             border: none;
@@ -1149,7 +1259,6 @@ h1, h2, h3, h4, h5, h6 {
             background-color: #{var(--color-form-bg)};
             outline: none;
             line-height: normal;
-
 
             @include placeholder {
                 color: #{var(--color-form-input)};
@@ -1175,7 +1284,9 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    small, .small, .small p {
+    small,
+    .small,
+    .small p {
         @extend .animation;
         font-size: 14px !important;
         line-height: 22px !important;
@@ -1191,33 +1302,43 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     blockquote {
-        padding: 0 40px;
-        margin-bottom: 40px;
-
-        @media screen and (max-width: 1024px) {
-            padding: 0px;
-        }
-
-        @media screen and (min-width: 1366px) {
-            max-width: 760px;
-        }
-
         cite {
             display: block;
             margin-top: 10px;
             font-style: normal;
-            opacity: 0.4;
-            font-size: 80%;
+            opacity: 0.6;
+            @include fluid-font(3vw, 13px, 15px, 17px);
         }
 
         p,
         ul,
         ol {
             padding: 0;
-            color: #{var(--color-link)};
+            color: #{var(--color-secondary)};
             font-weight: 700;
+            @include fluid-font(3vw, 20px, 28px, 35px);
             margin: 0;
-            font-family: $font-1;
+            font-family: $font-2;
+        }
+    }
+}
+
+.share-single {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+
+    @media screen and (max-width: 680px) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 20px;
+    }
+
+    h4 {
+        align-self: center;
+
+        @media screen and (max-width: 680px) {
+            text-align: center;
         }
     }
 }
@@ -1225,56 +1346,15 @@ h1, h2, h3, h4, h5, h6 {
 .share {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-    flex-wrap: nowrap;
-    justify-content: stretch;
+    grid-gap: 15px;
     align-items: center;
 
-    @media screen and (max-width: 600px) {
-        grid-template-columns: 1fr;
-    }
-
-    @media screen and (min-width: 601px) and (max-width: 1023px) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @media screen and (min-width: 1367px) and (max-width: 1600px) {
-        grid-template-columns: 1fr 1fr 1fr;
+    @media screen and (max-width: 680px) {
+        gap: 20px;
     }
 
     a {
-        border-radius: 50px;
-        padding: 19px 25px;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: normal;
-        font-family: $font-1;
-        border: none;
-        cursor: pointer;
-        color: #{var(--color-secondary)};
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        text-align: center;
-        line-height: normal;
-        @extend .animation;
-        position: relative;
-        background-color: #{var(--color-form-bg)};
-
-        &:after {
-            @extend .after-shadow;
-        }
-
         &:hover {
-            background-color: #{var(--color-primary)};
-            color: #{var(--color-white)};
-
             path,
             rect,
             polyline,
@@ -1283,13 +1363,12 @@ h1, h2, h3, h4, h5, h6 {
             ellipse,
             line {
                 @extend .animation;
-                fill: #{var(--color-white)};
+                fill: #{var(--color-secondary)};
             }
         }
 
         svg {
-            height: 15px;
-            margin-right: 10px;
+            height: 18px;
 
             path,
             rect,

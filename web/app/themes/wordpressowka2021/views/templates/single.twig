@@ -1,0 +1,76 @@
+{% extends "/layouts/base.twig" %}
+
+{% block main %}
+
+<section class="p-b-100">
+	<div class="grid-single">
+		<div class="item empty">
+		</div>
+
+		<div class="item item-single entry-content">
+			<header>
+				<time>20 grudnia 2020</time>
+				<h1>WordPressówka #104</h1>
+			</header>
+			{{ post.content }}
+
+			<div class="share-single">
+				<h4>{{ __( 'Podoba Ci się to wydanie? Podaj dalej!', 'sasquatch' ) }}</h4>
+				<div class="share">
+					<a href="{{ post.link | fb_share_url }}" target="_blank" rel="noopener">
+						{% include 'views/parts/icons/facebook.twig' %}
+					</a>
+					<a href="{{ post.link | ln_share_url }}" target="_blank" rel="noopener">
+						{% include 'views/parts/icons/linkedin.twig' %}
+					</a>
+					<a href="{{ post.link | tt_share_url }}" target="_blank" rel="noopener">
+						{% include 'views/parts/icons/twitter.twig' %}
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="item item-fixed">
+			<div class="sidebar">
+				{% if options.tytul_newslettera %}
+				<div class="item">
+					<h2 class="section-title text-center">
+						{{ options.tytul_newslettera }}
+					</h2>
+				</div>
+				{% endif %}
+
+				<div class="newsletter-form">
+					{% if options.opis_newslettera %}
+						{{ options.opis_newslettera }}
+					{% endif %}
+
+					<form class="text-left" action="{{ options.mailchimp_url }}" method="post"
+						name="mc-embedded-subscribe-form" class="validate">
+						<div>
+							<label>{{ __( 'Twój adres email', 'sasquatch' ) }}</label>
+							<input type="email" placeholder="{{ __( 'Podaj email', 'sasquatch' ) }}">
+						</div>
+						<div>
+							<input type="submit" value="{{ __( 'Zapisz się teraz', 'sasquatch' ) }}">
+						</div>
+					</form>
+
+					{% if options.reguly_newslettera %}
+					<div class="small">
+						{{ options.reguly_newslettera }}
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-border-bottom"></section>
+
+<p> tutaj wstaw Zobacz inne wydania - 3 sztuki z nagłówkiem "Zobacz inne wydania" </p>
+
+<p> wstaw tutaj block Zapisz się na Newsletter, który jest na stronie głównej </p>
+
+{% endblock %}

@@ -13,7 +13,7 @@ SupportsAlign: center
 #}
 
 <section class="section p-t-100 p-b-100 secondary-background">
-	<div class="grid grid-gap grid-align-middle grid-columns-1 text-center">
+	<div class="grid grid-gap grid-align-middle grid-columns-1 grid-narrow text-center">
 		{% if options.tytul_newslettera %}
 		<div class="item">
 			<h2 class="section-title text-center">
@@ -28,10 +28,10 @@ SupportsAlign: center
 			{% endif %}
 
 			<form class="text-left" action="{{ options.mailchimp_url }}" method="post" name="mc-embedded-subscribe-form" class="validate">
-				<div>
+				{# <div>
 					<label>{{ __( 'Twoje imię', 'sasquatch' ) }}</label>
 					<input type="text" placeholder="{{ __( 'Podaj swoje imię', 'sasquatch' ) }}">
-				</div>
+				</div> #}
 				<div>
 					<label>{{ __( 'Twój adres email', 'sasquatch' ) }}</label>
 					<input type="email" placeholder="{{ __( 'Podaj email', 'sasquatch' ) }}">
