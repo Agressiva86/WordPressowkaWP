@@ -1,5 +1,5 @@
-# Translation of WordPress - 5.5.x - Development - Administration - Network Admin in Polish
-# This file is distributed under the same license as the WordPress - 5.5.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 5.6.x - Development - Administration - Network Admin in Polish
+# This file is distributed under the same license as the WordPress - 5.6.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2020-07-27 17:06:38+0000\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: pl\n"
-"Project-Id-Version: WordPress - 5.5.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 5.6.x - Development - Administration - Network Admin\n"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:293
 msgctxt "site"
@@ -17,7 +17,7 @@ msgid "Not spam"
 msgstr "To nie jest spam"
 
 #. translators: %s: Number of themes.
-#: wp-admin/network/themes.php:405
+#: wp-admin/network/themes.php:410
 msgid "%s theme will no longer be auto-updated."
 msgid_plural "%s themes will no longer be auto-updated."
 msgstr[0] "%s motyw nie będzie już automatycznie aktualizowany."
@@ -25,7 +25,7 @@ msgstr[1] "%s motywy nie będą już automatycznie aktualizowane."
 msgstr[2] "%s motywów nie będzie już automatycznie aktualizowanych."
 
 #. translators: %s: Number of themes.
-#: wp-admin/network/themes.php:396
+#: wp-admin/network/themes.php:401
 msgid "%s theme will be auto-updated."
 msgid_plural "%s themes will be auto-updated."
 msgstr[0] "%s motyw będzie automatycznie aktualizowany."
@@ -40,8 +40,8 @@ msgstr "Przykro nam, nie masz uprawnień do zmiany ustawień automatycznych aktu
 msgid "No themes are currently available."
 msgstr "Żaden motyw nie jest aktualnie dostępny."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:475
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:496
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:477
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:498
 #: wp-admin/includes/class-wp-ms-users-list-table.php:336
 msgid "Y/m/d g:i:s a"
 msgstr "Y-m-d G:i:s"
@@ -122,7 +122,7 @@ msgstr[0] "Dostępna aktualizacja <span class=\"count\">(%s)</span>"
 msgstr[1] "Dostępne aktualizacje <span class=\"count\">(%s)</span>"
 msgstr[2] "Dostępne aktualizacje <span class=\"count\">(%s)</span>"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:614
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:616
 msgid "Main"
 msgstr "Główna"
 
@@ -147,7 +147,7 @@ msgstr "Zamierzasz usunąć następujące witryny:"
 msgid "User could not be added to this site."
 msgstr "Użytkownik nie mógł zostać dodany do witryny. "
 
-#: wp-admin/network/site-new.php:287
+#: wp-admin/network/site-new.php:263
 msgid "The username and a link to set the password will be mailed to this email address."
 msgstr "Nazwa użytkownika i odnośnik do ustawienia hasła zostanie wysłany na podany adres e-mail."
 
@@ -237,14 +237,9 @@ msgctxt "theme"
 msgid "%1$s by %2$s"
 msgstr "%1$s autorstwa %2$s"
 
-#: wp-admin/network/site-new.php:243
+#: wp-admin/network/site-new.php:219
 msgid "Only lowercase letters (a-z), numbers, and hyphens are allowed."
 msgstr "Dozwolone są małe litery (a-z) [bez polskich znaków diakrytycznych], liczby oraz myślnik."
-
-#: wp-admin/network/site-new.php:169
-msgctxt "email \"From\" field"
-msgid "Site Admin"
-msgstr "Administrator Witryny"
 
 #. translators: %s: wp-config.php
 #: wp-admin/includes/network.php:540
@@ -426,36 +421,36 @@ msgstr "Motyw"
 msgid "No themes found."
 msgstr "Nie znaleziono żadnych motywów."
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:704
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:706
 msgctxt "verb; site"
 msgid "Archive"
 msgstr "Archiwizuj"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:702
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:704
 msgid "Unarchive"
 msgstr "Przywróć z archiwum"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:478
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:480
 msgid "Never"
 msgstr "Nigdy"
 
 #. translators: 1: Site title, 2: Site tagline.
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:451
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:453
 msgid "%1$s &#8211; %2$s"
 msgstr "%1$s &#8211; %2$s"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:363
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:365
 #: wp-admin/network/site-info.php:176
 msgctxt "site"
 msgid "Registered"
 msgstr "Zarejestrowany"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:362
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:364
 #: wp-admin/network/site-info.php:180
 msgid "Last Updated"
 msgstr "Ostatnia aktualizacja"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:708
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:710
 msgctxt "site"
 msgid "Not Spam"
 msgstr "To nie jest spam"
@@ -480,7 +475,7 @@ msgid "Deleted"
 msgstr "Usunięte"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:40
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:710
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:712
 #: wp-admin/network/site-info.php:187
 msgctxt "site"
 msgid "Spam"
@@ -617,7 +612,7 @@ msgid "Warning! Problem updating %1$s. Your server may not be able to connect to
 msgstr "Uwaga! Wystąpił problem z aktualizacją %1$s. Twój serwer prawdopodobnie nie może połączyć się z docelową witryną. Błąd: %2$s"
 
 #. translators: %s: Number of themes.
-#: wp-admin/network/themes.php:387
+#: wp-admin/network/themes.php:392
 msgid "%s theme deleted."
 msgid_plural "%s themes deleted."
 msgstr[0] "Usunięto %s motyw."
@@ -625,7 +620,7 @@ msgstr[1] "Usunięto %s motywy."
 msgstr[2] "Usunięto %s motywów."
 
 #. translators: %s: Number of themes.
-#: wp-admin/network/themes.php:378 wp-admin/network/site-themes.php:204
+#: wp-admin/network/themes.php:383 wp-admin/network/site-themes.php:204
 msgid "%s theme disabled."
 msgid_plural "%s themes disabled."
 msgstr[0] "Wyłączono %s motyw."
@@ -633,7 +628,7 @@ msgstr[1] "Wyłączono %s motywy."
 msgstr[2] "Wyłączono %s motywów."
 
 #. translators: %s: Number of themes.
-#: wp-admin/network/themes.php:369 wp-admin/network/site-themes.php:195
+#: wp-admin/network/themes.php:374 wp-admin/network/site-themes.php:195
 msgid "%s theme enabled."
 msgid_plural "%s themes enabled."
 msgstr[0] "Włączono %s motyw."
@@ -677,7 +672,7 @@ msgid "New registrations settings"
 msgstr "Ustawienia nowych rejestracji"
 
 #. translators: 1: File name (.htaccess or web.config), 2: File path.
-#: wp-admin/includes/network.php:609 wp-admin/includes/network.php:661
+#: wp-admin/includes/network.php:609 wp-admin/includes/network.php:662
 msgid "Add the following to your %1$s file in %2$s, <strong>replacing</strong> other WordPress rules:"
 msgstr "Dodaj następującą treść do swojego pliku %1$s w katalogu %2$s, <strong>zastępując</strong> inne reguły WordPressa:"
 
@@ -754,22 +749,8 @@ msgstr "Proszę nie używać aktualizacji sieci witryn więcej niż raz po każd
 msgid "Upgrade Network"
 msgstr "Aktualizuj Sieć Witryn"
 
-#. translators: New site notification email. 1: User login, 2: Site URL, 3:
-#. Site title.
-#: wp-admin/network/site-new.php:157
-msgid ""
-"New site created by %1$s\n"
-"\n"
-"Address: %2$s\n"
-"Name: %3$s"
-msgstr ""
-"Nowa witryna utworzona przez: %1$s\n"
-"\n"
-"Adres: %2$s\n"
-"Nazwa: %3$s"
-
 #: wp-admin/includes/network.php:263 wp-admin/includes/network.php:615
-#: wp-admin/includes/network.php:667
+#: wp-admin/includes/network.php:668
 msgid "Subdirectory networks may not be fully compatible with custom wp-content directories."
 msgstr "Sieci witryn oparte o podkatalogi mogą nie być w pełni kompatybline z własnymi katalogami wp-content."
 
@@ -817,12 +798,12 @@ msgstr "Ten użytkownik został już dodany do tej witryny."
 msgid "Site options updated."
 msgstr "Ustawienia witryny zostały zaktualizowane."
 
-#: wp-admin/network/site-new.php:201 wp-admin/network/site-new.php:211
+#: wp-admin/network/site-new.php:177 wp-admin/network/site-new.php:187
 msgid "Add New Site"
 msgstr "Dodaj nową witrynę"
 
 #. translators: 1: Dashboard URL, 2: Network admin edit URL.
-#: wp-admin/network/site-new.php:194
+#: wp-admin/network/site-new.php:170
 msgid "Site added. <a href=\"%1$s\">Visit Dashboard</a> or <a href=\"%2$s\">Edit Site</a>"
 msgstr "Witryna została utworzona. <a href=\"%1$s\">Odwiedź jej kokpit</a> lub <a href=\"%2$s\">edytuj jej ustawienia</a>"
 
@@ -834,7 +815,7 @@ msgstr "Ten ekran służy dodawaniu nowych witryn do sieci przez superadministra
 msgid "Site info updated."
 msgstr "Informacje o witrynie zostały zaktualizowane."
 
-#: wp-admin/network/themes.php:411
+#: wp-admin/network/themes.php:416
 msgid "You cannot delete a theme while it is active on the main site."
 msgstr "Nie możesz usunąć motywu, który jest używany na głównej witrynie."
 
@@ -870,15 +851,15 @@ msgstr "Usuń motyw"
 msgid "Network enabled themes are not shown on this screen."
 msgstr "Motywy dostępne do użycia w całej sieci witryn nie są wyświetlane na tym ekranie."
 
-#: wp-admin/network/themes.php:409 wp-admin/network/site-themes.php:208
+#: wp-admin/network/themes.php:414 wp-admin/network/site-themes.php:208
 msgid "No theme selected."
 msgstr "Nie wybrano żadnego motywu."
 
-#: wp-admin/network/themes.php:375 wp-admin/network/site-themes.php:201
+#: wp-admin/network/themes.php:380 wp-admin/network/site-themes.php:201
 msgid "Theme disabled."
 msgstr "Motyw został wyłączony."
 
-#: wp-admin/network/themes.php:366 wp-admin/network/site-themes.php:192
+#: wp-admin/network/themes.php:371 wp-admin/network/site-themes.php:192
 msgid "Theme enabled."
 msgstr "Motyw został włączony."
 
@@ -951,7 +932,7 @@ msgstr "Motywy %s"
 msgid "All Sites"
 msgstr "Wszystkie witryny"
 
-#: wp-admin/includes/network.php:679
+#: wp-admin/includes/network.php:680
 msgid "Once you complete these steps, your network is enabled and configured. You will have to log in again."
 msgstr "Po wykonaniu tych czynności sieć witryn będzie włączona i skonfigurowana. Konieczne będzie ponowne zalogowanie się."
 
@@ -1056,10 +1037,6 @@ msgstr "Witamy w instalatorze sieci witryn!"
 #: wp-admin/includes/network.php:160
 msgid "Error: The network could not be created."
 msgstr "Błąd: Sieć witryn nie mogła zostać stworzona."
-
-#: wp-admin/includes/network.php:148
-msgid "Return to Dashboard"
-msgstr "Powrót do Kokpitu"
 
 #: wp-admin/includes/network.php:142
 msgid "You cannot install a network of sites with your server address."
@@ -1381,20 +1358,15 @@ msgstr "Za każdym razem, gdy ktoś zarejestruje witrynę lub użytkownika wyśl
 msgid "Network Admin Email"
 msgstr "Adres email administratora sieci witryn"
 
-#. translators: New site notification email subject. %s: Network title.
-#: wp-admin/network/site-new.php:152
-msgid "[%s] New Site Created"
-msgstr "[%s] Utworzono nową witrynę"
-
-#: wp-admin/network/site-new.php:287
+#: wp-admin/network/site-new.php:263
 msgid "A new user will be created if the above email address is not in the database."
 msgstr "Jeśli wprowadzony adres email nie znajduje się jeszcze w bazie danych, zostanie utworzone nowe konto."
 
-#: wp-admin/network/site-new.php:283
+#: wp-admin/network/site-new.php:259
 msgid "Admin Email"
 msgstr "Email administratora"
 
-#: wp-admin/network/site-new.php:299
+#: wp-admin/network/site-new.php:275
 msgid "Add Site"
 msgstr "Dodaj witrynę"
 

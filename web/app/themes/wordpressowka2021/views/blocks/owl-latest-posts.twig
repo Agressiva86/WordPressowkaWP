@@ -3,12 +3,12 @@ Title: Owl Latests Blog posts
 Description: Section with last posts
 Category: formatting
 Icon: admin-comments
-Keywords: text photo
+Keywords: blog posts
 Mode: preview
 Align: center
 PostTypes: post articles page
 SupportsMode: true
-SupportsMultiple: true
+SupportsMultiple: false
 SupportsAlign: center
 #}
 
@@ -16,132 +16,30 @@ SupportsAlign: center
 	<div class="grid grid-gap grid-align-middle grid-columns-2 border-bottom">
 		<div class="item">
 			<h2 class="section-title text-left">
-				Najnowsze artykuły
+				{{ fields.title }}
 			</h2>
 		</div>
 		<div class="item text-right for-desktop">
-			<a href="" class="button color-primary">Zobacz blog WordPressówki</a>
+			<a href="{{ site.url }}/{{ __( 'articles', 'sasquatch' ) }}" class="button color-primary">{{ __( 'Zobacz blog WordPressówki', 'sasquatch' ) }}</a>
 		</div>
 	</div>
 
 	<div class="grid grid-gap grid-wide grid-align-top grid-blog">
 		<div class="item">
-
-			<article class="owl-article article-big">
-				<div class="item">
-					<a href="" class="article-cover">
-						<picture>
-							<source media="(max-width:640px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
-							<source media="(min-width: 641px) and (max-width:1023px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
-							<img
-								src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
-						</picture>
-					</a>
-				</div>
-				<div class="item article-content">
-					<h2>
-						<a href="">
-							Upstairs Community: building a tribe with people, not for people
-						</a>
-					</h2>
-
-					<p>
-						There’s a familiar yet truthful saying that if you’re not paying for the product, you are the product. Even though people are becoming more precarious of being in charge of their websites, there’s still plenty of unknown.
-					</p>
-
-					{% include 'views/parts/icons/arrow.twig' %}
-				</div>
-			</article>
-
+		{% for entry in entries|slice(0, 1) %}
+			{% include 'views/parts/article-large.twig' %}
+		{% endfor %}
 		</div>
 		<div class="item item-article-column">
-
-			<article class="owl-article article-small">
-				<div class="item">
-					<a href="" class="article-cover">
-						<picture>
-							<source media="(max-width:640px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=570&h=260&q=80" />
-							<source media="(min-width: 641px) and (max-width:1023px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=920&h=420&q=80" />
-							<source media="(min-width: 1024px) and (max-width:1900px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=170&q=80" />
-							<img
-								src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=230&q=80" />
-						</picture>
-					</a>
-				</div>
-				<div class="item article-content">
-					<h2>
-						<a href="">
-							Upstairs Community: building a tribe with people, not for people
-						</a>
-					</h2>
-
-					{% include 'views/parts/icons/arrow.twig' %}
-				</div>
-			</article>
-
-			<article class="owl-article article-small">
-				<div class="item">
-					<a href="" class="article-cover">
-						<picture>
-							<source media="(max-width:640px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=570&h=260&q=80" />
-							<source media="(min-width: 641px) and (max-width:1023px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=920&h=420&q=80" />
-							<source media="(min-width: 1024px) and (max-width:1900px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=170&q=80" />
-							<img
-								src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=230&q=80" />
-						</picture>
-					</a>
-				</div>
-				<div class="item article-content">
-					<h2>
-						<a href="">
-							Upstairs Community: building a tribe with people, not for people
-						</a>
-					</h2>
-
-					{% include 'views/parts/icons/arrow.twig' %}
-				</div>
-			</article>
-
-			<article class="owl-article article-small">
-				<div class="item">
-					<a href="" class="article-cover">
-						<picture>
-							<source media="(max-width:640px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=570&h=260&q=80" />
-							<source media="(min-width: 641px) and (max-width:1023px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=920&h=420&q=80" />
-							<source media="(min-width: 1024px) and (max-width:1900px)"
-								srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=170&q=80" />
-							<img
-								src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=230&q=80" />
-						</picture>
-					</a>
-				</div>
-				<div class="item article-content">
-					<h2>
-						<a href="">
-							Upstairs Community: building a tribe with people, not for people
-						</a>
-					</h2>
-
-					{% include 'views/parts/icons/arrow.twig' %}
-				</div>
-			</article>
-
+		{% for entry in entries|slice(1, 3) %}
+			{% include 'views/parts/article-small.twig' %}
+		{% endfor %}
 		</div>
 	</div>
 
 	<div class="grid grid-columns-1 text-center for-mobile">
 		<div class="item">
-			<a href="" class="button color-primary">Zobacz blog WordPressówki</a>
+			<a href="{{ site.url }}/{{ __( 'articles', 'sasquatch' ) }}" class="button color-primary">{{ __( 'Zobacz blog WordPressówki', 'sasquatch' ) }}</a>
 		</div>
 	</div>
 </section>

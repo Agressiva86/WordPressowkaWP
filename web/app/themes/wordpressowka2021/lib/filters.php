@@ -86,3 +86,16 @@ add_filter(
 		return $context;
 	}
 );
+
+add_filter(
+	'timber/acf-gutenberg-blocks-data/owl-latest-posts',
+	function( $context ) {
+		$args               = array(
+			'posts_per_page' => 4,
+			'post_type'      => 'articles',
+		);
+		$context['entries'] = Timber::get_posts( $args );
+
+		return $context;
+	}
+);

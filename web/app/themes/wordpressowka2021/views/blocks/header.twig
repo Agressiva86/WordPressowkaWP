@@ -51,13 +51,47 @@
 		#}
 		<picture>
 			{% set newsletter_image = Image( options.obrazek_newslettera ) %}
-			<source type="image/webp" media="(max-width:640px)" srcset="{{ newsletter_image.src|towebp }}" />
-			<source media="(max-width:640px)" srcset="{{ newsletter_image.src }}" />
-			<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-				srcset="{{ newsletter_image.src|towebp }}" />
-			<source media="(min-width: 641px) and (max-width:1023px)" srcset="{{ newsletter_image.src }}" />
-			<source type="image/webp" srcset="{{ newsletter_image.src|towebp }}" />
-			<img src="{{ newsletter_image.src }}" />
+			<source
+				media="(max-width:640px)"
+				srcset="{{ newsletter_image.src|resize(1,1)|towebp }}"
+			/>
+			<source
+				media="(min-width: 1024px) and (max-width:1400px)"
+				type="image/webp"
+				srcset="{{ newsletter_image.src|resize(600,650)|towebp }}"
+				width="600"
+				height="650"
+			/>
+			<source
+				media="(min-width: 1024px) and (max-width:1400px)"
+				srcset="{{ newsletter_image.src|resize(600,650) }}"
+				width="600"
+				height="650"
+			/>
+			<source
+				media="(min-width: 1401px) and (max-width:1920px)"
+				type="image/webp"
+				srcset="{{ newsletter_image.src|resize(750,710)|towebp }}"
+				width="750"
+				height="710"
+			/>
+			<source
+				media="(min-width: 1401px) and (max-width:1920px)"
+				srcset="{{ newsletter_image.src|resize(750,710) }}"
+				width="750"
+				height="710"
+			/>
+			<source
+				type="image/webp"
+				srcset="{{ newsletter_image.src|resize(1320,1200)|towebp }}"
+				width="1320"
+				height="1200"
+			/>
+			<img
+				src="{{ newsletter_image.src|resize(1320,1200) }}"
+				width="1320"
+				height="1200"
+			/>
 		</picture>
 	</div>
 </section>
