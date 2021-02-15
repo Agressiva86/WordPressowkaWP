@@ -62,7 +62,23 @@
 		{% if options.napis_partner %}
 		<div class="item partner">
 			<span>{{ options.napis_partner }}</span>
-			<a href="{{ options.link }}" target="_blank"><img src="{{ Image(options.logo).src }}"></a>
+			<a href="{{ options.link }}" target="_blank">
+				<picture>
+					<source
+						type="image/webp"
+						src="{{ Image(options.logo).src|towebp }}"
+						width="{{ Image(options.logo).width }}"
+						height="{{ Image(options.logo).height }}"
+						alt=""
+					>
+					<img
+						src="{{ Image(options.logo).src }}"
+						width="{{ Image(options.logo).width }}"
+						height="{{ Image(options.logo).height }}"
+						alt=""
+					>
+				</picture>
+			</a>
 		</div>
 		{% endif %}
 	</div>
@@ -72,6 +88,20 @@
 {% if options.napis_partner %}
 <div class="partner-mobile">
 	<span>{{ options.napis_partner }}</span>
-	<a href="{{ options.link }}" target="_blank"><img src="{{ Image(options.logo).src }}"></a>
+		<picture>
+			<source
+				type="image/webp"
+				src="{{ Image(options.logo).src|towebp }}"
+				width="{{ Image(options.logo).width }}"
+				height="{{ Image(options.logo).height }}"
+				alt=""
+			>
+			<img
+				src="{{ Image(options.logo).src }}"
+				width="{{ Image(options.logo).width }}"
+				height="{{ Image(options.logo).height }}"
+				alt=""
+			>
+		</picture>
 </div>
 {% endif %}
