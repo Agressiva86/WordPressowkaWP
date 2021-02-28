@@ -29,8 +29,8 @@
 
 		<div class="item item-single entry-content">
 			<header>
-				<time>20 grudnia 2020</time>
-				<h1>WordPressówka #104</h1>
+				<time>{{ post.date( options.date_format ) }}</time>
+				<h1>{{ post.title }}</h1>
 			</header>
 			{{ post.content }}
 

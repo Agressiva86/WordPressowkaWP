@@ -808,6 +808,7 @@ h6 {
 .entry-content {
     display: grid;
     gap: 40px;
+    width: 100%;
     grid-template-columns: 1fr;
 
     header {
@@ -1184,6 +1185,11 @@ h6 {
             margin-bottom: 40px;
             @extend .animation;
             grid-gap: 0px;
+            border: 1px solid rgba(#152C5B, 0.08);
+
+            html[data-theme="dark"] & {
+                border: 1px solid rgba(#ffffff, 0.1) !important;
+            }
 
             input {
                 border-radius: 50% 0 0 50% !important;
@@ -1193,10 +1199,6 @@ h6 {
 
             input:focus {
                 box-shadow: none !important;
-            }
-
-            &:after {
-                @extend .after-shadow;
             }
 
             .ais-SearchBox-reset {
