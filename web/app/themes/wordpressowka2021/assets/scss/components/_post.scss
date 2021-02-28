@@ -620,10 +620,8 @@ h6 {
 
 .single-entry {
     &-wrapper {
-        margin-top: 30px;
-
         @media screen and (max-width: 1024px) {
-            margin-top: 30px;
+            margin-top: 100px;
         }
     }
 
@@ -799,7 +797,7 @@ h6 {
 
             img,
             source {
-                border-radius: 20px;
+                border-radius: $global-radius;
                 height: auto;
                 max-width: 100% !important;
             }
@@ -808,6 +806,10 @@ h6 {
 }
 
 .entry-content {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+
     header {
         display: grid;
         grid-template-columns: 1fr;
@@ -1372,6 +1374,11 @@ h6 {
 
         @media screen and (max-width: 680px) {
             text-align: center;
+
+            &:before {
+                left: 50% !important;
+                transform: translateX(-50%);
+            }
         }
     }
 }
