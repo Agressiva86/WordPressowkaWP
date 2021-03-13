@@ -328,7 +328,7 @@
 
         .face {
             position: sticky;
-            top: 50px;
+            top: 100px;
 
             .small {
                 @include fluid-font(3vw, 13px, 14px, 15px);

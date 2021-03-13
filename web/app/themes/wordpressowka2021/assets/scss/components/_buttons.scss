@@ -142,8 +142,9 @@
         }
 
         @media screen and (max-width: 680px) {
-            height: 52px;
+            height: 52px !important;
             width: 52px !important;
+            line-height: 52px !important;
             padding: 0 !important;
 
             svg {

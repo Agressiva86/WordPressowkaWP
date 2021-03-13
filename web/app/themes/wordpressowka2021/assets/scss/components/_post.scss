@@ -372,6 +372,31 @@ h6 {
         }
     }
 
+    &.article-small-horizontal {
+        grid-template-columns: 1fr;
+        gap: 35px;
+
+        @media screen and (max-width: 1024px) {
+            gap: 25px;
+        }
+
+        .article-content {
+            @media screen and (min-width: 1024px) {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+
+            h2 {
+                @include fluid-font(3vw, 20px, 24px, 26px);
+                line-height: 1.4;
+
+                @media screen and (max-width: 1024px) {
+                    @include fluid-font(3vw, 26px, 27px, 28px);
+                }
+            }
+        }
+    }
+
     &.article-small {
         grid-template-columns: 260px 1fr;
         gap: 50px;
@@ -393,7 +418,7 @@ h6 {
         }
 
         h2 {
-            @include fluid-font(3vw, 20px, 23px, 26px);
+            @include fluid-font(3vw, 20px, 24px, 26px);
             line-height: 1.4;
 
             @media screen and (max-width: 1024px) {
@@ -405,7 +430,7 @@ h6 {
 
 .grid-single {
     display: grid;
-    grid-template-columns: 230px 1fr 280px;
+    grid-template-columns: 230px 1fr 300px;
     gap: 50px;
     padding: 0 50px;
     justify-items: stretch;
@@ -458,6 +483,14 @@ h6 {
         @media screen and (max-width: 1024px) {
             padding-top: 50px;
         }
+    }
+}
+
+.wrapper-top {
+    padding-top: 200px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 50px;
     }
 }
 
@@ -587,10 +620,8 @@ h6 {
 
 .single-entry {
     &-wrapper {
-        margin-top: 30px;
-
         @media screen and (max-width: 1024px) {
-            margin-top: 30px;
+            margin-top: 100px;
         }
     }
 
@@ -766,7 +797,7 @@ h6 {
 
             img,
             source {
-                border-radius: 20px;
+                border-radius: $global-radius;
                 height: auto;
                 max-width: 100% !important;
             }
@@ -775,6 +806,11 @@ h6 {
 }
 
 .entry-content {
+    display: grid;
+    gap: 40px;
+    width: 100%;
+    grid-template-columns: 1fr;
+
     header {
         display: grid;
         grid-template-columns: 1fr;
@@ -1149,6 +1185,11 @@ h6 {
             margin-bottom: 40px;
             @extend .animation;
             grid-gap: 0px;
+            border: 1px solid rgba(#152C5B, 0.08);
+
+            html[data-theme="dark"] & {
+                border: 1px solid rgba(#ffffff, 0.1) !important;
+            }
 
             input {
                 border-radius: 50% 0 0 50% !important;
@@ -1158,10 +1199,6 @@ h6 {
 
             input:focus {
                 box-shadow: none !important;
-            }
-
-            &:after {
-                @extend .after-shadow;
             }
 
             .ais-SearchBox-reset {
@@ -1339,6 +1376,11 @@ h6 {
 
         @media screen and (max-width: 680px) {
             text-align: center;
+
+            &:before {
+                left: 50% !important;
+                transform: translateX(-50%);
+            }
         }
     }
 }
