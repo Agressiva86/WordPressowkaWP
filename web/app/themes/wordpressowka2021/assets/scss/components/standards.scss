@@ -475,6 +475,15 @@ a {
     border-radius: 50%;
 }
 
+.border-top {
+    border-top: 1px solid rgba(#152C5B, 0.08);
+    @extend .animation;
+
+    html[data-theme="dark"] & {
+        border-top: 1px solid rgba(#ffffff, 0.1);
+    }
+}
+
 .border {
     &-solid {
         border-style: solid;
