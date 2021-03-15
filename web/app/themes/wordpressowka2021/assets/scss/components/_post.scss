@@ -523,6 +523,26 @@ h6 {
         }
     }
 
+    &.item-icons {
+        padding: 50px;
+
+        @media screen and (max-width: 1023px) {
+            padding: 30px;
+        }
+
+        .inner {
+            justify-items: center !important;
+            gap: 15px;
+
+            h3 {
+                color: #{var(--color-primary)} !important;
+                @include fluid-font(3vw, 55px, 60px, 65px);
+                margin-top: 30px;
+                line-height: 100%;
+            }
+        }
+    }
+
     .inner {
         display: grid;
         grid-template-rows: 1fr;
