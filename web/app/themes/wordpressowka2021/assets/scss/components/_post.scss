@@ -543,6 +543,34 @@ h6 {
         }
     }
 
+    &.item-logo {
+        padding: 20px 10px;
+
+        .inner {
+            justify-items: center !important;
+            gap: 0;
+
+            img {
+                max-height: 60px;
+                min-height: 60px;
+                max-width: 230px;
+                width: auto;
+                filter: grayscale(1);
+                opacity: 0.6;
+                @extend .animation;
+            }
+
+            a {
+                &:hover {
+                    img {
+                        opacity: 1;
+                        filter: grayscale(0);
+                    }
+                }
+            }
+        }
+    }
+
     .inner {
         display: grid;
         grid-template-rows: 1fr;
