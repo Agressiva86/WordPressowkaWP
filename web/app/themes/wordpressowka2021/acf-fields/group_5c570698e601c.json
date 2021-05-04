@@ -130,6 +130,31 @@
             "maxlength": ""
         },
         {
+            "key": "field_604d325cede94",
+            "label": "Data",
+            "name": "data",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebb368a227fe",
+                        "operator": "==",
+                        "value": "event"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
             "key": "field_5edfee05d2c36",
             "label": "Wyłącz lazy load",
             "name": "disable_lazy_load",
@@ -164,7 +189,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1591733794
+    "modified": 1615671986
 }

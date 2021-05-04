@@ -87,5 +87,12 @@
 
 </section>
 
+{% set block_title = __('Przeczytaj także', 'sasquath') %}
+{% include 'views/parts/other-articles.twig' with {
+	'fields': {
+		'title': block_title
+	},
+	'entries': other_posts
+} %}
 
 {% endblock %}

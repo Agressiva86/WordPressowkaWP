@@ -1,13 +1,19 @@
 <article class="owl-article article-big">
     <div class="item">
-        <a href="" class="article-cover">
-            <picture>
-                <source media="(max-width:640px)"
-                    srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
-                <source media="(min-width: 641px) and (max-width:1023px)"
-                    srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
-                <img
-                    src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=883&h=442&q=80" />
+        <a href="{{ entry.link }}" class="article-cover">
+			{% set image = Image( entry.thumbnail ) %}
+			<picture>
+				<source
+					type="image/webp"
+					srcset="{{ image.src|resize(883,442, 'center')|towebp }}"
+					width="883"
+					height="442"
+				/>
+				<img
+					srcset="{{ image.src|resize(883,442, 'center') }}"
+					width="883"
+					height="442"
+				/>
             </picture>
         </a>
     </div>
@@ -18,9 +24,7 @@
             </a>
         </h2>
 
-        <p>
-            There’s a familiar yet truthful saying that if you’re not paying for the product, you are the product. Even though people are becoming more precarious of being in charge of their websites, there’s still plenty of unknown.
-        </p>
+        {{ entry.preview.length(50).read_more('')|wpautop }}
 
         {% include 'views/parts/icons/arrow.twig' %}
     </div>

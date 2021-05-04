@@ -1,15 +1,59 @@
 <article class="owl-article article-small">
     <div class="item">
         <a href="{{ entry.link }}" class="article-cover">
-            <picture>
-                <source media="(max-width:640px)"
-                    srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=570&h=260&q=80" />
-                <source media="(min-width: 641px) and (max-width:1023px)"
-                    srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=920&h=420&q=80" />
-                <source media="(min-width: 1024px) and (max-width:1900px)"
-                    srcset="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=170&q=80" />
-                <img
-                    src="https://images.unsplash.com/photo-1612235809233-6bcd4c8331db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=260&h=230&q=80" />
+			{% set image = Image( entry.thumbnail ) %}
+			<picture>
+                <source
+					type="image/webp"
+					media="(max-width:640px)"
+					srcset="{{ image.src|resize(570,260, 'center')|towebp }}"
+					width="570"
+					height="260"
+				/>
+				<source
+					media="(max-width:640px)"
+					srcset="{{ image.src|resize(570,260, 'center') }}"
+					width="570"
+					height="260"
+				/>
+				<source
+					type="image/webp"
+					media="(min-width: 641px) and (max-width:1023px)"
+					srcset="{{ image.src|resize(920,420, 'center')|towebp }}"
+					width="920"
+					height="420"
+				/>
+				<source
+					media="(min-width: 641px) and (max-width:1023px)"
+					srcset="{{ image.src|resize(920,420, 'center') }}"
+					width="920"
+					height="420"
+				/>
+				<source
+					type="image/webp"
+					media="(min-width: 1024px) and (max-width:1900px)"
+					srcset="{{ image.src|resize(260,170, 'center')|towebp }}"
+					width="260"
+					height="170"
+				/>
+				<source
+					media="(min-width: 1024px) and (max-width:1900px)"
+					srcset="{{ image.src|resize(260,170, 'center') }}"
+					width="260"
+					height="170"
+				/>
+				<source
+					type="image/webp"
+					srcset="{{ image.src|resize(260,230, 'center')|towebp }}"
+					width="260"
+					height="230"
+				/>
+				<img
+					src="{{ image.src|resize(260,230, 'center') }}"
+					loading="lazy"
+					width="260"
+					height="230"
+				/>
             </picture>
         </a>
     </div>

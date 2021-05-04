@@ -8,6 +8,7 @@ return array(
 		'thumbnail',
 		'page-attributes',
 		'author',
+		'excerpt'
 	),
 	'labels'   => array(
 		'has_one'     => __( 'Article', 'sasquatch' ),

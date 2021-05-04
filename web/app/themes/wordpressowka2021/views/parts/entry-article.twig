@@ -1,0 +1,59 @@
+<article class="owl-article article-small-horizontal">
+	<div class="item">
+		<a href="{{ entry.link }}" class="article-cover">
+			{% set image = Image( entry.thumbnail ) %}
+            <picture>
+                <source
+					type="image/webp"
+					media="(max-width:640px)"
+					srcset="{{ image.src|resize(570,260, 'center')|towebp }}"
+					width="570"
+					height="260"
+				/>
+				<source
+					media="(max-width:640px)"
+					srcset="{{ image.src|resize(570,260, 'center') }}"
+					width="570"
+					height="260"
+				/>
+				<source
+					type="image/webp"
+					media="(min-width: 641px) and (max-width:1023px)"
+					srcset="{{ image.src|resize(920,420, 'center')|towebp }}"
+					width="920"
+					height="420"
+				/>
+				<source
+					media="(min-width: 641px) and (max-width:1023px)"
+					srcset="{{ image.src|resize(920,420, 'center') }}"
+					width="920"
+					height="420"
+				/>
+
+				<source
+					type="image/webp"
+					srcset="{{ image.src|resize(570,260, 'center')|towebp }}"
+					width="570"
+					height="260"
+				/>
+				<img
+					src="{{ image.src|resize(570,260, 'center') }}"
+					loading="lazy"
+					width="570"
+					height="260"
+				/>
+            </picture>
+		</a>
+	</div>
+	<div class="item article-content">
+		<h2>
+			<a href="{{ entry.link }}">
+				{{ entry.title }}
+			</a>
+		</h2>
+
+		{{ entry.preview.length(30).read_more('')|wpautop }}
+
+		{% include 'views/parts/icons/arrow.twig' %}
+	</div>
+</article>

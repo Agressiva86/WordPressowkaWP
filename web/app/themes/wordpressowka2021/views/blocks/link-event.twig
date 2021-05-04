@@ -4,10 +4,10 @@
 	<div class="wordpressowka-link event" role="link">
 		<div class="time text-center">
 			<strong>
-				25
+				{{ fields.data|date('d') }}
 			</strong>
-			<span>listopada</span>
-			<small>2021</small>
+			<span>{{ fields.data|date('F') }}</span>
+			<small>{{ fields.data|date('Y') }}</small>
 		</div>
 		<div class="inner">
 			<div>

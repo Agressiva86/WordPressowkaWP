@@ -1,0 +1,16 @@
+<section class="section p-b-100">
+	{% if fields.title %}
+	<h2 class="section-title text-center">
+		{{ fields.title }}
+	</h2>
+	{% endif %}
+	<div class="grid grid-wide grid-gap grid-columns-3">
+		{% for entry in entries %}
+			{% include 'views/parts/entry-article.twig' %}
+		{% endfor %}
+	</div>
+
+	<div class="text-center m-t-50">
+		<a href="{{ site.url }}/{{ __( 'articles', 'sasquatch' ) }}" class="button color-primary">{{ __('Zobacz wszystkie artykuły', 'sasquatch' ) }}</a>
+	</div>
+</section>
