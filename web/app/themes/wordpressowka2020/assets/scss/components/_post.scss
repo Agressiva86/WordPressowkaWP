@@ -976,6 +976,16 @@ h1, h2, h3, h4, h5, h6 {
             font-family: $font-poppins;
         }
     }
+
+    iframe {
+        width: 100%;
+        height: auto;
+        margin-bottom: 80px;
+
+        @media screen and (max-width: 680px) {
+            margin-bottom: 40px;
+        }
+    }
 }
 
 .share {
