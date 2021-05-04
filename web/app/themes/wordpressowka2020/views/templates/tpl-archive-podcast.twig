@@ -6,113 +6,32 @@
 	<header class="single-entry-header" role="heading" aria-level="1">
 		<h2>{{ post.title }}</h2>
 	</header>
+	<div class="single-entry-columns">
+		<div class="item entry-content" role="article">
+			{{ post.content }}
+		</div>
+	</div>
 </article>
 
+
 <div class="editions-list podcast-list">
-	<a class="edition blog-post podcast-post" href="">
+{% for post in posts %}
+	{% set img = Image( post.thumbnail ) %}
+	<a class="edition blog-post podcast-post" href="{{ post.link }}">
 		<div>
 			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
+				<source type="image/webp"
+					srcset="{{ img | towebp }}"
 					width="700" height="393">
-				<source media="(max-width:640px)"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<img src="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
+				<img src="{{ img }}"
+					alt="" loading="lazy"
 					width="700" height="393">
 			</picture>
-			<h2>Contributing to WordPress</h2>
-			<small>posłuchaj </small>
+			<h2>{{ post.title }}</h2>
+			<small>listen now</small>
 		</div>
 	</a>
-	<a class="edition blog-post podcast-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(max-width:640px)"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<img src="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="700" height="393">
-			</picture>
-			<h2>Contributing to WordPress</h2>
-			<small>posłuchaj </small>
-		</div>
-	</a>
-	<a class="edition blog-post podcast-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(max-width:640px)"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<img src="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="700" height="393">
-			</picture>
-			<h2>Contributing to WordPress</h2>
-			<small>posłuchaj </small>
-		</div>
-	</a>
-	<a class="edition blog-post podcast-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(max-width:640px)"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					width="700" height="393">
-				<img src="https://app.wordpressowka.pl/app/uploads/2021/05/WP-Owlcast-web-cover.png"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="700" height="393">
-			</picture>
-			<h2>Contributing to WordPress</h2>
-			<small>posłuchaj </small>
-		</div>
-	</a>
+{% endfor %}
 </div>
 
 {% endblock %}
