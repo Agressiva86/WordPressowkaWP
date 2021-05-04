@@ -49,6 +49,11 @@
         font-family: $font-2 !important;
         margin-bottom: 28px !important;
     }
+
+    .border-top {
+        margin: 30px 0 !important;
+        border-top: 2px solid rgb(30, 30, 30) !important;
+    }
 }
 
 p.wp-block-paragraph {
