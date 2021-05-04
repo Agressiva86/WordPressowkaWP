@@ -131,6 +131,46 @@
         }
     }
 
+    &.blog-post {
+        width: auto;
+        margin-right: 0;
+
+        @media screen and (max-width: 1023px) {
+            padding: 25px;
+        }
+
+        &.podcast-post {
+            h2 {
+                @include fluid-font(3vw, 24px, 26px, 28px);
+            }
+        }
+
+        h2 {
+            @include fluid-font(3vw, 18px, 20px, 22px);
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #{var(--color-secondary)};
+        }
+
+        small {
+            @include fluid-font(3vw, 13px, 14px, 15px);
+            font-weight: 600;
+            color: #{var(--color-secondary)};
+            opacity: 0.4;
+            @extend .animation;
+        }
+
+        &:hover, &:focus {
+            h2 {
+                color: #{var(--color-primary)};
+            }
+
+            small {
+                opacity: 1;
+            }
+        }
+    }
+
     @media screen and (max-width: 680px) {
         padding: 30px 30px;
     }
@@ -248,6 +288,28 @@
         align-items: stretch;
     }
 
+    &.blog-list {
+        @media screen and (min-width: 680px) and (max-width: 1024px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr !important;
+            grid-gap: 30px;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+    }
+
+    &.podcast-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        justify-items: stretch;
+        align-items: stretch;
+
+        @media screen and (max-width: 680px) {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
     picture, source, img {
         display: block;
         max-width: 100%;
@@ -275,10 +337,13 @@
     padding: 80px 0;
 
     @media screen and (max-width: 1024px) {
-        padding: 0 0 60px 0;
+        padding: 60px 0;
     }
 
     svg {
+        width: auto;
+        height: auto;
+
         .color-primary {
             fill: #{var(--color-primary)};
             @extend .animation;
