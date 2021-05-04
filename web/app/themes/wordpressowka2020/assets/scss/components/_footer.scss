@@ -248,6 +248,14 @@
         align-items: stretch;
     }
 
+    picture, source, img {
+        display: block;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        border-radius: 10px;
+    }
+
     .all-editions {
         justify-self: center;
         align-self: center;
