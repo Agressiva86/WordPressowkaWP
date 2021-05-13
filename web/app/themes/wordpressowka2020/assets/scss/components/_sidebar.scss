@@ -10,14 +10,10 @@
     }
 
     h3 {
-        font-size: 22px;
+        @include fluid-font(3vw, 22px, 30px, 35px);
         color: #{var(--color-primary)};
         margin-bottom: 20px;
         @extend .animation;
-
-        @media screen and (min-width: 1367px) {
-            font-size: 25px;
-        }
     }
 
     p {
@@ -28,7 +24,7 @@
         color: #{var(--color-secondary)};
 
         &.title {
-            font-family: $font-poppins;
+            font-family: $font-uppercase;
             font-weight: 700;
             @include fluid-font(3vw, 20px, 29px, 35px);
             @extend .animation;
@@ -97,7 +93,7 @@
             border-radius: 50px;
             color: #{var(--color-form-input)};
             @extend .animation;
-            font-family: $font-poppins;
+            font-family: $font-normal;
             background-color: #{var(--color-form-bg)};
             outline: none;
             line-height: normal;

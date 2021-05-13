@@ -189,9 +189,9 @@
 
     time {
         color: #{var(--color-secondary)};
-        opacity: 0.2;
-        font-family: $font-poppins;
-        font-weight: 800;
+        opacity: 0.3;
+        font-family: $font-uppercase;
+        font-weight: 400;
         @extend .animation;
         display: block;
 
@@ -201,8 +201,8 @@
     }
 
     p {
-        font-family: $font-poppins;
-        font-weight: 700;
+        font-family: $font-uppercase;
+        font-weight: 400;
         @include fluid-font(3vw, 20px, 29px, 35px);
         @extend .animation;
         color: #{var(--color-secondary)};
@@ -214,7 +214,7 @@
     }
 
     h2 {
-        font-family: $font-poppins;
+        font-family: $font-normal;
         font-weight: 400;
         @include fluid-font(3vw, 14px, 17px, 35px);
         color: #{var(--color-secondary)};
@@ -342,7 +342,7 @@
 
     svg {
         width: auto;
-        height: auto;
+        height: 120px;
 
         .color-primary {
             fill: #{var(--color-primary)};
@@ -381,7 +381,7 @@
                 top: 50%;
                 transform: translateY(-50%);
                 @extend .animation;
-                font-family: $font-poppins;
+                font-family: $font-uppercase;
                 font-weight: 400;
             }
 
@@ -489,7 +489,7 @@
     }
 
     a {
-        font-family: $font-poppins;
+        font-family: $font-uppercase;
         font-weight: 700;
         @include fluid-font(3vw, 13px, 14px, 35px);
         @extend .big;

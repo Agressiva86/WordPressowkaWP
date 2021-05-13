@@ -252,14 +252,14 @@
             }
 
             .link {
-                font-weight: 700;
+                font-weight: 400;
                 display: inline;
-                // font-size: 18px;
+                font-size: 25px;
                 // line-height: 1.6;
                 border-bottom: 1px solid #{var(--color-link)};
                 color: #{var(--color-link)};
                 @extend .animation;
-                font-family: $font-poppins;
+                font-family: $font-uppercase;
 
                 &:hover {
                     color: #{var(--color-secondary)};
@@ -327,9 +327,9 @@
                 display: block;
                 margin-bottom: 10px;
                 margin-top: 10px;
-                font-family: $font-poppins;
-                font-weight: 700;
-                font-size: 16px;
+                font-family: $font-uppercase;
+                font-weight: 400;
+                font-size: 22px;
             }
 
             a {
