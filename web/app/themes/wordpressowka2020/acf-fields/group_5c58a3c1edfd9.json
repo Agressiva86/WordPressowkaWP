@@ -137,6 +137,22 @@
             "placeholder": ""
         },
         {
+            "key": "field_609d2a743f05d",
+            "label": "Anchor",
+            "name": "anchor",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_5ec6541e1a93f",
             "label": "Sidebar",
             "name": "",
@@ -151,78 +167,6 @@
             },
             "placement": "top",
             "endpoint": 0
-        },
-        {
-            "key": "field_5ec65be20afbb",
-            "label": "Link do strony z newsletterem",
-            "name": "link_newsletter",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
-            "key": "field_5ec6542f1a940",
-            "label": "Tytuł newslettera",
-            "name": "tytul_newslettera",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5ec654461a941",
-            "label": "Opis newslettera",
-            "name": "opis_newslettera",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 3,
-            "new_lines": ""
-        },
-        {
-            "key": "field_5ec654651a942",
-            "label": "Reguły newslettera",
-            "name": "reguly_newslettera",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 3,
-            "new_lines": ""
         },
         {
             "key": "field_5ec7a267a63af",
@@ -465,41 +409,6 @@
             ]
         },
         {
-            "key": "field_5ec9c41807a31",
-            "label": "Critical CSS",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5ec9c42807a32",
-            "label": "Critical CSS",
-            "name": "critical_css",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
             "key": "field_5ecc1ae4afbf3",
             "label": "Search",
             "name": "",
@@ -562,25 +471,6 @@
             "return_format": "array"
         },
         {
-            "key": "field_5f80db6b30097",
-            "label": "Mailchimp url",
-            "name": "mailchimp_url",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "https:\/\/wordpressowka.us20.list-manage.com\/subscribe\/post?u=bc1349d1dfefba72bdd8c3974&amp;id=f8311d93e4",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5f8dfa4e9f671",
             "label": "GTM",
             "name": "gtm",
@@ -600,8 +490,30 @@
             "new_lines": ""
         },
         {
-            "key": "field_5fd1342e6ae2f",
-            "label": "Partner",
+            "key": "field_6019a74f91624",
+            "label": "Kategoria guest editorów",
+            "name": "kategoria_guest_editorow",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_6019929ea7b5e",
+            "label": "Newsletter",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -616,9 +528,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_5fd134476ae30",
-            "label": "Napis partner",
-            "name": "napis_partner",
+            "key": "field_5ec6542f1a940",
+            "label": "Tytuł newslettera",
+            "name": "tytul_newslettera",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -635,15 +547,87 @@
             "maxlength": ""
         },
         {
-            "key": "field_5fd134566ae31",
-            "label": "Logo",
-            "name": "logo",
+            "key": "field_5f80db6b30097",
+            "label": "Mailchimp url",
+            "name": "mailchimp_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/wordpressowka.us20.list-manage.com\/subscribe\/post?u=bc1349d1dfefba72bdd8c3974&amp;id=f8311d93e4",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ec65be20afbb",
+            "label": "Link do strony z newsletterem",
+            "name": "link_newsletter",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5ec654461a941",
+            "label": "Opis newslettera",
+            "name": "opis_newslettera",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_5ec654651a942",
+            "label": "Reguły newslettera",
+            "name": "reguly_newslettera",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_601992d6a7b5f",
+            "label": "Obrazek newslettera",
+            "name": "obrazek_newslettera",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -657,22 +641,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_5fd134656ae32",
-            "label": "Link",
-            "name": "link",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
         }
     ],
     "location": [
@@ -692,5 +660,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1607546342
+    "modified": 1620912784
 }

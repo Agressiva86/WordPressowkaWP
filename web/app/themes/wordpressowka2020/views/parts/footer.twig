@@ -36,5 +36,10 @@
 			{% include 'views/parts/icons/twitter.twig' %}
 		</a>
 		{% endif %}
+		{% if options.anchor %}
+		<a href="{{ options.anchor }}" target="_blank" rel="noopener" aria-label="anchor">
+			{% include 'views/parts/icons/anchor.twig' %}
+		</a>
+		{% endif %}
 	</div>
 </footer>
