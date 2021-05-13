@@ -128,7 +128,7 @@
     .profiles {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
 
         a {
             position: relative;
