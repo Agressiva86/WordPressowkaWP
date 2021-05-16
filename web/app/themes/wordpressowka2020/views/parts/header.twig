@@ -1,16 +1,14 @@
+{% if menu.top_menu.get_items %}
 <nav class="header-nav">
 	<ul>
+		{% for item in menu.top_menu.get_items %}
 		<li>
-			<a href="">Strona główna</a>
+			<a href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>{{ item.title }}</a>
 		</li>
-		<li>
-			<a href="">Artykuły</a>
-		</li>
-		<li>
-			<a href="">Podcast</a>
-		</li>
+		{% endfor %}
 	</ul>
 </nav>
+{% endif %}
 <header id="header">
 	<div class="header-left">
 		<div class="item logo">

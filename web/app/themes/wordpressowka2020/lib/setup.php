@@ -30,8 +30,9 @@ function setup() {
 	// add_editor_style(Assets\asset_path('styles/main.css'));
 	register_nav_menus(
 		array(
-			'header' => 'Header',
-			'footer' => 'Footer',
+			'header'   => 'Header',
+			'footer'   => 'Footer',
+			'top_menu' => 'Top menu',
 		)
 	);
 

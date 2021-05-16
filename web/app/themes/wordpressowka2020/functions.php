@@ -77,6 +77,9 @@ function theme_change_comment_field_names( $translated_text, $text, $domain ) {
 			case 'articles':
 				$translated_text = 'artykuly';
 				break;
+			case 'read more':
+				$translated_text = 'czytaj dalej';
+				break;
 		}
 	}
 

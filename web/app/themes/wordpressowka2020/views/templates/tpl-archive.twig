@@ -9,215 +9,35 @@
 </article>
 
 <div class="editions-list blog-list">
+{% for post in posts %}
+	{% set img = Image( post.thumbnail ) %}
 	<a class="edition blog-post" href="">
 		<div>
 			<picture class="post-cover m-b-20" role="img">
 				<source media="(max-width:640px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
+					srcset="{{ img | resize(640,320, 'center') | towebp }}"
 					width="640" height="320">
 				<source media="(max-width:640px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
+					srcset="{{ img | resize(640,320, 'center') }}"
 					width="640" height="320">
 				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
+					srcset="{{ img | resize(1024,512, 'center') | towebp }}"
 					width="1024" height="512">
 				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
+					srcset="{{ img | resize(1024,512, 'center') }}"
 					width="1024" height="512">
 				<source media="(min-width:1024px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
+					srcset="{{ img | resize(1200,600, 'center') | towebp }}"
 					width="1200" height="600">
-				<img src="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="1200" height="600">
-			</picture>
-			<h2>WordPressówka – podsumowanie roku 2020</h2>
-			<small>czytaj dalej</small>
-		</div>
-	</a>
-	<a class="edition blog-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(max-width:640px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					width="1200" height="600">
-				<img src="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
+				<img src="{{ img | resize(1200,600, 'center') }}"
+					alt="{{ post.title }}" loading="lazy"
 					width="1200" height="600">
 			</picture>
-			<h2>WordPressówka – podsumowanie roku 2020</h2>
-			<small>czytaj dalej</small>
+			<h2>{{ post.title }}</h2>
+			<small>{{ __( 'read more', 'sasquatch' ) }}</small>
 		</div>
 	</a>
-	<a class="edition blog-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(max-width:640px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					width="1200" height="600">
-				<img src="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="1200" height="600">
-			</picture>
-			<h2>WordPressówka – podsumowanie roku 2020</h2>
-			<small>czytaj dalej</small>
-		</div>
-	</a>
-	<a class="edition blog-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(max-width:640px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					width="1200" height="600">
-				<img src="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="1200" height="600">
-			</picture>
-			<h2>WordPressówka – podsumowanie roku 2020</h2>
-			<small>czytaj dalej</small>
-		</div>
-	</a>
-
-	<a class="edition blog-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(max-width:640px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					width="1200" height="600">
-				<img src="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="1200" height="600">
-			</picture>
-			<h2>WordPressówka – podsumowanie roku 2020</h2>
-			<small>czytaj dalej</small>
-		</div>
-	</a>
-	<a class="edition blog-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(max-width:640px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					width="1200" height="600">
-				<img src="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="1200" height="600">
-			</picture>
-			<h2>WordPressówka – podsumowanie roku 2020</h2>
-			<small>czytaj dalej</small>
-		</div>
-	</a>
-	<a class="edition blog-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(max-width:640px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					width="1200" height="600">
-				<img src="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="1200" height="600">
-			</picture>
-			<h2>WordPressówka – podsumowanie roku 2020</h2>
-			<small>czytaj dalej</small>
-		</div>
-	</a>
-	<a class="edition blog-post" href="">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(max-width:640px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-640x320-c-center.jpg"
-					width="640" height="320">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1024x512-c-center.jpg"
-					width="1024" height="512">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					width="1200" height="600">
-				<img src="http://localhost/wordpressowka-wp//app/uploads/2020/12/hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background-scaled-1200x600-c-center.jpg"
-					alt="hand-flipping-wooden-blocks-change-year-2020-2021-blue-paper-background" loading="lazy"
-					width="1200" height="600">
-			</picture>
-			<h2>WordPressówka – podsumowanie roku 2020</h2>
-			<small>czytaj dalej</small>
-		</div>
-	</a>
+{% endfor %}
 </div>
 
 {% endblock %}

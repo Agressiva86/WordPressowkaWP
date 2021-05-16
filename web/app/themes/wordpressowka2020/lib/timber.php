@@ -27,8 +27,9 @@ function add_to_context( $data ) {
 
 	$data['options'] = get_fields( 'options' );
 
-	$data['menu']['header'] = new TimberMenu( 'header' );
-	$data['menu']['footer'] = new TimberMenu( 'footer' );
+	$data['menu']['header']   = new TimberMenu( 'header' );
+	$data['menu']['footer']   = new TimberMenu( 'footer' );
+	$data['menu']['top_menu'] = new TimberMenu( 'top_menu' );
 
 	$data['css_file'] = asset_path( 'css/app.css' );
 	$data['css_file_content'] = wp_remote_get( $data['css_file'] );
