@@ -552,10 +552,11 @@ h1, h2, h3, h4, h5, h6 {
                 .hit-name {
                     a {
                         font-family: $font-uppercase !important;
-                        font-weight: 700 !important;
+                        font-weight: 400 !important;
                         border: none !important;
                         color: #{var(--color-primary)};
                         @extend .animation;
+                        font-size: 38px;
 
                         .ais-Highlight-highlighted {
                             font-style: normal;
@@ -571,7 +572,7 @@ h1, h2, h3, h4, h5, h6 {
                 }
 
                 .hit-description {
-                    font-family: $font-uppercase;
+                    font-family: $font-normal;
                     font-weight: 400;
                     @include fluid-font(3vw, 14px, 17px, 35px);
                     color: #{var(--color-secondary)};
