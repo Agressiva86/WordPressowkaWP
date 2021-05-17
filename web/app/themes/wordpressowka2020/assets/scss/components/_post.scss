@@ -266,23 +266,23 @@ h1, h2, h3, h4, h5, h6 {
             @extend .animation;
 
             @media screen and (min-width: 1367px) {
-                font-size: 60px;
-                padding-top: 62px;
+                font-size: 70px;
+                padding-top: 75px;
             }
 
             @media screen and (max-width: 1366px) {
-                font-size: 46px;
+                font-size: 48px;
                 padding-top: 46px;
             }
 
             @media screen and (max-width: 1024px) {
-                font-size: 30px;
+                font-size: 42px;
                 padding-top: 35px;
             }
 
             @media screen and (max-width: 680px) {
-                font-size: 23px;
-                padding-top: 30px;
+                font-size: 38px;
+                padding-top: 34px;
             }
         }
 
@@ -506,15 +506,15 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     h2 {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     h3 {
-        font-size: 24px;
+        font-size: 32px;
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 26px;
     }
 
     ol {
