@@ -200,6 +200,13 @@
         }
     }
 
+    &.guest-post {
+        p {
+            font-family: $font-normal;
+            font-size: 16px;
+        }
+    }
+
     p {
         font-family: $font-uppercase;
         font-weight: 400;
