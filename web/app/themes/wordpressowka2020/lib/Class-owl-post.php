@@ -49,6 +49,8 @@ class OwlPost extends Timber\Post {
 					} elseif ( !empty( $block['attrs']['data']['description'] ) ) {
 						$guest['description'] = $block['attrs']['data']['description'];
 					}
+
+					break;
 				}
 			}
 		}
