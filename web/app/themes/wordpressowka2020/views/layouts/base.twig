@@ -61,7 +61,9 @@
 
 {% block footer %}
     {{ function( 'wp_footer' ) }}
+	{% if ( browser === 'WP2Static.com' ) %}
 	{{ options.gtm }}
+	{% endif %}
 </body>
 </html>
 {% endblock %}

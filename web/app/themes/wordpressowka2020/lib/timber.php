@@ -41,6 +41,7 @@ function add_to_context( $data ) {
 		$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_content']['body'] );
 	}
 
+	$data['browser'] = $_SERVER['HTTP_USER_AGENT'];
 	$data['get_data'] = $_GET;
 	return $data;
 }
