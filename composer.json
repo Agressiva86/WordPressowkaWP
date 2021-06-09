@@ -5,6 +5,7 @@
   "license": "MIT",
   "description": "Starter stack for WordPress - mix of Foundation, Bedrock and some magic ",
   "homepage": "https://github.com/SasquatchWP/SasquatchWP",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Maciej Palmowski",
