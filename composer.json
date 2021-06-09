@@ -1,5 +1,5 @@
 {
-  "name": "SasquatchWP/SasquatchWP_starter",
+  "name": "saasquatchwp/sasquatchwp_starter",
   "type": "project",
   "version": "1.2.5",
   "license": "MIT",
@@ -20,20 +20,8 @@
   },
   "repositories": [
     {
-      "type": "package",
-      "package": {
-        "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.9.6",
-        "type": "wordpress-plugin",
-        "dist": {
-          "type": "zip",
-          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
-        },
-        "require": {
-          "philippbaschke/acf-pro-installer": "dev-master#9cac3d3ed8217eb2c49aecd0941ab82bf0374f58",
-          "composer/installers": "^1.0"
-        }
-      }
+      "type": "composer",
+      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
     },
     { 
       "type": "composer", 
@@ -43,18 +31,18 @@
   "require": {
     "php": ">=5.6",
     "composer/installers": "^1.4",
-    "vlucas/phpdotenv": "^2.0.1",
+    "vlucas/phpdotenv": "^3.0.0",
     "roots/wordpress": "5.7.2",
     "oscarotero/env": "^1.1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "roots/wp-config": "1.0.0",
     "soberwp/models": "dev-master",
-    "philippbaschke/acf-pro-installer": "dev-master#9cac3d3ed8217eb2c49aecd0941ab82bf0374f58",
-    "advanced-custom-fields/advanced-custom-fields-pro": "5.9.6",
     "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-plugin/w3-total-cache": "*",
     "wpackagist-plugin/duplicate-post": "*",
-    "buddy/deploy-buddy": "*"
+    "buddy/deploy-buddy": "*",
+    "pivvenit/acf-pro-installer": "^3.0.0",
+    "advanced-custom-fields/advanced-custom-fields-pro": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
