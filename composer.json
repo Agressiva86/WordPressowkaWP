@@ -5,7 +5,6 @@
   "license": "MIT",
   "description": "Starter stack for WordPress - mix of Foundation, Bedrock and some magic ",
   "homepage": "https://github.com/SasquatchWP/SasquatchWP",
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Maciej Palmowski",
@@ -21,8 +20,20 @@
   },
   "repositories": [
     {
-      "type": "composer",
-      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.9.6",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+        },
+        "require": {
+          "philippbaschke/acf-pro-installer": "dev-master",
+          "composer/installers": "^1.0"
+        }
+      }
     },
     { 
       "type": "composer", 
@@ -32,17 +43,17 @@
   "require": {
     "php": ">=5.6",
     "composer/installers": "^1.4",
-    "vlucas/phpdotenv": "^3.0.0",
+    "vlucas/phpdotenv": "^2.0.1",
     "roots/wordpress": "5.7.2",
     "oscarotero/env": "^1.1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "roots/wp-config": "1.0.0",
     "soberwp/models": "dev-master",
+    "philippbaschke/acf-pro-installer": "dev-master",
+    "advanced-custom-fields/advanced-custom-fields-pro": "5.9.6",
     "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-plugin/w3-total-cache": "*",
-    "wpackagist-plugin/duplicate-post": "*",
-    "pivvenit/acf-pro-installer": "^3.0.0",
-    "advanced-custom-fields/advanced-custom-fields-pro": "*"
+    "wpackagist-plugin/duplicate-post": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
