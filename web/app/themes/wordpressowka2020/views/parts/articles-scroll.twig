@@ -1,0 +1,44 @@
+<div class="other-editions scroll">
+	<h3>Latest articles:</h3>
+	{% include 'views/parts/icons/swipe.twig' %}
+
+	<div class="editions-wrapper scroll">
+		<div class="editions-list">
+			{% for post in articles %}
+				{% set img = Image( post.thumbnail ) %}
+				<a class="edition" href="{{ post.link }}">
+					<div>
+						<picture class="post-cover m-b-20" role="img">
+							<source media="(max-width:640px)" type="image/webp"
+								srcset="{{ img | resize(640,320, 'center') | towebp }}"
+								width="640" height="320">
+							<source media="(max-width:640px)"
+								srcset="{{ img | resize(640,320, 'center') }}"
+								width="640" height="320">
+							<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
+								srcset="{{ img | resize(1024,512, 'center') | towebp }}"
+								width="1024" height="512">
+							<source media="(min-width: 641px) and (max-width:1023px)"
+								srcset="{{ img | resize(1024,512, 'center') }}"
+								width="1024" height="512">
+							<source media="(min-width:1024px)" type="image/webp"
+								srcset="{{ img | resize(1200,600, 'center') | towebp }}"
+								width="1200" height="600">
+							<img src="{{ img | resize(1200,600, 'center') }}"
+								alt="{{ post.title }}" loading="lazy"
+								width="1200" height="600">
+						</picture>
+						<p>{{ post.title }}</p>
+					</div>
+				</a>
+			{% endfor %}
+			<div class="all-editions">
+				<a
+					href="{{ site.url }}/articles"
+					class="button color-primary-border small">
+					Check all articles
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
