@@ -11,29 +11,6 @@
 </nav>
 {% endif %}
 #}
-
-<div class="outer-menu">
-	<input class="checkbox-toggle" type="checkbox" />
-	<div class="hamburger">
-		<div></div>
-	</div>
-	<div class="menu">
-		<div>
-			<div>
-				{% if menu.top_menu.get_items %}
-					<ul>
-						{% for item in menu.top_menu.get_items %}
-						<li>
-							<a href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>{{ item.title }}</a>
-						</li>
-						{% endfor %}
-					</ul>
-				{% endif %}
-			</div>
-		</div>
-	</div>
-</div>
-
 <header id="header" class="{{ body_class }}">
 	<div class="header-left">
 		<div class="item logo">
