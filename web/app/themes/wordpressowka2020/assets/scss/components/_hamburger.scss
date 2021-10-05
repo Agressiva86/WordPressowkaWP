@@ -1,0 +1,252 @@
+$hamburger-menu-size: 40px;
+$hamburger-menu-border-radius: 0.12em;
+$hamburger-menu-bg-color: #9dd12c;
+$hamburger-menu-line-height: 2px;
+$hover-line-height: $hamburger-menu-line-height;
+$main-color: #ffffff;
+$hover-color: darken($main-color, 10%);
+$content-bg-color: #9dd12c;
+$anim-duration: 0.4s;
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outer-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 444;
+
+    .checkbox-toggle {
+        position: absolute;
+        top: 50px;
+        left: 26px;
+        z-index: 1;
+        width: 74px;
+        height: 74px;
+        z-index: 2;
+        cursor: pointer;
+        opacity: 0%;
+        @extend .animation;
+
+        @media screen and (max-width: 880px) {
+            top: 37px;
+        }
+
+        @media screen and (max-width: 680px) {
+            top: 34px;
+            width: 54px;
+            height: 54px;
+        }
+
+        &:checked {
+            & + .hamburger {
+                > div {
+                    transform: rotate(135deg);
+
+                    &:before,
+                    &:after {
+                        top: 0;
+                        transform: rotate(90deg);
+                    }
+
+                    &:after {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            & ~ .menu {
+                pointer-events: auto;
+                visibility: visible;
+
+                > div {
+                    transform: scale(1);
+                    transition-duration: 0.75s;
+
+                    > div {
+                        opacity: 1;
+                        transition: opacity $anim-duration ease $anim-duration;
+                    }
+                }
+            }
+        }
+
+        &:hover + .hamburger {
+            //box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        &:checked:hover + .hamburger > div {
+            transform: rotate(225deg);
+        }
+    }
+
+    .hamburger {
+        position: absolute;
+        top: 54px;
+        left: 30px;
+        z-index: 1;
+        width: $hamburger-menu-size / 1.42;
+        height: $hamburger-menu-size / 1.42;
+        padding: 12px 12px;
+        background: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        @extend .animation;
+        backface-visibility: hidden;
+        @extend .flex-center;
+
+        @media screen and (max-width: 880px) {
+            top: 37px;
+        }
+
+        @media screen and (min-width: 681px) {
+            padding: 22px 22px;
+        }
+
+        html[data-theme="light"] & {
+            border: 1px solid rgba(#b4b7cc, 0.4);
+
+            &:focus, &:hover {
+                border: 1px solid rgba(#b4b7cc, 1);
+            }
+        }
+
+        html[data-theme="dark"] & {
+            border: 1px solid rgba(#ffffff, 0.2);
+
+            &:focus, &:hover {
+                border: 1px solid rgba(#ffffff, 0.8);
+            }
+        }
+
+        > div {
+            position: relative;
+            flex: none;
+            width: 100%;
+            height: $hamburger-menu-line-height;
+            background: #{var(--color-text)};
+            transition: all $anim-duration ease;
+            @extend .flex-center;
+
+            html[data-theme="dark"] & {
+                background: #{var(--color-bg)};
+            }
+
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top: -$hamburger-menu-size / 6;
+                left: 0;
+                width: 100%;
+                height: $hamburger-menu-line-height;
+                background: inherit;
+                transition: all $anim-duration ease;
+            }
+
+            &:after {
+                top: $hamburger-menu-size / 6;
+            }
+        }
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        visibility: hidden;
+        overflow: hidden;
+        backface-visibility: hidden;
+        outline: 1px solid transparent;
+        @extend .flex-center;
+
+        > div {
+            width: 300vw;
+            height: 300vw;
+            color: $main-color;
+            background: #{var(--color-bg)};
+            border-radius: 50%;
+            transition: all $anim-duration ease;
+            flex: none;
+            transform: scale(0);
+            backface-visibility: hidden;
+            overflow: hidden;
+            @extend .flex-center;
+
+            > div {
+                text-align: center;
+                max-width: 90vw;
+                max-height: 100vh;
+                opacity: 0;
+                transition: opacity $anim-duration ease;
+                overflow-y: auto;
+                flex: none;
+                @extend .flex-center;
+
+                > ul {
+                    list-style: none;
+                    padding: 0 1em;
+                    margin: 0;
+                    display: block;
+                    max-height: 100vh;
+
+                    > li {
+                        padding: 0;
+                        margin: 10px 0;
+                        display: block;
+
+                        > a {
+                            position: relative;
+                            display: inline;
+                            cursor: pointer;
+                            font-family: $font-uppercase;
+                            color: #{var(--color-primary)};
+                            letter-spacing: 1px;
+                            transition: color $anim-duration ease;
+
+                            @media screen and (min-width: 1367px) {
+                                font-size: 40px;
+                            }
+
+                            @media screen and (min-width: 501px) and (max-width: 1366px) {
+                                font-size: 30px;
+                            }
+
+                            @media screen and (max-width: 500px) {
+                                font-size: 20px;
+                            }
+
+                            &:hover {
+                                color: #{var(--color-secondary)};
+
+                                // &:after {
+                                //     width: 100%;
+                                // }
+                            }
+
+                            // &:after {
+                            //     content: "";
+                            //     position: absolute;
+                            //     z-index: 1;
+                            //     bottom: -0.15em;
+                            //     left: 0;
+                            //     width: 0;
+                            //     height: $hover-line-height;
+                            //     background: #{var(--color-primary)};
+                            //     transition: width $anim-duration ease;
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
