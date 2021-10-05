@@ -20,18 +20,21 @@
 	<div class="menu">
 		<div>
 			<div>
-				<ul>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Products</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
+				{% if menu.top_menu.get_items %}
+					<ul>
+						{% for item in menu.top_menu.get_items %}
+						<li>
+							<a href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>{{ item.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
 			</div>
 		</div>
 	</div>
 </div>
 
-<header id="header">
+<header id="header" class="{{ body_class }}">
 	<div class="header-left">
 		<div class="item logo">
 

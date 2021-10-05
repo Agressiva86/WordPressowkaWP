@@ -55,9 +55,10 @@
 	</a>
 	{% endif %}
 
-	{% include 'views/parts/header.twig' %}
+
 	<section data-barba="wrapper">
 		<main role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
+			{% include 'views/parts/header.twig' %}
 			{% block main %}
 			{% endblock %}
 		</main>

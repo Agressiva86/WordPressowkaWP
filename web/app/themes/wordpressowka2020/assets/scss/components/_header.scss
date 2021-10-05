@@ -1,9 +1,7 @@
-body.page-template-tpl-homepage {
-    #header {
-        a.logo {
-            @media screen and (min-width: 881px) {
-                display: none !important;
-            }
+#header.page-template-tpl-homepage {
+    a.logo {
+        @media screen and (min-width: 881px) {
+            display: none !important;
         }
     }
 }
