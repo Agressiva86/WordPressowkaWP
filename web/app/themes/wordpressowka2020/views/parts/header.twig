@@ -1,3 +1,4 @@
+{#
 {% if menu.top_menu.get_items %}
 <nav class="header-nav">
 	<ul>
@@ -9,15 +10,39 @@
 	</ul>
 </nav>
 {% endif %}
-<header id="header">
+#}
+
+<div class="outer-menu">
+	<input class="checkbox-toggle" type="checkbox" />
+	<div class="hamburger">
+		<div></div>
+	</div>
+	<div class="menu">
+		<div>
+			<div>
+				{% if menu.top_menu.get_items %}
+					<ul>
+						{% for item in menu.top_menu.get_items %}
+						<li>
+							<a href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>{{ item.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<header id="header" class="{{ body_class }}">
 	<div class="header-left">
 		<div class="item logo">
+
 			<a href="{{ site.url }}" class="logo" aria-label="{{ __( 'Strona główna', 'sasquatch' ) }}">
 				{% include 'views/parts/logo.twig' %}
-				<span>
+				{#<span>
 					<strong>{{ site.name }}</strong>
-					<small>{{ site.description }}</small>
-				</span>
+				</span>#}
 			</a>
 		</div>
 	</div>
@@ -64,9 +89,9 @@
 			</div>
 		</div>
 
-		<div class="item buttons">
+		{#<div class="item buttons">
 			{% if options.link_newsletter.url %}<a href="{{ options.link_newsletter.url }}" target="{{ options.link_newsletter.target }}" class="button color-primary for-mobile">{{ options.link_newsletter.title }}</a>{% endif %}
-		</div>
+		</div>#}
 
 		<div class="item switcher">
 			<a href="#" class="button color-switcher" id="themeswitcher" aria-label="{{ __( 'Zmień tryb strony', 'sasquatch' ) }}">

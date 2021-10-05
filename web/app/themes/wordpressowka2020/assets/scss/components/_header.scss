@@ -1,3 +1,11 @@
+#header.page-template-tpl-homepage {
+    a.logo {
+        @media screen and (min-width: 881px) {
+            display: none !important;
+        }
+    }
+}
+
 #header {
     display: flex;
     flex-wrap: nowrap;
@@ -7,7 +15,7 @@
     padding: 50px 0;
     width: 100%;
 
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 880px) {
         padding: 30px 0;
     }
 
@@ -23,6 +31,11 @@
             &.switcher,
             &.partner {
                 padding-left: 50px;
+                align-self: center;
+
+                .button {
+                    align-self: center;
+                }
             }
 
             &:first-child {
@@ -75,8 +88,16 @@
             font-weight: 400;
             font-family: $font-uppercase;
 
+            @media screen and (max-width: 1366px) {
+                margin-left: 100px;
+            }
+
+            @media screen and (min-width: 1367px) and (max-width: 2300px) {
+                margin-left: 40px;
+            }
+
             svg {
-                height: 76px;
+                height: 70px;
 
                 .color-primary {
                     fill: #{var(--color-primary)};
@@ -377,6 +398,50 @@
                     color: #{var(--color-primary)};
                 }
             }
+        }
+    }
+}
+
+a.logo, span.logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 0.8;
+    font-weight: 400;
+    font-family: $font-uppercase;
+
+    svg {
+        height: 70px;
+
+        .color-primary {
+            fill: #{var(--color-primary)};
+            @extend .animation;
+        }
+    }
+
+    span {
+        margin-left: 20px;
+
+        @media screen and (max-width: 680px) {
+            display: none;
+        }
+
+        strong {
+            display: block;
+            color: #{var(--color-secondary)};
+            font-size: 26px;
+            font-weight: 400;
+            @extend .animation;
+        }
+
+        small {
+            font-size: 11px;
+            color: #{var(--color-primary)};
+            @extend .big;
+            font-family: $font-normal;
+            font-weight: 400;
         }
     }
 }

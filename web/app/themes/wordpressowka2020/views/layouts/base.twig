@@ -2,68 +2,76 @@
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="{{ function( 'language_attributes' ) }}" > <![endif]-->
 <html {{ function( 'language_attributes' ) }}>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="{{ options.dodaj_palete_kolorow.0.kolor_primary }}">
-    <link rel="alternate" type="application/rss+xml" title="Wordpressowka" href="{{ site.link }}/feed/" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="{{ options.dodaj_palete_kolorow.0.kolor_primary }}">
+	<link rel="alternate" type="application/rss+xml" title="Wordpressowka" href="{{ site.link }}/feed/" />
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-700.woff2" as="font" crossorigin>
-	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-700italic.woff2" as="font" crossorigin>
+	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-700italic.woff2" as="font"
+		crossorigin>
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-800.woff2" as="font" crossorigin>
-	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-800italic.woff2" as="font" crossorigin>
+	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-800italic.woff2" as="font"
+		crossorigin>
 	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-italic.woff2" as="font" crossorigin>
-	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-regular.woff2" as="font" crossorigin>
-	<link rel="preload" href="{{ theme.link }}/dist/fonts/staatliches-v6-latin-ext_latin-regular.woff2" as="font" crossorigin>
+	<link rel="preload" href="{{ theme.link }}/dist/fonts/rubik-v12-latin-ext_latin-regular.woff2" as="font"
+		crossorigin>
+	<link rel="preload" href="{{ theme.link }}/dist/fonts/staatliches-v6-latin-ext_latin-regular.woff2" as="font"
+		crossorigin>
 	{{ function('wp_head') }}
 	{% if ( load_file ) %}
 	<style type="text/css">
-	{{ css_file_content }}
+		{{ css_file_content }}
 	</style>
 	{% else %}
-		{% if( get_data.generate_css == 1 ) %}
-			<link id="main-css" rel="stylesheet" href="{{ css_file }}" as="style">
+	{% if( get_data.generate_css == 1 ) %}
+	<link id="main-css" rel="stylesheet" href="{{ css_file }}" as="style">
 
-		{% else %}
-			<link id="main-css" rel="preload" href="{{ css_file }}" as="style">
-			<script>
-				window.addEventListener('DOMContentLoaded', () => {
-					var css = document.getElementById( 'main-css' );
-					css.rel = 'stylesheet';
-				});
-			</script>
-			<style type="text/css">
-			{{ options.critical_css }}
-			</style>
-		{% endif %}
+	{% else %}
+	<link id="main-css" rel="preload" href="{{ css_file }}" as="style">
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			var css = document.getElementById('main-css');
+			css.rel = 'stylesheet';
+		});
+	</script>
+	<style type="text/css">
+		{{ options.critical_css }}
+	</style>
+	{% endif %}
 	{% endif %}
 
 </head>
 {% endblock %}
 
-<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}" >
+<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
 
-{% if options.search_form_page.url %}
-<a href="{{ options.search_form_page.url }}" class="button color-switcher search-icon" id="search-icon" aria-label="{{ options.search_form_page.title }}">
-	{% include 'views/parts/icons/search.twig' %} <span>{{ options.search_form_page.title }}</span>
-</a>
-{% endif %}
+	{% if options.search_form_page.url %}
+	<a href="{{ options.search_form_page.url }}" class="button color-switcher search-icon" id="search-icon"
+		aria-label="{{ options.search_form_page.title }}">
+		{% include 'views/parts/icons/search.twig' %} <span>{{ options.search_form_page.title }}</span>
+	</a>
+	{% endif %}
 
-{% include 'views/parts/header.twig' %}
-<section data-barba="wrapper">
-	<main role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
-		{% block main %}
-		{% endblock %}
-	</main>
-</section>
 
-{% include 'views/parts/footer.twig' %}
+	<section data-barba="wrapper">
+		<main role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
+			{% include 'views/parts/header.twig' %}
+			{% block main %}
+			{% endblock %}
+		</main>
+	</section>
 
-{% block footer %}
-    {{ function( 'wp_footer' ) }}
+	{% include 'views/parts/footer.twig' %}
+
+	{% block footer %}
+	{{ function( 'wp_footer' ) }}
 	{% if ( browser == 'WP2Static.com' ) %}
 	{{ options.gtm }}
 	{% endif %}
 </body>
+
 </html>
 {% endblock %}

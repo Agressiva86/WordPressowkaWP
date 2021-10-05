@@ -61,7 +61,6 @@ $assets: "../../dist/images";
     @extend .animation;
 }
 
-
 body {
     overflow-x: hidden;
     text-rendering: optimizeLegibility !important;
@@ -80,7 +79,7 @@ body {
     @include fluid-font(3vw, 16px, 21px, 35px);
 
     @media screen and (min-width: 1920px) {
-        max-width: 2200px;
+        max-width: 2100px;
         padding: 0 100px;
         margin: 0 auto;
     }
@@ -91,7 +90,7 @@ body {
     }
 
     @media screen and (min-width: 681px) and (max-width: 1366px) {
-        padding: 0 50px;
+        padding: 0 30px;
         line-height: 1.45;
     }
 

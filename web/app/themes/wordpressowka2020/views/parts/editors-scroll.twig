@@ -1,0 +1,44 @@
+<div class="other-editions scroll">
+	<h3>Latest guest editors:</h3>
+	{% include 'views/parts/icons/swipe.twig' %}
+
+	<div class="editions-wrapper scroll">
+		<div class="editions-list">
+			{% for post in guest_editors %}
+				{% set img = Image( post.guest_editor.photo ) %}
+				<a class="edition" href="{{ post.link }}">
+					<div>
+						<picture class="post-cover m-b-20" role="img">
+							<source media="(max-width:640px)" type="image/webp"
+								srcset="{{ img | resize(640,640, 'center') | towebp }}"
+								width="640" height="640">
+							<source media="(max-width:640px)"
+								srcset="{{ img | resize(640,640, 'center') }}"
+								width="640" height="640">
+							<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
+								srcset="{{ img | resize(1024,1024, 'center') | towebp }}"
+								width="1024" height="1024">
+							<source media="(min-width: 641px) and (max-width:1023px)"
+								srcset="{{ img | resize(1024, 1024, 'center') }}"
+								width="1024" height="1024">
+							<source media="(min-width:1024px)" type="image/webp"
+								srcset="{{ img | resize(500,500, 'center') | towebp }}"
+								width="500" height="500">
+							<img src="{{ img | resize(500,500, 'center') }}"
+								alt="{{ post.title }}" loading="lazy"
+								width="500" height="500">
+						</picture>
+						<p>{{ post.guest_editor.name }}</p>
+					</div>
+				</a>
+			{% endfor %}
+			<div class="all-editions">
+				<a
+					href="{{ site.url }}/guest-editors"
+					class="button color-primary-border small">
+					Check all guest editors
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

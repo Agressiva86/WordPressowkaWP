@@ -207,15 +207,31 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
 
-        &:after {
-            @extend .after-shadow;
+        html[data-theme="light"] & {
+            border: 1px solid rgba(#b4b7cc, 0.4);
 
-            @media screen and (max-width: 1024px) {
-                filter: blur(28px);
-                opacity: 0.36;
-                transform: translateX(-50%) translateY(6px);
+            &:focus, &:hover {
+                border: 1px solid rgba(#b4b7cc, 1);
             }
         }
+
+        html[data-theme="dark"] & {
+            border: 1px solid rgba(#ffffff, 0.2);
+
+            &:focus, &:hover {
+                border: 1px solid rgba(#ffffff, 0.8);
+            }
+        }
+
+        // &:after {
+        //     @extend .after-shadow;
+
+        //     @media screen and (max-width: 1024px) {
+        //         filter: blur(28px);
+        //         opacity: 0.36;
+        //         transform: translateX(-50%) translateY(6px);
+        //     }
+        // }
 
         svg {
             height: 22px !important;
