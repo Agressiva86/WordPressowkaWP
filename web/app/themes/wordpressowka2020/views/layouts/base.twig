@@ -48,23 +48,15 @@
 
 <body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
 
-	{% if options.search_form_page.url %}
-	<a href="{{ options.search_form_page.url }}" class="button color-switcher search-icon" id="search-icon"
-		aria-label="{{ options.search_form_page.title }}">
-		{% include 'views/parts/icons/search.twig' %} <span>{{ options.search_form_page.title }}</span>
-	</a>
-	{% endif %}
+	{% include 'views/parts/header.twig' %}
 
-	<section data-barba="wrapper">
+	<section id="main-wrapper" data-barba="wrapper">
 		<main role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
-			{% include 'views/parts/header.twig' %}
 			{% block main %}
 			{% endblock %}
 			{% include 'views/parts/footer.twig' %}
 		</main>
 	</section>
-
-
 
 	{% block footer %}
 	{{ function( 'wp_footer' ) }}
