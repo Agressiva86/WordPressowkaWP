@@ -147,6 +147,23 @@
                 background-color: #{var(--color-form-bg)};
                 padding: 40px 40px;
 
+                html[data-theme="light"] & {
+                    color: #{var(--color-secondary)} !important;
+                    border: 1px solid rgba(#b4b7cc, 0.4);
+
+                    &:focus, &:hover {
+                        border: 1px solid rgba(#b4b7cc, 1);
+                    }
+                }
+
+                html[data-theme="dark"] & {
+                    border: 1px solid rgba(#ffffff, 0.2);
+
+                    &:focus, &:hover {
+                        border: 1px solid rgba(#ffffff, 0.8);
+                    }
+                }
+
                 @media screen and (max-width: 680px) {
                     padding: 40px 30px;
                 }
@@ -155,9 +172,9 @@
                     max-width: none;
                 }
 
-                &:after {
-                    @extend .after-shadow;
-                }
+                // &:after {
+                //     @extend .after-shadow;
+                // }
 
                 p {
                     max-width: none;
@@ -197,6 +214,23 @@
                 background-color: #{var(--color-form-bg)};
                 padding: 40px 40px;
 
+                html[data-theme="light"] & {
+                    color: #{var(--color-secondary)} !important;
+                    border: 1px solid rgba(#b4b7cc, 0.4);
+
+                    &:focus, &:hover {
+                        border: 1px solid rgba(#b4b7cc, 1);
+                    }
+                }
+
+                html[data-theme="dark"] & {
+                    border: 1px solid rgba(#ffffff, 0.2);
+
+                    &:focus, &:hover {
+                        border: 1px solid rgba(#ffffff, 0.8);
+                    }
+                }
+
                 @media screen and (max-width: 680px) {
                     padding: 40px 30px;
                 }
@@ -205,9 +239,9 @@
                     max-width: none;
                 }
 
-                &:after {
-                    @extend .after-shadow;
-                }
+                // &:after {
+                //     @extend .after-shadow;
+                // }
             }
 
             picture {

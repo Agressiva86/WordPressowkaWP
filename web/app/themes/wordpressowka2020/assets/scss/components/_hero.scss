@@ -1,6 +1,6 @@
 .home-hero {
     @media screen and (min-width: 1024px) {
-        min-height: 70vh;
+        min-height: 55vh;
     }
 
     @media screen and (max-width: 1023px) {
@@ -132,5 +132,84 @@
                 }
             }
         }
+
+        .scroll-down {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            animation: down 1.5s infinite;
+            -webkit-animation: down 1.5s infinite;
+
+            a {
+                width:100%;
+                height:100%;
+                display:block;
+            }
+
+            html[data-theme="light"] & {
+                border: 1px solid rgba(#b4b7cc, 0.4);
+
+                &:focus, &:hover {
+                    border: 1px solid rgba(#b4b7cc, 1);
+                }
+            }
+
+            html[data-theme="dark"] & {
+                border: 1px solid rgba(#ffffff, 0.2);
+
+                &:focus, &:hover {
+                    border: 1px solid rgba(#ffffff, 0.8);
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 12px;
+                left: 14px;
+                width: 10px;
+                height: 10px;
+                border-left-width: 2px;
+                border-left-style: solid;
+
+                border-bottom-width: 2px;
+                border-bottom-style: solid;
+                transform: rotate(-45deg);
+
+                html[data-theme="light"] & {
+                    border-color: rgba(#b4b7cc, 0.4);
+                }
+
+                html[data-theme="dark"] & {
+                    border-color: rgba(#ffffff, 0.2);
+                }
+            }
+        }
     }
+}
+
+@keyframes down {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translateY(15px);
+	}
+	40% {
+		transform: translate(0);
+	}
+}
+
+@-webkit-keyframes down {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translateY(15px);
+	}
+	40% {
+		transform: translate(0);
+	}
 }

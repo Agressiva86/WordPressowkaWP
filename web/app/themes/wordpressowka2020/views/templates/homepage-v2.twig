@@ -4,7 +4,6 @@
 
 <section class="home-hero">
 	<div class="home-hero-inner">
-		{% include 'views/parts/logo.twig' %}
 		<h1>See what is happening in the WordPress space</h1>
 		<p>Get the weekly email with all the important news and events from the WordPress world.</p>
 		<section class="newsletter">
@@ -17,12 +16,12 @@
 				<input type="submit" value="{{ __( 'Zapisz się teraz!', 'sasquatch' ) }}" class="button color-primary small" name="subscribe">
 			</form>
 		</section>
-		<div class="scroll-down"></div>
+		<div class="scroll-down"><a href="#owl-content"></a></div>
 	</div>
 </section>
-
+<div id="owl-content"></div>
 {% include 'views/parts/posts-scroll.twig' with
-	{}
+	{ extra_class: 'homepage-scroll'}
 %}
 
 {% include 'views/parts/editors-scroll.twig' with
