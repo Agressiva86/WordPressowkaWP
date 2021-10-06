@@ -47,11 +47,9 @@
 {% endblock %}
 
 <body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
-
-	{% include 'views/parts/header.twig' %}
-
 	<section id="main-wrapper" data-barba="wrapper">
 		<main role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
+			{% include 'views/parts/header.twig' %}
 			{% block main %}
 			{% endblock %}
 			{% include 'views/parts/footer.twig' %}
