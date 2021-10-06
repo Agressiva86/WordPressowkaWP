@@ -55,36 +55,16 @@
 	</a>
 	{% endif %}
 
-	<div class="outer-menu">
-		<input class="checkbox-toggle" type="checkbox" />
-		<div class="hamburger">
-			<div></div>
-		</div>
-		<div class="menu">
-			<div>
-				<div>
-					{% if menu.top_menu.get_items %}
-						<ul>
-							{% for item in menu.top_menu.get_items %}
-							<li>
-								<a href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>{{ item.title }}</a>
-							</li>
-							{% endfor %}
-						</ul>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-	</div>
 	<section data-barba="wrapper">
 		<main role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
 			{% include 'views/parts/header.twig' %}
 			{% block main %}
 			{% endblock %}
+			{% include 'views/parts/footer.twig' %}
 		</main>
 	</section>
 
-	{% include 'views/parts/footer.twig' %}
+
 
 	{% block footer %}
 	{{ function( 'wp_footer' ) }}
