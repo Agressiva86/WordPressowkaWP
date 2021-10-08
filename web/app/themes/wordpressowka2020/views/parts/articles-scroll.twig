@@ -1,5 +1,5 @@
 <div class="other-editions scroll homepage-scroll">
-	<h3>Latest articles:</h3>
+	<h3>{{ header ?? 'Latest articles:' }}</h3>
 	{% include 'views/parts/icons/swipe.twig' %}
 
 	<div class="editions-wrapper scroll">
@@ -32,6 +32,7 @@
 					</div>
 				</a>
 			{% endfor %}
+			{% if more %}
 			<div class="all-editions">
 				<a
 					href="{{ site.url }}/articles"
@@ -39,6 +40,7 @@
 					Read all articles
 				</a>
 			</div>
+			{% endif %}
 		</div>
 	</div>
 </div>

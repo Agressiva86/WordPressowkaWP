@@ -16,26 +16,32 @@
 				<input type="submit" value="{{ __( 'Zapisz się teraz!', 'sasquatch' ) }}" class="button color-primary small" name="subscribe">
 			</form>
 		</section>
+
+		<p>Learn why you should subscribe</p>
 		<div class="scroll-down"><a href="#owl-content"></a></div>
 	</div>
 </section>
 <div id="owl-content"></div>
+
 {% include 'views/parts/posts-scroll.twig' with
 	{
 		extra_class: 'homepage-scroll',
-		more: true,
+		more: false,
+		header: 'Discover what happened in the WordPress world',
 	}
 %}
 
 {% include 'views/parts/editors-scroll.twig' with
 	{
-		more: true,
+		more: false,
+		header: 'Learn from leading WordPress experts',
 	}
 %}
 
 {% include 'views/parts/articles-scroll.twig' with
 	{
-		more: true,
+		more: false,
+		header: 'Read interesting articles',
 	}
 %}
 

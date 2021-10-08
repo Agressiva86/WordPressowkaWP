@@ -11,7 +11,7 @@
 <div class="editions-list blog-list">
 {% for post in posts %}
 	{% set img = Image( post.guest_editor.photo ) %}
-	<span class="edition blog-post guest-post" href="{{ post.link }}">
+	<a class="edition blog-post guest-post" href="{{ post.link }}">
 		<div>
 			<picture class="post-cover m-b-20" role="img">
 				<source media="(max-width:640px)" type="image/webp"
@@ -37,7 +37,7 @@
 			{{ post.guest_editor.description | wpautop }}
 			<small>{{ __( 'read more', 'sasquatch' ) }}</small>
 		</div>
-	</span>
+	</a>
 {% endfor %}
 </div>
 
