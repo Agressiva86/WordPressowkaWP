@@ -30,5 +30,6 @@ $args                   = array(
 	'orderby' => 'rand'
 );
 
-$context['other_posts'] = Timber::get_posts( $args, 'OwlPost' );
+$context['guest_editors'] = Timber::get_posts( $args, 'OwlPost' );
+
 Timber::render('views/templates/tpl-newsletter.twig', $context);
