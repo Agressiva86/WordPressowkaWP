@@ -16,8 +16,6 @@ import prettyJSON    from 'prettyjson';
 import autoprefixer  from 'autoprefixer';
 import sassLint      from 'gulp-sass-lint';
 import eslint        from 'gulp-eslint';
-import purgecss		 from 'gulp-purgecss';
-import purgeFromHTML		 from 'purgecss-from-html';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -40,7 +38,6 @@ function loadConfig() {
 gulp.task('build',
  gulp.series(clean, gulp.parallel(images, sass, sassEditor, javascript, copy), revision_css, revision_js ));
 
-gulp.task('purgecss', purgeCss )
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
   gulp.series('build', server, watch));
@@ -141,19 +138,19 @@ function sassEditor() {
     .pipe(browser.reload({ stream: true }));
 }
 
-function purgeCss() {
-	return gulp.src('dist/css/app.css')
-		.pipe(purgecss({
-			content: ['../../uploads/wp2static-processed-site/**/*.html'],
-			extractors: [
-				{
-				  extractor: purgeFromHTML,
-				  extensions: ['html']
-				}
-			]
-		}))
-		.pipe(gulp.dest('dist/css/purged/'))
-}
+// function purgeCss() {
+// 	return gulp.src('dist/css/app.css')
+// 		.pipe(purgecss({
+// 			content: ['../../uploads/wp2static-processed-site/**/*.html'],
+// 			extractors: [
+// 				{
+// 				  extractor: purgeFromHTML,
+// 				  extensions: ['html']
+// 				}
+// 			]
+// 		}))
+// 		.pipe(gulp.dest('dist/css/purged/'))
+// }
 
 let webpackConfig = {
   rules: [

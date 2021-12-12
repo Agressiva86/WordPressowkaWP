@@ -9,8 +9,7 @@
     "development": "gulp build",
     "audit": "gulp audit",
     "sass-lint": "gulp sassLint",
-    "es-lint": "gulp esLint",
-    "purgecss": "gulp purgecss"
+    "es-lint": "gulp esLint"
   },
   "author": "Maciej Palmowski <m.palmowski@spiders.agency>",
   "license": "MIT",
