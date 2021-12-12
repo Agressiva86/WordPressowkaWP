@@ -386,6 +386,15 @@
     }
 }
 
+.wp-block-image figcaption {
+    font-size: 14px;
+    opacity: 0.6;
+    display: block;
+    text-align: center;
+    color: #{var(--color-secondary)};
+   margin-top: 5px;
+}
+
 
 .wp-block-gallery,
 .blocks-gallery-grid {
