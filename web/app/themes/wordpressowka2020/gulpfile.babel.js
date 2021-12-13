@@ -164,6 +164,10 @@ function purgeCss(done) {
 				  extensions: ['html']
 				}
 			],
+			safelist: {
+				greedy: [/^ais-/]
+			}
+
 		}))
 		.pipe(rename({
             basename: 'app-purged',
