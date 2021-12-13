@@ -157,7 +157,7 @@ function sassEditor() {
 function purgeCss(done) {
 	return gulp.src('dist/css/app.css')
 		.pipe(purgecss({
-			content: ['../../uploads/wp2static-processed-site/**/*.html'],
+			content: ['../../../../static/wp2static-processed-site/**/*.html'],
 			extractors: [
 				{
 				  extractor: purgeFromHTML,
