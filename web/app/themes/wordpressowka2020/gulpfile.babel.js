@@ -16,6 +16,9 @@ import prettyJSON    from 'prettyjson';
 import autoprefixer  from 'autoprefixer';
 import sassLint      from 'gulp-sass-lint';
 import eslint        from 'gulp-eslint';
+import purgecss		 from 'gulp-purgecss';
+import purgeFromHTML		 from 'purgecss-from-html';
+import rename		 from 'gulp-rename';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -38,6 +41,7 @@ function loadConfig() {
 gulp.task('build',
  gulp.series(clean, gulp.parallel(images, sass, sassEditor, javascript, copy), revision_css, revision_js ));
 
+gulp.task('purgecss', gulp.series( purgeCss, revision_purged_css ) );
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
   gulp.series('build', server, watch));
@@ -79,10 +83,22 @@ function clean(done) {
 }
 
 function revision_css() {
-	return gulp.src([ PATHS.dist + '/css/*.css' ], {base: PATHS.dist + '/css' })
+	return gulp.src([ PATHS.dist + '/css/app.css', PATHS.dist + '/css/editor.css' ], {base: PATHS.dist + '/css' })
   .pipe($.if(PRODUCTION, gulp.dest(PATHS.dist + '/css' )))
   .pipe($.if(PRODUCTION, $.rev() ))
   .pipe($.if(PRODUCTION, gulp.dest(PATHS.dist + '/css')))
+  .pipe($.if(PRODUCTION, $.rev.manifest( PATHS.dist +'/manifest.json', {
+    base: PATHS.dist,
+    merge: true
+  } )))
+  .pipe($.if(PRODUCTION, gulp.dest(PATHS.dist)));
+}
+
+function revision_purged_css() {
+	return gulp.src([ PATHS.dist + '/css/app-purged.css' ], {base: PATHS.dist + '/css' })
+  .pipe($.if(PRODUCTION, gulp.dest(PATHS.dist + '/css/' )))
+  .pipe($.if(PRODUCTION, $.rev() ))
+  .pipe($.if(PRODUCTION, gulp.dest(PATHS.dist + '/css/')))
   .pipe($.if(PRODUCTION, $.rev.manifest( PATHS.dist +'/manifest.json', {
     base: PATHS.dist,
     merge: true
@@ -138,19 +154,22 @@ function sassEditor() {
     .pipe(browser.reload({ stream: true }));
 }
 
-// function purgeCss() {
-// 	return gulp.src('dist/css/app.css')
-// 		.pipe(purgecss({
-// 			content: ['../../uploads/wp2static-processed-site/**/*.html'],
-// 			extractors: [
-// 				{
-// 				  extractor: purgeFromHTML,
-// 				  extensions: ['html']
-// 				}
-// 			]
-// 		}))
-// 		.pipe(gulp.dest('dist/css/purged/'))
-// }
+function purgeCss(done) {
+	return gulp.src('dist/css/app.css')
+		.pipe(purgecss({
+			content: ['../../uploads/wp2static-processed-site/**/*.html'],
+			extractors: [
+				{
+				  extractor: purgeFromHTML,
+				  extensions: ['html']
+				}
+			],
+		}))
+		.pipe(rename({
+            basename: 'app-purged',
+        }))
+		.pipe(gulp.dest('dist/css'))
+}
 
 let webpackConfig = {
   rules: [

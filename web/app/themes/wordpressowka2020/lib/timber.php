@@ -5,6 +5,14 @@ use CriticalCssProcessor\CriticalCssProcessor;
  * Conditional tags for Timber
  */
 
+function asset_path_no_manifest($filename) {
+	$dist_path = get_template_directory_uri() . '/dist/';
+	$directory = dirname($filename) . '/';
+	$file = basename($filename);
+
+	return $dist_path . $directory . $file;
+}
+
 function add_to_context( $data ) {
 	$data['is_home']          = is_home();
 	$data['is_front_page']    = is_front_page();
@@ -32,11 +40,12 @@ function add_to_context( $data ) {
 	$data['menu']['top_menu'] = new TimberMenu( 'top_menu' );
 
 	$data['css_file'] = asset_path( 'css/app.css' );
-	$data['css_file_purged'] = asset_path( 'css/purged/app.css' );
-	$data['css_file_content'] = wp_remote_get( $data['css_file'] );
+	$data['css_file_purged'] = asset_path( 'css/app-purged.css' );
 	$data['css_file_purged_content'] = wp_remote_get( $data['css_file_purged'] );
 
+
 	if ( is_wp_error( $data['css_file_purged_content'] ) ) {
+		$data['css_file_content'] = wp_remote_get( $data['css_file'] );
 		if ( is_wp_error( $data['css_file_content'] ) ) {
 			$data['load_file'] = false;
 		} else {
@@ -45,7 +54,7 @@ function add_to_context( $data ) {
 		}
 	} else {
 		$data['load_file'] = true;
-		$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_content']['body'] );
+		$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_purged_content']['body'] );
 	}
 
 	$data['browser'] = $_SERVER['HTTP_USER_AGENT'];

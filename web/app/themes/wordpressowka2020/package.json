@@ -9,13 +9,15 @@
     "development": "gulp build",
     "audit": "gulp audit",
     "sass-lint": "gulp sassLint",
-    "es-lint": "gulp esLint"
+    "es-lint": "gulp esLint",
+    "purgecss": "gulp purgecss"
   },
   "author": "Maciej Palmowski <m.palmowski@spiders.agency>",
   "license": "MIT",
   "dependencies": {
     "@barba/core": "^2.9.7",
-    "@barba/css": "^2.1.15"
+    "@barba/css": "^2.1.15",
+    "gulp-rename": "^1.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
