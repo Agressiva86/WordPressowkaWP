@@ -6,6 +6,7 @@ $context['post'] = Timber::get_posts( false, 'OwlPost' )[0];
 $args                   = array(
 	'posts_per_page' => 7,
 	'post__not_in'   => array( $context['post']->ID ),
+	'post_type'      => $context['post']->post_type,
 );
 $context['other_posts'] = Timber::get_posts( $args, 'OwlPost' );
 
