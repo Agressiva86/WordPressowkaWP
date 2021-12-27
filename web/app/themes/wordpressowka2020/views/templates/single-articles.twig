@@ -84,7 +84,9 @@
 		</aside> #}
 	</div>
 </article>
-
-{% include 'views/parts/editions-scroll.twig' %}
-
+{% if post.post_type == 'post' %}
+	{% include 'views/parts/editions-scroll.twig' %}
+{% elseif post.post_type == 'articles' %}
+	{% include 'views/parts/articles-scroll.twig' with { articles: other_posts, more: true } %}
+{% endif %}
 {% endblock %}
