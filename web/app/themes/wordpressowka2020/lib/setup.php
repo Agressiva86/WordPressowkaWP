@@ -116,3 +116,11 @@ function defer_parsing_of_js( $url ) {
 	return str_replace( ' src', ' defer src', $url );
 }
 add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
+
+function feed_request( $qv ) {
+    if ( isset( $qv['feed'] ) && !isset( $qv['post_type'] ) ) {
+    	$qv['post_type'] = array( 'post', 'articles' );
+    }
+    return $qv;
+}
+add_filter( 'request', 'feed_request' );
