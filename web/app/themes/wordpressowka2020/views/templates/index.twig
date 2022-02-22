@@ -16,7 +16,9 @@
 
 				{{ post.content }}
 
-				{{ fn( 'upcoming_events' ) }}
+				{% if post.id >= 3190 %}
+					{{ fn( 'upcoming_events' ) }}
+				{% endif %}
 
 				<h4>{{ __( 'Podoba Ci się to wydanie? Podaj dalej!', 'sasquatch' ) }}</h4>
 				<div class="share">
