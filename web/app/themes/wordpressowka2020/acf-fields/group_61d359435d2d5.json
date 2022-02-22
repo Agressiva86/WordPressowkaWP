@@ -1,0 +1,121 @@
+{
+    "key": "group_61d359435d2d5",
+    "title": "Events",
+    "fields": [
+        {
+            "key": "field_61d359484090e",
+            "label": "Date",
+            "name": "date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
+            "acfict_enabled": 1,
+            "acfict_use_prefix": 1,
+            "acfict_table_name": "events"
+        },
+        {
+            "key": "field_61d3756cf18d1",
+            "label": "End Date",
+            "name": "end_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acf_ct_exclude_column": 0,
+            "acf_ct_read_only_field": 0,
+            "display_format": "d\/m\/Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
+            "acfict_enabled": 1,
+            "acfict_use_prefix": 1,
+            "acfict_table_name": "events"
+        },
+        {
+            "key": "field_61d35e3bc721d",
+            "label": "Type",
+            "name": "type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "picture": "Side Image",
+                "picture-bg": "Background Image",
+                "selected": "Selected"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": "",
+            "acfict_enabled": 1,
+            "acfict_use_prefix": 1,
+            "acfict_table_name": "events"
+        },
+        {
+            "key": "field_61d35ed88b5b1",
+            "label": "Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "acfict_enabled": 1,
+            "acfict_use_prefix": 1,
+            "acfict_table_name": "events"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "page_attributes"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfict_enabled": 1,
+    "acfict_use_prefix": 1,
+    "acfict_table_name": "events",
+    "modified": 1641248688
+}

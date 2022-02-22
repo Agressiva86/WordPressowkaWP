@@ -1,0 +1,14 @@
+<h2>Upcoming events</h2>
+{% for event in events %}
+	{% set template = 'views/blocks/link-' ~event.meta('type')~ '.twig' %}
+	{% include [ template, 'views/blocks/link-default.twig' ] with {
+		fields:{
+			opis: event.content,
+			obrazek: event.thumbnail,
+			link: {
+				url: event.meta( 'url' ),
+				title: event.title
+			}
+		}
+	} %}
+{% endfor %}

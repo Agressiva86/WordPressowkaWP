@@ -31,6 +31,7 @@ $sage_includes = array(
 	'lib/filters.php',
 	'lib/class-css-vars.php',
 	'lib/class-customizer.php',
+	'lib/events.php',
 );
 
 foreach ( $sage_includes as $file ) {
@@ -79,6 +80,12 @@ function theme_change_comment_field_names( $translated_text, $text, $domain ) {
 				break;
 			case 'read more':
 				$translated_text = 'czytaj dalej';
+				break;
+			case 'Previous':
+				$translated_text = 'poprzednia';
+				break;
+			case 'Next':
+				$translated_text = 'następna';
 				break;
 		}
 	}

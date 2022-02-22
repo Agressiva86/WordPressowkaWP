@@ -16,6 +16,8 @@
 
 				{{ post.content }}
 
+				{{ fn( 'upcoming_events' ) }}
+
 				<h4>{{ __( 'Podoba Ci się to wydanie? Podaj dalej!', 'sasquatch' ) }}</h4>
 				<div class="share">
 					<a href="{{ post.link | fb_share_url }}" target="_blank" rel="noopener">

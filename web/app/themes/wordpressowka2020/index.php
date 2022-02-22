@@ -7,6 +7,8 @@ $args                   = array(
 	'posts_per_page' => 7,
 	'post__not_in'   => array( $context['post']->ID ),
 	'post_type'      => $context['post']->post_type,
+	'cache_results' => false,
+	'no_found_rows' => true,
 );
 $context['other_posts'] = Timber::get_posts( $args, 'OwlPost' );
 
