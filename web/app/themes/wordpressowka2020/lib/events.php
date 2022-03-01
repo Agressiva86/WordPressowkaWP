@@ -87,6 +87,7 @@ function upcoming_events() {
 		SELECT post_id FROM ws_acf_events WHERE
 		( date > CURDATE() AND YEAR(`end_date`) = 0 ) OR
 		( end_date > CURDATE() )
+		ORDER BY date ASC
 	' );
 
 	if ( count( $sql ) > 0 ) {
