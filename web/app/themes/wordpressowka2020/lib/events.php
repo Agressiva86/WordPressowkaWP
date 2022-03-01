@@ -95,6 +95,7 @@ function upcoming_events() {
 			'posts_per_page' => -1,
 			'post__in'   => $sql,
 			'post_type'      => 'events',
+			'orderby' => 'post__in',
 		);
 		$context['events'] = Timber::get_posts( $args, 'OwlPost' );
 		Timber::render( 'views/templates/events.twig', $context );
