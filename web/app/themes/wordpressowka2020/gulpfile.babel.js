@@ -165,7 +165,7 @@ function purgeCss(done) {
 				}
 			],
 			safelist: {
-				deep: ['scroll-down', 'checkbox-toggle'],
+				standard: [/scroll-down/, /checkbox-toggle/],
 				greedy: [/^ais-/]
 			}
 
