@@ -16,6 +16,10 @@
 
 				{{ post.content }}
 
+				{% include 'views/parts/owl-ads-row.twig' %}
+
+				{% include 'views/parts/owl-ads-logo.twig' %}
+
 				{% if post.id >= 3190 %}
 					{{ fn( 'upcoming_events' ) }}
 				{% endif %}
