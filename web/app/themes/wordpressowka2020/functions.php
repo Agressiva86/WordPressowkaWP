@@ -92,3 +92,88 @@ function theme_change_comment_field_names( $translated_text, $text, $domain ) {
 
 	return $translated_text;
 }
+
+function add_ad_blocks( $content ) {
+	global $post;
+
+	if ( $post->post_type === 'post' && is_singular() ) {
+
+		libxml_use_internal_errors(true);
+		$tpl = new DOMDocument;
+		$tpl->loadHtml( '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $content );
+
+		$xpath = new DomXPath( $tpl );
+		$blocks_as_guest = count( $xpath->query("//*[@class='wordpressowka-guest']//*[contains(@class, 'wordpressowka-block')]") );
+		if ( $blocks_as_guest > 0 ) {
+			$blocks_as_guest++;
+		}
+
+		$all_blocks = $xpath->query("//*[contains(@class, 'wordpressowka-block')]");
+
+		$when_insert = 3 + $blocks_as_guest;
+
+		$ad = $all_blocks->item( $when_insert  );
+
+		if ( $ad === null ) {
+			return;
+		}
+
+		$frag = $tpl->createDocumentFragment();
+		$frag->appendXML( insert_ad() );
+
+		$ad->parentNode->insertBefore( $frag, $ad );
+
+		$content = $tpl->saveHTML();
+	}
+
+	if ( $post->post_type === 'articles' && is_singular() ) {
+		libxml_use_internal_errors(true);
+		$tpl = new DOMDocument;
+		$tpl->loadHtml( '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . $content );
+
+		$xpath = new DomXPath( $tpl );
+
+		$all_headings = $xpath->query("//h2");
+
+		$has_owl_link = $xpath->query("//*[contains(@class, 'wordpressowka-block')]");
+
+		$modifier = 1;
+		if ( count( $has_owl_link ) > 0 ) {
+			$modifier = 2;
+		}
+
+		$frag = $tpl->createDocumentFragment();
+		$frag->appendXML( insert_ad() );
+
+		$heading1 = $all_headings->item( 0 );
+		$heading2 = $all_headings->item( count( $all_headings ) - $modifier );
+
+		if ( $heading1 === null || $heading2 === null ) {
+			return;
+		}
+
+		$heading1->parentNode->insertBefore( $frag, $heading1 );
+
+		$frag = $tpl->createDocumentFragment();
+		$frag->appendXML( insert_ad() );
+
+		$heading2->parentNode->insertBefore( $frag, $heading2 );
+
+		$content = $tpl->saveHTML();
+	}
+
+    return $content;
+}
+
+add_filter( 'the_content', 'add_ad_blocks', 99 );
+
+function insert_ad() {
+	$context = Timber::get_context();
+	if ( get_field( 'enable_ads', 'options' ) ) {
+		if ( get_field( 'ad_logo', 'options' ) ) {
+			return Timber::compile( 'views/parts/owl-ads-logo.twig', $context );
+		} else {
+			return Timber::compile( 'views/parts/owl-ads-row.twig', $context );
+		}
+	}
+}

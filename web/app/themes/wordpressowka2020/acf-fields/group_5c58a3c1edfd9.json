@@ -16,7 +16,10 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5c58a47eacb79",
@@ -35,7 +38,10 @@
             "tabs": "all",
             "toolbar": "basic",
             "media_upload": 0,
-            "delay": 0
+            "delay": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5c6d9439a9e61",
@@ -51,7 +57,10 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec653fc1a93e",
@@ -70,7 +79,10 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5c6d944ca9e62",
@@ -86,7 +98,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5c6d945fa9e63",
@@ -102,7 +117,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5c6d9473a9e64",
@@ -118,7 +136,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec6536c20ae6",
@@ -134,23 +155,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_609d2a743f05d",
-            "label": "Anchor",
-            "name": "anchor",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec6541e1a93f",
@@ -166,7 +174,10 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec7a267a63af",
@@ -185,7 +196,10 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec65918d5155",
@@ -201,7 +215,10 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec6592ad5156",
@@ -239,7 +256,10 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65938d5157",
@@ -254,7 +274,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#0052FF"
+                    "default_value": "#0052FF",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec6595dd5158",
@@ -269,7 +294,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#061058"
+                    "default_value": "#061058",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65974d5159",
@@ -284,7 +314,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#ffffff"
+                    "default_value": "#ffffff",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec659c6d515a",
@@ -299,7 +334,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#B4B7CC"
+                    "default_value": "#B4B7CC",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65a25d515b",
@@ -314,7 +354,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#061058"
+                    "default_value": "#061058",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65a47d515c",
@@ -329,7 +374,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#ffffff"
+                    "default_value": "#ffffff",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65a5cd515d",
@@ -344,7 +394,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#ffffff"
+                    "default_value": "#ffffff",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65a78d515e",
@@ -359,7 +414,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#F7F7FB"
+                    "default_value": "#F7F7FB",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65a95d515f",
@@ -374,7 +434,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#061058"
+                    "default_value": "#061058",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65aafd5160",
@@ -389,7 +454,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#0052FF"
+                    "default_value": "#0052FF",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 },
                 {
                     "key": "field_5ec65ae3d5161",
@@ -404,9 +474,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#061058"
+                    "default_value": "#061058",
+                    "enable_opacity": false,
+                    "return_format": "string",
+                    "acfict_enabled": false,
+                    "acfict_use_prefix": true,
+                    "acfict_table_name": null
                 }
-            ]
+            ],
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ecc1ae4afbf3",
@@ -422,7 +500,10 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ecc1af2afbf4",
@@ -437,7 +518,10 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "return_format": "array",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ede1c0d38e7f",
@@ -453,7 +537,10 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ede1c1838e80",
@@ -468,7 +555,10 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "return_format": "array",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5f8dfa4e9f671",
@@ -487,7 +577,10 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": ""
+            "new_lines": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_6019a74f91624",
@@ -509,7 +602,10 @@
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_6019929ea7b5e",
@@ -525,7 +621,10 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec6542f1a940",
@@ -544,7 +643,10 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5f80db6b30097",
@@ -563,7 +665,10 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec65be20afbb",
@@ -578,7 +683,10 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "return_format": "array",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec654461a941",
@@ -597,7 +705,10 @@
             "tabs": "all",
             "toolbar": "basic",
             "media_upload": 0,
-            "delay": 1
+            "delay": 1,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_5ec654651a942",
@@ -616,7 +727,10 @@
             "tabs": "all",
             "toolbar": "basic",
             "media_upload": 0,
-            "delay": 1
+            "delay": 1,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         },
         {
             "key": "field_601992d6a7b5f",
@@ -640,7 +754,183 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_6238b2f7c6087",
+            "label": "Ads",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_6238b308c6088",
+            "label": "Enable ads",
+            "name": "enable_ads",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_6238b31ec6089",
+            "label": "Ad Title Left",
+            "name": "ad_title_left",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_6238b32fc608a",
+            "label": "Ad Title Right",
+            "name": "ad_title_right",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_6238b61d0f64a",
+            "label": "Ad Link",
+            "name": "ad_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_6238b339c608b",
+            "label": "Ad Description",
+            "name": "ad_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_6238b358c608c",
+            "label": "Ad Logo",
+            "name": "ad_logo",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_6238b37cc608d",
+            "label": "Ad Color",
+            "name": "ad_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
         }
     ],
     "location": [
@@ -660,5 +950,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620912784
+    "show_in_rest": 0,
+    "acfict_enabled": 0,
+    "modified": 1647883825
 }

@@ -61,10 +61,6 @@
 
 				{{ post.content }}
 
-				{% include 'views/parts/owl-ads-row.twig' %}
-
-				{% include 'views/parts/owl-ads-logo.twig' %}
-
 				<h4>{{ __( 'Podoba Ci się ten artykuł? Podaj go dalej!', 'sasquatch' ) }}</h4>
 				<div class="share">
 					<a href="{{ post.link | fb_share_url }}" target="_blank" rel="noopener">
