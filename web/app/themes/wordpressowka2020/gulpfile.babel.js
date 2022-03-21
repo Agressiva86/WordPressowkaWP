@@ -20,6 +20,8 @@ import purgecss		 from 'gulp-purgecss';
 import purgeFromHTML		 from 'purgecss-from-html';
 import rename		 from 'gulp-rename';
 
+const scss = require('gulp-sass')(require('node-sass'));
+
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
@@ -131,10 +133,10 @@ function sass() {
   return gulp.src('assets/scss/app.scss')
     .pipe($.sourcemaps.init())
     .pipe($.plumber())
-    .pipe($.sass({
-      includePaths: PATHS.sass,
-      outputStyle: 'compressed'
-    }).on('error', $.sass.logError))
+	.pipe(scss({
+		includePaths: PATHS.sass,
+		outputStyle: 'compressed'
+	  }))
     .pipe($.postcss([autoprefixer()])) // uses ".browserslistrc"
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/css'))
@@ -145,9 +147,9 @@ function sassEditor() {
   return gulp.src('assets/scss/editor.scss')
     .pipe($.sourcemaps.init())
     .pipe($.plumber())
-    .pipe($.sass({
+    .pipe(scss({
       includePaths: PATHS.sass
-    }).on('error', $.sass.logError))
+    }))
     .pipe($.postcss([autoprefixer()])) // uses ".browserslistrc"
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/css'))
