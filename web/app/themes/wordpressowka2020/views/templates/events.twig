@@ -3,7 +3,7 @@
 	{% set template = 'views/blocks/link-' ~event.meta('type')~ '.twig' %}
 	{% include [ template, 'views/blocks/link-default.twig' ] with {
 		fields:{
-			opis: event.content,
+			opis: event.post_content,
 			obrazek: event.thumbnail,
 			link: {
 				url: event.meta( 'link' ),
