@@ -6,6 +6,8 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/w3tc-config
+web/app/themes/WP-Owls
+web/app/themes/wpowls
 package-lock.json
 composer.lock
 
