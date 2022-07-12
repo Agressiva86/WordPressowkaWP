@@ -1,18 +1,7 @@
 <?php
-use TwigWrapper\TwigWrapper;
-use CriticalCssProcessor\CriticalCssProcessor;
 /**
  * Conditional tags for Timber
  */
-
-function asset_path_no_manifest($filename) {
-	$dist_path = get_template_directory_uri() . '/dist/';
-	$directory = dirname($filename) . '/';
-	$file = basename($filename);
-
-	return $dist_path . $directory . $file;
-}
-
 function add_to_context( $data ) {
 	$data['is_home']          = is_home();
 	$data['is_front_page']    = is_front_page();
@@ -35,27 +24,50 @@ function add_to_context( $data ) {
 
 	$data['options'] = get_fields( 'options' );
 
-	$data['menu']['header']   = new TimberMenu( 'header' );
-	$data['menu']['footer']   = new TimberMenu( 'footer' );
-	$data['menu']['top_menu'] = new TimberMenu( 'top_menu' );
+	$data['menu']['header']   = new Timber\Menu( 'header' );
+	$data['menu']['footer']   = new Timber\Menu( 'footer' );
+	$data['menu']['top_menu'] = new Timber\Menu( 'top_menu' );
+	$data['menu']['tw_menu_left']   = new Timber\Menu( 'tw_menu_left' );
+	$data['menu']['tw_menu_right']   = new Timber\Menu( 'tw_menu_right' );
 
-	$data['css_file'] = asset_path( 'css/app.css' );
-	$data['css_file_purged'] = asset_path( 'css/app-purged.css' );
-	$data['css_file_purged_content'] = wp_remote_get( $data['css_file_purged'] );
+	$is_tw = false;
+	$dir = '/dist/';
 
+	if ( is_page( 'interviews' ) || get_post_type() === 'interviews' ) {
+		$is_tw = true;
+		$dir = '/dist_tw/';
 
-	if ( is_wp_error( $data['css_file_purged_content'] ) ) {
+		$data['css_file'] = asset_path( 'css/app.css', $is_tw );
 		$data['css_file_content'] = wp_remote_get( $data['css_file'] );
+
 		if ( is_wp_error( $data['css_file_content'] ) ) {
 			$data['load_file'] = false;
 		} else {
 			$data['load_file'] = true;
-			$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_content']['body'] );
+			$data['css_file_content'] = str_replace( '/fonts/', get_bloginfo( 'template_url' ) . $dir . 'fonts/', $data['css_file_content']['body'] );
+			//$data['css_file_content'] = $data['css_file_content']['body'];
 		}
+
 	} else {
-		$data['load_file'] = true;
-		$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_purged_content']['body'] );
+		$data['css_file'] = asset_path( 'css/app.css' );
+		$data['css_file_purged'] = asset_path( 'css/app-purged.css' );
+		$data['css_file_purged_content'] = wp_remote_get( $data['css_file_purged'] );
+
+
+		if ( is_wp_error( $data['css_file_purged_content'] ) ) {
+			$data['css_file_content'] = wp_remote_get( $data['css_file'] );
+			if ( is_wp_error( $data['css_file_content'] ) ) {
+				$data['load_file'] = false;
+			} else {
+				$data['load_file'] = true;
+				$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_content']['body'] );
+			}
+		} else {
+			$data['load_file'] = true;
+			$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_purged_content']['body'] );
+		}
 	}
+
 
 	$data['browser'] = $_SERVER['HTTP_USER_AGENT'];
 	$data['get_data'] = $_GET;
@@ -75,3 +87,38 @@ function add_to_config( $data ) {
 }
 
 add_filter( 'timber_context', 'add_to_config' );
+
+if ( class_exists( 'Timber' ) ) {
+	add_filter(
+		'timber/twig/environment/options',
+		function( $options ) {
+			$options['cache'] = true;
+			return $options;
+		}
+	);
+
+	add_filter(
+		'timber/post/classmap',
+		function( $classmap ) {
+			$custom_classmap = array(
+				'post' => OwlPost::class,
+			);
+
+			return array_merge( $classmap, $custom_classmap );
+		}
+	);
+}
+
+function asset_path( $filename, $is_tw = false ) {
+	if ( $is_tw ) {
+		$dir = '/dist_tw/';
+	} else {
+		$dir = '/dist/';
+	}
+
+	$dist_path = get_template_directory_uri() . $dir;
+	$directory = dirname($filename) . '/';
+	$file = basename($filename);
+
+	return $dist_path . $directory . $file;
+}

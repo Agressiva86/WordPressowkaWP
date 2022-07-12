@@ -24,7 +24,6 @@ if ( class_exists( 'Timber' ) ) {
 
 $sage_includes = array(
 	'lib/timber.php',
-	'lib/assets.php',
 	'lib/setup.php',
 	'lib/gutenberg.php',
 	'lib/Class-owl-post.php',

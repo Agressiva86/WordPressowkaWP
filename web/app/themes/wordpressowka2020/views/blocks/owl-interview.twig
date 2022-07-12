@@ -1,0 +1,27 @@
+{#
+  Title: owl-interview
+  Description: Interview
+  Category: formatting
+  Icon: admin-comments
+  Keywords: interview
+  Mode: preview
+  Align: center
+  PostTypes: interviews
+  SupportsMode: true
+  SupportsMultiple: true
+  SupportsAlign: center
+#}
+
+<div class="owl-faq relative pb-10 mb-10">
+	<h2 class="mb-10 mt-0">
+		<span>{{ fields.question }}</span>
+	</h2>
+
+	<div class="answer">
+		{{ fields.answer | wpautop }}
+	</div>
+
+	<div class="absolute bottom-0 right-0 z-10 dark:opacity-40">
+		{% include 'views/parts/icons/dots-line.twig' %}
+	</div>
+</div>

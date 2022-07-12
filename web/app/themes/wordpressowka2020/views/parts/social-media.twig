@@ -1,0 +1,10 @@
+<div class="mt-20 mb-20 mx-auto text-center">
+    <p class="mb-5"><strong class="text-owl-dark-blue dark:text-owl-dark-beige">{{ header }}</strong></p>
+    <div class="share-text flex flex-col md:flex md:flex-row md:gap-x-6 items-center content-center justify-center">
+        <a href="{{ link | tt_share_url }}" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6  bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/twitter.twig' with { 'icon_color': 'fill-white hover:fill-white' } %}</span>Share on Twitter</a>
+
+        <a href="{{ link | fb_share_url }}" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6  bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/facebook.twig' with { 'icon_color': 'fill-white hover:fill-white' } %}</span>Share on Facebook</a>
+
+        <a href="{{ link | ln_share_url }}" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6  bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/linkedin.twig' with { 'icon_color': 'fill-white hover:fill-white' } %}</span>Share on Linkedin</a>
+    </div>
+</div>

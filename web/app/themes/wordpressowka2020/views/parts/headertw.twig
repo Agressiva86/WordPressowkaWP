@@ -1,0 +1,99 @@
+<header id="header" class="{{ body_class }} container mx-auto px-4 my-10 grid grid-cols-3 gap-4 content-center">
+	<div class="item col-start-1">
+		<a href="{{ site.url }}">
+			{% include 'views/parts/logotw.twig' %}
+		</a>
+	</div>
+	<div class="item col-start-2 col-span-2 justify-self-end">
+		<ul class="flex flex-row flex-nowrap gap-4 content-center">
+			<li id="open-navigation" class="flex flex-row gap-4 items-center">
+				<span class="uppercase text-sm font-owlFont text-owl-dark-blue hidden md:block dark:text-owl-light-beige dark:opacity-40">Menu</span>
+				<small
+					class="icon h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-green cursor-pointer dark:bg-owl-dark-blue dark:hover:bg-owl-light-green">
+					<svg class="absolute inset-1/2" width="18" height="14" viewBox="0 0 18 14" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<rect width="18" height="2" rx="1" fill="#4E878C" class="fill-owl-green dark:fill-owl-dark-beige" />
+						<rect y="6" width="18" height="2" rx="1" fill="#4E878C" class="fill-owl-green dark:fill-owl-dark-beige" />
+						<rect y="12" width="18" height="2" rx="1" fill="#4E878C" class="fill-owl-green dark:fill-owl-dark-beige" />
+					</svg>
+				</small>
+			</li>
+			<li class="hidden md:block">
+				<a href="{{ options.search_form_page.url }}">
+					<small
+						class="icon h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-orange cursor-pointer dark:bg-owl-dark-blue dark:hover:bg-owl-orange">
+						<svg class="absolute inset-1/2" width="14" height="14" viewBox="0 0 14 14" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M13.8186 12.1015L11.0822 9.36976C10.9454 9.26049 10.7812 9.17854 10.617 9.17854H10.1792C10.918 8.22244 11.3832 7.02049 11.3832 5.68195C11.3832 2.5678 8.81106 0 5.69161 0C2.54481 0 0 2.5678 0 5.68195C0 8.82341 2.54481 11.3639 5.69161 11.3639C7.00506 11.3639 8.20906 10.9268 9.19415 10.162V10.6263C9.19415 10.7902 9.24887 10.9541 9.38569 11.0907L12.0947 13.7951C12.3683 14.0683 12.7788 14.0683 13.025 13.7951L13.7912 13.0302C14.0649 12.7844 14.0649 12.3746 13.8186 12.1015ZM5.69161 9.17854C3.7488 9.17854 2.18908 7.62146 2.18908 5.68195C2.18908 3.76976 3.7488 2.18537 5.69161 2.18537C7.60706 2.18537 9.19415 3.76976 9.19415 5.68195C9.19415 7.62146 7.60706 9.17854 5.69161 9.17854Z"
+								fill="#E29578" class="fill-owl-orange" />
+						</svg>
+					</small>
+				</a>
+			</li>
+			<li>
+				<a href="#" id="themeswitcher" aria-label="Change theme color">
+					<small
+						class="icon icon-darkmode h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-dark-blue cursor-pointer dark:bg-owl-dark-blue dark:hover:bg-owl-green">
+						<svg  class="absolute inset-1/2" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M7 12C9.76142 12 12 9.76142 12 7C12 4.23858 9.76142 2 7 2C4.23858 2 2 4.23858 2 7C2 9.76142 4.23858 12 7 12ZM7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14Z"
+								fill="#006D77" class="fill-owl-dark-blue dark:fill-owl-dark-beige" />
+							<path
+								d="M9.25218 9.5462C9.58656 9.2505 9.85943 8.89182 10.0552 8.49067C10.251 8.08951 10.3658 7.65372 10.3931 7.20818C10.4205 6.76264 10.3598 6.31608 10.2146 5.89399C10.0693 5.4719 9.84239 5.08255 9.54669 4.74817C9.25098 4.41379 8.89231 4.14093 8.49115 3.94516C8.08999 3.7494 7.6542 3.63456 7.20866 3.60721C6.76313 3.57987 6.31656 3.64054 5.89447 3.78578C5.47239 3.93101 5.08304 4.15796 4.74866 4.45367L7.00042 6.99993L9.25218 9.5462Z"
+								fill="#006D77"  class="fill-owl-dark-blue dark:fill-owl-dark-beige" />
+						</svg>
+					</small>
+				</a>
+			</li>
+		</ul>
+	</div>
+</header>
+
+<nav id="owl-navigation" class="fixed -top-full w-full h-full left-0 right-0 block overflow-x-hidden z-50 transition-all delay-150 bg-owl-dark-blue bg-opacity-60">
+	<div class="w-full lg:min-h-fit min-h-screen overflow-y-auto overflow-x-hidden bg-owl-dark-blue relative">
+		<div class="container mx-auto px-4 my-10 grid grid-cols-3 gap-4 content-center">
+			<div class="item col-start-1">
+				<a href="{{ site.url }}">
+					{% include 'views/parts/logotw.twig' %}
+				</a>
+			</div>
+			<div class="item col-start-2 col-span-2 justify-self-end">
+				<ul class="flex flex-row flex-nowrap gap-4 content-center">
+					<li id="close-navigation" class="flex flex-row gap-4 items-center">
+						<span class="uppercase text-sm font-owlFont text-owl-dark-beige hidden md:block opacity-40">Close</span>
+						<small
+							class="icon h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-green cursor-pointer dark:bg-owl-orange dark:hover:bg-owl-light-green">
+							<svg class="absolute inset-1/2" width="16" height="16" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" class="fill-owl-green dark:fill-owl-dark-beige"/></svg>
+						</small>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="relative z-20 container mx-auto px-4 py-20 md:grid md:grid-cols-2 md:gap-20 lg:items-end">
+			<ul class="owl-main-menu mb-10 md:mb-10">
+				{% for item in menu.tw_menu_left.get_items %}
+					<li>
+						<a href="{{ item.link }}" class="relative font-owlFont lg:text-h1lg text-h2md text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">
+							{{ item.title }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+			<ul class="owl-main-menu">
+				{% for item in menu.tw_menu_right.get_items %}
+					<li class="mb-4">
+						<a href="{{ item.link }}" class="relative font-owlFont text-xl text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">
+							{{ item.title }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="absolute bottom-20 right-20 z-10 opacity-40">
+			{% include 'views/parts/icons/dots-white.twig' %}
+		</div>
+	</div>
+</nav>

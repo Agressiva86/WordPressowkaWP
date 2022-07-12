@@ -1,0 +1,114 @@
+{
+    "key": "group_62900b66ee6ab",
+    "title": "Interview",
+    "fields": [
+        {
+            "key": "field_62900b70c15cf",
+            "label": "Name",
+            "name": "name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_62c8c753374f2",
+            "label": "Description",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_62c8c7b394c1a",
+            "label": "Twitter",
+            "name": "twitter",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_62c8c8037df2a",
+            "label": "Short bio",
+            "name": "short_bio",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "interviews"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfict_enabled": 0,
+    "modified": 1657327869
+}

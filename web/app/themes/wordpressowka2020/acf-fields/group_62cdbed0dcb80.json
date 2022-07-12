@@ -1,0 +1,68 @@
+{
+    "key": "group_62cdbed0dcb80",
+    "title": "Archive Interviews",
+    "fields": [
+        {
+            "key": "field_62cdbf3260ab7",
+            "label": "Description",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "full",
+            "delay": 0,
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        },
+        {
+            "key": "field_62cdbf5a60ab8",
+            "label": "Button",
+            "name": "button",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "acfict_enabled": 0,
+            "acfict_use_prefix": true,
+            "acfict_table_name": null
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "tpl-archive-interviews.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfict_enabled": 0,
+    "modified": 1657651133
+}

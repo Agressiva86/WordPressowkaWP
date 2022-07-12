@@ -1,0 +1,34 @@
+{#
+  Title: owl-image
+  Description: Image
+  Category: formatting
+  Icon: admin-comments
+  Keywords: image
+  Mode: preview
+  Align: center
+  PostTypes: post articles interviews
+  SupportsMode: true
+  SupportsMultiple: true
+  SupportsAlign: center
+#}
+{% set image = Image( fields.image ) %}
+<figure class="wp-block-image">
+    <picture>
+        <source media="(max-width:767px)"
+            srcset="{{ image|resize( 768 )|towebp }}" />
+
+        <source media="(min-width: 768px) and (max-width:1023px)"
+            srcset="{{ image|resize( 1024 )|towebp }}" />
+
+        <img class="rounded-tr-[50px]"
+            src="{{ image|resize( 1350 )|towebp }}"
+            alt="{{ image.alt }}"
+			loading="lazy"
+		>
+    </picture>
+	{% if image.caption %}
+    <figcaption class="-mt-4 text-sm uppercase text-owl-light-green opacity-80">
+        {{ image.caption }}
+    </figcaption>
+	{% endif %}
+</figure>

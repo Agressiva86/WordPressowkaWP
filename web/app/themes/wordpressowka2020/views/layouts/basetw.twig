@@ -1,0 +1,61 @@
+{% block header %}
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="{{ function( 'language_attributes' ) }}" > <![endif]-->
+<html {{ function( 'language_attributes' ) }} class="font-owlFontText scroll-smooth">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="{{ options.dodaj_palete_kolorow.0.kolor_primary }}">
+	<link rel="alternate" type="application/rss+xml" title="Wordpressowka" href="{{ site.link }}/feed/" />
+	<link rel="preload" href="{{ theme.link }}/dist_tw/fonts/n27-regular-webfont.woff2" as="font" crossorigin>
+	<link rel="preload" href="{{ theme.link }}/dist_tw/fonts/n27-bold-webfont.woff2" as="font" crossorigin>
+	<link rel="preload" href="{{ theme.link }}/dist_tw/fonts/plus-jakarta-sans-v2-latin-ext_latin-regular.woff2" as="font" crossorigin>
+	<link rel="preload" href="{{ theme.link }}/dist_tw/fonts/plus-jakarta-sans-v2-latin-ext_latin-700.woff2" as="font" crossorigin>
+	{{ function('wp_head') }}
+	{% if ( load_file ) %}
+	<style type="text/css">
+		{{ css_file_content }}
+	</style>
+	{% else %}
+	{% if( get_data.generate_css == 1 ) %}
+	<link id="main-css" rel="stylesheet" href="{{ css_file }}" as="style">
+
+	{% else %}
+	<link id="main-css" rel="preload" href="{{ css_file }}" as="style">
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			var css = document.getElementById('main-css');
+			css.rel = 'stylesheet';
+		});
+	</script>
+	{% endif %}
+	{% endif %}
+</head>
+{% endblock %}
+
+<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }} dark:bg-gray-800 dark:text-owl-dark-beige">
+
+	{% include 'views/parts/headertw.twig' %}
+	<section data-barba="wrapper">
+		<main class="container mx-auto px-4" role="main" id="wrapper" data-barba="container" data-barba-namespace="bhome">
+
+			<section id="main-wrapper">
+				{% block main %}
+				{% endblock %}
+			</section>
+
+		</main>
+	</section>
+	{% include 'views/parts/footertw.twig' %}
+
+	{% block footer %}
+	{{ function( 'wp_footer' ) }}
+	{% if ( browser == 'WP2Static.com' ) %}
+	{{ options.gtm }}
+	{% endif %}
+</body>
+
+</html>
+{% endblock %}
