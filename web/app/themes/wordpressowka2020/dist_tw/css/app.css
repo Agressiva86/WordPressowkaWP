@@ -1697,7 +1697,7 @@ a {
 	        transition-delay: 150ms;
 }
 
-.wp-block-image picture:before {
+.wp-block-image:hover picture:before {
     content: "";
     position: absolute;
     top: 0px;
@@ -1728,12 +1728,12 @@ a {
             transition-delay: 150ms;
 }
 
-.owl-content *:not(.owl-faq):not(li):not(.owl-short-bio *):not(.owl-content-inner):not(.owl-faq .wp-block-image picture:before):not(.owl-faq .absolute svg):not(figcaption) {
+.owl-content *:not(.owl-faq):not(li):not(.owl-short-bio *):not(.owl-content-inner):not(.owl-faq .wp-block-image:hover picture:before):not(.owl-faq .absolute svg):not(figcaption) {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.wp-block-image picture:before {
+.wp-block-image:hover picture:before {
     background-size: 600% 600%;
     -webkit-animation: OwlGradientAnimation 7s ease infinite;
             animation: OwlGradientAnimation 7s ease infinite;
@@ -1926,7 +1926,7 @@ a {
     width: 100%;
 }
 
-.owl-gradient {
+.owl-gradient:hover {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1946,12 +1946,12 @@ a {
           transition-delay: 150ms;
 }
 
-.owl-content *:not(.owl-faq):not(li):not(.owl-short-bio *):not(.owl-content-inner):not(.owl-faq .owl-gradient):not(.owl-faq .absolute svg):not(figcaption) {
+.owl-content *:not(.owl-faq):not(li):not(.owl-short-bio *):not(.owl-content-inner):not(.owl-faq .owl-gradient:hover):not(.owl-faq .absolute svg):not(figcaption) {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.owl-gradient {
+.owl-gradient:hover {
     background-size: 600% 600%;
     -webkit-animation: OwlGradientAnimation 7s ease infinite;
             animation: OwlGradientAnimation 7s ease infinite;
