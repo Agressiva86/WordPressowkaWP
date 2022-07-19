@@ -57,7 +57,7 @@ add_filter( 'timber/acf-gutenberg-blocks-data/owl-interview', function( $context
 } );
 
 add_filter( 'timber/acf-gutenberg-blocks-data/owl-quote', function( $context ){
-    $context['fields']['post_url'] = get_the_permalink();
+    $context['fields']['post_url'] = str_replace( '://app.', '://', get_the_permalink() );
 
     return $context;
 } );
