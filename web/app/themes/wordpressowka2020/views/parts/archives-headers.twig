@@ -1,0 +1,49 @@
+<div class="md:grid md:grid-cols-2 md:gap-20 items-center mt-20">
+
+	<div class="mb-10 md:mb-0 dark:text-owl-dark-beige">
+		<h1 class="owl-page-title lg:text-h1lg md:text-h1md text-h2md mb-10 text-owl-dark-blue dark:text-owl-dark-beige">
+			<span>
+				{{ post.title }}
+			</span>
+		</h1>
+		<div class="text-lg mb-10 text-gray-800 dark:text-owl-dark-beige">
+			{{ post.meta( 'description' ) }}
+		</div>
+		{% if post.meta( 'button' ) %}
+		<a href="{{ post.meta( 'button' ).url }}" class="inline-block no-underline relative transition-all delay-150 overflow-hidden">
+			<span class="text-lg absolute inset-0 transition-all delay-150 block bg-gradient-to-tr from-owl-light-green via-owl-green to-owl-dark-blue text-white font-owlFontBold rounded-md py-4 px-8 text-center hover:opacity-100 opacity-0">
+				{{ post.meta( 'button' ).title }}
+			</span>
+
+			<span class="text-lg inline-block bg-gradient-to-tr from-owl-orange to-owl-red text-white font-owlFontBold rounded-md py-4 px-8 text-center transition-all delay-150">
+				{{ post.meta( 'button' ).title }}
+			</span>
+		</a>
+		{% endif %}
+
+		<div class="text-right">
+			<a href="#content" class="inline-block p-4">
+				<img src="{{ theme.link }}/dist_tw/images/arrow-down-orange.svg" class="m-0" alt="scroll down">
+			</a>
+		</div>
+
+	</div>
+
+	<div>
+		<div class="picture">
+			{% set image = Image( post.thumbnail ) %}
+			<picture>
+				<source media="(max-width:767px)"
+					srcset="{{ image | resize( 650 ) |towebp }}" />
+
+				<source media="(min-width: 768px) and (max-width:1023px)"
+					srcset="{{ image | resize( 400 ) |towebp }}" />
+
+				<img
+					src="{{ image | resize( 750 ) |towebp }}"
+					alt="{{ image.alt }}">
+			</picture>
+		</div>
+	</div>
+
+</div>

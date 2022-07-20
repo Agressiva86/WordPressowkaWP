@@ -27,19 +27,25 @@
 				{% include 'views/parts/icons/dots-dark.twig' %}
 			</div>
 
-			<div class="owl-gradient inset-0 z-10 mix-blend-overlay opacity-75 rounded-tr-[50px]"></div>
+			<div class="owl-gradient rounded-tr-[50px] z-40"></div>
 
 			{% set image = Image( post.thumbnail ) %}
 			<picture>
 				<source media="(max-width:767px)"
-					srcset="{{ image|resize( 650, 550 )|towebp }}" />
+					srcset="{{ image|resize( 650, 550 )|towebp }}"
+					width="650" height="550"
+				/>
 
 				<source media="(min-width: 768px) and (max-width:1023px)"
-					srcset="{{ image|resize( 400, 750 )|towebp }}" />
+					srcset="{{ image|resize( 400, 750 )|towebp }}"
+					width="400" height="750"
+				/>
 
 				<img class="rounded-tr-[50px]"
 					src="{{ image|resize( 750, 750 )|towebp }}"
-					alt="{{ image.alt }}">
+					alt="{{ image.alt }}"
+					width="750" height="750"
+				>
 			</picture>
 		</div>
 	</div>

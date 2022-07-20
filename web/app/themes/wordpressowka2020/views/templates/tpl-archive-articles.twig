@@ -1,0 +1,13 @@
+{% extends "/layouts/basetw.twig" %}
+
+{% block main %}
+
+{% include 'parts/archives-headers.twig' %}
+
+<div class="mt-20 mb-20 lg:grid lg:grid-cols-2 lg:gap-10" id="content">
+	{% for article in posts %}
+		{% include 'views/parts/articles-entry.twig' %}
+	{% endfor %}
+</div>
+
+{% endblock %}

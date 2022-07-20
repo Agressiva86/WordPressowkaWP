@@ -1,0 +1,45 @@
+{% set image = Image( article.thumbnail ) %}
+<article class="p-8 bg-gradient-to-b from-owl-light-beige dark:from-owl-dark-blue relative pb-10 rounded-3xl mb-10 lg:mb-0">
+    <div class="picture mb-6 relative">
+        <a class="block relative" href="{{ article.link }}">
+			<div class="owl-gradient rounded-tr-[50px]"></div>
+            <picture class="block rounded-tr-[50px]">
+                <source media="(max-width:767px)"
+					srcset="{{ image|resize( 680, 400 )|towebp }}"
+					width="680"
+					height="400"
+				/>
+
+				<source media="(min-width: 768px) and (max-width:1023px)"
+					srcset="{{ image|resize( 680, 400 )|towebp }}"
+					width="680"
+					height="400"
+				/>
+
+				<img class="rounded-tr-[50px]" src="{{ image|resize( 680, 400 )|towebp }}"
+					width="680"
+					height="400"
+					alt="{{ image.alt }}" loading="lazy">
+            </picture>
+        </a>
+    </div>
+    <h2 class="text-h2md lg:text-h2lg">
+        <a href="{{ article.link }}" class="text-owl-dark-blue hover:text-owl-orange dark:text-owl-light-green dark:hover:text-owl-dark-beige">
+			<span class="uppercase text-sm font-owlFont text-owl-light-green dark:text-owl-dark-beige mb-1 block">
+				{{ article.date( options.date_format ) }}
+			</span>
+			{{ article.title }}
+		</a>
+    </h2>
+    <p class="text-base text-gray-500 dark:text-owl-dark-beige mt-6">
+    	{{ article.preview().length(50).read_more('') }}
+    </p>
+
+	<a href="{{ article.link }}" class="block text-base text-owl-light-green dark:text-owl-orange hover:text-owl-dark-blue dark:hover:text-owl-dark-beige font-bold mt-4">
+		Read more
+	</a>
+
+    <div class="absolute bottom-0 right-8 z-10">
+        {% include 'views/parts/icons/dots-line.twig' %}
+    </div>
+</article>

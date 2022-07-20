@@ -176,3 +176,7 @@ function insert_ad() {
 		}
 	}
 }
+
+function is_tailwind() {
+	return ( is_page( 'interviews' ) || get_post_type() === 'interviews' || is_page( 'articles' ) );
+}

@@ -2,16 +2,22 @@
 <article class="p-8 bg-gradient-to-b from-owl-light-beige dark:from-owl-dark-blue relative pb-10 rounded-3xl mb-10 lg:mb-0">
     <div class="picture mb-6 relative">
         <a class="block relative" href="{{ interview.link }}">
-			<div class="owl-gradient inset-0 z-10 mix-blend-overlay opacity-75 rounded-tr-[50px]"></div>
+			<div class="owl-gradient rounded-tr-[50px]"></div>
             <picture class="block rounded-tr-[50px]">
                 <source media="(max-width:767px)"
-					srcset="{{ image|resize( 650, 550 )|towebp }}" />
+					srcset="{{ image|resize( 650, 550 )|towebp }}"
+					width="650" height="550"
+				/>
 
 				<source media="(min-width: 768px) and (max-width:1023px)"
-					srcset="{{ image|resize( 680, 550 )|towebp }}" />
+					srcset="{{ image|resize( 680, 550 )|towebp }}"
+					width="680" height="550"
+				/>
 
 				<img class="rounded-tr-[50px]" src="{{ image|resize( 450, 380 )|towebp }}"
-					alt="{{ image.alt }}" loading="lazy">
+					alt="{{ image.alt }}" loading="lazy"
+					width="450" height="380"
+				>
             </picture>
         </a>
     </div>

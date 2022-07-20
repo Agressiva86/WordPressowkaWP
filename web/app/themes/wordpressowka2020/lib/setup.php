@@ -60,7 +60,7 @@ add_action( 'after_setup_theme', 'setup' );
  */
 
 function assets() {
-	if ( is_page( 'interviews' ) || get_post_type() === 'interviews' ) {
+	if ( is_tailwind() ) {
 		wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js', true ), '', null, true );
 	} else {
 		wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js', false ), '', null, true );

@@ -33,7 +33,7 @@ function add_to_context( $data ) {
 	$is_tw = false;
 	$dir = '/dist/';
 
-	if ( is_page( 'interviews' ) || get_post_type() === 'interviews' ) {
+	if ( is_tailwind() ) {
 		$is_tw = true;
 		$dir = '/dist_tw/';
 

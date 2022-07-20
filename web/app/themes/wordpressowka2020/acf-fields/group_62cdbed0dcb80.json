@@ -1,6 +1,6 @@
 {
     "key": "group_62cdbed0dcb80",
-    "title": "Archive Interviews",
+    "title": "Archives",
     "fields": [
         {
             "key": "field_62cdbf3260ab7",
@@ -50,6 +50,13 @@
                 "operator": "==",
                 "value": "tpl-archive-interviews.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "tpl-archive-articles.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -64,5 +71,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfict_enabled": 0,
-    "modified": 1657651133
+    "modified": 1658265019
 }
